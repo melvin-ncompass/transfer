@@ -65,6 +65,11 @@ out/
 # Files exceeding GitHub's 100MB limit (transfer these separately)
 data_csv/prompts_populated.csv
 
+# Upstream Superset demo files containing example Mapbox tokens (blocked by GitHub secret scanning)
+superset/superset2.0/superset-frontend/packages/superset-ui-demo/storybook/stories/plugins/legacy-preset-chart-deckgl/
+superset/superset2.0/superset-frontend/packages/superset-ui-demo/storybook/stories/plugins/legacy-plugin-chart-map-box/
+superset/superset2.0/superset/db_engine_specs/README.md
+
 # Logs
 logs/
 *.log

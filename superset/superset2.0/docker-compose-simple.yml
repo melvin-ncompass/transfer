@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_PASSWORD: superset
+      POSTGRES_USER: superset
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_home:/var/lib/postgresql/data
+      - ./docker/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+  superset:
+    image: apache/superset:5.0.0
+    ports:
+      - "8088:8088"
+    depends_on:
+      - redis
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      SECRET_KEY: "thisISaSECRET_1234ForLocalDevelopmentOnly!@#$"
+      SUPERSET_SECRET_KEY: "thisISaSECRET_1234ForLocalDevelopmentOnly!@#$"
+      SUPERSET_LOAD_EXAMPLES: "yes"
+    volumes:
+      - superset_home:/app/superset_home
+    command: >
+      sh -c "
+      superset db upgrade &&
+      superset fab create-admin --username admin --firstname Admin --lastname User --email admin@superset.com --password admin &&
+      superset load_examples &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088 --with-threads --reload --debugger
+      "
+
+volumes:
+  redis:
+  db_home:
+  superset_home:
+
