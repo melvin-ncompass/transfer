@@ -1,0 +1,30 @@
+<VRTDataset rasterXSize="1500" rasterYSize="1600">
+  <SRS dataAxisToSRSAxisMapping="2,1">GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AXIS["Latitude",NORTH],AXIS["Longitude",EAST],AUTHORITY["EPSG","4326"]]</SRS>
+  <GeoTransform> -2.0000000000000000e+01,  5.0000000745058060e-02,  0.0000000000000000e+00,  4.0000000000000000e+01,  0.0000000000000000e+00, -5.0000000745058060e-02</GeoTransform>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="TIFFTAG_DATETIME">2025:10:22 03:02:51</MDI>
+    <MDI key="TIFFTAG_DOCUMENTNAME">/home/chc-data-out/products/EWX/data/forecasts/CHIRPS-GEFS_precip_v12/05day/Africa/anomaly_mean/anom.2025.295.tif</MDI>
+    <MDI key="TIFFTAG_IMAGEDESCRIPTION">IDL TIFF file</MDI>
+    <MDI key="TIFFTAG_RESOLUTIONUNIT">2 (pixels/inch)</MDI>
+    <MDI key="TIFFTAG_SOFTWARE">IDL 9.0.0, NV5 Geospatial Solutions, Inc.</MDI>
+    <MDI key="TIFFTAG_XRESOLUTION">100</MDI>
+    <MDI key="TIFFTAG_YRESOLUTION">100</MDI>
+  </Metadata>
+  <Metadata domain="IMAGE_STRUCTURE">
+    <MDI key="INTERLEAVE">BAND</MDI>
+    <MDI key="COMPRESSION">PACKBITS</MDI>
+  </Metadata>
+  <VRTRasterBand dataType="Byte" band="1" blockXSize="1500" blockYSize="1">
+    <ColorInterp>Gray</ColorInterp>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="1">anom.2025.295.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="1500" RasterYSize="1600" DataType="Float32" BlockXSize="1500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="1500" ySize="1600" />
+      <DstRect xOff="0" yOff="0" xSize="1500" ySize="1600" />
+      <ScaleOffset>130.436</ScaleOffset>
+      <ScaleRatio>1.37501</ScaleRatio>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>
