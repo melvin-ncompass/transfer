@@ -1,0 +1,34 @@
+{
+  "functionName": "sendPrompt",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 125,
+  "ends": 140,
+  "usedBy": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "analyzeRepository",
+      "starts": 31,
+      "ends": 50
+    },
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "classifyFiles",
+      "starts": 27,
+      "ends": 36
+    },
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "readStream",
+      "starts": 142,
+      "ends": 150
+    }
+  ]
+}

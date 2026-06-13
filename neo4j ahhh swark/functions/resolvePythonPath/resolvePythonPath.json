@@ -1,0 +1,8 @@
+{
+  "functionName": "resolvePythonPath",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 220,
+  "ends": 233,
+  "usedBy": [],
+  "dependsOn": []
+}

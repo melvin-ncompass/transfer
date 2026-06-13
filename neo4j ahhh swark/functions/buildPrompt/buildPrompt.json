@@ -1,0 +1,22 @@
+{
+  "functionName": "buildPrompt",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 27,
+  "ends": 139,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "estimatePathTokens",
+      "starts": 141,
+      "ends": 149
+    }
+  ]
+}

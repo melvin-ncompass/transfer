@@ -1,0 +1,21 @@
+{
+  "functionName": "runQuery",
+  "filePath": "src/io/neo4j.service.ts",
+  "starts": 29,
+  "ends": 37,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "getSession",
+      "starts": 25,
+      "ends": 27
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ]
+}

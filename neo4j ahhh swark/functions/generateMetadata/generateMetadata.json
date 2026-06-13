@@ -1,0 +1,8 @@
+{
+  "functionName": "generateMetadata",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 503,
+  "ends": 516,
+  "usedBy": [],
+  "dependsOn": []
+}

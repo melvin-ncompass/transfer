@@ -1,0 +1,8 @@
+{
+  "functionName": "getCurrentCommit",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 73,
+  "ends": 82,
+  "usedBy": [],
+  "dependsOn": []
+}

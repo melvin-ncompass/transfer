@@ -1,0 +1,28 @@
+{
+  "functionName": "scanDirectoryRecursive",
+  "filePath": "debug-scanner.js",
+  "starts": 18,
+  "ends": 51,
+  "usedBy": [
+    {
+      "path": "debug-scanner.js",
+      "name": "scanDirectory",
+      "starts": 4,
+      "ends": 63
+    },
+    {
+      "path": "debug-scanner.js",
+      "name": "scanDirectoryRecursive",
+      "starts": 18,
+      "ends": 51
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "debug-scanner.js",
+      "name": "scanDirectoryRecursive",
+      "starts": 18,
+      "ends": 51
+    }
+  ]
+}

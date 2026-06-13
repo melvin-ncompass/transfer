@@ -1,0 +1,8 @@
+{
+  "functionName": "findStronglyConnectedComponents",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 323,
+  "ends": 379,
+  "usedBy": [],
+  "dependsOn": []
+}

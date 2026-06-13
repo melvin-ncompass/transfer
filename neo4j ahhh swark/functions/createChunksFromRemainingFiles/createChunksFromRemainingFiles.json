@@ -1,0 +1,8 @@
+{
+  "functionName": "createChunksFromRemainingFiles",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 426,
+  "ends": 466,
+  "usedBy": [],
+  "dependsOn": []
+}

@@ -1,0 +1,15 @@
+{
+  "functionName": "formatCommitForQuickPick",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 118,
+  "ends": 130,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/io/git-utils.ts",
+      "name": "getTimeAgo",
+      "starts": 132,
+      "ends": 162
+    }
+  ]
+}

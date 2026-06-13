@@ -1,0 +1,385 @@
+/* Neo4j Toolbar Styles */
+
+.neo4j-toolbar {
+    height: 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+/* Brand Section */
+.toolbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.neo4j-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    color: #68B7C7;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.neo4j {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: -0.5px;
+}
+
+.browser {
+    font-size: 12px;
+    font-weight: 500;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Query Interface */
+.query-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+}
+
+.query-input-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.query-input-container {
+    flex: 1;
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.query-input-container:focus-within {
+    border-color: #68B7C7;
+    box-shadow: 0 0 0 3px rgba(104, 183, 199, 0.1);
+}
+
+.cypher-query-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    color: #2d3748;
+    resize: none;
+    line-height: 1.5;
+}
+
+.cypher-query-input::placeholder {
+    color: #a0aec0;
+}
+
+.query-actions {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.run-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #68B7C7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.run-btn:hover {
+    background: #5aa3b4;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(104, 183, 199, 0.3);
+}
+
+.save-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: #718096;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.save-btn:hover {
+    background: #f7fafc;
+    color: #4a5568;
+    border-color: #cbd5e0;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.quick-query-btn {
+    background: #edf2f7;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.quick-query-btn:hover {
+    background: #68B7C7;
+    color: white;
+    border-color: #68B7C7;
+    transform: translateY(-1px);
+}
+
+/* Toolbar Controls */
+.toolbar-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.panel-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: #718096;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.panel-btn:hover {
+    background: #f7fafc;
+    color: #4a5568;
+    border-color: #cbd5e0;
+}
+
+.panel-btn.active {
+    background: #68B7C7;
+    color: white;
+    border-color: #68B7C7;
+}
+
+.settings-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: #718096;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-btn:hover {
+    background: #f7fafc;
+    color: #4a5568;
+    border-color: #cbd5e0;
+}
+
+/* Query History */
+.query-history {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.history-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: #718096;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-btn:hover {
+    background: #f7fafc;
+    color: #4a5568;
+    border-color: #cbd5e0;
+}
+
+.history-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s;
+    margin-top: 4px;
+}
+
+.query-history:hover .history-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.history-item {
+    padding: 10px 12px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    color: #4a5568;
+    border-bottom: 1px solid #f7fafc;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-item:hover {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .neo4j-toolbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 16px 24px;
+        gap: 16px;
+    }
+
+    .query-interface {
+        order: 2;
+        width: 100%;
+        max-width: none;
+    }
+
+    .toolbar-controls {
+        order: 3;
+    }
+
+    .query-history {
+        order: 4;
+    }
+}
+
+@media (max-width: 768px) {
+    .neo4j-toolbar {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .quick-actions {
+        display: none;
+    }
+
+    .toolbar-controls {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .panel-btn span {
+        display: none;
+    }
+
+    .cypher-query-input {
+        font-size: 12px;
+    }
+}
+
+/* Neo4j Theme Colors */
+.neo4j-theme-blue {
+    --primary-color: #68B7C7;
+    --primary-hover: #5aa3b4;
+    --primary-light: rgba(104, 183, 199, 0.1);
+}
+
+.neo4j-theme-green {
+    --primary-color: #48bb78;
+    --primary-hover: #38a169;
+    --primary-light: rgba(72, 187, 120, 0.1);
+}
+
+.neo4j-theme-purple {
+    --primary-color: #9f7aea;
+    --primary-hover: #805ad5;
+    --primary-light: rgba(159, 122, 234, 0.1);
+}
+
+/* Animations */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history-dropdown {
+    animation: slide-down 0.2s ease-out;
+}

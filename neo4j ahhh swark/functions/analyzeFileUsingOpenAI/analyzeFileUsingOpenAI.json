@@ -1,0 +1,15 @@
+{
+  "functionName": "analyzeFileUsingOpenAI",
+  "filePath": "src/io/file-analyuzer.ts",
+  "starts": 42,
+  "ends": 69,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": []
+}

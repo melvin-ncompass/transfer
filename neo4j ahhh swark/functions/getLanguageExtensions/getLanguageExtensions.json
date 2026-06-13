@@ -1,0 +1,15 @@
+{
+  "functionName": "getLanguageExtensions",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 274,
+  "ends": 289,
+  "usedBy": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "getFallbackPatterns",
+      "starts": 231,
+      "ends": 272
+    }
+  ],
+  "dependsOn": []
+}

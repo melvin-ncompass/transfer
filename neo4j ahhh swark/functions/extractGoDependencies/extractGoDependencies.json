@@ -1,0 +1,8 @@
+{
+  "functionName": "extractGoDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 616,
+  "ends": 637,
+  "usedBy": [],
+  "dependsOn": []
+}

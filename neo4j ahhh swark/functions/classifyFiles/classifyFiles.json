@@ -1,0 +1,33 @@
+{
+  "functionName": "classifyFiles",
+  "filePath": "src/llm/file-classifier.ts",
+  "starts": 27,
+  "ends": 36,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    },
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "buildClassificationPrompt",
+      "starts": 38,
+      "ends": 92
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "sendPrompt",
+      "starts": 125,
+      "ends": 140
+    },
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "parseClassificationResponse",
+      "starts": 112,
+      "ends": 155
+    }
+  ]
+}

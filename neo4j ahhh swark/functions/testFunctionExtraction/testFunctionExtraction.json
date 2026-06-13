@@ -1,0 +1,34 @@
+{
+  "functionName": "testFunctionExtraction",
+  "filePath": "src/commands/debug-function-test.ts",
+  "starts": 7,
+  "ends": 66,
+  "usedBy": [
+    {
+      "path": "src/extension.ts",
+      "name": "registerCommand",
+      "starts": 17,
+      "ends": 48
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/commands/debug-function-test.ts",
+      "name": "copyDirectory",
+      "starts": 68,
+      "ends": 85
+    },
+    {
+      "path": "src/io/graph-generator.ts",
+      "name": "generateGraph",
+      "starts": 62,
+      "ends": 399
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ]
+}

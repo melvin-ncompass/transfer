@@ -1,0 +1,22 @@
+{
+  "functionName": "testScanner",
+  "filePath": "debug-scanner.js",
+  "starts": 56,
+  "ends": 61,
+  "usedBy": [
+    {
+      "path": "debug-scanner.js",
+      "name": "scanDirectory",
+      "starts": 4,
+      "ends": 63
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "debug-scanner.js",
+      "name": "scanDirectory",
+      "starts": 4,
+      "ends": 63
+    }
+  ]
+}

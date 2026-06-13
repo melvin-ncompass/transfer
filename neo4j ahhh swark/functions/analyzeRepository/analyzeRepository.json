@@ -1,0 +1,45 @@
+{
+  "functionName": "analyzeRepository",
+  "filePath": "src/io/dynamic-language-analyzer.ts",
+  "starts": 31,
+  "ends": 50,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "getRepositorySnapshot",
+      "starts": 52,
+      "ends": 76
+    },
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "buildAnalysisPrompt",
+      "starts": 78,
+      "ends": 117
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "sendPrompt",
+      "starts": 125,
+      "ends": 140
+    },
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "parseStructureResponse",
+      "starts": 119,
+      "ends": 141
+    },
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "enhanceWithFileAnalysis",
+      "starts": 143,
+      "ends": 156
+    }
+  ]
+}

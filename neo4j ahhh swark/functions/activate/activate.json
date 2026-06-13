@@ -1,0 +1,15 @@
+{
+  "functionName": "activate",
+  "filePath": "src/extension.ts",
+  "starts": 5,
+  "ends": 15,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/extension.ts",
+      "name": "registerCommand",
+      "starts": 17,
+      "ends": 48
+    }
+  ]
+}

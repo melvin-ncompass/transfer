@@ -1,0 +1,15 @@
+{
+  "functionName": "fallbackLanguageDetection",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 188,
+  "ends": 231,
+  "usedBy": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": []
+}

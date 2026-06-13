@@ -1,0 +1,40 @@
+{
+  "functionName": "registerCommand",
+  "filePath": "src/extension.ts",
+  "starts": 17,
+  "ends": 48,
+  "usedBy": [
+    {
+      "path": "src/extension.ts",
+      "name": "activate",
+      "starts": 5,
+      "ends": 15
+    },
+    {
+      "path": "src/extension.ts",
+      "name": "registerCommand",
+      "starts": 17,
+      "ends": 48
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/extension.ts",
+      "name": "registerCommand",
+      "starts": 17,
+      "ends": 48
+    },
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    },
+    {
+      "path": "src/commands/debug-function-test.ts",
+      "name": "testFunctionExtraction",
+      "starts": 7,
+      "ends": 66
+    }
+  ]
+}

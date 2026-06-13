@@ -1,0 +1,22 @@
+{
+  "functionName": "getSampleFiles",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 133,
+  "ends": 145,
+  "usedBy": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "getFilePriority",
+      "starts": 147,
+      "ends": 164
+    }
+  ]
+}

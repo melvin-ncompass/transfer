@@ -1,0 +1,46 @@
+{
+  "functionName": "close",
+  "filePath": "src/io/neo4j.service.ts",
+  "starts": 39,
+  "ends": 42,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    },
+    {
+      "path": "src/commands/debug-function-test.ts",
+      "name": "testFunctionExtraction",
+      "starts": 7,
+      "ends": 66
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "testConnection",
+      "starts": 14,
+      "ends": 23
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "runQuery",
+      "starts": 29,
+      "ends": 37
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ]
+}

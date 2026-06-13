@@ -1,0 +1,15 @@
+{
+  "functionName": "estimatePathTokens",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 141,
+  "ends": 149,
+  "usedBy": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "buildPrompt",
+      "starts": 27,
+      "ends": 139
+    }
+  ],
+  "dependsOn": []
+}

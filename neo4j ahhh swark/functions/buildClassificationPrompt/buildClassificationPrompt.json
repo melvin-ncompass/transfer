@@ -1,0 +1,22 @@
+{
+  "functionName": "buildClassificationPrompt",
+  "filePath": "src/llm/file-classifier.ts",
+  "starts": 38,
+  "ends": 92,
+  "usedBy": [
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "classifyFiles",
+      "starts": 27,
+      "ends": 36
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "analyzeDependencies",
+      "starts": 94,
+      "ends": 110
+    }
+  ]
+}

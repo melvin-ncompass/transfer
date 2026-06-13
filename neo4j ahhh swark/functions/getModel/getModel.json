@@ -1,0 +1,58 @@
+{
+  "functionName": "getModel",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 7,
+  "ends": 24,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    },
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "analyzeRepository",
+      "starts": 31,
+      "ends": 50
+    },
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "classifyFiles",
+      "starts": 27,
+      "ends": 36
+    },
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getAvailableModels",
+      "starts": 26,
+      "ends": 41
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getConfiguredModel",
+      "starts": 43,
+      "ends": 54
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "selectModel",
+      "starts": 56,
+      "ends": 88
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "sendModelSelectedTelemetry",
+      "starts": 110,
+      "ends": 117
+    }
+  ]
+}

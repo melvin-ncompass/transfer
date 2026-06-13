@@ -1,0 +1,15 @@
+{
+  "functionName": "testFunctionScanning",
+  "filePath": "test-function-scan.js",
+  "starts": 4,
+  "ends": 47,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "test-function-scan.js",
+      "name": "scanDirectory",
+      "starts": 10,
+      "ends": 28
+    }
+  ]
+}

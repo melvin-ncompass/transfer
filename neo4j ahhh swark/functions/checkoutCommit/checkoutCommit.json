@@ -1,0 +1,8 @@
+{
+  "functionName": "checkoutCommit",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 84,
+  "ends": 94,
+  "usedBy": [],
+  "dependsOn": []
+}

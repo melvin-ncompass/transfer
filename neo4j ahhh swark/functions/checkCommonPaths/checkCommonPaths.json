@@ -1,0 +1,22 @@
+{
+  "functionName": "checkCommonPaths",
+  "filePath": "debug-directories.js",
+  "starts": 56,
+  "ends": 76,
+  "usedBy": [
+    {
+      "path": "debug-directories.js",
+      "name": "main",
+      "starts": 78,
+      "ends": 82
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "debug-directories.js",
+      "name": "exploreDirectory",
+      "starts": 28,
+      "ends": 54
+    }
+  ]
+}

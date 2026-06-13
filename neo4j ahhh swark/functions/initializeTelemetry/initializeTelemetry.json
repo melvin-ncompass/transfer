@@ -1,0 +1,8 @@
+{
+  "functionName": "initializeTelemetry",
+  "filePath": "src/telemetry.ts",
+  "starts": 8,
+  "ends": 10,
+  "usedBy": [],
+  "dependsOn": []
+}

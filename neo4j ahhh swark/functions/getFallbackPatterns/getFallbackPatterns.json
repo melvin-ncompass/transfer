@@ -1,0 +1,28 @@
+{
+  "functionName": "getFallbackPatterns",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 231,
+  "ends": 272,
+  "usedBy": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "parseRegexResponse",
+      "starts": 151,
+      "ends": 168
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "getLanguageExtensions",
+      "starts": 274,
+      "ends": 289
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "getLanguageDefaultPatterns",
+      "starts": 291,
+      "ends": 400
+    }
+  ]
+}

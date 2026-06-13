@@ -1,0 +1,8 @@
+{
+  "functionName": "getMermaidContentFromLLM",
+  "filePath": "src/io/diagram-generator.ts",
+  "starts": 32,
+  "ends": 213,
+  "usedBy": [],
+  "dependsOn": []
+}

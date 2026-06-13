@@ -1,0 +1,15 @@
+{
+  "functionName": "analyzeDependencies",
+  "filePath": "src/llm/file-classifier.ts",
+  "starts": 94,
+  "ends": 110,
+  "usedBy": [
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "buildClassificationPrompt",
+      "starts": 38,
+      "ends": 92
+    }
+  ],
+  "dependsOn": []
+}

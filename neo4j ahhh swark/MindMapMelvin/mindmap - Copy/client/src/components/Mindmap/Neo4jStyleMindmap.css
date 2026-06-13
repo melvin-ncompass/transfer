@@ -1,0 +1,744 @@
+/* Neo4j Style Mindmap CSS */
+
+.neo4j-mindmap-container {
+    width: 100vw;
+    height: 100vh;
+    background: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Navigation Bar - Legacy (keeping for compatibility) */
+.neo4j-nav-bar {
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-left h2 {
+    margin: 0;
+    color: #1a202c;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.database-info {
+    font-size: 12px;
+    color: #718096;
+    margin-left: 16px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.panel-toggle {
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #4a5568;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.panel-toggle:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.panel-toggle.active {
+    background: #3182ce;
+    color: white;
+    border-color: #3182ce;
+}
+
+.refresh-btn {
+    padding: 8px 16px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #4a5568;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.refresh-btn:hover {
+    background: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Main Content Area */
+.neo4j-main-content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Database Panel */
+.database-panel {
+    width: 320px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.database-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.database-header h3 {
+    margin: 0 0 8px 0;
+    color: #1a202c;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.database-instance {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #718096;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #48bb78;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+
+/* Database Statistics */
+.database-stats {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.stat-section {
+    margin-bottom: 20px;
+}
+
+.stat-section h4 {
+    margin: 0 0 12px 0;
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.node-types, .relationship-types {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.node-type-item, .relationship-type-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f7fafc;
+    border-radius: 6px;
+    border-left: 3px solid #68b7c7;
+}
+
+.node-type-badge, .relationship-badge {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.node-count, .relationship-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a5568;
+    background: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+/* Cypher Query Section */
+.cypher-section {
+    padding: 20px;
+    flex: 1;
+}
+
+.cypher-section h4 {
+    margin: 0 0 12px 0;
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cypher-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cypher-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    background: #f7fafc;
+    color: #2d3748;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.cypher-input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.run-query-btn {
+    padding: 10px 16px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.run-query-btn:hover {
+    background: #2c5aa0;
+}
+
+.run-query-btn span {
+    font-size: 12px;
+}
+
+/* Query History */
+.query-history {
+    margin-top: 16px;
+}
+
+.query-history h5 {
+    margin: 0 0 8px 0;
+    color: #4a5568;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.history-item {
+    padding: 8px;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 11px;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.history-item:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+/* Graph Container */
+.neo4j-graph-container {
+    flex: 1;
+    position: relative;
+    background: #fafafa;
+}
+
+.neo4j-react-flow {
+    width: 100%;
+    height: 100%;
+}
+
+/* Loading and Error Overlays */
+.loading-overlay, .error-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 50;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e2e8f0;
+    border-top: 3px solid #3182ce;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+.error-message {
+    text-align: center;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.error-message h3 {
+    margin: 0 0 12px 0;
+    color: #e53e3e;
+    font-size: 18px;
+}
+
+.error-message p {
+    margin: 0 0 16px 0;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.retry-btn {
+    padding: 10px 20px;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.retry-btn:hover {
+    background: #2c5aa0;
+}
+
+/* Node Details Panel */
+.node-details-panel {
+    width: 320px;
+    background: #ffffff;
+    border-left: 1px solid #e2e8f0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    padding: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    margin: 0;
+    color: #1a202c;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #718096;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: #f7fafc;
+    color: #4a5568;
+}
+
+.node-info {
+    padding: 20px;
+}
+
+.node-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.node-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #68b7c7;
+}
+
+.node-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.node-labels {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.label-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.function-label {
+    background: #68b7c7;
+    color: white;
+}
+
+.module-label {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.property-section h4 {
+    margin: 0 0 12px 0;
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.properties-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.property-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: #f7fafc;
+    border-radius: 6px;
+    border-left: 3px solid #68b7c7;
+}
+
+.property-key {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.property-value {
+    font-size: 12px;
+    color: #2d3748;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Neo4j Node Styles */
+.neo4j-node {
+    width: 140px;
+    min-height: 100px;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.neo4j-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.neo4j-node.selected {
+    transform: translateY(-4px);
+}
+
+.neo4j-node-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.neo4j-node-icon {
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.neo4j-node-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.neo4j-node-labels {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.neo4j-label {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.neo4j-node-properties {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.neo4j-node-properties .property-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border-left: none;
+    justify-content: center;
+}
+
+.neo4j-node-properties .property-key {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.neo4j-node-properties .property-value {
+    color: white;
+    font-weight: 500;
+}
+
+.entry-point {
+    background: rgba(245, 158, 11, 0.3) !important;
+    border: 1px solid rgba(245, 158, 11, 0.5) !important;
+}
+
+.entry-icon {
+    font-size: 10px;
+}
+
+.neo4j-selection-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid white;
+    border-radius: 16px;
+    animation: pulse-ring 2s infinite;
+    pointer-events: none;
+}
+
+/* Neo4j Handle Styles */
+.neo4j-handle {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 2px solid #4a5568;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.neo4j-handle:hover {
+    background: #3182ce;
+    border-color: white;
+    transform: scale(1.2);
+}
+
+.neo4j-handle-target {
+    left: -6px;
+}
+
+.neo4j-handle-source {
+    right: -6px;
+}
+
+/* Neo4j Edge Styles */
+.neo4j-edge {
+    transition: all 0.3s;
+}
+
+.neo4j-edge.selected {
+    stroke-width: 3;
+    stroke: #2563eb;
+}
+
+.neo4j-edge-particle {
+    filter: drop-shadow(0 0 3px #2563eb);
+}
+
+.neo4j-edge-label {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* React Flow Customization */
+.neo4j-controls {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.neo4j-controls button {
+    background: white;
+    border: none;
+    color: #4a5568;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.neo4j-controls button:hover {
+    background: #f7fafc;
+    color: #2d3748;
+}
+
+.neo4j-minimap {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Query Results Panel */
+.query-results-panel {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 600px;
+}
+
+.query-results {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.query-results h4 {
+    margin: 0;
+    color: #1a202c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.results-info {
+    font-size: 12px;
+    color: #718096;
+}
+
+.close-results {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #718096;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.close-results:hover {
+    background: #f7fafc;
+    color: #4a5568;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .database-panel,
+    .node-details-panel {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .neo4j-main-content {
+        flex-direction: column;
+    }
+    
+    .database-panel,
+    .node-details-panel {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .neo4j-nav-bar {
+        padding: 0 16px;
+    }
+    
+    .nav-left h2 {
+        font-size: 16px;
+    }
+    
+    .database-info {
+        display: none;
+    }
+}

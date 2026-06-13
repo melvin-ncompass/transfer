@@ -1,0 +1,455 @@
+/* ProjectMindmap.css - Static styles for ProjectMindmap component */
+
+/* Main Container */
+.project-mindmap-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header Styles */
+.project-mindmap-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-mindmap-title {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Search Input Styles */
+.search-container {
+    position: relative;
+    width: 350px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    margin-right: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background: white;
+    color: #000;
+    transition: border-color 0.2s ease;
+}
+
+.search-input.normal {
+    border: 1px solid #d1d5db;
+}
+
+.search-input.searching {
+    border: 2px solid #10b981;
+}
+
+.search-input.centering {
+    border: 2px solid #f59e0b;
+}
+
+.search-clear-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #6b7280;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #6b7280;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/* Stats Section */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4a5568;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.stat-item.search-active {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid #10b981;
+}
+
+.search-active-badge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    height: calc(100vh - 180px);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Left Panel - Selection Info */
+.left-panel {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow-y: auto;
+}
+
+/* Selected Function Header */
+.selected-function-header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.selected-function-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.selected-function-name {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.selected-function-connections {
+    font-size: 12px;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Loading Code State */
+.loading-code {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.loading-code-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* Code Details Panel */
+.code-details-panel {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.code-details-title {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Error State */
+.code-error {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    text-align: center;
+}
+
+.code-error-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.code-error-title {
+    font-weight: 600;
+}
+
+.code-error-message {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* Function Name Section */
+.function-name-section {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.function-name-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #667eea;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.function-name-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d3748;
+    word-break: break-word;
+}
+
+/* File Path Section */
+.file-path-section {
+    margin-bottom: 16px;
+    padding: 16px;
+    background: rgba(118, 75, 162, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(118, 75, 162, 0.1);
+}
+
+.file-path-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #764ba2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.file-path-value {
+    font-size: 13px;
+    color: #4a5568;
+    word-break: break-all;
+    font-family: Monaco, "Cascadia Code", "Roboto Mono", monospace;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* Purpose Section */
+.purpose-section {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.purpose-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.purpose-value {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2d3748;
+    font-weight: 400;
+}
+
+/* Code Viewer */
+.code-viewer {
+    margin-top: 20px;
+}
+
+.code-viewer-summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.code-viewer-content {
+    margin-top: 12px;
+}
+
+.code-block {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: Monaco, "Cascadia Code", "Roboto Mono", monospace;
+    line-height: 1.5;
+    overflow: auto;
+    max-height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #666;
+    padding: 40px 20px;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state-title {
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.empty-state-description {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Right Panel - Mindmap */
+.right-panel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    color: #666;
+}
+
+.loading-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.loading-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.loading-description {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Error State */
+.error-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    color: #e74c3c;
+    text-align: center;
+    padding: 40px;
+}
+
+.error-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.error-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.error-message {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.error-fallback {
+    font-size: 12px;
+    color: #666;
+}
+
+/* React Flow Controls */
+.react-flow-controls {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow-minimap {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

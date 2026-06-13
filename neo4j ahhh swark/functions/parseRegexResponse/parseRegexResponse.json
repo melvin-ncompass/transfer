@@ -1,0 +1,27 @@
+{
+  "functionName": "parseRegexResponse",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 151,
+  "ends": 168,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "validateAndCleanPatterns",
+      "starts": 170,
+      "ends": 200
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "extractPatternsFromText",
+      "starts": 202,
+      "ends": 229
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "getFallbackPatterns",
+      "starts": 231,
+      "ends": 272
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "extractJSTSDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 558,
+  "ends": 573,
+  "usedBy": [],
+  "dependsOn": []
+}

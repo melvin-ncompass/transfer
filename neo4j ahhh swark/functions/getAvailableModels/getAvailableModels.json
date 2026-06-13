@@ -1,0 +1,15 @@
+{
+  "functionName": "getAvailableModels",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 26,
+  "ends": 41,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    }
+  ],
+  "dependsOn": []
+}

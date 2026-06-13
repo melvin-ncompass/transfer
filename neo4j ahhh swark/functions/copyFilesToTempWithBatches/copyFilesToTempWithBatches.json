@@ -1,0 +1,15 @@
+{
+  "functionName": "copyFilesToTempWithBatches",
+  "filePath": "src/io/temp-directory-creator.ts",
+  "starts": 28,
+  "ends": 228,
+  "usedBy": [
+    {
+      "path": "src/io/temp-directory-creator.ts",
+      "name": "copyFilesToTemp",
+      "starts": 7,
+      "ends": 26
+    }
+  ],
+  "dependsOn": []
+}

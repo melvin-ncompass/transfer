@@ -1,0 +1,8 @@
+{
+  "functionName": "resolveJavaPath",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 235,
+  "ends": 242,
+  "usedBy": [],
+  "dependsOn": []
+}

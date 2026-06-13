@@ -1,0 +1,21 @@
+{
+  "functionName": "main",
+  "filePath": "debug-directories.js",
+  "starts": 78,
+  "ends": 82,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "debug-directories.js",
+      "name": "debugSwarkDirectories",
+      "starts": 4,
+      "ends": 26
+    },
+    {
+      "path": "debug-directories.js",
+      "name": "checkCommonPaths",
+      "starts": 56,
+      "ends": 76
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "hasUncommittedChanges",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 107,
+  "ends": 116,
+  "usedBy": [],
+  "dependsOn": []
+}

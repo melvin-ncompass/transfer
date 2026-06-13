@@ -1,0 +1,8 @@
+{
+  "functionName": "processBatches",
+  "filePath": "src/io/batch-summary-processor.ts",
+  "starts": 8,
+  "ends": 65,
+  "usedBy": [],
+  "dependsOn": []
+}

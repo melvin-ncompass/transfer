@@ -1,0 +1,28 @@
+{
+  "functionName": "generateGraph",
+  "filePath": "src/io/graph-generator.ts",
+  "starts": 62,
+  "ends": 399,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    },
+    {
+      "path": "src/commands/debug-function-test.ts",
+      "name": "testFunctionExtraction",
+      "starts": 7,
+      "ends": 66
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "scanDirectory",
+      "starts": 161,
+      "ends": 188
+    }
+  ]
+}

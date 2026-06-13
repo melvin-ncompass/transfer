@@ -1,0 +1,22 @@
+{
+  "functionName": "copyFilesToTemp",
+  "filePath": "src/io/temp-directory-creator.ts",
+  "starts": 7,
+  "ends": 26,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/temp-directory-creator.ts",
+      "name": "copyFilesToTempWithBatches",
+      "starts": 28,
+      "ends": 228
+    }
+  ]
+}

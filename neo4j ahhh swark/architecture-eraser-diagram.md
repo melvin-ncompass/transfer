@@ -1,0 +1,83 @@
+# Architecture Eraser Diagram
+
+This diagram shows the system architecture based on the batch analysis.
+
+```eraser
+title System Architecture Overview
+
+Users [icon: users] {
+  End Users [icon: user, label: "Batch job submitters and consumers"]
+  Administrators [icon: user-check, label: "System administrators and operators"]
+}
+
+Frontend Layer [icon: monitor] {
+  Web Dashboard [icon: globe, label: "Web-based monitoring and management interface"]
+  CLI Interface [icon: terminal, label: "Command-line interface for job submission"]
+}
+
+Batch Processing Layer [icon: server] {
+  Job Scheduler [icon: clock, label: "Orchestrates and schedules batch jobs"]
+  Task Manager [icon: cpu, label: "Manages individual task execution"]
+  Worker Nodes [icon: server, label: "Distributed processing nodes"]
+  Resource Allocator [icon: layers, label: "Manages compute and memory resources"]
+}
+
+Data Processing Layer [icon: database] {
+  Input Handler [icon: download, label: "Processes and validates input data"]
+  Processing Engine [icon: settings, label: "Core data transformation logic"]
+  Output Generator [icon: upload, label: "Formats and delivers results"]
+}
+
+Storage Layer [icon: database] {
+  Job Metadata Store [icon: cylinder, label: "Stores job configurations and status"]
+  Data Repository [icon: database, label: "Persistent data storage for inputs/outputs"]
+  Cache Layer [icon: zap, label: "In-memory caching for performance"]
+}
+
+Monitoring Layer [icon: bar-chart] {
+  Metrics Collector [icon: activity, label: "Gathers system performance metrics"]
+  Log Aggregator [icon: file-text, label: "Centralized logging and analysis"]
+  Alert Manager [icon: bell, label: "Notification and alerting system"]
+}
+
+External Services [icon: cloud] {
+  Data Sources [icon: link, label: "External data providers and APIs"]
+  Notification Service [icon: mail, label: "Email and messaging notifications"]
+  Storage Services [icon: cloud, label: "External cloud storage providers"]
+}
+
+# Connections
+End Users > Web Dashboard
+End Users > CLI Interface
+Administrators > Web Dashboard
+Web Dashboard > Job Scheduler
+CLI Interface > Job Scheduler
+Job Scheduler > Task Manager
+Task Manager > Worker Nodes
+Task Manager > Resource Allocator
+Resource Allocator > Worker Nodes
+Worker Nodes > Input Handler
+Input Handler > Data Repository
+Input Handler > Data Sources
+Input Handler > Processing Engine
+Processing Engine > Output Generator
+Output Generator > Data Repository
+Output Generator > Storage Services
+Job Scheduler > Job Metadata Store
+Task Manager > Job Metadata Store
+Worker Nodes > Metrics Collector
+Worker Nodes > Log Aggregator
+Metrics Collector > Alert Manager
+Log Aggregator > Alert Manager
+Alert Manager > Notification Service
+Web Dashboard > Metrics Collector
+Web Dashboard > Log Aggregator
+```
+
+## How to Use
+
+1. Copy the Eraser code above
+2. Paste it into [Eraser](https://app.eraser.io/)
+3. Or save as .eraserdiagram file and import
+
+Generated on: 2025-09-18T06:33:27.928Z

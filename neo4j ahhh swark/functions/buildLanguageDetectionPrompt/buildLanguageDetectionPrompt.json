@@ -1,0 +1,15 @@
+{
+  "functionName": "buildLanguageDetectionPrompt",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 90,
+  "ends": 131,
+  "usedBy": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": []
+}

@@ -1,0 +1,15 @@
+{
+  "functionName": "getRecentCommits",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 34,
+  "ends": 71,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": []
+}

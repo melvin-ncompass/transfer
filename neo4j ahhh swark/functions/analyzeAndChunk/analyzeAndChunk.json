@@ -1,0 +1,8 @@
+{
+  "functionName": "analyzeAndChunk",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 43,
+  "ends": 57,
+  "usedBy": [],
+  "dependsOn": []
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "extractJavaDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 592,
+  "ends": 602,
+  "usedBy": [],
+  "dependsOn": []
+}

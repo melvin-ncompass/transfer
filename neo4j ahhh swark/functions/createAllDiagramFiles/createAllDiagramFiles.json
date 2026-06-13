@@ -1,0 +1,8 @@
+{
+  "functionName": "createAllDiagramFiles",
+  "filePath": "src/io/diagram-generator.ts",
+  "starts": 310,
+  "ends": 377,
+  "usedBy": [],
+  "dependsOn": []
+}

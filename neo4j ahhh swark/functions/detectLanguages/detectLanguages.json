@@ -1,0 +1,45 @@
+{
+  "functionName": "detectLanguages",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 18,
+  "ends": 42,
+  "usedBy": [],
+  "dependsOn": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "getSampleFiles",
+      "starts": 133,
+      "ends": 145
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    },
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "buildLanguageDetectionPrompt",
+      "starts": 90,
+      "ends": 131
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "sendPrompt",
+      "starts": 125,
+      "ends": 140
+    },
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "parseLanguageResponse",
+      "starts": 166,
+      "ends": 186
+    },
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "fallbackLanguageDetection",
+      "starts": 188,
+      "ends": 231
+    }
+  ]
+}

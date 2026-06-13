@@ -1,0 +1,144 @@
+# Architecture Mermaid Diagram
+
+This diagram shows the system architecture based on the batch analysis.
+
+```mermaid
+```mermaid
+flowchart TD
+    %% External Users and Entry Points
+    Analyst(("👨‍🔬 Data Analyst"))
+    Scientist(("👩‍🔬 Research Scientist"))
+    Admin(("🔧 System Administrator"))
+    Partner(("🤝 External Partner"))
+
+    %% User Interface Layer
+    WebUI["🌐 Web Analysis Portal"]
+    AdminUI["🧭 Admin Dashboard"]
+    API["🔌 Analysis API Gateway"]
+    DesktopApp["💻 Desktop Client"]
+
+    %% Authentication & Security
+    Auth{"🔐 Authentication Gateway"}
+    AuthZ{"🔒 Authorization Service"}
+
+    %% Core Business Services
+    BatchSvc["📦 Batch Processing Service"]
+    AnalysisSvc["🔍 Analysis Engine Service"]
+    DataIngestSvc["📥 Data Ingestion Service"]
+    ResultSvc["📊 Results Service"]
+    ValidationSvc["✅ Data Validation Service"]
+    ReportingSvc["📋 Reporting Service"]
+
+    %% Orchestration and Processing
+    WorkflowOrchestrator["/🚦 Workflow Orchestration/"]
+    MessageQueue["/📬 Message Queue Processor/"]
+    EventHandler["/📣 Event Handler/"]
+    BatchScheduler["/⏰ Batch Scheduler/"]
+
+    %% Data Storage Layer
+    RawDataDB[("🗃️ Raw Data Database")]
+    ProcessedDataDB[("📊 Processed Data Database")]
+    ResultsDB[("📈 Results Database")]
+    MetadataDB[("🏷️ Metadata Database")]
+    CacheStore[("⚡ Cache Store")]
+    FileStorage[("📁 File Storage")]
+
+    %% Utilities / Cross-cutting
+    Monitoring["/📊 Monitoring & Logging/"]
+    Analytics["/📈 Analytics Engine/"]
+    BackupService["/💾 Backup Service/"]
+    AlertService["/🚨 Alert Service/"]
+
+    %% External Systems
+    DataSource(("📡 External Data Source"))
+    CloudCompute(("☁️ Cloud Compute Platform"))
+    StorageProvider(("🗄️ Cloud Storage Provider"))
+    PartnerAPI(("🔗 Partner API"))
+
+    %% User Flow Connections
+    Analyst --> WebUI
+    Scientist --> DesktopApp
+    Admin --> AdminUI
+    Partner --> API
+
+    WebUI --> Auth
+    DesktopApp --> Auth
+    AdminUI --> Auth
+    API --> Auth
+
+    Auth --> AuthZ
+
+    %% Service Connections
+    AuthZ --> BatchSvc
+    AuthZ --> AnalysisSvc
+    AuthZ --> DataIngestSvc
+    AuthZ --> ReportingSvc
+
+    DataIngestSvc --> RawDataDB
+    BatchSvc --> ProcessedDataDB
+    AnalysisSvc --> ResultsDB
+    ReportingSvc --> MetadataDB
+
+    DataIngestSvc --> ValidationSvc
+    BatchSvc --> ValidationSvc
+    AnalysisSvc --> ValidationSvc
+
+    %% Orchestration Flow
+    DataIngestSvc --> WorkflowOrchestrator
+    BatchScheduler --> WorkflowOrchestrator
+    WorkflowOrchestrator --> MessageQueue
+    MessageQueue --> EventHandler
+    EventHandler --> BatchSvc
+    EventHandler --> AnalysisSvc
+
+    %% Data Persistence & Optimization
+    ValidationSvc --> CacheStore
+    AnalysisSvc --> CacheStore
+    DataIngestSvc --> FileStorage
+    ResultsDB --> FileStorage
+    EventHandler --> MetadataDB
+
+    %% External Integrations
+    DataIngestSvc --> DataSource
+    BatchSvc --> CloudCompute
+    FileStorage --> StorageProvider
+    ReportingSvc --> PartnerAPI
+
+    %% Cross-cutting Services
+    Monitoring -->|monitors| BatchSvc
+    Monitoring -->|monitors| AnalysisSvc
+    Monitoring -->|monitors| WorkflowOrchestrator
+    Analytics --> MetadataDB
+    Analytics --> ResultsDB
+    BatchScheduler --> RawDataDB
+    BackupService --> RawDataDB
+    BackupService --> ResultsDB
+    AlertService --> Monitoring
+
+    %% Styling for comprehensive visualization
+    classDef userClass fill:#f3f4ff,stroke:#3f51b5,stroke-width:2px,color:#1a237e
+    classDef uiClass fill:#f3f4ff,stroke:#3f51b5,stroke-width:2px,color:#1a237e
+    classDef serviceClass fill:#e8f7ea,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef procClass fill:#fff8e1,stroke:#ff8f00,stroke-width:2px,color:#e65100
+    classDef dataClass fill:#fff0f6,stroke:#c2185b,stroke-width:2px,color:#880e4f
+    classDef externalClass fill:#e3f2fd,stroke:#0277bd,stroke-width:2px,color:#01579b
+    classDef utilClass fill:#f1f8e9,stroke:#558b2f,stroke-width:2px,color:#33691e
+
+    class Analyst,Scientist,Admin,Partner userClass
+    class WebUI,AdminUI,API,DesktopApp,Auth,AuthZ uiClass
+    class BatchSvc,AnalysisSvc,DataIngestSvc,ResultSvc,ValidationSvc,ReportingSvc serviceClass
+    class WorkflowOrchestrator,MessageQueue,EventHandler,BatchScheduler procClass
+    class RawDataDB,ProcessedDataDB,ResultsDB,MetadataDB,CacheStore,FileStorage dataClass
+    class DataSource,CloudCompute,StorageProvider,PartnerAPI externalClass
+    class Monitoring,Analytics,BackupService,AlertService utilClass
+```
+```
+
+## How to Use
+
+1. Copy the Mermaid code above
+2. Paste it into [Mermaid Live Editor](https://mermaid.live/)
+3. Or use VS Code with Mermaid extension
+4. Or include in GitHub/GitLab markdown files
+
+Generated on: 2025-09-18T06:33:27.926Z

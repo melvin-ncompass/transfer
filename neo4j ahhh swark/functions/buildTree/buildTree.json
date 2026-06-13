@@ -1,0 +1,28 @@
+{
+  "functionName": "buildTree",
+  "filePath": "src/io/swark55-metadata-extractor.ts",
+  "starts": 85,
+  "ends": 116,
+  "usedBy": [
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "buildDirectoryStructure",
+      "starts": 79,
+      "ends": 122
+    },
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "buildTree",
+      "starts": 85,
+      "ends": 116
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "buildTree",
+      "starts": 85,
+      "ends": 116
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "generateFromSummary",
+  "filePath": "src/io/diagram-generator.ts",
+  "starts": 8,
+  "ends": 30,
+  "usedBy": [],
+  "dependsOn": []
+}

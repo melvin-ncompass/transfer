@@ -1,0 +1,15 @@
+{
+  "functionName": "parseClassificationResponse",
+  "filePath": "src/llm/file-classifier.ts",
+  "starts": 112,
+  "ends": 155,
+  "usedBy": [
+    {
+      "path": "src/llm/file-classifier.ts",
+      "name": "classifyFiles",
+      "starts": 27,
+      "ends": 36
+    }
+  ],
+  "dependsOn": []
+}

@@ -1,0 +1,15 @@
+{
+  "functionName": "copyDirectory",
+  "filePath": "src/commands/debug-function-test.ts",
+  "starts": 68,
+  "ends": 85,
+  "usedBy": [
+    {
+      "path": "src/commands/debug-function-test.ts",
+      "name": "testFunctionExtraction",
+      "starts": 7,
+      "ends": 66
+    }
+  ],
+  "dependsOn": []
+}

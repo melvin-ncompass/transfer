@@ -1,0 +1,8 @@
+{
+  "functionName": "buildBatchAnalysisPrompt",
+  "filePath": "src/io/batch-summary-processor.ts",
+  "starts": 67,
+  "ends": 107,
+  "usedBy": [],
+  "dependsOn": []
+}

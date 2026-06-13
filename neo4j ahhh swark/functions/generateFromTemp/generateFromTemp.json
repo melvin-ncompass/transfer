@@ -1,0 +1,15 @@
+{
+  "functionName": "generateFromTemp",
+  "filePath": "src/io/filtered-filesystem-generator.ts",
+  "starts": 7,
+  "ends": 86,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": []
+}

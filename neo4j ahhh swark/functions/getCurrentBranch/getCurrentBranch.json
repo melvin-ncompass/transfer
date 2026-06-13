@@ -1,0 +1,8 @@
+{
+  "functionName": "getCurrentBranch",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 96,
+  "ends": 105,
+  "usedBy": [],
+  "dependsOn": []
+}

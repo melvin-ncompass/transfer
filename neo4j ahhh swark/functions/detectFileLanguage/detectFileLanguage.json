@@ -1,0 +1,8 @@
+{
+  "functionName": "detectFileLanguage",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 44,
+  "ends": 88,
+  "usedBy": [],
+  "dependsOn": []
+}

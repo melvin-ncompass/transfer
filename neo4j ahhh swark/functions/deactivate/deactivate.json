@@ -1,0 +1,8 @@
+{
+  "functionName": "deactivate",
+  "filePath": "src/extension.ts",
+  "starts": 50,
+  "ends": 52,
+  "usedBy": [],
+  "dependsOn": []
+}

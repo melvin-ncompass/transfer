@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swark Neo4j Function Dependency Visualizer</title>
+    <script src="https://unpkg.com/neo4j-driver@5.3.0/lib/neo4j-web.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        input, select, button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        button {
+            background: rgba(76, 175, 80, 0.8);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: rgba(76, 175, 80, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        
+        .info-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .info-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #FFE082;
+        }
+        
+        .info-card .value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #81C784;
+        }
+        
+        #visualization {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            height: 600px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .node-details {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: none;
+        }
+        
+        .node-details h4 {
+            margin: 0 0 15px 0;
+            color: #FFE082;
+            font-size: 1.2em;
+        }
+        
+        .detail-item {
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #BCAAA4;
+            font-size: 0.9em;
+        }
+        
+        .detail-value {
+            color: white;
+            margin-top: 5px;
+        }
+        
+        .function-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: rgba(33, 150, 243, 0.7);
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin: 2px;
+        }
+        
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .status.connecting {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.5);
+            color: #FFC107;
+        }
+        
+        .status.connected {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            color: #4CAF50;
+        }
+        
+        .status.error {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.5);
+            color: #F44336;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        /* Node colors for different function types */
+        .entry { background: #FF6B6B; }
+        .controller { background: #4ECDC4; }
+        .service { background: #45B7D1; }
+        .util { background: #96CEB4; }
+        .business-logic { background: #FECA57; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Swark Neo4j Function Dependency Visualizer</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="projectSelect">Project:</label>
+                <select id="projectSelect">
+                    <option value="">Select a project...</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="functionFilter">Filter Functions:</label>
+                <input type="text" id="functionFilter" placeholder="Type function name...">
+            </div>
+            
+            <button id="loadGraph">Load Graph</button>
+            <button id="resetView">Reset View</button>
+        </div>
+        
+        <div id="status" class="status connecting">
+            🔌 Connecting to Neo4j database...
+        </div>
+        
+        <div class="info-panel">
+            <div class="info-card">
+                <h3>📊 Total Functions</h3>
+                <div class="value" id="totalFunctions">0</div>
+            </div>
+            <div class="info-card">
+                <h3>🔗 Relationships</h3>
+                <div class="value" id="totalRelationships">0</div>
+            </div>
+            <div class="info-card">
+                <h3>🎯 Selected Node</h3>
+                <div class="value" id="selectedNode">None</div>
+            </div>
+        </div>
+        
+        <div id="visualization">
+            <div id="nodeDetails" class="node-details">
+                <h4>Function Details</h4>
+                <div id="detailsContent"></div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color entry"></div>
+                <span>Entry Points</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color controller"></div>
+                <span>Controllers</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color service"></div>
+                <span>Services</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color util"></div>
+                <span>Utils</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color business-logic"></div>
+                <span>Business Logic</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Neo4j connection configuration
+        const NEO4J_URI = 'bolt://localhost:7687';
+        const NEO4J_USER = 'neo4j';
+        const NEO4J_PASSWORD = 'password123';
+        
+        let driver = null;
+        let currentData = { nodes: [], links: [] };
+        let svg = null;
+        let simulation = null;
+        
+        // Function type colors
+        const functionColors = {
+            'entry': '#FF6B6B',
+            'controller': '#4ECDC4', 
+            'service': '#45B7D1',
+            'util': '#96CEB4',
+            'business-logic': '#FECA57'
+        };
+        
+        // Initialize the application
+        async function init() {
+            try {
+                updateStatus('connecting', '🔌 Connecting to Neo4j database...');
+                
+                // Connect to Neo4j
+                driver = neo4j.driver(NEO4J_URI, neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD));
+                
+                // Test connection
+                const session = driver.session();
+                await session.run('RETURN 1 as test');
+                await session.close();
+                
+                updateStatus('connected', '✅ Connected to Neo4j successfully!');
+                
+                // Load projects
+                await loadProjects();
+                
+                // Initialize visualization
+                initVisualization();
+                
+                // Set up event listeners
+                setupEventListeners();
+                
+            } catch (error) {
+                console.error('Connection failed:', error);
+                updateStatus('error', `❌ Connection failed: ${error.message}`);
+            }
+        }
+        
+        function updateStatus(type, message) {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.textContent = message;
+        }
+        
+        async function loadProjects() {
+            try {
+                const session = driver.session();
+                const result = await session.run(`
+                    MATCH (p:Project) 
+                    RETURN p.name as name 
+                    ORDER BY p.name
+                `);
+                
+                const select = document.getElementById('projectSelect');
+                select.innerHTML = '<option value="">Select a project...</option>';
+                
+                result.records.forEach(record => {
+                    const option = document.createElement('option');
+                    option.value = record.get('name');
+                    option.textContent = record.get('name');
+                    select.appendChild(option);
+                });
+                
+                await session.close();
+            } catch (error) {
+                console.error('Failed to load projects:', error);
+            }
+        }
+        
+        function initVisualization() {
+            const container = document.getElementById('visualization');
+            const rect = container.getBoundingClientRect();
+            
+            svg = d3.select('#visualization')
+                .append('svg')
+                .attr('width', '100%')
+                .attr('height', '100%')
+                .style('background', 'rgba(0,0,0,0.1)');
+            
+            // Add zoom behavior
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 3])
+                .on('zoom', (event) => {
+                    svg.selectAll('g').attr('transform', event.transform);
+                });
+            
+            svg.call(zoom);
+            
+            // Create groups for links and nodes
+            svg.append('g').attr('class', 'links');
+            svg.append('g').attr('class', 'nodes');
+        }
+        
+        async function loadGraph() {
+            const projectName = document.getElementById('projectSelect').value;
+            const filter = document.getElementById('functionFilter').value.toLowerCase();
+            
+            if (!projectName) {
+                alert('Please select a project first!');
+                return;
+            }
+            
+            try {
+                updateStatus('connecting', '📊 Loading function graph...');
+                
+                const session = driver.session();
+                
+                // Build query with optional filter
+                let functionFilter = '';
+                if (filter) {
+                    functionFilter = `AND toLower(f.functionName) CONTAINS $filter`;
+                }
+                
+                const result = await session.run(`
+                    MATCH (p:Project {name: $projectName})-[:CONTAINS]->(f:Function)
+                    WHERE 1=1 ${functionFilter}
+                    OPTIONAL MATCH (f)-[r:DEPENDS_ON]->(target:Function)
+                    RETURN f, collect({target: target, type: type(r)}) as relationships
+                `, { 
+                    projectName: projectName,
+                    filter: filter 
+                });
+                
+                // Process data for D3
+                const nodes = [];
+                const links = [];
+                const nodeMap = new Map();
+                
+                result.records.forEach(record => {
+                    const func = record.get('f').properties;
+                    const relationships = record.get('relationships');
+                    
+                    // Add node
+                    const node = {
+                        id: func.id,
+                        name: func.functionName,
+                        type: func.functionType || 'business-logic',
+                        filePath: func.filePath,
+                        complexity: func.complexity || 0,
+                        isEntryPoint: func.isEntryPoint || false,
+                        isIsolated: func.isIsolated || false,
+                        dependsOnCount: func.dependsOnCount || 0,
+                        usedByCount: func.usedByCount || 0
+                    };
+                    
+                    nodes.push(node);
+                    nodeMap.set(node.id, node);
+                    
+                    // Add links
+                    relationships.forEach(rel => {
+                        if (rel.target) {
+                            const targetId = rel.target.properties.id;
+                            links.push({
+                                source: node.id,
+                                target: targetId,
+                                type: rel.type
+                            });
+                        }
+                    });
+                });
+                
+                await session.close();
+                
+                // Update info panel
+                document.getElementById('totalFunctions').textContent = nodes.length;
+                document.getElementById('totalRelationships').textContent = links.length;
+                
+                // Store data and render
+                currentData = { nodes, links };
+                renderGraph();
+                
+                updateStatus('connected', `✅ Loaded ${nodes.length} functions with ${links.length} dependencies`);
+                
+            } catch (error) {
+                console.error('Failed to load graph:', error);
+                updateStatus('error', `❌ Failed to load graph: ${error.message}`);
+            }
+        }
+        
+        function renderGraph() {
+            const { nodes, links } = currentData;
+            
+            if (nodes.length === 0) {
+                updateStatus('error', '⚠️ No functions found for the selected criteria');
+                return;
+            }
+            
+            // Clear existing content
+            svg.selectAll('.links').selectAll('*').remove();
+            svg.selectAll('.nodes').selectAll('*').remove();
+            
+            // Create force simulation
+            simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(100))
+                .force('charge', d3.forceManyBody().strength(-300))
+                .force('center', d3.forceCenter(400, 300))
+                .force('collision', d3.forceCollide().radius(30));
+            
+            // Create links
+            const link = svg.select('.links')
+                .selectAll('line')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('stroke', '#fff')
+                .attr('stroke-opacity', 0.6)
+                .attr('stroke-width', 2)
+                .attr('marker-end', 'url(#arrowhead)');
+            
+            // Add arrow markers
+            svg.append('defs').append('marker')
+                .attr('id', 'arrowhead')
+                .attr('viewBox', '-0 -5 10 10')
+                .attr('refX', 25)
+                .attr('refY', 0)
+                .attr('orient', 'auto')
+                .attr('markerWidth', 6)
+                .attr('markerHeight', 6)
+                .append('path')
+                .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+                .attr('fill', '#fff')
+                .attr('stroke', '#fff');
+            
+            // Create nodes
+            const node = svg.select('.nodes')
+                .selectAll('circle')
+                .data(nodes)
+                .enter()
+                .append('circle')
+                .attr('r', d => Math.max(8, Math.min(20, d.complexity / 2)))
+                .attr('fill', d => functionColors[d.type] || functionColors['business-logic'])
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 2)
+                .style('cursor', 'pointer')
+                .call(d3.drag()
+                    .on('start', dragstarted)
+                    .on('drag', dragged)
+                    .on('end', dragended))
+                .on('click', showNodeDetails)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).attr('stroke-width', 4);
+                    // Highlight connected nodes
+                    highlightConnections(d.id, true);
+                })
+                .on('mouseout', function(event, d) {
+                    d3.select(this).attr('stroke-width', 2);
+                    highlightConnections(d.id, false);
+                });
+            
+            // Add labels
+            const label = svg.select('.nodes')
+                .selectAll('text')
+                .data(nodes)
+                .enter()
+                .append('text')
+                .text(d => d.name)
+                .attr('font-size', '12px')
+                .attr('dx', 25)
+                .attr('dy', 4)
+                .attr('fill', 'white')
+                .style('pointer-events', 'none');
+            
+            // Update positions on tick
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+                
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+                
+                label
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+        }
+        
+        function highlightConnections(nodeId, highlight) {
+            const { links } = currentData;
+            
+            // Find connected node IDs
+            const connectedIds = new Set();
+            links.forEach(link => {
+                if (link.source.id === nodeId) {
+                    connectedIds.add(link.target.id);
+                }
+                if (link.target.id === nodeId) {
+                    connectedIds.add(link.source.id);
+                }
+            });
+            
+            // Highlight/unhighlight nodes and links
+            svg.selectAll('circle')
+                .style('opacity', d => {
+                    if (!highlight) return 1;
+                    return (d.id === nodeId || connectedIds.has(d.id)) ? 1 : 0.3;
+                });
+            
+            svg.selectAll('line')
+                .style('opacity', d => {
+                    if (!highlight) return 0.6;
+                    return (d.source.id === nodeId || d.target.id === nodeId) ? 1 : 0.1;
+                });
+        }
+        
+        function showNodeDetails(event, d) {
+            document.getElementById('selectedNode').textContent = d.name;
+            
+            const details = document.getElementById('detailsContent');
+            details.innerHTML = `
+                <div class="detail-item">
+                    <div class="detail-label">Function Name</div>
+                    <div class="detail-value">${d.name}</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">File Path</div>
+                    <div class="detail-value">${d.filePath}</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Type</div>
+                    <div class="detail-value">
+                        <span class="function-tag" style="background: ${functionColors[d.type]}">
+                            ${d.type}
+                        </span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Complexity (Lines)</div>
+                    <div class="detail-value">${d.complexity}</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Dependencies</div>
+                    <div class="detail-value">${d.dependsOnCount} functions</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Used By</div>
+                    <div class="detail-value">${d.usedByCount} functions</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Status</div>
+                    <div class="detail-value">
+                        ${d.isEntryPoint ? '<span class="function-tag" style="background: #FF6B6B">Entry Point</span>' : ''}
+                        ${d.isIsolated ? '<span class="function-tag" style="background: #95A5A6">Isolated</span>' : ''}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('nodeDetails').style.display = 'block';
+        }
+        
+        function setupEventListeners() {
+            document.getElementById('loadGraph').addEventListener('click', loadGraph);
+            document.getElementById('resetView').addEventListener('click', resetView);
+            
+            document.getElementById('functionFilter').addEventListener('input', (e) => {
+                if (e.target.value === '') {
+                    // Auto-reload when filter is cleared
+                    setTimeout(loadGraph, 300);
+                }
+            });
+            
+            document.getElementById('functionFilter').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    loadGraph();
+                }
+            });
+        }
+        
+        function resetView() {
+            if (svg) {
+                svg.transition().duration(750).call(
+                    d3.zoom().transform,
+                    d3.zoomIdentity
+                );
+            }
+            
+            document.getElementById('nodeDetails').style.display = 'none';
+            document.getElementById('selectedNode').textContent = 'None';
+        }
+        
+        // Drag functions
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+        
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+        
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', init);
+        
+        // Clean up on page unload
+        window.addEventListener('beforeunload', () => {
+            if (driver) {
+                driver.close();
+            }
+        });
+    </script>
+</body>
+</html>

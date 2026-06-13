@@ -1,0 +1,15 @@
+{
+  "functionName": "getConfiguredModel",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 43,
+  "ends": 54,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    }
+  ],
+  "dependsOn": []
+}

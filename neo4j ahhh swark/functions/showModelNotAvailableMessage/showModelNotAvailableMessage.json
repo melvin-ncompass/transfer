@@ -1,0 +1,22 @@
+{
+  "functionName": "showModelNotAvailableMessage",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 97,
+  "ends": 108,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "selectModel",
+      "starts": 56,
+      "ends": 88
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "availableModelsToString",
+      "starts": 119,
+      "ends": 123
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "extractPythonDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 575,
+  "ends": 590,
+  "usedBy": [],
+  "dependsOn": []
+}

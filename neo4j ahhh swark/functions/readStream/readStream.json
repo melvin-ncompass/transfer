@@ -1,0 +1,15 @@
+{
+  "functionName": "readStream",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 142,
+  "ends": 150,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "sendPrompt",
+      "starts": 125,
+      "ends": 140
+    }
+  ],
+  "dependsOn": []
+}

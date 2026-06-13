@@ -1,0 +1,15 @@
+{
+  "functionName": "getGitRepoPath",
+  "filePath": "src/io/git-utils.ts",
+  "starts": 18,
+  "ends": 27,
+  "usedBy": [
+    {
+      "path": "src/io/git-utils.ts",
+      "name": "isGitRepository",
+      "starts": 29,
+      "ends": 32
+    }
+  ],
+  "dependsOn": []
+}

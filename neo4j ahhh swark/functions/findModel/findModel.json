@@ -1,0 +1,15 @@
+{
+  "functionName": "findModel",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 90,
+  "ends": 95,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "selectModel",
+      "starts": 56,
+      "ends": 88
+    }
+  ],
+  "dependsOn": []
+}

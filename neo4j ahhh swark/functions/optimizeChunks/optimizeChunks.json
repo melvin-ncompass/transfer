@@ -1,0 +1,8 @@
+{
+  "functionName": "optimizeChunks",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 468,
+  "ends": 501,
+  "usedBy": [],
+  "dependsOn": []
+}

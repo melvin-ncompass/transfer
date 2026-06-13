@@ -1,0 +1,8 @@
+{
+  "functionName": "buildDependencyGraph",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 59,
+  "ends": 77,
+  "usedBy": [],
+  "dependsOn": []
+}

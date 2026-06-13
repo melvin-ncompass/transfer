@@ -1,0 +1,22 @@
+{
+  "functionName": "enhanceWithFileAnalysis",
+  "filePath": "src/io/dynamic-language-analyzer.ts",
+  "starts": 143,
+  "ends": 156,
+  "usedBy": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "analyzeRepository",
+      "starts": 31,
+      "ends": 50
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "findFilesByLanguage",
+      "starts": 158,
+      "ends": 192
+    }
+  ]
+}

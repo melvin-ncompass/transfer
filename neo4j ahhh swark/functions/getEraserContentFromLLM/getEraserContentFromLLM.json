@@ -1,0 +1,8 @@
+{
+  "functionName": "getEraserContentFromLLM",
+  "filePath": "src/io/diagram-generator.ts",
+  "starts": 215,
+  "ends": 308,
+  "usedBy": [],
+  "dependsOn": []
+}

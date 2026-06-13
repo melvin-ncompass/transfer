@@ -1,0 +1,15 @@
+{
+  "functionName": "parseLanguageResponse",
+  "filePath": "src/llm/language-detector.ts",
+  "starts": 166,
+  "ends": 186,
+  "usedBy": [
+    {
+      "path": "src/llm/language-detector.ts",
+      "name": "detectLanguages",
+      "starts": 18,
+      "ends": 42
+    }
+  ],
+  "dependsOn": []
+}

@@ -1,0 +1,8 @@
+{
+  "functionName": "extractRustDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 639,
+  "ends": 649,
+  "usedBy": [],
+  "dependsOn": []
+}

@@ -1,0 +1,15 @@
+{
+  "functionName": "selectCommit",
+  "filePath": "src/commands/create-swark55-architecture.ts",
+  "starts": 293,
+  "ends": 310,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": []
+}

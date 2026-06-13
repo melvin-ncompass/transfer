@@ -1,0 +1,27 @@
+{
+  "functionName": "getLanguageDefaultPatterns",
+  "filePath": "src/io/prompt-builder.ts",
+  "starts": 291,
+  "ends": 400,
+  "usedBy": [
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "validateAndCleanPatterns",
+      "starts": 170,
+      "ends": 200
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "extractPatternsFromText",
+      "starts": 202,
+      "ends": 229
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "getFallbackPatterns",
+      "starts": 231,
+      "ends": 272
+    }
+  ],
+  "dependsOn": []
+}

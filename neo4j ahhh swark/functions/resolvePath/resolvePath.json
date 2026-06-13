@@ -1,0 +1,8 @@
+{
+  "functionName": "resolvePath",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 197,
+  "ends": 218,
+  "usedBy": [],
+  "dependsOn": []
+}

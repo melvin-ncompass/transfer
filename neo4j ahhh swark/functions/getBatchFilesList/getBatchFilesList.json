@@ -1,0 +1,8 @@
+{
+  "functionName": "getBatchFilesList",
+  "filePath": "src/io/batch-summary-processor.ts",
+  "starts": 109,
+  "ends": 137,
+  "usedBy": [],
+  "dependsOn": []
+}

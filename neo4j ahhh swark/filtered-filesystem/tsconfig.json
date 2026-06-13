@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "Node16",
+		"target": "ES2022",
+		"outDir": "out",
+		"lib": [
+			"ES2022"
+		],
+		"sourceMap": true,
+		"rootDir": "src",
+		"strict": true, 
+		"downlevelIteration": true, 
+		"skipLibCheck": true 
+
+	},
+	"exclude": [
+		"Swark5.0/**",
+		"node_modules/**",
+		"out/**"
+	]
+}

@@ -1,0 +1,251 @@
+{
+  "name": "swark6",
+  "displayName": "Swark 6.0",
+  "description": "LLM-Powered Universal Architecture Analyzer - Intelligently detects any programming language and generates proper D2 diagrams",
+  "version": "6.0.0",
+  "publisher": "swark",
+  "icon": "assets/logo/swark-icon.png",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https:
+  "bugs": {
+    "url": "https:
+    "email": "contact@swark.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https:
+  },
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "extensionDependencies": [
+    "github.copilot"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Visualization",
+    "AI"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "swark6.0.commitAwareAnalysis",
+        "title": "Swark 6.0: LLM-Powered Architecture Analysis",
+        "icon": "$(search-fuzzy)"
+      },
+      {
+        "command": "swark6.0.debugFunctionTest",
+        "title": "Swark 6.0: DEBUG Function Extraction Test",
+        "icon": "$(bug)"
+      }
+    ],
+    "configuration": {
+      "title": "Swark 6.0",
+      "properties": {
+        "swark6.openaiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API Key for Swark analysis. Get yours at https:
+          "scope": "machine"
+        },
+        "swark2.maxFiles": {
+          "type": "number",
+          "default": 1000,
+          "description": "Max number of files to read. The number of files read is also affected by the LLM max token limit."
+        },
+        "swark2.fileExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "py",
+            "js",
+            "jsx",
+            "ts",
+            "tsx",
+            "mjs",
+            "cjs",
+            "c",
+            "h",
+            "cpp",
+            "cc",
+            "cxx",
+            "hpp",
+            "java",
+            "cs",
+            "go",
+            "rb",
+            "php",
+            "rs",
+            "scala",
+            "swift",
+            "kt",
+            "kts",
+            "lua",
+            "dart"
+          ],
+          "description": "List of file extensions to include in search."
+        },
+        "swark2.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/.*",
+            "**/.*node_modules/**"
+          ],
+          "description": "List of glob patterns to exclude from file search."
+        },
+        "swark2.languageModel": {
+          "type": "string",
+          "markdownDescription": "Language model to use for diagram generation.",
+          "default": "gpt-4o",
+          "enum": [
+            "gpt-4o",
+            "claude-3.5-sonnet",
+            "o1-ga",
+            "o3-mini",
+            "gemini-2.0-flash"
+          ],
+          "enumDescriptions": [
+            "GPT 4o",
+            "Claude 3.5 Sonnet",
+            "OpenAI o1",
+            "OpenAI o3-mini",
+            "Gemini 2.0 Flash"
+          ]
+        },
+        "swark2.defaultOutputFormat": {
+          "type": "string",
+          "markdownDescription": "Default output format for diagrams.",
+          "default": "both",
+          "enum": [
+            "d2",
+            "eraser",
+            "both"
+          ],
+          "enumDescriptions": [
+            "D2 format only",
+            "Eraser format only",
+            "Both D2 and Eraser formats"
+          ]
+        },
+        "swark2.fixD2Cycles": {
+          "type": "boolean",
+          "default": false,
+          "description": "(Deprecated - not needed for D2) Automatically fix cycles in the generated diagram to prevent rendering failures."
+        },
+        "swark2.chunkingThreshold": {
+          "type": "number",
+          "default": 0.8,
+          "minimum": 0.1,
+          "maximum": 1,
+          "description": "Percentage of token limit to trigger chunking (0.8 = 80%). Lower values chunk more aggressively."
+        },
+        "swark2.enableChunking": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable intelligent dependency-based chunking for large repositories."
+        },
+        "swark3.maxTokensPerChunk": {
+          "type": "number",
+          "default": 200000,
+          "description": "Maximum tokens per chunk for Swark 3.0 analysis"
+        },
+        "swark3.contextOverlap": {
+          "type": "number",
+          "default": 0.1,
+          "minimum": 0,
+          "maximum": 0.5,
+          "description": "Context overlap ratio between chunks (0.1 = 10% overlap)"
+        },
+        "swark3.enableGitIntegration": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Git commit analysis features in Swark 3.0"
+        },
+        "swark3.defaultAnalysisLevel": {
+          "type": "string",
+          "enum": [
+            "high-level",
+            "semi-detailed",
+            "detailed",
+            "all"
+          ],
+          "default": "high-level",
+          "description": "Default analysis level for Swark 3.0"
+        },
+        "swark3.enhancedMetadata": {
+          "type": "boolean",
+          "default": true,
+          "description": "Collect enhanced repository metadata before analysis"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "swark2.architecture",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "swark2.chunkedArchitecture",
+        "key": "ctrl+shift+alt+r",
+        "mac": "cmd+shift+alt+r",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "swark3.analyzeRepository",
+        "key": "ctrl+shift+alt+a",
+        "mac": "cmd+shift+alt+a",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "swark3.analyzeCommit",
+        "key": "ctrl+shift+alt+c",
+        "mac": "cmd+shift+alt+c",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/pako": "^2.0.3",
+    "@types/vscode": "^1.91.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@vscode/extension-telemetry": "^0.9.9",
+    "dotenv": "^17.2.2",
+    "js-base64": "^3.7.7",
+    "neo4j-driver": "^5.28.2",
+    "openai": "^5.19.1",
+    "pako": "^2.1.0",
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-java": "^0.21.0",
+    "tree-sitter-javascript": "^0.21.4",
+    "tree-sitter-python": "^0.21.0",
+    "tree-sitter-typescript": "^0.23.2",
+    "tslib": "^2.8.1"
+  }
+}

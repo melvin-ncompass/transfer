@@ -1,0 +1,15 @@
+{
+  "functionName": "buildAnalysisPrompt",
+  "filePath": "src/io/dynamic-language-analyzer.ts",
+  "starts": 78,
+  "ends": 117,
+  "usedBy": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "analyzeRepository",
+      "starts": 31,
+      "ends": 50
+    }
+  ],
+  "dependsOn": []
+}

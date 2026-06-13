@@ -1,0 +1,15 @@
+{
+  "functionName": "getRepositorySnapshot",
+  "filePath": "src/io/dynamic-language-analyzer.ts",
+  "starts": 52,
+  "ends": 76,
+  "usedBy": [
+    {
+      "path": "src/io/dynamic-language-analyzer.ts",
+      "name": "analyzeRepository",
+      "starts": 31,
+      "ends": 50
+    }
+  ],
+  "dependsOn": []
+}

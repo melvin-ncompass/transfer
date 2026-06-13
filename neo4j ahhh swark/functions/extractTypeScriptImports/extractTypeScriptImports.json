@@ -1,0 +1,8 @@
+{
+  "functionName": "extractTypeScriptImports",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 119,
+  "ends": 141,
+  "usedBy": [],
+  "dependsOn": []
+}

@@ -1,0 +1,22 @@
+{
+  "functionName": "testConnection",
+  "filePath": "src/io/neo4j.service.ts",
+  "starts": 14,
+  "ends": 23,
+  "usedBy": [
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "constructor",
+      "starts": 5,
+      "ends": 13
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ]
+}

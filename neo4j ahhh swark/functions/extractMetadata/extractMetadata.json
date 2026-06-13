@@ -1,0 +1,34 @@
+{
+  "functionName": "extractMetadata",
+  "filePath": "src/io/swark55-metadata-extractor.ts",
+  "starts": 41,
+  "ends": 77,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "buildDirectoryStructure",
+      "starts": 79,
+      "ends": 122
+    },
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "getAllFiles",
+      "starts": 124,
+      "ends": 172
+    },
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "analyzeFile",
+      "starts": 174,
+      "ends": 200
+    }
+  ]
+}

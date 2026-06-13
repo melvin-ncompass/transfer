@@ -1,0 +1,88 @@
+{
+  "functionName": "createSwark55Architecture",
+  "filePath": "src/commands/create-swark55-architecture.ts",
+  "starts": 15,
+  "ends": 291,
+  "usedBy": [
+    {
+      "path": "src/extension.ts",
+      "name": "registerCommand",
+      "starts": 17,
+      "ends": 48
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/io/git-utils.ts",
+      "name": "isGitRepository",
+      "starts": 29,
+      "ends": 32
+    },
+    {
+      "path": "src/io/git-utils.ts",
+      "name": "getRecentCommits",
+      "starts": 34,
+      "ends": 71
+    },
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "selectCommit",
+      "starts": 293,
+      "ends": 310
+    },
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "extractMetadata",
+      "starts": 41,
+      "ends": 77
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    },
+    {
+      "path": "src/io/prompt-builder.ts",
+      "name": "buildPrompt",
+      "starts": 27,
+      "ends": 139
+    },
+    {
+      "path": "src/io/file-analyuzer.ts",
+      "name": "analyzeFileUsingOpenAI",
+      "starts": 42,
+      "ends": 69
+    },
+    {
+      "path": "src/io/json-cleaner.ts",
+      "name": "clean",
+      "starts": 20,
+      "ends": 152
+    },
+    {
+      "path": "src/io/temp-directory-creator.ts",
+      "name": "copyFilesToTemp",
+      "starts": 7,
+      "ends": 26
+    },
+    {
+      "path": "src/io/filtered-filesystem-generator.ts",
+      "name": "generateFromTemp",
+      "starts": 7,
+      "ends": 86
+    },
+    {
+      "path": "src/io/graph-generator.ts",
+      "name": "generateGraph",
+      "starts": 62,
+      "ends": 399
+    },
+    {
+      "path": "src/io/neo4j.service.ts",
+      "name": "close",
+      "starts": 39,
+      "ends": 42
+    }
+  ]
+}

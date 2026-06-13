@@ -1,0 +1,8 @@
+{
+  "functionName": "extractGenericDependencies",
+  "filePath": "src/io/dependency-analyzer.ts",
+  "starts": 651,
+  "ends": 669,
+  "usedBy": [],
+  "dependsOn": []
+}

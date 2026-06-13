@@ -1,0 +1,28 @@
+{
+  "functionName": "selectModel",
+  "filePath": "src/llm/model-interactor.ts",
+  "starts": 56,
+  "ends": 88,
+  "usedBy": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "getModel",
+      "starts": 7,
+      "ends": 24
+    }
+  ],
+  "dependsOn": [
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "findModel",
+      "starts": 90,
+      "ends": 95
+    },
+    {
+      "path": "src/llm/model-interactor.ts",
+      "name": "showModelNotAvailableMessage",
+      "starts": 97,
+      "ends": 108
+    }
+  ]
+}

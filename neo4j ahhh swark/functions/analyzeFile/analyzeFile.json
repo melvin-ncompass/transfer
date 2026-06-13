@@ -1,0 +1,15 @@
+{
+  "functionName": "analyzeFile",
+  "filePath": "src/io/swark55-metadata-extractor.ts",
+  "starts": 174,
+  "ends": 200,
+  "usedBy": [
+    {
+      "path": "src/io/swark55-metadata-extractor.ts",
+      "name": "extractMetadata",
+      "starts": 41,
+      "ends": 77
+    }
+  ],
+  "dependsOn": []
+}

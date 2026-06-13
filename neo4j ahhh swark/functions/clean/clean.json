@@ -1,0 +1,15 @@
+{
+  "functionName": "clean",
+  "filePath": "src/io/json-cleaner.ts",
+  "starts": 20,
+  "ends": 152,
+  "usedBy": [
+    {
+      "path": "src/commands/create-swark55-architecture.ts",
+      "name": "createSwark55Architecture",
+      "starts": 15,
+      "ends": 291
+    }
+  ],
+  "dependsOn": []
+}
