@@ -1,0 +1,63 @@
+{
+  "name": "melcp",
+  "version": "0.1.8",
+  "description": "melcp - AI-powered project introspection tool for PostgreSQL and codebases",
+  "bin": {
+    "melcp": "mcp-server/bin/cli.js"
+  },
+  "main": "./mcp-server/dist/main.js",
+  "files": [
+    "mcp-server/dist",
+    "mcp-server/bin",
+    "react-client/dist",
+    "melcp.config.example.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build:ui": "cd react-client && npm run build",
+    "build:server": "cd mcp-server && npm run build",
+    "build": "npm run build:ui && npm run build:server",
+    "start": "node mcp-server/bin/cli.js start",
+    "test:tiers": "node scripts/test-context-tiers.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "developer-tools",
+    "database-introspection",
+    "ai-agents",
+    "nestjs"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melvin-M-Shajan/MCP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Melvin-M-Shajan/MCP/issues"
+  },
+  "homepage": "https://github.com/Melvin-M-Shajan/MCP#readme",
+  "dependencies": {
+    "@langchain/core": "^1.1.35",
+    "@langchain/google-genai": "^2.1.26",
+    "@langchain/groq": "^1.1.5",
+    "@nestjs/common": "^11.1.17",
+    "@nestjs/config": "^4.0.3",
+    "@nestjs/core": "^11.1.17",
+    "@nestjs/platform-express": "^11.1.17",
+    "@nestjs/serve-static": "^5.0.4",
+    "@nestjs/typeorm": "^11.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "melcp": "^0.1.8",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "typeorm": "^0.3.28",
+    "uuid": "^13.0.0",
+    "zod": "^4.3.6"
+  }
+}

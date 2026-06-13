@@ -1,0 +1,73 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.8219, -1.2921]
+      },
+      "properties": {
+        "name": "Nairobi",
+        "population": 4397073,
+        "type": "Capital City",
+        "country": "Kenya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [39.6682, -4.0435]
+      },
+      "properties": {
+        "name": "Mombasa",
+        "population": 1208333,
+        "type": "City",
+        "country": "Kenya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.2698, 0.5143]
+      },
+      "properties": {
+        "name": "Kisumu",
+        "population": 409928,
+        "type": "City",
+        "country": "Kenya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.7166, -0.4500]
+      },
+      "properties": {
+        "name": "Nakuru",
+        "population": 307990,
+        "type": "City",
+        "country": "Kenya"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.0833, 1.2833]
+      },
+      "properties": {
+        "name": "Eldoret",
+        "population": 289380,
+        "type": "City",
+        "country": "Kenya"
+      }
+    }
+  ]
+}
+
+
+

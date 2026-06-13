@@ -1,0 +1,7 @@
+- [ ] npm run build passes clean
+- [ ] npm pack --dry-run shows only expected files (no src/, no .env, no node_modules)
+- [ ] melcp.config.example.json has no real credentials
+- [ ] README Getting Started section tested from scratch in a temp directory
+- [ ] Version bumped in root package.json
+- [ ] CHANGELOG.md updated
+- [ ] git tag created matching version

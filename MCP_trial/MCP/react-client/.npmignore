@@ -1,0 +1,7 @@
+src/
+node_modules/
+!dist/
+!dist/**
+dist/*.mp4
+dist/*.png
+dist/*.jpg

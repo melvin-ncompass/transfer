@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./bin",
+    "outDir": "./bin",
+    "declaration": false,
+    "sourceMap": false,
+    "incremental": false
+  },
+  "files": ["bin/cli.ts"]
+}

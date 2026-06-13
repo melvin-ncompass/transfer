@@ -1,0 +1,16 @@
+{
+  "port": 3001,
+  "apiKey": "00000000-0000-0000-0000-000000000000",
+  "ai": {
+    "googleApiKey": "YOUR_GEMINI_API_KEY",
+    "groqApiKey": ""
+  },
+  "database": {
+    "url": "postgresql://readonly_user:readonly_password@localhost:5432/your_database"
+  },
+  "repo": {
+    "path": "C:/path/to/your/project/root",
+    "ignore": ["node_modules", "dist", ".git"],
+    "maxFileSizeKb": 50
+  }
+}

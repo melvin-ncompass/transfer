@@ -1,0 +1,214 @@
+{
+  "agents/csv.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "5218-mn5"
+  },
+  "agents/diagram.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3509-mn5"
+  },
+  "agents/execution/execution.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3000-mm4"
+  },
+  "agents/formatter/formatter.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3481-mn5"
+  },
+  "agents/repo/repo.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3608-mn5"
+  },
+  "agents/sql/sql.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3865-mn5"
+  },
+  "agents/supervisor/supervisor.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3948-mn5"
+  },
+  "agents/task/task.agent.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3281-mn5"
+  },
+  "ai/ai.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "363-mm4e"
+  },
+  "ai/ai.provider.interface.ts": {
+    "summary": "mock summary sentence",
+    "hash": "813-mm67"
+  },
+  "ai/gemini.provider.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "4938-mm6"
+  },
+  "app.controller.spec.ts": {
+    "summary": "mock summary sentence",
+    "hash": "877-mm4e"
+  },
+  "app.controller.ts": {
+    "summary": "mock summary sentence",
+    "hash": "918-mn5p"
+  },
+  "app.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3461-mn5"
+  },
+  "app.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "150-mm4e"
+  },
+  "auth/api-key.guard.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1724-mn5"
+  },
+  "config/app-config.schema.ts": {
+    "summary": "mock summary sentence",
+    "hash": "498-mn5p"
+  },
+  "config/config.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "219-mn5p"
+  },
+  "config/config.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "863-mn5p"
+  },
+  "core/all-exceptions.filter.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1377-mn5"
+  },
+  "core/chat-history.util.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1870-mn5"
+  },
+  "database/database.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "2269-mn5"
+  },
+  "database/query.validator.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1856-mm4"
+  },
+  "database/schema.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3483-mn5"
+  },
+  "dto/query.dto.ts": {
+    "summary": "mock summary sentence",
+    "hash": "548-mm4e"
+  },
+  "interfaces/core.interface.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1247-mn5"
+  },
+  "introspection/dto/introspection.dto.ts": {
+    "summary": "mock summary sentence",
+    "hash": "816-mn5p"
+  },
+  "introspection/introspection.controller.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1457-mn5"
+  },
+  "introspection/introspection.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "469-mn5p"
+  },
+  "introspection/introspection.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "8381-mn5"
+  },
+  "logging/reasoning.logger.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3134-mn5"
+  },
+  "main.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1997-mn5"
+  },
+  "memory/entities/audit.entity.ts": {
+    "summary": "mock summary sentence",
+    "hash": "652-mm4e"
+  },
+  "memory/entities/memory.entity.ts": {
+    "summary": "mock summary sentence",
+    "hash": "502-mm4e"
+  },
+  "memory/memory.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "465-mm4e"
+  },
+  "memory/memory.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3024-mn5"
+  },
+  "observability/metrics.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "2452-mm4"
+  },
+  "observability/observability.controller.ts": {
+    "summary": "mock summary sentence",
+    "hash": "352-mn5p"
+  },
+  "observability/observability.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "350-mm4e"
+  },
+  "orchestrator/agent.registry.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1383-mm4"
+  },
+  "orchestrator/orchestrator.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "14001-mn"
+  },
+  "prompts/csv.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "627-mmzd"
+  },
+  "prompts/diagram.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1091-mmz"
+  },
+  "prompts/formatter.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "438-mm4e"
+  },
+  "prompts/repo.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1098-mmz"
+  },
+  "prompts/sql.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1459-mmz"
+  },
+  "prompts/supervisor.prompt.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3153-mn5"
+  },
+  "repo/repo.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "249-mn8i"
+  },
+  "repo/repo.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "18465-mn"
+  },
+  "sessions/entities/chat-session.entity.ts": {
+    "summary": "mock summary sentence",
+    "hash": "505-mmd2"
+  },
+  "sessions/sessions.controller.ts": {
+    "summary": "mock summary sentence",
+    "hash": "1831-mn5"
+  },
+  "sessions/sessions.module.ts": {
+    "summary": "mock summary sentence",
+    "hash": "595-mmd2"
+  },
+  "sessions/sessions.service.ts": {
+    "summary": "mock summary sentence",
+    "hash": "3183-mmd"
+  }
+}

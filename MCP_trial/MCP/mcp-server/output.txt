@@ -1,0 +1,36 @@
+
+===================
+Query 1: What is this project?
+Status: 201 (8941ms)
+Agents Executed: SUPERVISOR_AGENT, INFOGRAPHIC_AGENT
+Final Output Excerpt:
+{
+  "summary": "Infographic JSON generated successfully."
+}
+
+===================
+Query 2: Draw a flowchart of how a query flows through the system
+Status: 201 (17608ms)
+Agents Executed: SUPERVISOR_AGENT, REPO_AGENT
+Final Output Excerpt:
+{
+  "summary": "Execution failed. Reason: [REPO_AGENT] [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For mo... (truncated)
+
+===================
+Query 3: Where does session persistence happen and which file owns it?
+Status: 201 (11724ms)
+Agents Executed: SUPERVISOR_AGENT
+Final Output Excerpt:
+{
+  "escalationNeeded": true,
+  "message": "I'm not completely sure how to answer this. Could you clarify your request?",
+  "partialReasoning": "Fallback invoked due to generic error"
+}
+
+===================
+Query 4: How many sessions exist in the database?
+Status: 201 (16170ms)
+Agents Executed: SUPERVISOR_AGENT, SQL_AGENT
+Final Output Excerpt:
+{
+  "summary": "Execution failed. Reason: [SQL_AGENT] [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For mor... (truncated)

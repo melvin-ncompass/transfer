@@ -1,0 +1,262 @@
+{
+  "mcp-server/bin/cli.js": {
+    "summary": "Does nothing",
+    "hash": "5825-mn8"
+  },
+  "mcp-server/bin/cli.ts": {
+    "summary": "Handles file system and crypto operations",
+    "hash": "6014-mn5"
+  },
+  "mcp-server/schema-check.js": {
+    "summary": "Does nothing",
+    "hash": "840-mm4h"
+  },
+  "mcp-server/src/agents/csv.agent.ts": {
+    "summary": "Handles CSV operations for the server",
+    "hash": "5218-mn5"
+  },
+  "mcp-server/src/agents/diagram.agent.ts": {
+    "summary": "Manages diagram-related tasks",
+    "hash": "3509-mn5"
+  },
+  "mcp-server/src/agents/execution/execution.agent.ts": {
+    "summary": "Manages execution with TypeORM and NestJS",
+    "hash": "3000-mm4"
+  },
+  "mcp-server/src/agents/formatter/formatter.agent.ts": {
+    "summary": "Formats data using zod and NestJS",
+    "hash": "3481-mn5"
+  },
+  "mcp-server/src/agents/repo/repo.agent.ts": {
+    "summary": "Manages repository interactions for the MCP server",
+    "hash": "3882-mn8"
+  },
+  "mcp-server/src/agents/sql/sql.agent.ts": {
+    "summary": "SqlAgent handles SQL queries and interactions",
+    "hash": "3865-mn5"
+  },
+  "mcp-server/src/agents/task/task.agent.ts": {
+    "summary": "Manages tasks using AI and logging",
+    "hash": "3281-mn5"
+  },
+  "mcp-server/src/ai/ai.module.ts": {
+    "summary": "AiModule for NestJS application",
+    "hash": "363-mm4e"
+  },
+  "mcp-server/src/ai/ai.provider.interface.ts": {
+    "summary": "Defines AI provider interface using zod and langchain",
+    "hash": "813-mm67"
+  },
+  "mcp-server/src/ai/gemini.provider.service.ts": {
+    "summary": "GeminiProviderService handles AI operations",
+    "hash": "4938-mm6"
+  },
+  "mcp-server/src/app.controller.spec.ts": {
+    "summary": "Tests app controller with NestJS testing",
+    "hash": "877-mm4e"
+  },
+  "mcp-server/src/app.controller.ts": {
+    "summary": "Handles app requests and orchestrates services",
+    "hash": "1016-mn8"
+  },
+  "mcp-server/src/app.module.ts": {
+    "summary": "NestJS application module",
+    "hash": "3461-mn5"
+  },
+  "mcp-server/src/app.service.ts": {
+    "summary": "Provides application logic",
+    "hash": "150-mm4e"
+  },
+  "mcp-server/src/auth/api-key.guard.ts": {
+    "summary": "Authenticates API requests using API keys",
+    "hash": "1724-mn5"
+  },
+  "mcp-server/src/config/app-config.schema.ts": {
+    "summary": "defines app config schema",
+    "hash": "498-mn5p"
+  },
+  "mcp-server/src/config/config.module.ts": {
+    "summary": "Configures server settings",
+    "hash": "219-mn5p"
+  },
+  "mcp-server/src/config/config.service.ts": {
+    "summary": "Manages server configuration",
+    "hash": "863-mn5p"
+  },
+  "mcp-server/src/core/all-exceptions.filter.ts": {
+    "summary": "Handles all exceptions in the NestJS application",
+    "hash": "1377-mn5"
+  },
+  "mcp-server/src/core/chat-history.util.ts": {
+    "summary": "Formats chat history",
+    "hash": "1870-mn5"
+  },
+  "mcp-server/src/database/database.module.ts": {
+    "summary": "Manages database operations using TypeORM and NestJS",
+    "hash": "2269-mn5"
+  },
+  "mcp-server/src/database/query.validator.ts": {
+    "summary": "Validates database queries",
+    "hash": "1856-mm4"
+  },
+  "mcp-server/src/database/schema.service.ts": {
+    "summary": "Manages database schema using TypeORM",
+    "hash": "3900-mn8"
+  },
+  "mcp-server/src/dto/query.dto.ts": {
+    "summary": "defines data transfer objects for query requests",
+    "hash": "548-mm4e"
+  },
+  "mcp-server/src/interfaces/core.interface.ts": {
+    "summary": "defines core interfaces for the server",
+    "hash": "1134-mn8"
+  },
+  "mcp-server/src/introspection/dto/introspection.dto.ts": {
+    "summary": "Contains data transfer object for introspection",
+    "hash": "816-mn5p"
+  },
+  "mcp-server/src/introspection/introspection.controller.ts": {
+    "summary": "IntrospectionController module",
+    "hash": "1457-mn5"
+  },
+  "mcp-server/src/introspection/introspection.module.ts": {
+    "summary": "IntrospectionModule module",
+    "hash": "469-mn5p"
+  },
+  "mcp-server/src/introspection/introspection.service.ts": {
+    "summary": "Provides introspection service for the application",
+    "hash": "8381-mn5"
+  },
+  "mcp-server/src/logging/reasoning.logger.ts": {
+    "summary": "Logs reasoning for LangChain agents",
+    "hash": "3134-mn5"
+  },
+  "mcp-server/src/main.ts": {
+    "summary": "main module",
+    "hash": "1997-mn5"
+  },
+  "mcp-server/src/memory/entities/audit.entity.ts": {
+    "summary": "AuditTrail module",
+    "hash": "652-mm4e"
+  },
+  "mcp-server/src/memory/entities/memory.entity.ts": {
+    "summary": "ConversationMemory module",
+    "hash": "502-mm4e"
+  },
+  "mcp-server/src/memory/memory.module.ts": {
+    "summary": "MemoryModule module",
+    "hash": "465-mm4e"
+  },
+  "mcp-server/src/memory/memory.service.ts": {
+    "summary": "MemoryService module",
+    "hash": "3024-mn5"
+  },
+  "mcp-server/src/observability/metrics.service.ts": {
+    "summary": "MetricsService module",
+    "hash": "2452-mm4"
+  },
+  "mcp-server/src/observability/observability.controller.ts": {
+    "summary": "ObservabilityController module",
+    "hash": "352-mn5p"
+  },
+  "mcp-server/src/observability/observability.module.ts": {
+    "summary": "ObservabilityModule module",
+    "hash": "350-mm4e"
+  },
+  "mcp-server/src/orchestrator/agent.registry.ts": {
+    "summary": "AgentRegistry module",
+    "hash": "1383-mm4"
+  },
+  "mcp-server/src/prompts/csv.prompt.ts": {
+    "summary": "CSV_PROMPT module",
+    "hash": "627-mmzd"
+  },
+  "mcp-server/src/prompts/diagram.prompt.ts": {
+    "summary": "DIAGRAM_PROMPT module",
+    "hash": "1091-mmz"
+  },
+  "mcp-server/src/prompts/formatter.prompt.ts": {
+    "summary": "FORMATTER_PROMPT_V1 module",
+    "hash": "438-mm4e"
+  },
+  "mcp-server/src/prompts/repo.prompt.ts": {
+    "summary": "REPO_PROMPT module",
+    "hash": "1098-mmz"
+  },
+  "mcp-server/src/prompts/sql.prompt.ts": {
+    "summary": "SQL_GENERATION_PROMPT_V1 module",
+    "hash": "1459-mmz"
+  },
+  "mcp-server/src/prompts/supervisor.prompt.ts": {
+    "summary": "defines supervisor decomposition prompt",
+    "hash": "3808-mn8"
+  },
+  "mcp-server/src/repo/repo.module.ts": {
+    "summary": "RepoModule module",
+    "hash": "249-mn8i"
+  },
+  "mcp-server/src/repo/repo.service.ts": {
+    "summary": "RepoService module",
+    "hash": "18534-mn"
+  },
+  "mcp-server/src/sessions/entities/chat-session.entity.ts": {
+    "summary": "ChatSession module",
+    "hash": "505-mmd2"
+  },
+  "mcp-server/src/sessions/sessions.controller.ts": {
+    "summary": "SessionsController module",
+    "hash": "1831-mn5"
+  },
+  "mcp-server/src/sessions/sessions.module.ts": {
+    "summary": "SessionsModule module",
+    "hash": "595-mmd2"
+  },
+  "mcp-server/src/sessions/sessions.service.ts": {
+    "summary": "SessionsService module",
+    "hash": "3183-mmd"
+  },
+  "mcp-server/test-queries.js": {
+    "summary": "test-queries module",
+    "hash": "1513-mmz"
+  },
+  "mcp-server/test/app.e2e-spec.ts": {
+    "summary": "app.e2e-spec module",
+    "hash": "694-mm4e"
+  },
+  "react-client/eslint.config.js": {
+    "summary": "Configures ESLint for React TypeScript projects",
+    "hash": "616-mm8q"
+  },
+  "react-client/src/lib/utils.ts": {
+    "summary": "cn module",
+    "hash": "172-mm4e"
+  },
+  "react-client/src/services/api.ts": {
+    "summary": "wsService module",
+    "hash": "7725-mn5"
+  },
+  "react-client/src/services/auth.ts": {
+    "summary": "getApiKey module",
+    "hash": "1119-mn5"
+  },
+  "react-client/src/store/agentStore.ts": {
+    "summary": "useAgentStore module",
+    "hash": "6964-mn5"
+  },
+  "react-client/src/types/agent.ts": {
+    "summary": "agent module",
+    "hash": "945-mmza"
+  },
+  "react-client/vite.config.ts": {
+    "summary": "vite.config module",
+    "hash": "301-mm8q"
+  },
+  "mcp-server/src/orchestrator/orchestrator.service.ts": {
+    "summary": "It orchestrates server agents, memory, sessions, and database interactions",
+    "hash": "14800-mn"
+  },
+  "mcp-server/src/agents/supervisor/supervisor.agent.ts": {
+    "summary": "SupervisorAgent module",
+    "hash": "5315-mn8"
+  }
+}

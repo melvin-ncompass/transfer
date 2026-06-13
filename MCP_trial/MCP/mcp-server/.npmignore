@@ -1,0 +1,11 @@
+*
+!dist/
+!dist/**
+dist/src/
+dist/src/**
+dist/tsconfig.build.tsbuildinfo
+dist/*.tsbuildinfo
+!bin/
+!bin/cli.js
+!README.md
+melcp.config.example.json
