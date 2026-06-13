@@ -1,0 +1,42 @@
+/* Custom styles for Leaflet tooltips and popups */
+.cxh-leaflet-tooltip {
+  background: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  border-radius: 8px;
+}
+
+.ward-tooltip {
+  background: white !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  max-width: 200px !important;
+}
+
+.ward-tooltip::before {
+  border-top-color: white !important;
+}
+
+.cxh-leaflet-popup .leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
+}
+
+.cxh-leaflet-popup .leaflet-popup-content {
+  margin: 0;
+  min-width: 200px;
+}
+
+.hospital-icon {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+  transition: transform 0.2s ease-in-out;
+}
+
+.hospital-icon:hover {
+  transform: scale(1.2);
+  z-index: 1000 !important;
+}

@@ -1,0 +1,72 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="460"
+  height="70"
+  viewBox="0 0 460 70"
+  role="img"
+  aria-label="CxH Pulse by DataKind logo"
+>
+  <!-- Heartbeat / pulse symbol (optically centered) -->
+  <path
+    class="pulse"
+    d="M16 36 L24 36 L30 26 L36 46 L42 32 L48 36 L58 36"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- C -->
+  <text
+    x="70"
+    y="46"
+    font-family="DM Sans Variable, Barlow, sans-serif"
+    font-weight="600"
+    font-size="40"
+    fill="currentColor"
+    letter-spacing="-1.5px"
+  >C</text>
+
+  <!-- x symbol -->
+  <text
+    x="99"
+    y="43"
+    font-family="DM Sans Variable, Barlow, sans-serif"
+    font-weight="700"
+    font-size="32"
+    fill="currentColor"
+  >x</text>
+
+  <!-- H Pulse -->
+  <text
+    x="120"
+    y="46"
+    font-family="DM Sans Variable, Barlow, sans-serif"
+    font-weight="600"
+    font-size="40"
+    fill="currentColor"
+    letter-spacing="-1.5px"
+  >H Pulse</text>
+
+  <!-- by -->
+  <text
+    x="268"
+    y="26"
+    font-family="Inter, Helvetica Neue, Arial, sans-serif"
+    font-weight="500"
+    font-size="12"
+    fill="currentColor"
+  >by</text>
+
+  <!-- DataKind® -->
+  <text
+    x="268"
+    y="46"
+    font-family="Inter, Helvetica Neue, Arial, sans-serif"
+    font-weight="800"
+    font-size="15.5"
+    fill="currentColor"
+    letter-spacing="-0.3px"
+  >DataKind<tspan dx="1" dy="-6" font-size="9" baseline-shift="super">®</tspan></text>
+</svg>

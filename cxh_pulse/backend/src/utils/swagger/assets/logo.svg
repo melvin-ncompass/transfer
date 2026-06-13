@@ -1,0 +1,66 @@
+<svg width="460" height="70" viewBox="0 0 460 70" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* Main wordmark — More formal serif */
+    .brand-main {
+      font-family: "Arial", "Helvetica", sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      fill: #385981;
+      letter-spacing: -1.5px;
+    }
+    /* Special styling for "x" (representing "and") */
+    .brand-x {
+      font-family:"Arial", "Helvetica", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      fill: #385981;
+    }
+    /* "by" */
+    .brand-by {
+      font-family: "Arial", "Helvetica",  sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      fill: #385981;
+    }
+    /* DataKind — thicker and taller */
+    .brand-dk {
+      font-family: "Arial", "Helvetica", sans-serif;
+      font-weight: 800;
+      font-size: 15.5px;
+      fill: #385981;
+      letter-spacing: -0.3px;
+    }
+    /* Registered trademark symbol */
+    .brand-r {
+      font-family: "Arial", "Helvetica", sans-serif;
+      font-weight: 800;
+      font-size: 9px;
+      fill: #385981;
+    }
+    /* Heartbeat */
+    .pulse {
+      fill: none;
+      stroke: #385981;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+  <!-- Heartbeat / pulse symbol (OPTICALLY centered) -->
+  <!-- Main text baseline is at y=46, visual mid ≈ y=36 -->
+  <path class="pulse"
+        d="M16 36
+           L24 36
+           L30 26
+           L36 46
+           L42 32
+           L48 36
+           L58 36" />
+  <!-- Main brand with special "x" -->
+  <text x="70" y="46" class="brand-main">C</text>
+  <text x="99" y="43" class="brand-x">x</text>
+  <text x="120" y="46" class="brand-main">H Pulse</text>
+  <!-- Side stacked branding -->
+  <text x="268" y="26" class="brand-by">by</text>
+  <text x="268" y="46" class="brand-dk">DataKind<tspan dx="1" dy="-6" class="brand-r">®</tspan></text>
+</svg>

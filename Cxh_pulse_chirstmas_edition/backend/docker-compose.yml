@@ -1,0 +1,54 @@
+services:
+  pulse-server-v2:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: pulse-server-v2
+    ports:
+      - '${PORT}:${PORT}'
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_HOST=${DOCKER_DB_HOST}
+      - DB_PORT=${DOCKER_DB_PORT}
+      - DB_USERNAME=${DOCKER_DB_USERNAME}
+      - DB_PASSWORD=${DOCKER_DB_PASSWORD}
+      - DB_NAME=${DOCKER_DB_NAME}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    depends_on:
+      - pulse-db-v2
+    volumes:
+      - .:/app
+      - /app/node_modules
+    profiles:
+      - development
+  pulse-db-v2:
+    image: postgis/postgis:17-3.4
+    container_name: pulse-db-v2
+    environment:
+      - POSTGRES_USER=${DOCKER_DB_USERNAME}
+      - POSTGRES_PASSWORD=${DOCKER_DB_PASSWORD}
+      - POSTGRES_DB=${DOCKER_DB_NAME}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '${DOCKER_DB_PORT_EXTERNAL}:${DOCKER_DB_PORT}'
+    volumes:
+      - db-data-v2:/var/lib/postgresql/data
+  pulse-pgadmin-v2:
+    image: dpage/pgadmin4
+    container_name: pulse-pgadmin-v2
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '${DOCKER_PGADMIN_PORT}:80'
+    depends_on:
+      - pulse-db-v2
+    volumes:
+      - pgadmin-data-v2:/var/lib/pgadmin
+volumes:
+  db-data-v2:
+  pgadmin-data-v2:

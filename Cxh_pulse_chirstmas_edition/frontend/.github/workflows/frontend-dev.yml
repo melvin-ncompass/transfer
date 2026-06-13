@@ -1,0 +1,21 @@
+name: Deploy FE/dev
+on:
+  push:
+    branches:
+      - FE/dev
+      
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.PROXY_PRIVATE_KEY }}
+
+      - name: SSH to proxy and execute deploy
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.PROXY_VM_IP }} "
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.VM_USER }}@${{ secrets.APP_DEV_VM_IP }} '
+              ${{ secrets.DEPLOY_FRONTEND_FILE_PATH }}'
+          "

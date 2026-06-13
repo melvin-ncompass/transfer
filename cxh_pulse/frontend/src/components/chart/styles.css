@@ -1,0 +1,102 @@
+.apexcharts-canvas {
+  /**
+  * Tooltip
+  */
+  .apexcharts-tooltip {
+    min-width: 80px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    color: var(--palette-text-primary);
+    box-shadow: var(--customShadows-dropdown);
+    background-color: rgba(var(--palette-background-defaultChannel) / 0.9);
+  }
+  .apexcharts-xaxistooltip {
+    border-radius: 10px;
+    border-color: transparent;
+    backdrop-filter: blur(6px);
+    color: var(--palette-text-primary);
+    box-shadow: var(--customShadows-dropdown);
+    background-color: rgba(var(--palette-background-defaultChannel) / 0.9);
+    &::before {
+      border-bottom-color: rgba(var(--palette-grey-500Channel) / 0.16);
+    }
+    &::after {
+      border-bottom-color: rgba(var(--palette-background-defaultChannel) / 0.9);
+    }
+  }
+  .apexcharts-tooltip-title {
+    font-weight: 700;
+    text-align: center;
+    color: var(--palette-text-secondary);
+    background-color: var(--palette-background-neutral);
+  }
+  /**
+  * Tooltip: group
+  */
+  .apexcharts-tooltip-series-group {
+    padding: 4px 12px;
+  }
+  .apexcharts-tooltip-marker {
+    margin-right: 8px;
+  }
+  /**
+  * Legend
+  */
+  .apexcharts-legend {
+    padding: 0;
+  }
+  .apexcharts-legend-marker {
+    margin-right: 6px;
+  }
+  .apexcharts-legend-text {
+    margin-left: 0;
+    padding-left: 0;
+    line-height: 18px;
+  }
+}
+
+/**
+ * ApexCharts Toolbar Dropdown Menu - Match MUI Theme
+ */
+.apexcharts-menu {
+  background-color: var(--palette-background-paper) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--customShadows-dropdown) !important;
+  border: 1px solid rgba(var(--palette-grey-500Channel) / 0.16) !important;
+  padding: 4px 0 !important;
+  min-width: 160px !important;
+  z-index: 1300 !important;
+}
+
+.apexcharts-menu-item {
+  color: var(--palette-text-primary) !important;
+  padding: 8px 16px !important;
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.apexcharts-menu-item:hover {
+  background-color: rgba(var(--palette-grey-500Channel) / 0.08) !important;
+}
+
+.apexcharts-menu-item:active {
+  background-color: rgba(var(--palette-grey-500Channel) / 0.12) !important;
+}
+
+.apexcharts-menu-icon {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 8px !important;
+  color: var(--palette-text-primary) !important;
+  opacity: 0.7 !important;
+}
+
+.apexcharts-menu-item:hover .apexcharts-menu-icon {
+  opacity: 1 !important;
+}

@@ -1,0 +1,21 @@
+services:
+  pulse-db-v2:
+    image: postgis/postgis:17-3.4
+    container_name: pulse-db-v2
+    environment:
+      POSTGRES_USER: ${DOCKER_DB_USERNAME}
+      POSTGRES_PASSWORD: ${DOCKER_DB_PASSWORD}
+      POSTGRES_DB: ${DOCKER_DB_NAME}
+    ports:
+      - "${DOCKER_DB_PORT_EXTERNAL}:${DOCKER_DB_PORT}"
+    volumes:
+      - db-data-v2:/var/lib/postgresql/data
+    networks:
+      - pulse-network
+
+volumes:
+  db-data-v2:
+
+networks:
+  pulse-network:
+    external: true

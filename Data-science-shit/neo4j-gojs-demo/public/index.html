@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Neo4j + GoJS Graph</title>
+  <script src="https://unpkg.com/gojs/release/go.js"></script>
+  <style>
+    #myDiagramDiv {
+      width: 100%;
+      height: 90vh;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h2>Neo4j Graph Visualization (GoJS)</h2>
+  <div id="myDiagramDiv"></div>
+
+  <script>
+    const $ = go.GraphObject.make;
+
+    const diagram = $(go.Diagram, "myDiagramDiv", {
+      layout: $(go.ForceDirectedLayout),
+      "undoManager.isEnabled": true
+    });
+
+    // Node template
+    diagram.nodeTemplate =
+      $(go.Node, "Auto",
+        $(go.Shape, "RoundedRectangle",
+          { fill: "lightblue", strokeWidth: 0 }),
+        $(go.TextBlock, { margin: 8, font: "bold 12px sans-serif" },
+          new go.Binding("text", "label"))
+      );
+
+    // Link template
+    diagram.linkTemplate =
+      $(go.Link,
+        $(go.Shape),                          // line
+        $(go.Shape, { toArrow: "OpenTriangle" }), // arrow
+        $(go.TextBlock,
+          { segmentOffset: new go.Point(0, -10) },
+          new go.Binding("text", "rel"))
+      );
+
+    // Fetch Neo4j data
+    fetch("/graph")
+      .then(res => res.json())
+      .then(graphData => {
+        diagram.model = new go.GraphLinksModel(
+          graphData.nodeDataArray,
+          graphData.linkDataArray
+        );
+      });
+  </script>
+</body>
+</html>

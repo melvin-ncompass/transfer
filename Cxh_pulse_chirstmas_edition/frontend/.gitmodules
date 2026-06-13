@@ -1,0 +1,3 @@
+[submodule "scaffolding"]
+	path = scaffolding
+	url = https://code.shiotech.com/shio/scaffold.git

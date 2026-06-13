@@ -1,0 +1,16 @@
+services:
+  vite-app-v2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vite-app-v2
+    ports:
+      - "${VITE_PORT}:${VITE_PORT}"
+    environment:
+      - NODE_ENV=development
+      - VITE_PORT=${VITE_PORT}
+      - VITE_ALLOWED_HOSTS=${VITE_ALLOWED_HOSTS}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm run dev -- --host 0.0.0.0 --port ${VITE_PORT}"

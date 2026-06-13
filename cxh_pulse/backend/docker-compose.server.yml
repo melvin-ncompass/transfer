@@ -1,0 +1,58 @@
+services:
+  pulse-server-v2:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: pulse-server-v2
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      DB_HOST: ${DOCKER_DB_HOST}
+      DB_PORT: ${DOCKER_DB_PORT}
+      DB_USERNAME: ${DOCKER_DB_USERNAME}
+      DB_PASSWORD: ${DOCKER_DB_PASSWORD}
+      DB_NAME: ${DOCKER_DB_NAME}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - pulse-network
+
+  # migrate-generate:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   command: npm run typeorm:migrate:generate -- ./src/migrations/InitialMigration
+  #   environment:
+  #     DB_HOST: ${DOCKER_DB_HOST}
+  #     DB_PORT: ${DOCKER_DB_PORT}
+  #     DB_USERNAME: ${DOCKER_DB_USERNAME}
+  #     DB_PASSWORD: ${DOCKER_DB_PASSWORD}
+  #     DB_NAME: ${DOCKER_DB_NAME}
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #   networks:
+  #     - pulse-network
+
+  # migrate-run:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.dev
+  #   command: npm run typeorm:migrate:run
+  #   environment:
+  #     DB_HOST: ${DOCKER_DB_HOST}
+  #     DB_PORT: ${DOCKER_DB_PORT}
+  #     DB_USERNAME: ${DOCKER_DB_USERNAME}
+  #     DB_PASSWORD: ${DOCKER_DB_PASSWORD}
+  #     DB_NAME: ${DOCKER_DB_NAME}
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  #   networks:
+  #     - pulse-network
+
+networks:
+  pulse-network:
+    external: true

@@ -1,0 +1,17 @@
+import type { Theme } from '@mui/material/styles';
+
+// ----------------------------------------------------------------------
+
+export function layoutSectionVars(theme: Theme) {
+  return {
+    '--layout-nav-zIndex': theme.zIndex.drawer + 1,
+    '--layout-nav-mobile-width': '288px',
+    '--layout-header-blur': '8px',
+    '--layout-header-zIndex': theme.zIndex.appBar + 1,
+    '--layout-header-mobile-height': '56px',
+    '--layout-header-desktop-height': '60px',
+    // Header surface/text variables - fall back to branding vars
+    '--layout-header-surface': 'var(--brand-header-surface, var(--brand-surface))',
+    '--layout-header-text': 'var(--brand-header-text, var(--brand-text))',
+  };
+}

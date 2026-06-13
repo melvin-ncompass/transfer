@@ -1,0 +1,262 @@
+
+
+/** **************************************
+* Fonts: app
+*************************************** */
+@import '@fontsource-variable/dm-sans';
+
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow/700.css';
+@import '@fontsource/barlow/800.css';
+
+/** **************************************
+* Plugins
+*************************************** */
+/* scrollbar */
+@import './components/scrollbar/styles.css';
+
+/* chart */
+@import './components/chart/styles.css';
+
+/** **************************************
+* Baseline
+*************************************** */
+html {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+body,
+#root,
+#root__layout {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 100%;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+input[type='number']::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* Branding CSS variables defaults (will be overwritten by BrandingProvider at runtime) */
+:root {
+  --brand-bg: #ffffff;
+  --brand-accent: #fe7f2d; /* default 10% */
+  --brand-accent-contrast: #ffffff;
+  --brand-text: #1c1c1c; /* default 60% */
+  --brand-fg: var(--brand-accent);
+  --brand-secondary: #1565C0;
+  --brand-secondary-contrast: #ffffff;
+  --brand-success: #22C55E;
+  --brand-success-contrast: #ffffff;
+  --brand-warning: #FFAB00;
+  --brand-warning-contrast: #1C252E;
+  --brand-error: #FF5630;
+  --brand-error-contrast: #ffffff;
+}
+
+/* Global clickable styles to respect branding */
+button,
+.btn,
+.button,
+.clickable,
+a.button-like {
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+/* Text buttons / links use accent color */
+button.text, a.button-like, .btn.text {
+  background: transparent;
+  color: var(--brand-accent);
+  border: none;
+}
+
+/* Accent (CTA) buttons use brand accent and readable text color */
+button.cta,
+.btn.cta,
+button.primary,
+.btn.primary {
+  background-color: var(--brand-accent);
+  color: var(--brand-accent-contrast);
+  border: none;
+  box-shadow: none;
+}
+
+/* Outline variant */
+button.outline,
+.btn.outline {
+  background: transparent;
+  color: var(--brand-accent);
+  border: 1px solid var(--brand-accent);
+}
+
+/* Hover states */
+button.cta:hover,
+.btn.cta:hover,
+button.primary:hover,
+.btn.primary:hover {
+  filter: brightness(0.95);
+}
+
+button.outline:hover,
+.btn.outline:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Force MUI button classes to use branding vars (higher priority fallback) */
+.MuiButton-containedPrimary {
+  background-color: var(--brand-accent) !important;
+  color: var(--brand-accent-contrast) !important;
+}
+.MuiButton-outlinedPrimary {
+  border-color: var(--brand-accent) !important;
+  color: var(--brand-accent) !important;
+}
+.MuiButton-textPrimary {
+  color: var(--brand-accent) !important;
+}
+
+.MuiButton-containedSecondary {
+  background-color: var(--brand-secondary) !important;
+  color: var(--brand-secondary-contrast) !important;
+}
+.MuiButton-containedSuccess { background-color: var(--brand-success) !important; color: var(--brand-success-contrast) !important; }
+.MuiButton-containedWarning { background-color: var(--brand-warning) !important; color: var(--brand-warning-contrast) !important; }
+.MuiButton-containedError { background-color: var(--brand-error) !important; color: var(--brand-error-contrast) !important; }
+
+/* Inputs, selects, textareas: use branding text and readable backgrounds */
+/* input,
+textarea,
+select,
+.MuiInputBase-root,
+.MuiOutlinedInput-root,
+.MuiFilledInput-root,
+.MuiInputBase-input,
+.MuiOutlinedInput-input,
+.MuiFilledInput-input {
+  color: var(--brand-text) !important;
+  background-color: var(--brand-bg) !important;
+} */
+
+/* Placeholder color */
+/* input::placeholder,
+textarea::placeholder,
+.MuiInputBase-input::placeholder,
+.MuiOutlinedInput-input::placeholder {
+  color: color-mix(in srgb, var(--brand-text) 60%, transparent) !important;
+} */
+
+/* Labels and helper text */
+.MuiInputLabel-root,
+.MuiFormHelperText-root {
+  color: var(--brand-text) !important;
+}
+
+/* Outlined input border: default neutral, focused uses accent */
+/* .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0,0,0,0.12);
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--brand-accent) !important;
+}
+
+/* Filled input focus */
+/* .MuiFilledInput-root.Mui-focused {
+  background-color: color-mix(in srgb, var(--brand-bg) 90%, var(--brand-accent) 10%);
+} */ */
+
+/* Make select arrow and adornments visible */
+.MuiSelect-icon,
+.MuiInputAdornment-root {
+  color: var(--brand-text) !important;
+}
+
+/* Ensure inputs inside modals (e.g., invite dialog) use visible text */
+/* .MuiDialog-root input,
+.MuiDialog-root textarea,
+.MuiDialog-root select {
+  color: var(--brand-text) !important;
+  background-color: var(--brand-bg) !important;
+} */
+
+/* Ensure table header cells do not use the theme's neutral surface in dark layouts */
+.MuiTableCell-head,
+.MuiTableHead-root .MuiTableCell-root {
+  /* Use header-specific surface and text (computed by BrandingProvider) */
+  background-color: var(--brand-header-surface, transparent) !important;
+  color: var(--brand-header-text, var(--brand-text)) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Leaflet tooltip custom styling to match app design */
+.cxh-leaflet-tooltip.leaflet-tooltip {
+  background: rgba(0,0,0,0.88) !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.35 !important;
+}
+.cxh-leaflet-tooltip.leaflet-tooltip strong { font-weight: 700; }
+.cxh-leaflet-tooltip.leaflet-tooltip div { margin-bottom: 4px; }
+
+/* Popup (click) style to match screenshot's dark card */
+.cxh-leaflet-popup.leaflet-popup-content-wrapper {
+  background: rgba(0,0,0,0.92) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6) !important;
+  padding: 12px !important;
+}
+.cxh-leaflet-popup .leaflet-popup-content { padding: 0 !important; }
+.cxh-leaflet-popup details summary { cursor: pointer; }
+.cxh-leaflet-popup details div { margin-top: 8px; }
+
+
+
+/* .maplibregl-map > :last-child {
+  display: none !important;
+} */
+
+/* Google Maps InfoWindow - Remove outer white background */
+.gm-style .gm-style-iw-c {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.gm-style .gm-style-iw-d {
+  background: transparent !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+  background: transparent !important;
+}
+
+.gm-style .gm-style-iw-t {
+  background: transparent !important;
+}

@@ -1,0 +1,15 @@
+services:
+  vite-app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: vite-app-prod
+    ports:
+      - "${VITE_PORT}:${VITE_PORT}"
+    environment:
+      - NODE_ENV=production
+      - VITE_PORT=${VITE_PORT}
+      - VITE_ALLOWED_HOSTS=${VITE_ALLOWED_HOSTS}
+      - VITE_API_URL=${VITE_API_URL}
+    restart: unless-stopped
+

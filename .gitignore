@@ -54,9 +54,16 @@ out/
 .nuxt/
 .output/
 .cache/
+.temp_cache/
 .parcel-cache/
 .turbo/
 *.tsbuildinfo
+
+# Test runner / editor download artifacts
+.vscode-test/
+
+# Files exceeding GitHub's 100MB limit (transfer these separately)
+data_csv/prompts_populated.csv
 
 # Logs
 logs/
