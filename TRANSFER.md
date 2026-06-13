@@ -14,13 +14,29 @@ to work. Everything else (source code, configs, small assets) is pushed.
 
 | Excluded | Reason | How to get it back |
 |----------|--------|--------------------|
-| `*.png` (all PNGs, incl. map tiles) | 72k+ tile files made the push huge/slow | Regenerate from the raster scripts, or copy the folder manually (see below) |
+| `*.png` (all PNGs, incl. map tiles) | 70k+ tile files made the push huge/slow | Regenerate from the raster scripts, or copy the folders manually (see below) |
 | `leaflet/raster/weather_tiles/`, `leaflet/raster/new_tiles/` | Map tile pyramids (tens of thousands of files) | Regenerate with `leaflet/raster/raster.py` / `riotiler.py` |
-| `node_modules/`, `.venv/`, build outputs | Reinstallable dependencies | `npm install` / `pip install -r requirements.txt` per project |
+| `node_modules/`, `.venv/`, build outputs, `.temp_cache/`, `.vscode-test/` | Reinstallable dependencies / caches | `npm install` / `pip install -r requirements.txt` per project |
+| `*.zip` archives at the workspace root | Large backups, not needed | Copy manually if you want them |
+| `data_csv/prompts_populated.csv` (185 MB) | Exceeds GitHub's hard 100 MB-per-file limit | Copy manually via USB / cloud drive |
+| `Bsuit/bsuite-backend/static/storage_read_sa.json` | Google service-account key (real secret) | Recreate from your own GCP credentials |
+| Superset demo files with example Mapbox tokens (`legacy-preset-chart-deckgl/`, `legacy-plugin-chart-map-box/`, `db_engine_specs/README.md`) | Blocked by GitHub secret scanning | Restore from upstream Apache Superset if needed |
 | `.env`, keys, secrets | Should never be committed | Recreate locally from each project's `.env.example` |
 
 > If you actually want the PNGs tracked in git, delete the `*.png` line in `.gitignore`,
 > then `git add` and commit again. (Be aware GitHub blocks any single file > 100 MB.)
+
+## ⚠️ Security action required
+
+`werfrew getwg etr/day2.py`, `day2o.py`, and `new1.py` contained a hardcoded **OpenAI API
+key** (`sk-proj-...`). The key was scrubbed from the pushed code, but it existed in plaintext
+on disk. **Revoke/rotate it now** at <https://platform.openai.com/api-keys> and set it via an
+environment variable instead:
+
+```powershell
+$env:OPENAI_API_KEY="<your-new-key>"   # Windows PowerShell
+# export OPENAI_API_KEY="<your-new-key>"  # macOS/Linux
+```
 
 ---
 
