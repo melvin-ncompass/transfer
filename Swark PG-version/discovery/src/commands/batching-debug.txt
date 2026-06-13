@@ -1,0 +1,62 @@
+Batching Debug Info:
+Raw Response: {
+  "batches": [
+    {
+      "batchNumber": 1,
+      "description": "Very large generated lockfile",
+      "filePatterns": ["package-lock.json"],
+      "maxFiles": 1,
+      "estimatedTokens": 339490
+    },
+    {
+      "batchNumber": 2,
+      "description": "Large diagram and analysis/script files",
+      "filePatterns": ["linux_filesystem_diagram.d2", "trial.py", "phonex-buyer_filesystem_diagram.d2"],
+      "maxFiles": 3,
+      "estimatedTokens": 11188 + 5041 + 3861
+    },
+    {
+      "batchNumber": 3,
+      "description": "Public binary/asset and medium large assets",
+      "filePatterns": ["public/favicon.ico", "src/components/icons/**", "src/assets/**"],
+      "maxFiles": 6,
+      "estimatedTokens": 2151 + 1385 + 846 + 791 + 483 + 694
+    },
+    {
+      "batchNumber": 4,
+      "description": "Documentation, metadata, and README",
+      "filePatterns": ["README.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md", "swark55-fileanalyzer.txt", "swark55-metadata.txt", "swark55-metadataPrompt.txt", "LICENSE"],
+      "maxFiles": 7,
+      "estimatedTokens": 231 + 650 + 68 + 29 + 543 + 668 + 195
+    },
+    {
+      "batchNumber": 5,
+      "description": "Project config, small source files and amplify",
+      "filePatterns": [
+        ".gitignore",
+        "amplify/**",
+        "amplify.yml",
+        "package.json",
+        "index.html",
+        "src/**",
+        "env.d.ts",
+        "tsconfig*.json",
+        "vite.config.ts",
+        "trial_misc"
+      ],
+      "maxFiles": 19,
+      "estimatedTokens": 123 + 62 + 41 + 461 + 9 + 106 + 103 + 336 + 103 + 36 + 9 + 112 + 43 + 124 + 84 + 332
+    }
+  ],
+  "totalBatches": 5,
+  "reasoning": "Isolated the single very large lockfile as its own batch; grouped very large diagrams and scripts together; grouped large binary/asset and icon files together; grouped docs and metadata together; remaining configuration, small source, and amplify files grouped into a final batch to keep batches balanced under constraints."
+}
+
+Cleaned Result: null
+
+Expected Format:
+{
+  "batches": [...],
+  "totalBatches": number,
+  "reasoning": "string"
+}

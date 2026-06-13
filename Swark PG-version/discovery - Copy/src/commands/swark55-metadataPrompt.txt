@@ -1,0 +1,338 @@
+You are an expert code analysis assistant. You will be given a complete list of all file paths in a repository, including files in all folders and subfolders. Your job is to:
+
+1. Analyze the entire file list and repository structure, considering all folders and nested files.
+2. Identify the programming languages used across all files.
+3. For each detected programming language, map the relevant file paths into that language.
+4. Ignoring files that are clearly unnecessary (such as build artifacts, dependencies, coverage reports, documentation, style files, and type definitions). If you are unsure about a file, include it.
+5. Generate content filtering patterns for each programming language to remove unwanted code like comments, logging statements, debug code, test blocks, and boilerplate.
+6. **CRITICAL: Batch Analysis Decision** - Determine if this repository needs to be processed in batches due to token limits:
+   - Consider the estimatedPathttokens if you think its going to reach 70% of max token when we include the file content Only then split into batches
+   - If batching is needed, determine optimal number of batches with 10% file overlap for maintaining context
+   - Ensure each batch has logical grouping (related modules/components together)
+   - Overlap should include key interface files, main entry points, and shared utilities
+
+**Repository Analysis:**
+- Total Files: 207
+- Commit: b8869e7 - just testing
+
+**Current Files (with path token estimates):**
+Dockerfile (3 path tokens)
+nest-cli.json (5 path tokens)
+package-lock.json (6 path tokens)
+package.json (4 path tokens)
+README.md (4 path tokens)
+src\alerts\alerts.controller.ts (12 path tokens)
+src\alerts\alerts.module.ts (11 path tokens)
+src\alerts\alerts.repository.ts (12 path tokens)
+src\alerts\alerts.service.ts (11 path tokens)
+src\alerts\dto\alert-dto.ts (11 path tokens)
+src\alerts\entity\alerts-entity.ts (13 path tokens)
+src\app.module.ts (8 path tokens)
+src\asset\asset.controller.ts (12 path tokens)
+src\asset\asset.module.ts (11 path tokens)
+src\asset\asset.service.ts (11 path tokens)
+src\asset\dto\update-asset-details.dto.ts (16 path tokens)
+src\asset\entity\asset-assignment-history.ts (15 path tokens)
+src\asset\entity\asset-assignment.ts (13 path tokens)
+src\asset\entity\asset-details-entity.ts (14 path tokens)
+src\asset\entity\asset-logon-details.entity.ts (17 path tokens)
+src\auth\auth.controller.ts (11 path tokens)
+src\auth\auth.module.ts (10 path tokens)
+src\auth\auth.service.ts (10 path tokens)
+src\auth\dto\api-key-generate-request.ts (14 path tokens)
+src\auth\entity\api-key-entity.ts (13 path tokens)
+src\auth\guards\admin-role.guard.ts (14 path tokens)
+src\auth\guards\jwt-auth.guard.ts (14 path tokens)
+src\auth\guards\local-auth.guard.ts (14 path tokens)
+src\auth\guards\refreshtoken.guard.ts (15 path tokens)
+src\auth\strategies\api-key.strategy.ts (15 path tokens)
+src\auth\strategies\jwt-auth.strategy.ts (15 path tokens)
+src\auth\strategies\local.strategy.ts (15 path tokens)
+src\auth\strategies\refreshToken.strategy.ts (16 path tokens)
+src\aws\aws.controller.ts (11 path tokens)
+src\aws\aws.module.ts (10 path tokens)
+src\aws\aws.service.ts (10 path tokens)
+src\aws\dto\aws-group-response.ts (13 path tokens)
+src\aws\dto\aws-policy-response.ts (13 path tokens)
+src\aws\dto\aws-user-response.ts (12 path tokens)
+src\aws\entity\aws-group-policy.entity.ts (16 path tokens)
+src\aws\entity\aws-groups.entity.ts (14 path tokens)
+src\aws\entity\aws-policies.entity.ts (15 path tokens)
+src\aws\entity\aws-user-group.entity.ts (15 path tokens)
+src\aws\entity\aws-users.entity.ts (14 path tokens)
+src\azure\azure.controller.ts (12 path tokens)
+src\azure\azure.module.ts (11 path tokens)
+src\azure\azure.service.ts (11 path tokens)
+src\azure\entity\azure-user.entity.ts (15 path tokens)
+src\common\api-response.ts (10 path tokens)
+src\common\decorator\get-current-user-id.decorator.ts (19 path tokens)
+src\common\decorator\get-current-user.decorator.ts (18 path tokens)
+src\common\decorator\is-valid-url.decorator.ts (17 path tokens)
+src\common\decorator\match.decorator.ts (15 path tokens)
+src\common\enum\ibex-status.enum.ts (14 path tokens)
+src\common\exceptions\http-exception.filter.ts (17 path tokens)
+src\common\exceptions\invalid-csv-exception.ts (16 path tokens)
+src\common\interceptors\api-response.interceptor.ts (18 path tokens)
+src\common-fn\common-fn.module.ts (13 path tokens)
+src\common-fn\common-fn.service.ts (13 path tokens)
+src\cost\cost.controller.ts (11 path tokens)
+src\cost\cost.module.ts (10 path tokens)
+src\cost\cost.service.ts (10 path tokens)
+src\cost\entity\aws-cost.entity.ts (14 path tokens)
+src\cost\entity\azure-cost.entity.ts (14 path tokens)
+src\cost\entity\gcp-cost.entity.ts (14 path tokens)
+src\cron-jobs\cron-jobs.controller.ts (14 path tokens)
+src\cron-jobs\cron-jobs.module.ts (13 path tokens)
+src\cron-jobs\cron-jobs.service.ts (13 path tokens)
+src\gcp\dto\aws-policy-response.ts (13 path tokens)
+src\gcp\dto\gcp-project-response.ts (13 path tokens)
+src\gcp\dto\gcp-user-response.ts (12 path tokens)
+src\gcp\entity\gcp-org-roles.entity.ts (15 path tokens)
+src\gcp\entity\gcp-projects.entity.ts (15 path tokens)
+src\gcp\entity\gcp-roles.entity.ts (14 path tokens)
+src\gcp\entity\gcp-user-org-role.entity.ts (16 path tokens)
+src\gcp\entity\gcp-user-project.ts (13 path tokens)
+src\gcp\entity\gcp-user-role.ts (12 path tokens)
+src\gcp\entity\gcp-users.entity.ts (14 path tokens)
+src\gcp\gcp.controller.ts (11 path tokens)
+src\gcp\gcp.module.ts (10 path tokens)
+src\gcp\gcp.service.ts (10 path tokens)
+src\github\dto\git-collab-response.ts (14 path tokens)
+src\github\dto\git-repo-response.ts (13 path tokens)
+src\github\entity\github-collaborators.entity.ts (17 path tokens)
+src\github\entity\github-repo-collaboration.entity.ts (19 path tokens)
+src\github\entity\github-repository.entity.ts (17 path tokens)
+src\github\github.controller.ts (12 path tokens)
+src\github\github.module.ts (11 path tokens)
+src\github\github.service.ts (11 path tokens)
+src\gsuite\dto\custom-email-decorator.ts (14 path tokens)
+src\gsuite\dto\gsuite-user-csv.ts (13 path tokens)
+src\gsuite\entity\gsuite-users.entity.ts (15 path tokens)
+src\gsuite\gsuite.controller.ts (12 path tokens)
+src\gsuite\gsuite.middleware.ts (12 path tokens)
+src\gsuite\gsuite.module.ts (11 path tokens)
+src\gsuite\gsuite.service.ts (11 path tokens)
+src\ibex-users\dto\create-user.dto.ts (15 path tokens)
+src\ibex-users\dto\date-range.dto.ts (14 path tokens)
+src\ibex-users\dto\update-user.dto.ts (15 path tokens)
+src\ibex-users\dto\user.dto.ts (13 path tokens)
+src\ibex-users\entity\ibex-users.entity.ts (16 path tokens)
+src\ibex-users\ibex-users.controller.ts (14 path tokens)
+src\ibex-users\ibex-users.module.ts (13 path tokens)
+src\ibex-users\ibex-users.service.ts (13 path tokens)
+src\invoice\dto\uploaded-file.dto.ts (14 path tokens)
+src\invoice\entity\invoice-entity.ts (13 path tokens)
+src\invoice\invoice.controller.ts (13 path tokens)
+src\invoice\invoice.module.ts (12 path tokens)
+src\invoice\invoice.service.ts (12 path tokens)
+src\jira\entity\jira-groups.entity.ts (15 path tokens)
+src\jira\entity\jira-projects.entity.ts (15 path tokens)
+src\jira\entity\jira-user-group.entity.ts (16 path tokens)
+src\jira\entity\jira-user-project.entity.ts (16 path tokens)
+src\jira\entity\jira-users.entity.ts (14 path tokens)
+src\jira\jira.controller.ts (11 path tokens)
+src\jira\jira.module.ts (10 path tokens)
+src\jira\jira.service.ts (10 path tokens)
+src\keka\dto\asset-csv.ts (11 path tokens)
+src\keka\dto\custom-date-relieved-decorator.ts (16 path tokens)
+src\keka\dto\custom-email-decorator.ts (14 path tokens)
+src\keka\dto\keka-csv.ts (10 path tokens)
+src\keka\entity\Department-migrated-history.entity.ts (19 path tokens)
+src\keka\entity\keka.entity.ts (13 path tokens)
+src\keka\keka.controller.ts (11 path tokens)
+src\keka\keka.middleware.ts (11 path tokens)
+src\keka\keka.module.ts (10 path tokens)
+src\keka\keka.service.ts (10 path tokens)
+src\lambda.ts (6 path tokens)
+src\mail\mail.module.ts (10 path tokens)
+src\mail\mail.service.ts (10 path tokens)
+src\main.ts (5 path tokens)
+src\outline\entity\outline-groups.entity.ts (16 path tokens)
+src\outline\entity\outline-users.entity.ts (16 path tokens)
+src\outline\outline.controller.ts (13 path tokens)
+src\outline\outline.module.ts (12 path tokens)
+src\outline\outline.service.ts (12 path tokens)
+src\pipedrive\entity\pipedrive.enitity.ts (16 path tokens)
+src\pipedrive\pipedrive.controller.ts (14 path tokens)
+src\pipedrive\pipedrive.module.ts (13 path tokens)
+src\pipedrive\pipedrive.service.ts (13 path tokens)
+src\secrets\secrets.config.ts (12 path tokens)
+src\services\dto\create-payment.dto.ts (15 path tokens)
+src\services\dto\create-service-user.dto.ts (16 path tokens)
+src\services\dto\create-service.dto.ts (15 path tokens)
+src\services\dto\importDto.ts (12 path tokens)
+src\services\dto\paymentHistory-csv.ts (14 path tokens)
+src\services\dto\update-payment-dto.ts (14 path tokens)
+src\services\dto\update-service-dto.ts (14 path tokens)
+src\services\dto\update-service-user.dto.ts (16 path tokens)
+src\services\entity\payments-history.entity.ts (17 path tokens)
+src\services\entity\service-user-activity-history.ts (17 path tokens)
+src\services\entity\service-user-billing-history.ts (17 path tokens)
+src\services\entity\services-history.entity.ts (17 path tokens)
+src\services\entity\services-users.entity.ts (16 path tokens)
+src\services\entity\services.entity.ts (15 path tokens)
+src\services\paymentHistory.middleware.ts (15 path tokens)
+src\services\service.middleware.ts (13 path tokens)
+src\services\services.controller.ts (13 path tokens)
+src\services\services.module.ts (12 path tokens)
+src\services\services.service.ts (12 path tokens)
+src\slack\entity\slack.entity.ts (13 path tokens)
+src\slack\slack.controller.ts (12 path tokens)
+src\slack\slack.module.ts (11 path tokens)
+src\slack\slack.service.ts (11 path tokens)
+src\sync\dto\create-sync.dto.ts (13 path tokens)
+src\sync\entity\sync-entity.ts (12 path tokens)
+src\sync\sync.controller.ts (11 path tokens)
+src\sync\sync.module.ts (10 path tokens)
+src\sync\sync.service.ts (10 path tokens)
+src\sync-log\entity\sync-log.entity.ts (15 path tokens)
+src\sync-log\sync-log.controller.ts (13 path tokens)
+src\sync-log\sync-log.module.ts (12 path tokens)
+src\sync-log\sync-log.service.ts (12 path tokens)
+src\types\index.ts (8 path tokens)
+src\types\jwtPayload.type.ts (11 path tokens)
+src\types\jwtPayloadWithRt.type.ts (13 path tokens)
+src\users\dto\create-user.dto.ts (13 path tokens)
+src\users\dto\update-user.dto.ts (13 path tokens)
+src\users\dto\user.dto.ts (12 path tokens)
+src\users\entity\users.entity.ts (13 path tokens)
+src\users\users.controller.ts (12 path tokens)
+src\users\users.module.ts (11 path tokens)
+src\users\users.service.ts (11 path tokens)
+src\utils\encrypt.ts (8 path tokens)
+src\utils\lib.ts (7 path tokens)
+src\webhooks\guard\verify-signature.guard.ts (16 path tokens)
+src\webhooks\webhook.controller.ts (13 path tokens)
+src\webhooks\webhook.module.ts (12 path tokens)
+src\webhooks\webhook.service.ts (12 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\detailed-architecture.d2 (18 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\detailed-architecture.eraser (19 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\high-level-architecture.d2 (18 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\high-level-architecture.eraser (19 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\semi-detailed-architecture.d2 (19 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\semi-detailed-architecture.eraser (20 path tokens)
+swark55-efa5bf1d-2025-09-05T11-26-47\swark55-analysis-summary.md (18 path tokens)
+swark_output\HEAD\detailed.d2 (11 path tokens)
+swark_output\HEAD\detailed.eraser (12 path tokens)
+swark_output\HEAD\high_level.d2 (11 path tokens)
+swark_output\HEAD\high_level.eraser (12 path tokens)
+swark_output\HEAD\semi_detailed.d2 (12 path tokens)
+swark_output\HEAD\semi_detailed.eraser (13 path tokens)
+swark_output\HEAD\token_report.txt (12 path tokens)
+test\app.e2e-spec.ts (8 path tokens)
+test\jest-e2e.json (7 path tokens)
+tsconfig.build.json (7 path tokens)
+tsconfig.json (5 path tokens)
+
+**Response Format (Single line JSON):**
+{
+  "detectedLanguages": [
+    "typescript",
+    "javascript",
+    "python",
+    "java"
+  ],
+  "batches": [
+    {
+      "batchNumber": 1,
+      
+      "estimatedTokens": 15000,
+      "description": "Core extension and utilities"
+      "fileInclusion": {
+        "typescript": [
+          "src/user/extension.ts",
+          "src/utils/helper.ts",
+          "src/components/Button/index.tsx"
+        ],
+        "python": [
+          "scripts/analysis.py"
+        ]   
+      }
+    },
+    {
+      "batchNumber": 2,
+      
+      "estimatedTokens": 18000,
+      "description": "UI components with shared interfaces"
+      "fileInclusion": {
+        "typescript": [
+          "src/user/extension.ts",
+          
+        ],
+        "python": [
+          "scripts/analysis.py"
+        ],
+        "java": [
+          "backend/src/Main.java"
+        ]
+      }
+    }
+  ],
+  "fileIgnored": [
+    "node_modules/some-lib/index.js",
+    "dist/bundle.js",
+    "docs/README.md",
+    "build/assets/logo.png",
+    "coverage/report.html"
+  ],
+  "ignoringPattern": {
+    "typescript": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "console\.(log|info|warn|error|debug|trace)\s*\([^)]*\);?",
+      "debugger;?",
+      "import\s+[^;]+from\s+['"][^'"]*test[^'"]*['"];?"
+    ],
+    "javascript": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "console\.(log|info|warn|error|debug|trace)\s*\([^)]*\);?",
+      "debugger;?"
+    ],
+    "python": [
+      "#.*",
+      "print\s*\([^)]*\)",
+      "logging\.(debug|info|warning|error|critical)\s*\([^)]*\)",
+      """"[\s\S]*?"""",
+      "'''[\s\S]*?'''"
+    ],
+    "java": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "System\.out\.(print|println)\s*\([^)]*\);?",
+      "logger\.(debug|info|warn|error)\s*\([^)]*\);?"
+    ]
+  }
+}
+
+Generate regex patterns for each detected language that will remove:
+- Single-line and multi-line comments
+- Console/logging statements
+- Debug statements
+- Test-related imports
+- Boilerplate code
+- Unused code patterns
+
+**BATCHING DECISION CRITERIA:**
+- If batching required:
+  - Calculate optimal number of batches (aim for ~40,000 tokens per batch)
+  - Create logical groupings (modules, components, features together)
+  - Ensure minimum 10% overlap between consecutive batches using:
+    * Shared interface files
+    * Common utility files
+    * Main entry points
+    * Configuration files
+  - Provide estimated tokens per batch
+  - Include descriptive names for each batch
+
+**OVERLAP STRATEGY:**
+- Include key files that provide context across batches
+- Prioritize: types/interfaces, shared utilities, main entry files
+- Overlap should be meaningful, not random
+- Each overlapping file should appear in adjacent batches only
+
+Analyze the repository and return the valid JSON as described above.
+**IMPORTANT: 
+1. Make sure to maintain same file fullpath as given in the above Current Files.
+2. If Repo is small, omit the batches array.
+3. If Repo is big, the batches array is mandatory with proper overlap.**

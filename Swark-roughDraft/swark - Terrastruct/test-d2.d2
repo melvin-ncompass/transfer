@@ -1,0 +1,18 @@
+# Test D2 diagram to verify syntax
+user: {
+    label: "User\nSystem user"
+    shape: person
+}
+
+api: {
+    label: "API\nApplication programming interface"
+}
+
+database: {
+    label: "Database\nData storage"
+    shape: cylinder
+}
+
+# Connections
+user -> api
+api -> database

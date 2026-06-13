@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Wards Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="map"></div>
+    <div class="info" id="info">
+        <h4>Kenya Wards</h4>
+        <p>Hover over a ward</p>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Initialize map centered on Kenya
+        const map = L.map('map').setView([0.0236, 37.9062], 6);
+        
+        // Add base map tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+        
+        const info = document.getElementById('info');
+        
+        // Highlight on hover
+        function highlightFeature(e) {
+            const layer = e.target;
+            layer.setStyle({
+                weight: 2,
+                color: '#666',
+                fillOpacity: 0.7
+            });
+            
+            // Show info
+            const props = layer.feature.properties;
+            let html = '<h4>Ward Information</h4>';
+            for (let key in props) {
+                html += `<b>${key}:</b> ${props[key]}<br>`;
+            }
+            info.innerHTML = html;
+        }
+        
+        // Reset on mouseout
+        function resetHighlight(e) {
+            geojsonLayer.resetStyle(e.target);
+            info.innerHTML = '<h4>Kenya Wards</h4><p>Hover over a ward</p>';
+        }
+        
+        let geojsonLayer;
+        
+        // Style function to highlight Kajiado county
+        function style(feature) {
+            const props = feature.properties;
+            // Check if this ward belongs to Kajiado county
+            const isKajiado = Object.values(props).some(val => 
+                String(val).toLowerCase().includes('kajiado')
+            );
+            
+            return {
+                fillColor: isKajiado ? '#ff0000' : '#3388ff',
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                fillOpacity: 0.5
+            };
+        }
+        
+        // Load and display GeoJSON
+        fetch('kenya_wards.geojson')
+            .then(response => response.json())
+            .then(data => {
+                geojsonLayer = L.geoJSON(data, {
+                    style: style,
+                    onEachFeature: function(feature, layer) {
+                        layer.on({
+                            mouseover: highlightFeature,
+                            mouseout: resetHighlight
+                        });
+                    }
+                }).addTo(map);
+            })
+            .catch(error => console.error('Error loading GeoJSON:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+1. Preprocessor => From root level traverse all the files and folders build a Json Object.
+2. Build prompt
+    2A. You are a system archiect I want you to study the file system provided as a JSON object
+    2B. JSON Object
+    2C. Based on your study let me know
+        2C1. What are all the programming languages present in this file system
+        2C2. To constuct a mindmap at a detiled what files and folders can be safely ignored, if are in doubt include it
+        2C3. Without ignoring another version
+3. Identify token size of the prompt = Request
+4. Request < MAX_TOKEN_SIZE for the model (DeepSeek coder) [input + out]
+    True => Submit to the model and get the output
+5. Based on LLM output ( filtered files )
+6. Traversing filtered files,
+    6A. Use tree-sitters to extract all functions
+    6B. Traverse throw each function,
+        6B1. build individual json files
+        6B2. the json file content should have information like ( function name , used by, depends on, file path, start line and end line )
+        6B3. the above json information to be inserted in Neo4J
+7. WebUI to visualize the networks from Neo4J
+    7A. on click a particular node,
+        7A1. highlight depends on and used by
+        7A2. have option to view codeblock
+        7A3. have option to interact with llm and summarize this particular node info

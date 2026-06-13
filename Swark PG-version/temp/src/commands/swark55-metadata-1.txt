@@ -1,0 +1,2848 @@
+{
+  "repositoryPath": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer",
+  "selectedCommit": {
+    "hash": "3568a97a9c73228420d2f7e24aec3ec119ed3e13",
+    "shortHash": "3568a97a",
+    "author": "Vignesh",
+    "date": "2025-08-07 19:46:54 +0530",
+    "message": "SP-8729 - refactored changes.",
+    "timestamp": "2025-08-07T14:16:54.000Z"
+  },
+  "totalFiles": 472,
+  "directoryStructure": "phonex-buyer/\n├── .gitignore\n├── README.md\n├── json/\n│   └── walkthrough.json\n├── package.json\n├── public/\n│   ├── _redirects\n│   ├── index.html\n│   ├── manifest.json\n│   ├── quill.snow.css\n│   └── robots.txt\n├── scripts/\n│   └── sonar-code-analysis.sh\n├── src/\n│   ├── ApiMapping.tsx\n│   ├── I18n.tsx\n│   ├── I18nTranslationKeys.ts\n│   ├── PhonexRouter.tsx\n│   ├── Theme.tsx\n│   ├── _lib/\n│   │   ├── constant.ts\n│   │   ├── formatting.ts\n│   │   ├── icons.tsx\n│   │   ├── lib.tsx\n│   │   ├── rules.tsx\n│   │   ├── tagUtil.ts\n│   │   └── util.ts\n│   ├── aws-exports.ts\n│   ├── components/\n│   │   ├── AccountBalanceGrid/\n│   │   │   ├── AccountBalanceFilters.tsx\n│   │   │   ├── AccountBalanceGrid.scss\n│   │   │   ├── AccountBalanceGrid.tsx\n│   │   │   ├── AccountBalanceUtils.tsx\n│   │   │   └── FilterDateV1.tsx\n│   │   ├── AccountSetup/\n│   │   │   ├── AccountDetailsDocuments.tsx\n│   │   │   ├── AccountSectionClosed.tsx\n│   │   │   ├── AccountSectionOpen.tsx\n│   │   │   ├── AccountSetupPopup.tsx\n│   │   │   ├── AccountSetupSection.tsx\n│   │   │   ├── AccountSetupUtils.tsx\n│   │   │   ├── DocumentsFillAddressSection.tsx\n│   │   │   ├── EUSAdditionalParties.tsx\n│   │   │   ├── EUSAdditonalPartyInfo.tsx\n│   │   │   ├── EUSAddressAdditionalPartiesSection.tsx\n│   │   │   ├── EUSCompanyOrIndividual.tsx\n│   │   │   ├── EUSFormAddress.tsx\n│   │   │   ├── EUSFormRadio.tsx\n│   │   │   ├── EUSSignature.tsx\n│   │   │   ├── MasterAgreementContent.tsx\n│   │   │   ├── MissingDocumentDialog.tsx\n│   │   │   └── swark-output/\n│   │   │       ├── 2025-08-20__12-20-02__diagram.md\n│   │   │       └── 2025-08-20__12-20-02__log.md\n│   │   ├── AtomComponents/\n│   │   │   ├── AddFab.tsx\n│   │   │   ├── BackButton.tsx\n│   │   │   ├── FileWell.tsx\n│   │   │   ├── GlobalButtonWrapper.tsx\n│   │   │   ├── GridLoadingOverlay.tsx\n│   │   │   ├── IFrame.tsx\n│   │   │   ├── PXPrompt.tsx\n│   │   │   ├── PXTooltip.tsx\n│   │   │   ├── Pagination.tsx\n│   │   │   ├── PrimaryBadge.tsx\n│   │   │   ├── PrimaryButton.tsx\n│   │   │   ├── PrimaryCheckbox.tsx\n│   │   │   ├── PrimaryIconButton.tsx\n│   │   │   ├── PrimaryRadio.tsx\n│   │   │   ├── PrimarySwitch.tsx\n│   │   │   ├── SecondaryButton.tsx\n│   │   │   ├── ShadowDom.tsx\n│   │   │   ├── SideMenuIcons.tsx\n│   │   │   ├── TertiaryButton.tsx\n│   │   │   ├── TextField.tsx\n│   │   │   ├── UnsanitizedShadowDom.tsx\n│   │   │   └── index.ts\n│   │   ├── AuctionBidding/\n│   │   │   ├── AuctionBiddingGrid.tsx\n│   │   │   ├── AuctionBiddingMobileCard.tsx\n│   │   │   ├── AuctionBiddingTabs.tsx\n│   │   │   ├── AuctionBidingUtils.tsx\n│   │   │   ├── BidConfirmationDialog.tsx\n│   │   │   ├── BidLotDescription.tsx\n│   │   │   ├── ConfirmImportedBids.tsx\n│   │   │   ├── ImportLotGrid.tsx\n│   │   │   ├── LotDetailsPopup.tsx\n│   │   │   ├── LotDetailsPopupGrid.tsx\n│   │   │   ├── MaxBidComponent.tsx\n│   │   │   ├── RefreshData.tsx\n│   │   │   ├── TimeRemainingComponent.tsx\n│   │   │   └── useTimeCountDown.ts\n│   │   ├── AuctionBiddingFilter/\n│   │   │   ├── AttributeFilters.tsx\n│   │   │   ├── AuctionFilters.tsx\n│   │   │   ├── BiddingSearchField.tsx\n│   │   │   ├── FilterGroups.tsx\n│   │   │   ├── FilterUtils.ts\n│   │   │   └── useFilterSearchAndTab.tsx\n│   │   ├── AuctionList/\n│   │   │   ├── AuctionListGrid.tsx\n│   │   │   └── AuctionListGridMobileView.tsx\n│   │   ├── BillingShippingComponent/\n│   │   │   ├── AddressClosedViewComponent.tsx\n│   │   │   ├── BillMyAccountComponent.tsx\n│   │   │   ├── BillingShippingClosedRowV1.tsx\n│   │   │   ├── BillingShippingComponent.scss\n│   │   │   ├── BillingShippingComponentUtils.ts\n│   │   │   ├── BillingShippingComponentV1.tsx\n│   │   │   ├── BillingShippingOpenRowV1.tsx\n│   │   │   ├── Instructions.tsx\n│   │   │   ├── RenderAddressClosedView.tsx\n│   │   │   ├── RenderOpenAddressView.tsx\n│   │   │   ├── RequestAQuote.tsx\n│   │   │   ├── ShippingMethodInsuredV1.tsx\n│   │   │   └── ShippingSectionDescription.tsx\n│   │   ├── BillingShippingPreference/\n│   │   │   ├── BillingShippingPreference.tsx\n│   │   │   └── BillingShippingPreferenceUtils.tsx\n│   │   ├── BulkOfferImportDialog/\n│   │   │   └── BulkOfferImportDialog.tsx\n│   │   ├── BuyOfferDialog/\n│   │   │   ├── BuyOfferAlert.tsx\n│   │   │   ├── BuyOfferDialog.scss\n│   │   │   └── BuyOfferDialog.tsx\n│   │   ├── CartComponents/\n│   │   │   ├── CartItems/\n│   │   │   │   ├── CartItem.scss\n│   │   │   │   ├── CartItem.tsx\n│   │   │   │   ├── CartItemV1.tsx\n│   │   │   │   ├── OffersAwaitingTenantItem.tsx\n│   │   │   │   ├── ReadyToCheckoutAndAwaitingBuyerItem.tsx\n│   │   │   │   └── WarehousesLinks.tsx\n│   │   │   ├── CartSnackbars/\n│   │   │   │   └── CartSnackbars.tsx\n│   │   │   ├── CartTabs/\n│   │   │   │   └── CartTabs.tsx\n│   │   │   ├── OffersAwaitingTenantBox/\n│   │   │   │   ├── OffersAwaitingTenantBox.tsx\n│   │   │   │   └── OffersAwaitingTenantBoxV1.tsx\n│   │   │   ├── ReadyForAutoCheckoutBox/\n│   │   │   │   ├── Item.tsx\n│   │   │   │   └── ReadyForAutoCheckoutBox.tsx\n│   │   │   └── ReadyToCheckoutAndAwaitingBuyerBox/\n│   │   │       ├── ReadyToCheckoutAndAwaitingBuyerBox.scss\n│   │   │       └── ReadyToCheckoutAndAwaitingBuyerBoxV1.tsx\n│   │   ├── CheckoutComponents/\n│   │   │   ├── BlockedVerifiedProspectDialog/\n│   │   │   │   └── BlockedVerifiedProspectDialog.tsx\n│   │   │   ├── CalculationBarMetrics/\n│   │   │   │   └── CalculationBarMetrics.tsx\n│   │   │   ├── CalculationMetrics/\n│   │   │   │   └── CalculationMetrics.tsx\n│   │   │   ├── CheckoutAdressAndShipping/\n│   │   │   │   └── CheckoutAddressAndShippingV1.tsx\n│   │   │   ├── CheckoutAdressAndShippingOptions/\n│   │   │   │   ├── CheckoutAddressAndShippingOptionsV1.tsx\n│   │   │   │   ├── CheckoutShippingInstructions.tsx\n│   │   │   │   ├── CheckoutShippingMethodInsuredV1.tsx\n│   │   │   │   └── ShippingSectionDescription.tsx\n│   │   │   ├── CheckoutBillingShippingPreferences/\n│   │   │   │   └── CheckoutBillingShippingPreferences.tsx\n│   │   │   ├── CheckoutButtons/\n│   │   │   │   └── CheckoutButtonsV1.tsx\n│   │   │   ├── CheckoutCalculation/\n│   │   │   │   └── CheckoutCalculationV1.tsx\n│   │   │   ├── CheckoutCalculationBar/\n│   │   │   │   └── CheckoutCalculationBar.tsx\n│   │   │   ├── CheckoutUtils.ts\n│   │   │   ├── ReviewOrderCalculationBar/\n│   │   │   │   └── ReviewOrderCalculationBar.tsx\n│   │   │   └── TermsOfSale/\n│   │   │       └── TermsOfSale.tsx\n│   │   ├── ComplianceQuestionnaire/\n│   │   │   ├── CQAddress.tsx\n│   │   │   ├── CQFormRadio.tsx\n│   │   │   ├── CQMultipleTextField.tsx\n│   │   │   ├── CQOwnerShipSection.tsx\n│   │   │   ├── CQQuestion.tsx\n│   │   │   ├── CQSignature.tsx\n│   │   │   ├── ExportCQSection.tsx\n│   │   │   └── InitialCQSection.tsx\n│   │   ├── Config/\n│   │   │   └── ConfigWrapper.tsx\n│   │   ├── CreateAccount/\n│   │   │   ├── CreateAccountField.tsx\n│   │   │   └── utils.tsx\n│   │   ├── DailyReportDialog/\n│   │   │   └── DailyReportDialog.tsx\n│   │   ├── DateField/\n│   │   │   ├── DateDialog.tsx\n│   │   │   ├── DateField.scss\n│   │   │   ├── DateField.tsx\n│   │   │   └── DateFieldV1.tsx\n│   │   ├── DateFormatWrapper/\n│   │   │   └── DateFormatWrapper.tsx\n│   │   ├── Dialog/\n│   │   │   └── Dialog.tsx\n│   │   ├── DynamicField/\n│   │   │   ├── CheckBoxField.tsx\n│   │   │   ├── DefaultTextField.tsx\n│   │   │   ├── DisplayField.tsx\n│   │   │   ├── DynamicField.tsx\n│   │   │   ├── HtmlDisplayField.tsx\n│   │   │   ├── NumericTextField.tsx\n│   │   │   ├── RadioField.tsx\n│   │   │   ├── SelectTextField.tsx\n│   │   │   ├── SwitchField.tsx\n│   │   │   └── TextSelectField.tsx\n│   │   ├── EChart/\n│   │   │   └── EChart.tsx\n│   │   ├── EmailVerification/\n│   │   │   ├── EmailVerification.scss\n│   │   │   └── EmailVerification.tsx\n│   │   ├── ErrorHandlers/\n│   │   │   ├── ErrorHandler.tsx\n│   │   │   ├── ErrorUtils.ts\n│   │   │   ├── ErrorView.scss\n│   │   │   ├── ErrorView.tsx\n│   │   │   ├── PageLevelErrorBoundary.tsx\n│   │   │   ├── RootLevelErrorBoundary.scss\n│   │   │   └── RootLevelErrorBoundary.tsx\n│   │   ├── FileWell/\n│   │   │   ├── FileWell.scss\n│   │   │   └── FileWell.tsx\n│   │   ├── FilterDate/\n│   │   │   ├── FilterDate.scss\n│   │   │   └── FilterDate.tsx\n│   │   ├── FiltersPersistWrapper/\n│   │   │   └── FiltersPersistWrapper.tsx\n│   │   ├── FiltersV2/\n│   │   │   ├── FilterAddedToStock/\n│   │   │   │   └── FilterAddedToStock.tsx\n│   │   │   ├── FilterAdvanceOutOfStock/\n│   │   │   │   └── FilterAdvanceOutOfStock.tsx\n│   │   │   ├── FilterBuyers/\n│   │   │   │   └── FilterBuyers.tsx\n│   │   │   ├── FilterCategory/\n│   │   │   │   └── FilterCategory.tsx\n│   │   │   ├── FilterChip.tsx\n│   │   │   ├── FilterComponentsList.ts\n│   │   │   ├── FilterDate/\n│   │   │   │   └── FilterDate.scss\n│   │   │   ├── FilterDaysToSell/\n│   │   │   │   └── FilterDaysToSell.tsx\n│   │   │   ├── FilterDialog/\n│   │   │   │   └── FilterDialog.tsx\n│   │   │   ├── FilterItemsAvailability/\n│   │   │   │   └── FilterItemsAvailability.tsx\n│   │   │   ├── FilterMultiSelect/\n│   │   │   │   └── FilterMultiSelect.tsx\n│   │   │   ├── FilterMultiSelectChip/\n│   │   │   │   └── FilterMultiSelectChip.tsx\n│   │   │   ├── FilterMultiSelectSearch/\n│   │   │   │   └── FilterMultiSelectSearch.tsx\n│   │   │   ├── FilterNew/\n│   │   │   │   └── FilterNew.tsx\n│   │   │   ├── FilterOfferRange/\n│   │   │   │   └── FilterOfferRange.tsx\n│   │   │   ├── FilterOptions.tsx\n│   │   │   ├── FilterSingleSelect/\n│   │   │   │   └── FilterSingleSelect.tsx\n│   │   │   ├── FilterSingleSelectSearch/\n│   │   │   │   └── FilterSingleSelectSearch.tsx\n│   │   │   ├── FilterSupplierOffer/\n│   │   │   │   └── FilterSupplierOffer.tsx\n│   │   │   ├── FilterTopOffers/\n│   │   │   │   └── FilterTopOffers.tsx\n│   │   │   ├── Filters.tsx\n│   │   │   ├── FiltersUtils.ts\n│   │   │   ├── SwitchFilterChip.tsx\n│   │   │   ├── index.scss\n│   │   │   └── utils.ts\n│   │   ├── Footer/\n│   │   │   └── Footer.tsx\n│   │   ├── GradePopup/\n│   │   │   ├── GradeDescription.tsx\n│   │   │   ├── GradeMixChart.tsx\n│   │   │   ├── GradeMixChartPreview.tsx\n│   │   │   ├── GradePopup.scss\n│   │   │   └── GradePopup.tsx\n│   │   ├── ImportExportDropdown/\n│   │   │   └── ImportExportDropdown.tsx\n│   │   ├── ImportPopup/\n│   │   │   └── ImportPopup.tsx\n│   │   ├── Instructions/\n│   │   │   └── Instructions.tsx\n│   │   ├── LoadingDialog/\n│   │   │   └── LoadingDialog.tsx\n│   │   ├── Login/\n│   │   │   ├── AuthWrapper.scss\n│   │   │   ├── AuthWrapper.tsx\n│   │   │   ├── LoginFlow.tsx\n│   │   │   ├── NewPassword.tsx\n│   │   │   ├── PasswordPolicyPopover.tsx\n│   │   │   ├── ResetPasswordFlow.tsx\n│   │   │   └── UnauthorizedUserDialog.tsx\n│   │   ├── Logo/\n│   │   │   ├── Logo.scss\n│   │   │   └── Logo.tsx\n│   │   ├── MinOrderQtyDialog/\n│   │   │   ├── MinOrderQtyDialog.scss\n│   │   │   └── MinOrderQtyDialog.tsx\n│   │   ├── OrderAttachments/\n│   │   │   ├── AwaitingDocumentInfo.tsx\n│   │   │   ├── OpenAttachments.scss\n│   │   │   ├── OrderAttachments.tsx\n│   │   │   └── OrderAttachmentsDialog.tsx\n│   │   ├── OrderLineItems/\n│   │   │   └── OrderLineItemsV1.tsx\n│   │   ├── OrdersComponents/\n│   │   │   ├── BulkOrderChangesRow.tsx\n│   │   │   ├── InsufficientAvailabilityDialog.scss\n│   │   │   ├── InsufficientAvailabilityDialog.tsx\n│   │   │   ├── LatePaymentPolicy.tsx\n│   │   │   ├── OrderFulfillmentButtonsV2.tsx\n│   │   │   ├── OrderTotalsV1.tsx\n│   │   │   ├── OrderUtils.tsx\n│   │   │   ├── OrderValidations.ts\n│   │   │   ├── PXTable.scss\n│   │   │   ├── PXTable.tsx\n│   │   │   ├── PXTableV1.tsx\n│   │   │   ├── ReservationAndCancellationTermsDialog.tsx\n│   │   │   ├── SnackBarWithActionProps.tsx\n│   │   │   └── TermsOfReservationAndCancellation.tsx\n│   │   ├── PoAwards/\n│   │   │   ├── DateRangeAnalyticsSelector.tsx\n│   │   │   ├── DateSelectorComponent.tsx\n│   │   │   ├── PoAwardsGrid.tsx\n│   │   │   ├── PoAwardsGridMobileView.tsx\n│   │   │   ├── TableCellComponents.tsx\n│   │   │   ├── TableProperties.tsx\n│   │   │   └── Utils.ts\n│   │   ├── PopOverMenu/\n│   │   │   └── PopOverMenu.tsx\n│   │   ├── PresignupStorefrontDivision/\n│   │   │   ├── SalesRepCardInfo.tsx\n│   │   │   └── StorefrontDivisionCard.tsx\n│   │   ├── Progress/\n│   │   │   ├── Progress.tsx\n│   │   │   └── SectionProgress.tsx\n│   │   ├── ProofOfExportDialog/\n│   │   │   ├── FetchProofOfExport.tsx\n│   │   │   └── ProofOfExportDialog.tsx\n│   │   ├── RMARequestDetails/\n│   │   │   ├── RMARequestDetailHeader.tsx\n│   │   │   ├── RMARequestDetailsActions.tsx\n│   │   │   ├── RMARequestDetailsGrid.tsx\n│   │   │   ├── RMARequestReturnInstructions.tsx\n│   │   │   ├── RMARequestsDetailsGridMobileView.tsx\n│   │   │   ├── Utils.tsx\n│   │   │   └── gridUtils.tsx\n│   │   ├── ReviewStockImport/\n│   │   │   ├── InvalidRequestBox/\n│   │   │   │   └── InvalidRequest.tsx\n│   │   │   ├── OverwriteRequestBox/\n│   │   │   │   └── OverwriteRequestBox.tsx\n│   │   │   ├── ReviewStockImport.scss\n│   │   │   ├── ReviewStockImport.tsx\n│   │   │   └── ValidRequestBox/\n│   │   │       └── ValidRequestBox.tsx\n│   │   ├── RmaItemDialog/\n│   │   │   ├── ImagePreview.tsx\n│   │   │   ├── RMAAddItemDialog.tsx\n│   │   │   ├── RMAAddOrderItemDialog.tsx\n│   │   │   ├── RMAEditItemDialog.tsx\n│   │   │   ├── RmaAddOrderItemDialogForm.tsx\n│   │   │   ├── RmaItemDialog.scss\n│   │   │   ├── RmaItemDialogForm.tsx\n│   │   │   ├── RmaItemDialogUtils.ts\n│   │   │   └── RmaViewItemDialog.tsx\n│   │   ├── RmaRequest/\n│   │   │   ├── BatchUpdateComponent.tsx\n│   │   │   ├── RmaRequestDate.tsx\n│   │   │   ├── RmaRequestsGrid.tsx\n│   │   │   ├── RmaRequestsGridMobileView.tsx\n│   │   │   ├── TableProperties.tsx\n│   │   │   └── Utils.ts\n│   │   ├── SearchField/\n│   │   │   ├── SearchField.scss\n│   │   │   ├── SearchField.tsx\n│   │   │   ├── SearchFieldV1.scss\n│   │   │   └── SearchFieldV2.tsx\n│   │   ├── SideMenu/\n│   │   │   ├── SideMenu.scss\n│   │   │   └── SideMenu.tsx\n│   │   ├── SignaturePad/\n│   │   │   ├── SignaturePad.scss\n│   │   │   └── SignaturePad.tsx\n│   │   ├── StockAlertDialog/\n│   │   │   └── StockAlertDialog.tsx\n│   │   ├── StockListComponents/\n│   │   │   ├── AutoCheckoutPromptDialog.tsx\n│   │   │   ├── CategoryFilter.tsx\n│   │   │   ├── PreviewDescription.tsx\n│   │   │   ├── StockList.scss\n│   │   │   ├── StockList.tsx\n│   │   │   ├── StockListBuyOffer.tsx\n│   │   │   ├── StockListFilterItems.tsx\n│   │   │   ├── StockListItem.scss\n│   │   │   ├── StockListItem.tsx\n│   │   │   ├── StockListUtils.tsx\n│   │   │   ├── StockLot/\n│   │   │   │   ├── StockLotItemFooter.tsx\n│   │   │   │   ├── StocklotIcon.tsx\n│   │   │   │   └── stockLotUtils.ts\n│   │   │   ├── StockPrice.tsx\n│   │   │   ├── StocklistAlert.tsx\n│   │   │   ├── WarehouseFilter.tsx\n│   │   │   └── WarehouseGroupDescriptionDialog.tsx\n│   │   ├── StockListTutorialDialog/\n│   │   │   ├── StockListTutorialDialog.scss\n│   │   │   └── StockListTutorialDialog.tsx\n│   │   ├── TopMenu/\n│   │   │   ├── AccountPopoverMenu/\n│   │   │   │   ├── AccountPopoverMenu.tsx\n│   │   │   │   └── AccountPopoverMenuUtils.ts\n│   │   │   ├── AuthTopMenu.tsx\n│   │   │   ├── TopMenu.scss\n│   │   │   └── TopMenu.tsx\n│   │   └── Walkthrough/\n│   │       ├── Walkthrough.scss\n│   │       ├── Walkthrough.tsx\n│   │       ├── WalkthroughImpl.tsx\n│   │       ├── WalkthroughType.ts\n│   │       └── WalkthroughUtils.ts\n│   ├── ctx/\n│   │   └── StockLotCtx/\n│   │       └── StockLotCtx.tsx\n│   ├── hooks/\n│   │   ├── useBadgedTab.tsx\n│   │   ├── useDataService.tsx\n│   │   ├── useDebounce.tsx\n│   │   ├── useDialog.tsx\n│   │   ├── useFetchConfig.tsx\n│   │   ├── useFilterV1.tsx\n│   │   ├── usePagination.tsx\n│   │   └── useQueryCustomHooks/\n│   │       ├── useCountryAndStateCodes.tsx\n│   │       ├── useDataService.tsx\n│   │       ├── useGetProofOfExport.tsx\n│   │       ├── useGetQueryCacheData.ts\n│   │       ├── useGetUserInfoAndAuthorities.tsx\n│   │       └── usePublicQueryStates.tsx\n│   ├── index.scss\n│   ├── index.tsx\n│   ├── layouts/\n│   │   ├── layout-dashboard-frame.tsx\n│   │   └── layout-dashboard-fullwidth.tsx\n│   ├── react-app-env.d.ts\n│   ├── redux/\n│   │   ├── actions/\n│   │   │   ├── actionTypes.ts\n│   │   │   └── userActions.ts\n│   │   ├── configureStore.ts\n│   │   ├── middlewares/\n│   │   │   └── preFiltering.tsx\n│   │   └── reducers/\n│   │       ├── index.ts\n│   │       └── userReducer.ts\n│   ├── reportWebVitals.ts\n│   ├── routes/\n│   │   ├── AccountSetupPrivate.tsx\n│   │   ├── PublicAndPrivateRoute.tsx\n│   │   └── PublicRoute.tsx\n│   ├── setupTests.ts\n│   ├── styles/\n│   │   ├── _customization.scss\n│   │   ├── _elements.scss\n│   │   ├── _helper.scss\n│   │   ├── _utilities.scss\n│   │   └── _variables.scss\n│   ├── swark-output/\n│   │   ├── 2025-08-20__12-18-45__diagram.md\n│   │   ├── 2025-08-20__12-18-45__log.md\n│   │   ├── 2025-08-20__12-35-56__diagram.md\n│   │   └── 2025-08-20__12-35-56__log.md\n│   ├── types/\n│   │   ├── AuthorityTypes.tsx\n│   │   ├── CardCheckout.tsx\n│   │   ├── DialogControl.tsx\n│   │   ├── Filters.ts\n│   │   ├── IAccountSetup.ts\n│   │   ├── IAccountSetupDetails.ts\n│   │   ├── IBillingShippingPreferences.ts\n│   │   ├── IBillingShippingTypes.ts\n│   │   ├── IFilterEngine.ts\n│   │   ├── IFilterEngineV2.ts\n│   │   ├── IFilterPreset.ts\n│   │   ├── ILogin.ts\n│   │   ├── IMessageType.tsx\n│   │   ├── INetworkSystemTypes.ts\n│   │   ├── IOrderTypes.ts\n│   │   ├── IPOFulfillment.ts\n│   │   ├── ISystemTypes.ts\n│   │   ├── IUserInfo.ts\n│   │   ├── OrderOptions.tsx\n│   │   ├── POETypes.tsx\n│   │   ├── StockListTypes.tsx\n│   │   ├── checkoutConfirmation.tsx\n│   │   ├── enumToLabelsMap.tsx\n│   │   └── pxnSettings.ts\n│   ├── views/\n│   │   ├── Account/\n│   │   │   └── Account.tsx\n│   │   ├── AccountBalance/\n│   │   │   ├── AccountBalance.scss\n│   │   │   └── AccountBalance.tsx\n│   │   ├── AccountBalanceSummary/\n│   │   │   └── AccountBalanceSummary.tsx\n│   │   ├── AccountSetup/\n│   │   │   ├── AccountSetup.scss\n│   │   │   └── AccountSetup.tsx\n│   │   ├── AccountSetupConfirmation/\n│   │   │   └── AccountSetupConfirmation.tsx\n│   │   ├── AccountSetupDetails/\n│   │   │   ├── AccountSetupDetails.scss\n│   │   │   └── AccountSetupDetails.tsx\n│   │   ├── AccountSetupDocuments/\n│   │   │   ├── AccountSetupDocuments.scss\n│   │   │   ├── AccountSetupDocuments.tsx\n│   │   │   └── AccountSetupDocumentsV1.tsx\n│   │   ├── AccountSetupEUS/\n│   │   │   ├── AccountSetupEUS.tsx\n│   │   │   ├── AccountSetupEUSV1.tsx\n│   │   │   └── AccountSetupEUSV2.tsx\n│   │   ├── AccountSetupEUSAddendum/\n│   │   │   └── AccountSetupEUSAddendum.tsx\n│   │   ├── AddToExistingOrder/\n│   │   │   └── AddToExistingOrderV1.tsx\n│   │   ├── AuctionBidding/\n│   │   │   ├── AuctionBidding.scss\n│   │   │   ├── AuctionBidding.tsx\n│   │   │   ├── useAuctionBiddingController.tsx\n│   │   │   ├── useAuctionBiddingModel.tsx\n│   │   │   └── useAuctionData.tsx\n│   │   ├── AuctionList/\n│   │   │   ├── AuctionList.scss\n│   │   │   ├── AuctionList.tsx\n│   │   │   ├── AuctionListTabs.tsx\n│   │   │   ├── useAuctionListController.ts\n│   │   │   └── useAuctionListModel.tsx\n│   │   ├── Cart/\n│   │   │   ├── Cart.scss\n│   │   │   └── CartV1.tsx\n│   │   ├── Checkout/\n│   │   │   ├── Checkout.scss\n│   │   │   └── CheckoutV1.tsx\n│   │   ├── CheckoutConfirmation/\n│   │   │   └── CheckoutConfirmationV1.tsx\n│   │   ├── ComplianceQuestionnaire/\n│   │   │   └── ComplianceQuestionnaire.tsx\n│   │   ├── CreateAccount/\n│   │   │   ├── CreateAccount.scss\n│   │   │   └── CreateAccount.tsx\n│   │   ├── Dashboard/\n│   │   │   ├── Dashboard.scss\n│   │   │   └── Dashboard.tsx\n│   │   ├── Homepage/\n│   │   │   ├── Homepage.scss\n│   │   │   ├── Homepage.test.tsx\n│   │   │   └── Homepage.tsx\n│   │   ├── MasterPurchaseAgreement/\n│   │   │   ├── MasterPurchaseAgreement.scss\n│   │   │   └── MasterPurchaseAgreement.tsx\n│   │   ├── OrderConfirmation/\n│   │   │   └── OrderConfirmation.tsx\n│   │   ├── Orders/\n│   │   │   ├── OrderDetailsV1.tsx\n│   │   │   ├── Orders.scss\n│   │   │   └── OrdersV1.tsx\n│   │   ├── POFulfillment/\n│   │   │   ├── PoAwards.scss\n│   │   │   └── PoAwards.tsx\n│   │   ├── PaymentConfirmation/\n│   │   │   ├── PayPal.tsx\n│   │   │   ├── PaymentConfirmation.scss\n│   │   │   └── PaymentConfirmation.tsx\n│   │   ├── PresignupStorefrontDivision/\n│   │   │   ├── PresignupStorefrontDivision.scss\n│   │   │   └── PresignupStorefrontDivision.tsx\n│   │   ├── RMARequest/\n│   │   │   ├── RmaRequest.scss\n│   │   │   ├── RmaRequest.tsx\n│   │   │   └── Tabs.tsx\n│   │   ├── RMARequestDetails/\n│   │   │   ├── RMARequestDetails.scss\n│   │   │   └── RMARequestDetails.tsx\n│   │   ├── Returns/\n│   │   │   └── Returns.tsx\n│   │   ├── ShippingAndBillingPreferences/\n│   │   │   ├── ShippingAndBillingPreferences.scss\n│   │   │   ├── ShippingAndBillingPreferences.tsx\n│   │   │   └── ShippingAndBillingPreferencesUtils.ts\n│   │   ├── ShippingConsentForm/\n│   │   │   └── ShippingConsentForm.tsx\n│   │   ├── Stock/\n│   │   │   ├── Stock.scss\n│   │   │   └── Stock.tsx\n│   │   ├── StockAlerts/\n│   │   │   └── StockAlerts.tsx\n│   │   └── Terms/\n│   │       └── Terms.tsx\n│   └── widgets/\n│       ├── BannerDialog/\n│       │   └── index.tsx\n│       ├── BotActivity/\n│       │   └── BotActivityWrapper.tsx\n│       ├── GoogleAnalytics.tsx\n│       ├── Helpdesk.scss\n│       ├── Helpdesk.tsx\n│       ├── PersistedScreens/\n│       │   ├── DeactivatedTenant.scss\n│       │   ├── DeactivatedTenant.tsx\n│       │   ├── PersistedSnackbar.tsx\n│       │   └── index.tsx\n│       ├── Pusher/\n│       │   └── index.tsx\n│       ├── Rum/\n│       │   └── index.tsx\n│       ├── WhatsApp.scss\n│       ├── WhatsApp.tsx\n│       ├── googleAnalyticsUtils.ts\n│       └── index.tsx\n├── tsconfig.json\n└── yarn.lock",
+  "fileList": [
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/.gitignore",
+      "relativePath": ".gitignore",
+      "size": 333,
+      "estimatedTokens": 82
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/README.md",
+      "relativePath": "README.md",
+      "size": 2159,
+      "estimatedTokens": 474
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/json/walkthrough.json",
+      "relativePath": "json/walkthrough.json",
+      "size": 6918,
+      "estimatedTokens": 1673
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/package.json",
+      "relativePath": "package.json",
+      "size": 7074,
+      "estimatedTokens": 2241
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/public/_redirects",
+      "relativePath": "public/_redirects",
+      "size": 25,
+      "estimatedTokens": 9
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/public/index.html",
+      "relativePath": "public/index.html",
+      "size": 3132,
+      "estimatedTokens": 794
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/public/manifest.json",
+      "relativePath": "public/manifest.json",
+      "size": 117,
+      "estimatedTokens": 34
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/public/quill.snow.css",
+      "relativePath": "public/quill.snow.css",
+      "size": 25688,
+      "estimatedTokens": 8205
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/public/robots.txt",
+      "relativePath": "public/robots.txt",
+      "size": 72,
+      "estimatedTokens": 23
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/scripts/sonar-code-analysis.sh",
+      "relativePath": "scripts/sonar-code-analysis.sh",
+      "size": 770,
+      "estimatedTokens": 216
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/ApiMapping.tsx",
+      "relativePath": "src/ApiMapping.tsx",
+      "size": 10167,
+      "estimatedTokens": 2663
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/I18n.tsx",
+      "relativePath": "src/I18n.tsx",
+      "size": 11037,
+      "estimatedTokens": 2815
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/I18nTranslationKeys.ts",
+      "relativePath": "src/I18nTranslationKeys.ts",
+      "size": 72013,
+      "estimatedTokens": 16931
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/PhonexRouter.tsx",
+      "relativePath": "src/PhonexRouter.tsx",
+      "size": 31164,
+      "estimatedTokens": 6535
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/Theme.tsx",
+      "relativePath": "src/Theme.tsx",
+      "size": 7113,
+      "estimatedTokens": 1910
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/constant.ts",
+      "relativePath": "src/_lib/constant.ts",
+      "size": 757,
+      "estimatedTokens": 199
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/formatting.ts",
+      "relativePath": "src/_lib/formatting.ts",
+      "size": 4547,
+      "estimatedTokens": 930
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/icons.tsx",
+      "relativePath": "src/_lib/icons.tsx",
+      "size": 4698,
+      "estimatedTokens": 2599
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/lib.tsx",
+      "relativePath": "src/_lib/lib.tsx",
+      "size": 29543,
+      "estimatedTokens": 7302
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/rules.tsx",
+      "relativePath": "src/_lib/rules.tsx",
+      "size": 1643,
+      "estimatedTokens": 454
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/tagUtil.ts",
+      "relativePath": "src/_lib/tagUtil.ts",
+      "size": 489,
+      "estimatedTokens": 117
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/_lib/util.ts",
+      "relativePath": "src/_lib/util.ts",
+      "size": 14233,
+      "estimatedTokens": 3497
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/aws-exports.ts",
+      "relativePath": "src/aws-exports.ts",
+      "size": 3390,
+      "estimatedTokens": 838
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountBalanceGrid/AccountBalanceFilters.tsx",
+      "relativePath": "src/components/AccountBalanceGrid/AccountBalanceFilters.tsx",
+      "size": 5292,
+      "estimatedTokens": 1210
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountBalanceGrid/AccountBalanceGrid.scss",
+      "relativePath": "src/components/AccountBalanceGrid/AccountBalanceGrid.scss",
+      "size": 1908,
+      "estimatedTokens": 548
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountBalanceGrid/AccountBalanceGrid.tsx",
+      "relativePath": "src/components/AccountBalanceGrid/AccountBalanceGrid.tsx",
+      "size": 9520,
+      "estimatedTokens": 2223
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountBalanceGrid/AccountBalanceUtils.tsx",
+      "relativePath": "src/components/AccountBalanceGrid/AccountBalanceUtils.tsx",
+      "size": 845,
+      "estimatedTokens": 207
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountBalanceGrid/FilterDateV1.tsx",
+      "relativePath": "src/components/AccountBalanceGrid/FilterDateV1.tsx",
+      "size": 20722,
+      "estimatedTokens": 4887
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountDetailsDocuments.tsx",
+      "relativePath": "src/components/AccountSetup/AccountDetailsDocuments.tsx",
+      "size": 11162,
+      "estimatedTokens": 2468
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountSectionClosed.tsx",
+      "relativePath": "src/components/AccountSetup/AccountSectionClosed.tsx",
+      "size": 4294,
+      "estimatedTokens": 1063
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountSectionOpen.tsx",
+      "relativePath": "src/components/AccountSetup/AccountSectionOpen.tsx",
+      "size": 6614,
+      "estimatedTokens": 1443
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountSetupPopup.tsx",
+      "relativePath": "src/components/AccountSetup/AccountSetupPopup.tsx",
+      "size": 1834,
+      "estimatedTokens": 423
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountSetupSection.tsx",
+      "relativePath": "src/components/AccountSetup/AccountSetupSection.tsx",
+      "size": 3057,
+      "estimatedTokens": 678
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/AccountSetupUtils.tsx",
+      "relativePath": "src/components/AccountSetup/AccountSetupUtils.tsx",
+      "size": 26616,
+      "estimatedTokens": 6437
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/DocumentsFillAddressSection.tsx",
+      "relativePath": "src/components/AccountSetup/DocumentsFillAddressSection.tsx",
+      "size": 3797,
+      "estimatedTokens": 894
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSAdditionalParties.tsx",
+      "relativePath": "src/components/AccountSetup/EUSAdditionalParties.tsx",
+      "size": 2864,
+      "estimatedTokens": 636
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSAdditonalPartyInfo.tsx",
+      "relativePath": "src/components/AccountSetup/EUSAdditonalPartyInfo.tsx",
+      "size": 3816,
+      "estimatedTokens": 877
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSAddressAdditionalPartiesSection.tsx",
+      "relativePath": "src/components/AccountSetup/EUSAddressAdditionalPartiesSection.tsx",
+      "size": 7581,
+      "estimatedTokens": 1701
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSCompanyOrIndividual.tsx",
+      "relativePath": "src/components/AccountSetup/EUSCompanyOrIndividual.tsx",
+      "size": 2773,
+      "estimatedTokens": 609
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSFormAddress.tsx",
+      "relativePath": "src/components/AccountSetup/EUSFormAddress.tsx",
+      "size": 1382,
+      "estimatedTokens": 330
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSFormRadio.tsx",
+      "relativePath": "src/components/AccountSetup/EUSFormRadio.tsx",
+      "size": 3175,
+      "estimatedTokens": 710
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/EUSSignature.tsx",
+      "relativePath": "src/components/AccountSetup/EUSSignature.tsx",
+      "size": 2617,
+      "estimatedTokens": 612
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/MasterAgreementContent.tsx",
+      "relativePath": "src/components/AccountSetup/MasterAgreementContent.tsx",
+      "size": 16849,
+      "estimatedTokens": 3222
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/MissingDocumentDialog.tsx",
+      "relativePath": "src/components/AccountSetup/MissingDocumentDialog.tsx",
+      "size": 10830,
+      "estimatedTokens": 2265
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/swark-output/2025-08-20__12-20-02__diagram.md",
+      "relativePath": "src/components/AccountSetup/swark-output/2025-08-20__12-20-02__diagram.md",
+      "size": 3781,
+      "estimatedTokens": 1405
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AccountSetup/swark-output/2025-08-20__12-20-02__log.md",
+      "relativePath": "src/components/AccountSetup/swark-output/2025-08-20__12-20-02__log.md",
+      "size": 1811,
+      "estimatedTokens": 592
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/AddFab.tsx",
+      "relativePath": "src/components/AtomComponents/AddFab.tsx",
+      "size": 290,
+      "estimatedTokens": 74
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/BackButton.tsx",
+      "relativePath": "src/components/AtomComponents/BackButton.tsx",
+      "size": 594,
+      "estimatedTokens": 143
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/FileWell.tsx",
+      "relativePath": "src/components/AtomComponents/FileWell.tsx",
+      "size": 1598,
+      "estimatedTokens": 399
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/GlobalButtonWrapper.tsx",
+      "relativePath": "src/components/AtomComponents/GlobalButtonWrapper.tsx",
+      "size": 1268,
+      "estimatedTokens": 301
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/GridLoadingOverlay.tsx",
+      "relativePath": "src/components/AtomComponents/GridLoadingOverlay.tsx",
+      "size": 470,
+      "estimatedTokens": 123
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/IFrame.tsx",
+      "relativePath": "src/components/AtomComponents/IFrame.tsx",
+      "size": 382,
+      "estimatedTokens": 93
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PXPrompt.tsx",
+      "relativePath": "src/components/AtomComponents/PXPrompt.tsx",
+      "size": 1283,
+      "estimatedTokens": 279
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PXTooltip.tsx",
+      "relativePath": "src/components/AtomComponents/PXTooltip.tsx",
+      "size": 243,
+      "estimatedTokens": 59
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/Pagination.tsx",
+      "relativePath": "src/components/AtomComponents/Pagination.tsx",
+      "size": 598,
+      "estimatedTokens": 133
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimaryBadge.tsx",
+      "relativePath": "src/components/AtomComponents/PrimaryBadge.tsx",
+      "size": 301,
+      "estimatedTokens": 74
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimaryButton.tsx",
+      "relativePath": "src/components/AtomComponents/PrimaryButton.tsx",
+      "size": 421,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimaryCheckbox.tsx",
+      "relativePath": "src/components/AtomComponents/PrimaryCheckbox.tsx",
+      "size": 233,
+      "estimatedTokens": 50
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimaryIconButton.tsx",
+      "relativePath": "src/components/AtomComponents/PrimaryIconButton.tsx",
+      "size": 566,
+      "estimatedTokens": 118
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimaryRadio.tsx",
+      "relativePath": "src/components/AtomComponents/PrimaryRadio.tsx",
+      "size": 215,
+      "estimatedTokens": 50
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/PrimarySwitch.tsx",
+      "relativePath": "src/components/AtomComponents/PrimarySwitch.tsx",
+      "size": 221,
+      "estimatedTokens": 50
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/SecondaryButton.tsx",
+      "relativePath": "src/components/AtomComponents/SecondaryButton.tsx",
+      "size": 424,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/ShadowDom.tsx",
+      "relativePath": "src/components/AtomComponents/ShadowDom.tsx",
+      "size": 1317,
+      "estimatedTokens": 313
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/SideMenuIcons.tsx",
+      "relativePath": "src/components/AtomComponents/SideMenuIcons.tsx",
+      "size": 913,
+      "estimatedTokens": 512
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/TertiaryButton.tsx",
+      "relativePath": "src/components/AtomComponents/TertiaryButton.tsx",
+      "size": 566,
+      "estimatedTokens": 127
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/TextField.tsx",
+      "relativePath": "src/components/AtomComponents/TextField.tsx",
+      "size": 401,
+      "estimatedTokens": 91
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/UnsanitizedShadowDom.tsx",
+      "relativePath": "src/components/AtomComponents/UnsanitizedShadowDom.tsx",
+      "size": 859,
+      "estimatedTokens": 212
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AtomComponents/index.ts",
+      "relativePath": "src/components/AtomComponents/index.ts",
+      "size": 863,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/AuctionBiddingGrid.tsx",
+      "relativePath": "src/components/AuctionBidding/AuctionBiddingGrid.tsx",
+      "size": 10567,
+      "estimatedTokens": 2646
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/AuctionBiddingMobileCard.tsx",
+      "relativePath": "src/components/AuctionBidding/AuctionBiddingMobileCard.tsx",
+      "size": 4016,
+      "estimatedTokens": 1009
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/AuctionBiddingTabs.tsx",
+      "relativePath": "src/components/AuctionBidding/AuctionBiddingTabs.tsx",
+      "size": 1200,
+      "estimatedTokens": 305
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/AuctionBidingUtils.tsx",
+      "relativePath": "src/components/AuctionBidding/AuctionBidingUtils.tsx",
+      "size": 11366,
+      "estimatedTokens": 3031
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/BidConfirmationDialog.tsx",
+      "relativePath": "src/components/AuctionBidding/BidConfirmationDialog.tsx",
+      "size": 4827,
+      "estimatedTokens": 1168
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/BidLotDescription.tsx",
+      "relativePath": "src/components/AuctionBidding/BidLotDescription.tsx",
+      "size": 2663,
+      "estimatedTokens": 628
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/ConfirmImportedBids.tsx",
+      "relativePath": "src/components/AuctionBidding/ConfirmImportedBids.tsx",
+      "size": 5179,
+      "estimatedTokens": 1303
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/ImportLotGrid.tsx",
+      "relativePath": "src/components/AuctionBidding/ImportLotGrid.tsx",
+      "size": 1818,
+      "estimatedTokens": 490
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/LotDetailsPopup.tsx",
+      "relativePath": "src/components/AuctionBidding/LotDetailsPopup.tsx",
+      "size": 5925,
+      "estimatedTokens": 1385
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/LotDetailsPopupGrid.tsx",
+      "relativePath": "src/components/AuctionBidding/LotDetailsPopupGrid.tsx",
+      "size": 1039,
+      "estimatedTokens": 272
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/MaxBidComponent.tsx",
+      "relativePath": "src/components/AuctionBidding/MaxBidComponent.tsx",
+      "size": 3439,
+      "estimatedTokens": 845
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/RefreshData.tsx",
+      "relativePath": "src/components/AuctionBidding/RefreshData.tsx",
+      "size": 2710,
+      "estimatedTokens": 675
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/TimeRemainingComponent.tsx",
+      "relativePath": "src/components/AuctionBidding/TimeRemainingComponent.tsx",
+      "size": 602,
+      "estimatedTokens": 164
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBidding/useTimeCountDown.ts",
+      "relativePath": "src/components/AuctionBidding/useTimeCountDown.ts",
+      "size": 2371,
+      "estimatedTokens": 655
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/AttributeFilters.tsx",
+      "relativePath": "src/components/AuctionBiddingFilter/AttributeFilters.tsx",
+      "size": 2220,
+      "estimatedTokens": 459
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/AuctionFilters.tsx",
+      "relativePath": "src/components/AuctionBiddingFilter/AuctionFilters.tsx",
+      "size": 3392,
+      "estimatedTokens": 781
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/BiddingSearchField.tsx",
+      "relativePath": "src/components/AuctionBiddingFilter/BiddingSearchField.tsx",
+      "size": 3717,
+      "estimatedTokens": 850
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/FilterGroups.tsx",
+      "relativePath": "src/components/AuctionBiddingFilter/FilterGroups.tsx",
+      "size": 2789,
+      "estimatedTokens": 553
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/FilterUtils.ts",
+      "relativePath": "src/components/AuctionBiddingFilter/FilterUtils.ts",
+      "size": 12098,
+      "estimatedTokens": 2662
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionBiddingFilter/useFilterSearchAndTab.tsx",
+      "relativePath": "src/components/AuctionBiddingFilter/useFilterSearchAndTab.tsx",
+      "size": 7238,
+      "estimatedTokens": 1597
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionList/AuctionListGrid.tsx",
+      "relativePath": "src/components/AuctionList/AuctionListGrid.tsx",
+      "size": 8232,
+      "estimatedTokens": 2069
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/AuctionList/AuctionListGridMobileView.tsx",
+      "relativePath": "src/components/AuctionList/AuctionListGridMobileView.tsx",
+      "size": 3439,
+      "estimatedTokens": 853
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/AddressClosedViewComponent.tsx",
+      "relativePath": "src/components/BillingShippingComponent/AddressClosedViewComponent.tsx",
+      "size": 1440,
+      "estimatedTokens": 327
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillMyAccountComponent.tsx",
+      "relativePath": "src/components/BillingShippingComponent/BillMyAccountComponent.tsx",
+      "size": 5926,
+      "estimatedTokens": 1324
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillingShippingClosedRowV1.tsx",
+      "relativePath": "src/components/BillingShippingComponent/BillingShippingClosedRowV1.tsx",
+      "size": 9554,
+      "estimatedTokens": 2019
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillingShippingComponent.scss",
+      "relativePath": "src/components/BillingShippingComponent/BillingShippingComponent.scss",
+      "size": 1865,
+      "estimatedTokens": 580
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillingShippingComponentUtils.ts",
+      "relativePath": "src/components/BillingShippingComponent/BillingShippingComponentUtils.ts",
+      "size": 19997,
+      "estimatedTokens": 4339
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillingShippingComponentV1.tsx",
+      "relativePath": "src/components/BillingShippingComponent/BillingShippingComponentV1.tsx",
+      "size": 26391,
+      "estimatedTokens": 5484
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/BillingShippingOpenRowV1.tsx",
+      "relativePath": "src/components/BillingShippingComponent/BillingShippingOpenRowV1.tsx",
+      "size": 24142,
+      "estimatedTokens": 4876
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/Instructions.tsx",
+      "relativePath": "src/components/BillingShippingComponent/Instructions.tsx",
+      "size": 3269,
+      "estimatedTokens": 742
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/RenderAddressClosedView.tsx",
+      "relativePath": "src/components/BillingShippingComponent/RenderAddressClosedView.tsx",
+      "size": 1601,
+      "estimatedTokens": 366
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/RenderOpenAddressView.tsx",
+      "relativePath": "src/components/BillingShippingComponent/RenderOpenAddressView.tsx",
+      "size": 1168,
+      "estimatedTokens": 271
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/RequestAQuote.tsx",
+      "relativePath": "src/components/BillingShippingComponent/RequestAQuote.tsx",
+      "size": 3515,
+      "estimatedTokens": 829
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/ShippingMethodInsuredV1.tsx",
+      "relativePath": "src/components/BillingShippingComponent/ShippingMethodInsuredV1.tsx",
+      "size": 8771,
+      "estimatedTokens": 1950
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingComponent/ShippingSectionDescription.tsx",
+      "relativePath": "src/components/BillingShippingComponent/ShippingSectionDescription.tsx",
+      "size": 595,
+      "estimatedTokens": 119
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingPreference/BillingShippingPreference.tsx",
+      "relativePath": "src/components/BillingShippingPreference/BillingShippingPreference.tsx",
+      "size": 10623,
+      "estimatedTokens": 2238
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BillingShippingPreference/BillingShippingPreferenceUtils.tsx",
+      "relativePath": "src/components/BillingShippingPreference/BillingShippingPreferenceUtils.tsx",
+      "size": 5450,
+      "estimatedTokens": 1173
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BulkOfferImportDialog/BulkOfferImportDialog.tsx",
+      "relativePath": "src/components/BulkOfferImportDialog/BulkOfferImportDialog.tsx",
+      "size": 4052,
+      "estimatedTokens": 916
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BuyOfferDialog/BuyOfferAlert.tsx",
+      "relativePath": "src/components/BuyOfferDialog/BuyOfferAlert.tsx",
+      "size": 2482,
+      "estimatedTokens": 492
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BuyOfferDialog/BuyOfferDialog.scss",
+      "relativePath": "src/components/BuyOfferDialog/BuyOfferDialog.scss",
+      "size": 295,
+      "estimatedTokens": 88
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/BuyOfferDialog/BuyOfferDialog.tsx",
+      "relativePath": "src/components/BuyOfferDialog/BuyOfferDialog.tsx",
+      "size": 14515,
+      "estimatedTokens": 3181
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/CartItem.scss",
+      "relativePath": "src/components/CartComponents/CartItems/CartItem.scss",
+      "size": 1728,
+      "estimatedTokens": 528
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/CartItem.tsx",
+      "relativePath": "src/components/CartComponents/CartItems/CartItem.tsx",
+      "size": 20439,
+      "estimatedTokens": 4334
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/CartItemV1.tsx",
+      "relativePath": "src/components/CartComponents/CartItems/CartItemV1.tsx",
+      "size": 20318,
+      "estimatedTokens": 4310
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/OffersAwaitingTenantItem.tsx",
+      "relativePath": "src/components/CartComponents/CartItems/OffersAwaitingTenantItem.tsx",
+      "size": 2915,
+      "estimatedTokens": 682
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/ReadyToCheckoutAndAwaitingBuyerItem.tsx",
+      "relativePath": "src/components/CartComponents/CartItems/ReadyToCheckoutAndAwaitingBuyerItem.tsx",
+      "size": 5073,
+      "estimatedTokens": 1150
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartItems/WarehousesLinks.tsx",
+      "relativePath": "src/components/CartComponents/CartItems/WarehousesLinks.tsx",
+      "size": 3470,
+      "estimatedTokens": 795
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartSnackbars/CartSnackbars.tsx",
+      "relativePath": "src/components/CartComponents/CartSnackbars/CartSnackbars.tsx",
+      "size": 1709,
+      "estimatedTokens": 398
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/CartTabs/CartTabs.tsx",
+      "relativePath": "src/components/CartComponents/CartTabs/CartTabs.tsx",
+      "size": 3665,
+      "estimatedTokens": 868
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/OffersAwaitingTenantBox/OffersAwaitingTenantBox.tsx",
+      "relativePath": "src/components/CartComponents/OffersAwaitingTenantBox/OffersAwaitingTenantBox.tsx",
+      "size": 7742,
+      "estimatedTokens": 1810
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/OffersAwaitingTenantBox/OffersAwaitingTenantBoxV1.tsx",
+      "relativePath": "src/components/CartComponents/OffersAwaitingTenantBox/OffersAwaitingTenantBoxV1.tsx",
+      "size": 9964,
+      "estimatedTokens": 2314
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/ReadyForAutoCheckoutBox/Item.tsx",
+      "relativePath": "src/components/CartComponents/ReadyForAutoCheckoutBox/Item.tsx",
+      "size": 5440,
+      "estimatedTokens": 1173
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/ReadyForAutoCheckoutBox/ReadyForAutoCheckoutBox.tsx",
+      "relativePath": "src/components/CartComponents/ReadyForAutoCheckoutBox/ReadyForAutoCheckoutBox.tsx",
+      "size": 2986,
+      "estimatedTokens": 713
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/ReadyToCheckoutAndAwaitingBuyerBox/ReadyToCheckoutAndAwaitingBuyerBox.scss",
+      "relativePath": "src/components/CartComponents/ReadyToCheckoutAndAwaitingBuyerBox/ReadyToCheckoutAndAwaitingBuyerBox.scss",
+      "size": 2221,
+      "estimatedTokens": 648
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CartComponents/ReadyToCheckoutAndAwaitingBuyerBox/ReadyToCheckoutAndAwaitingBuyerBoxV1.tsx",
+      "relativePath": "src/components/CartComponents/ReadyToCheckoutAndAwaitingBuyerBox/ReadyToCheckoutAndAwaitingBuyerBoxV1.tsx",
+      "size": 28849,
+      "estimatedTokens": 6279
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/BlockedVerifiedProspectDialog/BlockedVerifiedProspectDialog.tsx",
+      "relativePath": "src/components/CheckoutComponents/BlockedVerifiedProspectDialog/BlockedVerifiedProspectDialog.tsx",
+      "size": 4226,
+      "estimatedTokens": 1219
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CalculationBarMetrics/CalculationBarMetrics.tsx",
+      "relativePath": "src/components/CheckoutComponents/CalculationBarMetrics/CalculationBarMetrics.tsx",
+      "size": 3605,
+      "estimatedTokens": 858
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CalculationMetrics/CalculationMetrics.tsx",
+      "relativePath": "src/components/CheckoutComponents/CalculationMetrics/CalculationMetrics.tsx",
+      "size": 3988,
+      "estimatedTokens": 957
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutAdressAndShipping/CheckoutAddressAndShippingV1.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutAdressAndShipping/CheckoutAddressAndShippingV1.tsx",
+      "size": 47353,
+      "estimatedTokens": 9909
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutAddressAndShippingOptionsV1.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutAddressAndShippingOptionsV1.tsx",
+      "size": 19332,
+      "estimatedTokens": 3613
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutShippingInstructions.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutShippingInstructions.tsx",
+      "size": 1458,
+      "estimatedTokens": 312
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutShippingMethodInsuredV1.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/CheckoutShippingMethodInsuredV1.tsx",
+      "size": 5376,
+      "estimatedTokens": 1150
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/ShippingSectionDescription.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutAdressAndShippingOptions/ShippingSectionDescription.tsx",
+      "size": 601,
+      "estimatedTokens": 119
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutBillingShippingPreferences/CheckoutBillingShippingPreferences.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutBillingShippingPreferences/CheckoutBillingShippingPreferences.tsx",
+      "size": 2801,
+      "estimatedTokens": 598
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutButtons/CheckoutButtonsV1.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutButtons/CheckoutButtonsV1.tsx",
+      "size": 2246,
+      "estimatedTokens": 573
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutCalculation/CheckoutCalculationV1.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutCalculation/CheckoutCalculationV1.tsx",
+      "size": 4956,
+      "estimatedTokens": 1035
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutCalculationBar/CheckoutCalculationBar.tsx",
+      "relativePath": "src/components/CheckoutComponents/CheckoutCalculationBar/CheckoutCalculationBar.tsx",
+      "size": 3867,
+      "estimatedTokens": 849
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/CheckoutUtils.ts",
+      "relativePath": "src/components/CheckoutComponents/CheckoutUtils.ts",
+      "size": 9176,
+      "estimatedTokens": 2071
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/ReviewOrderCalculationBar/ReviewOrderCalculationBar.tsx",
+      "relativePath": "src/components/CheckoutComponents/ReviewOrderCalculationBar/ReviewOrderCalculationBar.tsx",
+      "size": 4264,
+      "estimatedTokens": 936
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CheckoutComponents/TermsOfSale/TermsOfSale.tsx",
+      "relativePath": "src/components/CheckoutComponents/TermsOfSale/TermsOfSale.tsx",
+      "size": 1906,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQAddress.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQAddress.tsx",
+      "size": 1618,
+      "estimatedTokens": 358
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQFormRadio.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQFormRadio.tsx",
+      "size": 1559,
+      "estimatedTokens": 356
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQMultipleTextField.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQMultipleTextField.tsx",
+      "size": 1617,
+      "estimatedTokens": 371
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQOwnerShipSection.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQOwnerShipSection.tsx",
+      "size": 4616,
+      "estimatedTokens": 1128
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQQuestion.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQQuestion.tsx",
+      "size": 1691,
+      "estimatedTokens": 385
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/CQSignature.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/CQSignature.tsx",
+      "size": 3659,
+      "estimatedTokens": 879
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/ExportCQSection.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/ExportCQSection.tsx",
+      "size": 14389,
+      "estimatedTokens": 3426
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ComplianceQuestionnaire/InitialCQSection.tsx",
+      "relativePath": "src/components/ComplianceQuestionnaire/InitialCQSection.tsx",
+      "size": 4564,
+      "estimatedTokens": 1145
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Config/ConfigWrapper.tsx",
+      "relativePath": "src/components/Config/ConfigWrapper.tsx",
+      "size": 5158,
+      "estimatedTokens": 1185
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CreateAccount/CreateAccountField.tsx",
+      "relativePath": "src/components/CreateAccount/CreateAccountField.tsx",
+      "size": 2094,
+      "estimatedTokens": 473
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/CreateAccount/utils.tsx",
+      "relativePath": "src/components/CreateAccount/utils.tsx",
+      "size": 2875,
+      "estimatedTokens": 772
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DailyReportDialog/DailyReportDialog.tsx",
+      "relativePath": "src/components/DailyReportDialog/DailyReportDialog.tsx",
+      "size": 2457,
+      "estimatedTokens": 541
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DateField/DateDialog.tsx",
+      "relativePath": "src/components/DateField/DateDialog.tsx",
+      "size": 1275,
+      "estimatedTokens": 312
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DateField/DateField.scss",
+      "relativePath": "src/components/DateField/DateField.scss",
+      "size": 440,
+      "estimatedTokens": 114
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DateField/DateField.tsx",
+      "relativePath": "src/components/DateField/DateField.tsx",
+      "size": 9196,
+      "estimatedTokens": 1952
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DateField/DateFieldV1.tsx",
+      "relativePath": "src/components/DateField/DateFieldV1.tsx",
+      "size": 6152,
+      "estimatedTokens": 1485
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DateFormatWrapper/DateFormatWrapper.tsx",
+      "relativePath": "src/components/DateFormatWrapper/DateFormatWrapper.tsx",
+      "size": 2339,
+      "estimatedTokens": 571
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Dialog/Dialog.tsx",
+      "relativePath": "src/components/Dialog/Dialog.tsx",
+      "size": 1421,
+      "estimatedTokens": 344
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/CheckBoxField.tsx",
+      "relativePath": "src/components/DynamicField/CheckBoxField.tsx",
+      "size": 1555,
+      "estimatedTokens": 344
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/DefaultTextField.tsx",
+      "relativePath": "src/components/DynamicField/DefaultTextField.tsx",
+      "size": 1837,
+      "estimatedTokens": 414
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/DisplayField.tsx",
+      "relativePath": "src/components/DynamicField/DisplayField.tsx",
+      "size": 657,
+      "estimatedTokens": 155
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/DynamicField.tsx",
+      "relativePath": "src/components/DynamicField/DynamicField.tsx",
+      "size": 2638,
+      "estimatedTokens": 625
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/HtmlDisplayField.tsx",
+      "relativePath": "src/components/DynamicField/HtmlDisplayField.tsx",
+      "size": 1101,
+      "estimatedTokens": 250
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/NumericTextField.tsx",
+      "relativePath": "src/components/DynamicField/NumericTextField.tsx",
+      "size": 1497,
+      "estimatedTokens": 354
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/RadioField.tsx",
+      "relativePath": "src/components/DynamicField/RadioField.tsx",
+      "size": 1964,
+      "estimatedTokens": 441
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/SelectTextField.tsx",
+      "relativePath": "src/components/DynamicField/SelectTextField.tsx",
+      "size": 2391,
+      "estimatedTokens": 516
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/SwitchField.tsx",
+      "relativePath": "src/components/DynamicField/SwitchField.tsx",
+      "size": 1227,
+      "estimatedTokens": 272
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/DynamicField/TextSelectField.tsx",
+      "relativePath": "src/components/DynamicField/TextSelectField.tsx",
+      "size": 609,
+      "estimatedTokens": 133
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/EChart/EChart.tsx",
+      "relativePath": "src/components/EChart/EChart.tsx",
+      "size": 3392,
+      "estimatedTokens": 785
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/EmailVerification/EmailVerification.scss",
+      "relativePath": "src/components/EmailVerification/EmailVerification.scss",
+      "size": 570,
+      "estimatedTokens": 160
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/EmailVerification/EmailVerification.tsx",
+      "relativePath": "src/components/EmailVerification/EmailVerification.tsx",
+      "size": 6234,
+      "estimatedTokens": 1435
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/ErrorHandler.tsx",
+      "relativePath": "src/components/ErrorHandlers/ErrorHandler.tsx",
+      "size": 1768,
+      "estimatedTokens": 402
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/ErrorUtils.ts",
+      "relativePath": "src/components/ErrorHandlers/ErrorUtils.ts",
+      "size": 1245,
+      "estimatedTokens": 342
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/ErrorView.scss",
+      "relativePath": "src/components/ErrorHandlers/ErrorView.scss",
+      "size": 1119,
+      "estimatedTokens": 328
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/ErrorView.tsx",
+      "relativePath": "src/components/ErrorHandlers/ErrorView.tsx",
+      "size": 3595,
+      "estimatedTokens": 915
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/PageLevelErrorBoundary.tsx",
+      "relativePath": "src/components/ErrorHandlers/PageLevelErrorBoundary.tsx",
+      "size": 2753,
+      "estimatedTokens": 610
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/RootLevelErrorBoundary.scss",
+      "relativePath": "src/components/ErrorHandlers/RootLevelErrorBoundary.scss",
+      "size": 1740,
+      "estimatedTokens": 511
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ErrorHandlers/RootLevelErrorBoundary.tsx",
+      "relativePath": "src/components/ErrorHandlers/RootLevelErrorBoundary.tsx",
+      "size": 1283,
+      "estimatedTokens": 290
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FileWell/FileWell.scss",
+      "relativePath": "src/components/FileWell/FileWell.scss",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FileWell/FileWell.tsx",
+      "relativePath": "src/components/FileWell/FileWell.tsx",
+      "size": 2145,
+      "estimatedTokens": 544
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FilterDate/FilterDate.scss",
+      "relativePath": "src/components/FilterDate/FilterDate.scss",
+      "size": 282,
+      "estimatedTokens": 73
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FilterDate/FilterDate.tsx",
+      "relativePath": "src/components/FilterDate/FilterDate.tsx",
+      "size": 13717,
+      "estimatedTokens": 3097
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersPersistWrapper/FiltersPersistWrapper.tsx",
+      "relativePath": "src/components/FiltersPersistWrapper/FiltersPersistWrapper.tsx",
+      "size": 1394,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterAddedToStock/FilterAddedToStock.tsx",
+      "relativePath": "src/components/FiltersV2/FilterAddedToStock/FilterAddedToStock.tsx",
+      "size": 5532,
+      "estimatedTokens": 1307
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterAdvanceOutOfStock/FilterAdvanceOutOfStock.tsx",
+      "relativePath": "src/components/FiltersV2/FilterAdvanceOutOfStock/FilterAdvanceOutOfStock.tsx",
+      "size": 3813,
+      "estimatedTokens": 853
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterBuyers/FilterBuyers.tsx",
+      "relativePath": "src/components/FiltersV2/FilterBuyers/FilterBuyers.tsx",
+      "size": 10768,
+      "estimatedTokens": 2337
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterCategory/FilterCategory.tsx",
+      "relativePath": "src/components/FiltersV2/FilterCategory/FilterCategory.tsx",
+      "size": 4859,
+      "estimatedTokens": 1055
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterChip.tsx",
+      "relativePath": "src/components/FiltersV2/FilterChip.tsx",
+      "size": 1501,
+      "estimatedTokens": 349
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterComponentsList.ts",
+      "relativePath": "src/components/FiltersV2/FilterComponentsList.ts",
+      "size": 1897,
+      "estimatedTokens": 427
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterDate/FilterDate.scss",
+      "relativePath": "src/components/FiltersV2/FilterDate/FilterDate.scss",
+      "size": 282,
+      "estimatedTokens": 73
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterDaysToSell/FilterDaysToSell.tsx",
+      "relativePath": "src/components/FiltersV2/FilterDaysToSell/FilterDaysToSell.tsx",
+      "size": 5623,
+      "estimatedTokens": 1356
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterDialog/FilterDialog.tsx",
+      "relativePath": "src/components/FiltersV2/FilterDialog/FilterDialog.tsx",
+      "size": 2832,
+      "estimatedTokens": 635
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterItemsAvailability/FilterItemsAvailability.tsx",
+      "relativePath": "src/components/FiltersV2/FilterItemsAvailability/FilterItemsAvailability.tsx",
+      "size": 4711,
+      "estimatedTokens": 1054
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterMultiSelect/FilterMultiSelect.tsx",
+      "relativePath": "src/components/FiltersV2/FilterMultiSelect/FilterMultiSelect.tsx",
+      "size": 4641,
+      "estimatedTokens": 1015
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterMultiSelectChip/FilterMultiSelectChip.tsx",
+      "relativePath": "src/components/FiltersV2/FilterMultiSelectChip/FilterMultiSelectChip.tsx",
+      "size": 5795,
+      "estimatedTokens": 1215
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterMultiSelectSearch/FilterMultiSelectSearch.tsx",
+      "relativePath": "src/components/FiltersV2/FilterMultiSelectSearch/FilterMultiSelectSearch.tsx",
+      "size": 7033,
+      "estimatedTokens": 1481
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterNew/FilterNew.tsx",
+      "relativePath": "src/components/FiltersV2/FilterNew/FilterNew.tsx",
+      "size": 5755,
+      "estimatedTokens": 1139
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterOfferRange/FilterOfferRange.tsx",
+      "relativePath": "src/components/FiltersV2/FilterOfferRange/FilterOfferRange.tsx",
+      "size": 7220,
+      "estimatedTokens": 1631
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterOptions.tsx",
+      "relativePath": "src/components/FiltersV2/FilterOptions.tsx",
+      "size": 1896,
+      "estimatedTokens": 431
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterSingleSelect/FilterSingleSelect.tsx",
+      "relativePath": "src/components/FiltersV2/FilterSingleSelect/FilterSingleSelect.tsx",
+      "size": 2999,
+      "estimatedTokens": 677
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterSingleSelectSearch/FilterSingleSelectSearch.tsx",
+      "relativePath": "src/components/FiltersV2/FilterSingleSelectSearch/FilterSingleSelectSearch.tsx",
+      "size": 4986,
+      "estimatedTokens": 1077
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterSupplierOffer/FilterSupplierOffer.tsx",
+      "relativePath": "src/components/FiltersV2/FilterSupplierOffer/FilterSupplierOffer.tsx",
+      "size": 3461,
+      "estimatedTokens": 781
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FilterTopOffers/FilterTopOffers.tsx",
+      "relativePath": "src/components/FiltersV2/FilterTopOffers/FilterTopOffers.tsx",
+      "size": 3638,
+      "estimatedTokens": 860
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/Filters.tsx",
+      "relativePath": "src/components/FiltersV2/Filters.tsx",
+      "size": 10057,
+      "estimatedTokens": 2253
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/FiltersUtils.ts",
+      "relativePath": "src/components/FiltersV2/FiltersUtils.ts",
+      "size": 36613,
+      "estimatedTokens": 7948
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/SwitchFilterChip.tsx",
+      "relativePath": "src/components/FiltersV2/SwitchFilterChip.tsx",
+      "size": 810,
+      "estimatedTokens": 195
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/index.scss",
+      "relativePath": "src/components/FiltersV2/index.scss",
+      "size": 1258,
+      "estimatedTokens": 386
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/FiltersV2/utils.ts",
+      "relativePath": "src/components/FiltersV2/utils.ts",
+      "size": 3870,
+      "estimatedTokens": 877
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Footer/Footer.tsx",
+      "relativePath": "src/components/Footer/Footer.tsx",
+      "size": 1158,
+      "estimatedTokens": 282
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/GradePopup/GradeDescription.tsx",
+      "relativePath": "src/components/GradePopup/GradeDescription.tsx",
+      "size": 511,
+      "estimatedTokens": 123
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/GradePopup/GradeMixChart.tsx",
+      "relativePath": "src/components/GradePopup/GradeMixChart.tsx",
+      "size": 1103,
+      "estimatedTokens": 304
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/GradePopup/GradeMixChartPreview.tsx",
+      "relativePath": "src/components/GradePopup/GradeMixChartPreview.tsx",
+      "size": 1028,
+      "estimatedTokens": 235
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/GradePopup/GradePopup.scss",
+      "relativePath": "src/components/GradePopup/GradePopup.scss",
+      "size": 1907,
+      "estimatedTokens": 510
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/GradePopup/GradePopup.tsx",
+      "relativePath": "src/components/GradePopup/GradePopup.tsx",
+      "size": 9316,
+      "estimatedTokens": 1942
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ImportExportDropdown/ImportExportDropdown.tsx",
+      "relativePath": "src/components/ImportExportDropdown/ImportExportDropdown.tsx",
+      "size": 4324,
+      "estimatedTokens": 897
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ImportPopup/ImportPopup.tsx",
+      "relativePath": "src/components/ImportPopup/ImportPopup.tsx",
+      "size": 3929,
+      "estimatedTokens": 939
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Instructions/Instructions.tsx",
+      "relativePath": "src/components/Instructions/Instructions.tsx",
+      "size": 3795,
+      "estimatedTokens": 854
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/LoadingDialog/LoadingDialog.tsx",
+      "relativePath": "src/components/LoadingDialog/LoadingDialog.tsx",
+      "size": 445,
+      "estimatedTokens": 96
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/AuthWrapper.scss",
+      "relativePath": "src/components/Login/AuthWrapper.scss",
+      "size": 4999,
+      "estimatedTokens": 1521
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/AuthWrapper.tsx",
+      "relativePath": "src/components/Login/AuthWrapper.tsx",
+      "size": 2821,
+      "estimatedTokens": 645
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/LoginFlow.tsx",
+      "relativePath": "src/components/Login/LoginFlow.tsx",
+      "size": 9998,
+      "estimatedTokens": 2319
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/NewPassword.tsx",
+      "relativePath": "src/components/Login/NewPassword.tsx",
+      "size": 3149,
+      "estimatedTokens": 736
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/PasswordPolicyPopover.tsx",
+      "relativePath": "src/components/Login/PasswordPolicyPopover.tsx",
+      "size": 5272,
+      "estimatedTokens": 1139
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/ResetPasswordFlow.tsx",
+      "relativePath": "src/components/Login/ResetPasswordFlow.tsx",
+      "size": 11908,
+      "estimatedTokens": 2593
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Login/UnauthorizedUserDialog.tsx",
+      "relativePath": "src/components/Login/UnauthorizedUserDialog.tsx",
+      "size": 3653,
+      "estimatedTokens": 849
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Logo/Logo.scss",
+      "relativePath": "src/components/Logo/Logo.scss",
+      "size": 318,
+      "estimatedTokens": 78
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Logo/Logo.tsx",
+      "relativePath": "src/components/Logo/Logo.tsx",
+      "size": 1003,
+      "estimatedTokens": 245
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/MinOrderQtyDialog/MinOrderQtyDialog.scss",
+      "relativePath": "src/components/MinOrderQtyDialog/MinOrderQtyDialog.scss",
+      "size": 195,
+      "estimatedTokens": 59
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/MinOrderQtyDialog/MinOrderQtyDialog.tsx",
+      "relativePath": "src/components/MinOrderQtyDialog/MinOrderQtyDialog.tsx",
+      "size": 2615,
+      "estimatedTokens": 642
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrderAttachments/AwaitingDocumentInfo.tsx",
+      "relativePath": "src/components/OrderAttachments/AwaitingDocumentInfo.tsx",
+      "size": 13908,
+      "estimatedTokens": 3029
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrderAttachments/OpenAttachments.scss",
+      "relativePath": "src/components/OrderAttachments/OpenAttachments.scss",
+      "size": 91,
+      "estimatedTokens": 28
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrderAttachments/OrderAttachments.tsx",
+      "relativePath": "src/components/OrderAttachments/OrderAttachments.tsx",
+      "size": 1952,
+      "estimatedTokens": 422
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrderAttachments/OrderAttachmentsDialog.tsx",
+      "relativePath": "src/components/OrderAttachments/OrderAttachmentsDialog.tsx",
+      "size": 4507,
+      "estimatedTokens": 994
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrderLineItems/OrderLineItemsV1.tsx",
+      "relativePath": "src/components/OrderLineItems/OrderLineItemsV1.tsx",
+      "size": 5061,
+      "estimatedTokens": 1184
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/BulkOrderChangesRow.tsx",
+      "relativePath": "src/components/OrdersComponents/BulkOrderChangesRow.tsx",
+      "size": 1521,
+      "estimatedTokens": 400
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/InsufficientAvailabilityDialog.scss",
+      "relativePath": "src/components/OrdersComponents/InsufficientAvailabilityDialog.scss",
+      "size": 934,
+      "estimatedTokens": 264
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/InsufficientAvailabilityDialog.tsx",
+      "relativePath": "src/components/OrdersComponents/InsufficientAvailabilityDialog.tsx",
+      "size": 6113,
+      "estimatedTokens": 1351
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/LatePaymentPolicy.tsx",
+      "relativePath": "src/components/OrdersComponents/LatePaymentPolicy.tsx",
+      "size": 7824,
+      "estimatedTokens": 1805
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/OrderFulfillmentButtonsV2.tsx",
+      "relativePath": "src/components/OrdersComponents/OrderFulfillmentButtonsV2.tsx",
+      "size": 4349,
+      "estimatedTokens": 1038
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/OrderTotalsV1.tsx",
+      "relativePath": "src/components/OrdersComponents/OrderTotalsV1.tsx",
+      "size": 9304,
+      "estimatedTokens": 2109
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/OrderUtils.tsx",
+      "relativePath": "src/components/OrdersComponents/OrderUtils.tsx",
+      "size": 13818,
+      "estimatedTokens": 3069
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/OrderValidations.ts",
+      "relativePath": "src/components/OrdersComponents/OrderValidations.ts",
+      "size": 1931,
+      "estimatedTokens": 458
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/PXTable.scss",
+      "relativePath": "src/components/OrdersComponents/PXTable.scss",
+      "size": 2775,
+      "estimatedTokens": 782
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/PXTable.tsx",
+      "relativePath": "src/components/OrdersComponents/PXTable.tsx",
+      "size": 15538,
+      "estimatedTokens": 3619
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/PXTableV1.tsx",
+      "relativePath": "src/components/OrdersComponents/PXTableV1.tsx",
+      "size": 17690,
+      "estimatedTokens": 4153
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/ReservationAndCancellationTermsDialog.tsx",
+      "relativePath": "src/components/OrdersComponents/ReservationAndCancellationTermsDialog.tsx",
+      "size": 7846,
+      "estimatedTokens": 1800
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/SnackBarWithActionProps.tsx",
+      "relativePath": "src/components/OrdersComponents/SnackBarWithActionProps.tsx",
+      "size": 2593,
+      "estimatedTokens": 606
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/OrdersComponents/TermsOfReservationAndCancellation.tsx",
+      "relativePath": "src/components/OrdersComponents/TermsOfReservationAndCancellation.tsx",
+      "size": 1336,
+      "estimatedTokens": 326
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/DateRangeAnalyticsSelector.tsx",
+      "relativePath": "src/components/PoAwards/DateRangeAnalyticsSelector.tsx",
+      "size": 1830,
+      "estimatedTokens": 439
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/DateSelectorComponent.tsx",
+      "relativePath": "src/components/PoAwards/DateSelectorComponent.tsx",
+      "size": 1281,
+      "estimatedTokens": 303
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/PoAwardsGrid.tsx",
+      "relativePath": "src/components/PoAwards/PoAwardsGrid.tsx",
+      "size": 1771,
+      "estimatedTokens": 459
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/PoAwardsGridMobileView.tsx",
+      "relativePath": "src/components/PoAwards/PoAwardsGridMobileView.tsx",
+      "size": 4498,
+      "estimatedTokens": 1065
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/TableCellComponents.tsx",
+      "relativePath": "src/components/PoAwards/TableCellComponents.tsx",
+      "size": 2813,
+      "estimatedTokens": 719
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/TableProperties.tsx",
+      "relativePath": "src/components/PoAwards/TableProperties.tsx",
+      "size": 7918,
+      "estimatedTokens": 1954
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PoAwards/Utils.ts",
+      "relativePath": "src/components/PoAwards/Utils.ts",
+      "size": 4969,
+      "estimatedTokens": 1427
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PopOverMenu/PopOverMenu.tsx",
+      "relativePath": "src/components/PopOverMenu/PopOverMenu.tsx",
+      "size": 643,
+      "estimatedTokens": 156
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PresignupStorefrontDivision/SalesRepCardInfo.tsx",
+      "relativePath": "src/components/PresignupStorefrontDivision/SalesRepCardInfo.tsx",
+      "size": 6394,
+      "estimatedTokens": 1594
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/PresignupStorefrontDivision/StorefrontDivisionCard.tsx",
+      "relativePath": "src/components/PresignupStorefrontDivision/StorefrontDivisionCard.tsx",
+      "size": 6617,
+      "estimatedTokens": 1499
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Progress/Progress.tsx",
+      "relativePath": "src/components/Progress/Progress.tsx",
+      "size": 986,
+      "estimatedTokens": 234
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Progress/SectionProgress.tsx",
+      "relativePath": "src/components/Progress/SectionProgress.tsx",
+      "size": 633,
+      "estimatedTokens": 155
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ProofOfExportDialog/FetchProofOfExport.tsx",
+      "relativePath": "src/components/ProofOfExportDialog/FetchProofOfExport.tsx",
+      "size": 1532,
+      "estimatedTokens": 375
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ProofOfExportDialog/ProofOfExportDialog.tsx",
+      "relativePath": "src/components/ProofOfExportDialog/ProofOfExportDialog.tsx",
+      "size": 6346,
+      "estimatedTokens": 1463
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/RMARequestDetailHeader.tsx",
+      "relativePath": "src/components/RMARequestDetails/RMARequestDetailHeader.tsx",
+      "size": 3810,
+      "estimatedTokens": 993
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/RMARequestDetailsActions.tsx",
+      "relativePath": "src/components/RMARequestDetails/RMARequestDetailsActions.tsx",
+      "size": 3864,
+      "estimatedTokens": 894
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/RMARequestDetailsGrid.tsx",
+      "relativePath": "src/components/RMARequestDetails/RMARequestDetailsGrid.tsx",
+      "size": 5260,
+      "estimatedTokens": 1376
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/RMARequestReturnInstructions.tsx",
+      "relativePath": "src/components/RMARequestDetails/RMARequestReturnInstructions.tsx",
+      "size": 7251,
+      "estimatedTokens": 1514
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/RMARequestsDetailsGridMobileView.tsx",
+      "relativePath": "src/components/RMARequestDetails/RMARequestsDetailsGridMobileView.tsx",
+      "size": 2265,
+      "estimatedTokens": 511
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/Utils.tsx",
+      "relativePath": "src/components/RMARequestDetails/Utils.tsx",
+      "size": 4551,
+      "estimatedTokens": 1206
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RMARequestDetails/gridUtils.tsx",
+      "relativePath": "src/components/RMARequestDetails/gridUtils.tsx",
+      "size": 6958,
+      "estimatedTokens": 1683
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ReviewStockImport/InvalidRequestBox/InvalidRequest.tsx",
+      "relativePath": "src/components/ReviewStockImport/InvalidRequestBox/InvalidRequest.tsx",
+      "size": 5709,
+      "estimatedTokens": 1180
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ReviewStockImport/OverwriteRequestBox/OverwriteRequestBox.tsx",
+      "relativePath": "src/components/ReviewStockImport/OverwriteRequestBox/OverwriteRequestBox.tsx",
+      "size": 7536,
+      "estimatedTokens": 1573
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ReviewStockImport/ReviewStockImport.scss",
+      "relativePath": "src/components/ReviewStockImport/ReviewStockImport.scss",
+      "size": 637,
+      "estimatedTokens": 195
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ReviewStockImport/ReviewStockImport.tsx",
+      "relativePath": "src/components/ReviewStockImport/ReviewStockImport.tsx",
+      "size": 12755,
+      "estimatedTokens": 2797
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/ReviewStockImport/ValidRequestBox/ValidRequestBox.tsx",
+      "relativePath": "src/components/ReviewStockImport/ValidRequestBox/ValidRequestBox.tsx",
+      "size": 6813,
+      "estimatedTokens": 1378
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/ImagePreview.tsx",
+      "relativePath": "src/components/RmaItemDialog/ImagePreview.tsx",
+      "size": 2682,
+      "estimatedTokens": 676
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RMAAddItemDialog.tsx",
+      "relativePath": "src/components/RmaItemDialog/RMAAddItemDialog.tsx",
+      "size": 10102,
+      "estimatedTokens": 2396
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RMAAddOrderItemDialog.tsx",
+      "relativePath": "src/components/RmaItemDialog/RMAAddOrderItemDialog.tsx",
+      "size": 11474,
+      "estimatedTokens": 2695
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RMAEditItemDialog.tsx",
+      "relativePath": "src/components/RmaItemDialog/RMAEditItemDialog.tsx",
+      "size": 12605,
+      "estimatedTokens": 2939
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RmaAddOrderItemDialogForm.tsx",
+      "relativePath": "src/components/RmaItemDialog/RmaAddOrderItemDialogForm.tsx",
+      "size": 9521,
+      "estimatedTokens": 2165
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RmaItemDialog.scss",
+      "relativePath": "src/components/RmaItemDialog/RmaItemDialog.scss",
+      "size": 1058,
+      "estimatedTokens": 290
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RmaItemDialogForm.tsx",
+      "relativePath": "src/components/RmaItemDialog/RmaItemDialogForm.tsx",
+      "size": 9638,
+      "estimatedTokens": 2191
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RmaItemDialogUtils.ts",
+      "relativePath": "src/components/RmaItemDialog/RmaItemDialogUtils.ts",
+      "size": 1770,
+      "estimatedTokens": 458
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaItemDialog/RmaViewItemDialog.tsx",
+      "relativePath": "src/components/RmaItemDialog/RmaViewItemDialog.tsx",
+      "size": 7311,
+      "estimatedTokens": 1646
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/BatchUpdateComponent.tsx",
+      "relativePath": "src/components/RmaRequest/BatchUpdateComponent.tsx",
+      "size": 4945,
+      "estimatedTokens": 1151
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/RmaRequestDate.tsx",
+      "relativePath": "src/components/RmaRequest/RmaRequestDate.tsx",
+      "size": 2744,
+      "estimatedTokens": 683
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/RmaRequestsGrid.tsx",
+      "relativePath": "src/components/RmaRequest/RmaRequestsGrid.tsx",
+      "size": 3953,
+      "estimatedTokens": 960
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/RmaRequestsGridMobileView.tsx",
+      "relativePath": "src/components/RmaRequest/RmaRequestsGridMobileView.tsx",
+      "size": 4788,
+      "estimatedTokens": 990
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/TableProperties.tsx",
+      "relativePath": "src/components/RmaRequest/TableProperties.tsx",
+      "size": 10137,
+      "estimatedTokens": 2520
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/RmaRequest/Utils.ts",
+      "relativePath": "src/components/RmaRequest/Utils.ts",
+      "size": 6989,
+      "estimatedTokens": 1806
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SearchField/SearchField.scss",
+      "relativePath": "src/components/SearchField/SearchField.scss",
+      "size": 111,
+      "estimatedTokens": 32
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SearchField/SearchField.tsx",
+      "relativePath": "src/components/SearchField/SearchField.tsx",
+      "size": 3762,
+      "estimatedTokens": 873
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SearchField/SearchFieldV1.scss",
+      "relativePath": "src/components/SearchField/SearchFieldV1.scss",
+      "size": 1816,
+      "estimatedTokens": 485
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SearchField/SearchFieldV2.tsx",
+      "relativePath": "src/components/SearchField/SearchFieldV2.tsx",
+      "size": 6559,
+      "estimatedTokens": 1472
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SideMenu/SideMenu.scss",
+      "relativePath": "src/components/SideMenu/SideMenu.scss",
+      "size": 3296,
+      "estimatedTokens": 959
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SideMenu/SideMenu.tsx",
+      "relativePath": "src/components/SideMenu/SideMenu.tsx",
+      "size": 13544,
+      "estimatedTokens": 2812
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SignaturePad/SignaturePad.scss",
+      "relativePath": "src/components/SignaturePad/SignaturePad.scss",
+      "size": 148,
+      "estimatedTokens": 40
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/SignaturePad/SignaturePad.tsx",
+      "relativePath": "src/components/SignaturePad/SignaturePad.tsx",
+      "size": 6588,
+      "estimatedTokens": 1576
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockAlertDialog/StockAlertDialog.tsx",
+      "relativePath": "src/components/StockAlertDialog/StockAlertDialog.tsx",
+      "size": 4468,
+      "estimatedTokens": 1000
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/AutoCheckoutPromptDialog.tsx",
+      "relativePath": "src/components/StockListComponents/AutoCheckoutPromptDialog.tsx",
+      "size": 2179,
+      "estimatedTokens": 491
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/CategoryFilter.tsx",
+      "relativePath": "src/components/StockListComponents/CategoryFilter.tsx",
+      "size": 2236,
+      "estimatedTokens": 501
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/PreviewDescription.tsx",
+      "relativePath": "src/components/StockListComponents/PreviewDescription.tsx",
+      "size": 584,
+      "estimatedTokens": 133
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockList.scss",
+      "relativePath": "src/components/StockListComponents/StockList.scss",
+      "size": 230,
+      "estimatedTokens": 61
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockList.tsx",
+      "relativePath": "src/components/StockListComponents/StockList.tsx",
+      "size": 2544,
+      "estimatedTokens": 574
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockListBuyOffer.tsx",
+      "relativePath": "src/components/StockListComponents/StockListBuyOffer.tsx",
+      "size": 6035,
+      "estimatedTokens": 1375
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockListFilterItems.tsx",
+      "relativePath": "src/components/StockListComponents/StockListFilterItems.tsx",
+      "size": 1166,
+      "estimatedTokens": 291
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockListItem.scss",
+      "relativePath": "src/components/StockListComponents/StockListItem.scss",
+      "size": 6152,
+      "estimatedTokens": 1742
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockListItem.tsx",
+      "relativePath": "src/components/StockListComponents/StockListItem.tsx",
+      "size": 29987,
+      "estimatedTokens": 6299
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockListUtils.tsx",
+      "relativePath": "src/components/StockListComponents/StockListUtils.tsx",
+      "size": 5663,
+      "estimatedTokens": 1369
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockLot/StockLotItemFooter.tsx",
+      "relativePath": "src/components/StockListComponents/StockLot/StockLotItemFooter.tsx",
+      "size": 427,
+      "estimatedTokens": 113
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockLot/StocklotIcon.tsx",
+      "relativePath": "src/components/StockListComponents/StockLot/StocklotIcon.tsx",
+      "size": 1099,
+      "estimatedTokens": 290
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockLot/stockLotUtils.ts",
+      "relativePath": "src/components/StockListComponents/StockLot/stockLotUtils.ts",
+      "size": 1583,
+      "estimatedTokens": 382
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StockPrice.tsx",
+      "relativePath": "src/components/StockListComponents/StockPrice.tsx",
+      "size": 2737,
+      "estimatedTokens": 634
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/StocklistAlert.tsx",
+      "relativePath": "src/components/StockListComponents/StocklistAlert.tsx",
+      "size": 2543,
+      "estimatedTokens": 491
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/WarehouseFilter.tsx",
+      "relativePath": "src/components/StockListComponents/WarehouseFilter.tsx",
+      "size": 7980,
+      "estimatedTokens": 1671
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListComponents/WarehouseGroupDescriptionDialog.tsx",
+      "relativePath": "src/components/StockListComponents/WarehouseGroupDescriptionDialog.tsx",
+      "size": 2619,
+      "estimatedTokens": 616
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListTutorialDialog/StockListTutorialDialog.scss",
+      "relativePath": "src/components/StockListTutorialDialog/StockListTutorialDialog.scss",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/StockListTutorialDialog/StockListTutorialDialog.tsx",
+      "relativePath": "src/components/StockListTutorialDialog/StockListTutorialDialog.tsx",
+      "size": 992,
+      "estimatedTokens": 242
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/TopMenu/AccountPopoverMenu/AccountPopoverMenu.tsx",
+      "relativePath": "src/components/TopMenu/AccountPopoverMenu/AccountPopoverMenu.tsx",
+      "size": 3796,
+      "estimatedTokens": 868
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/TopMenu/AccountPopoverMenu/AccountPopoverMenuUtils.ts",
+      "relativePath": "src/components/TopMenu/AccountPopoverMenu/AccountPopoverMenuUtils.ts",
+      "size": 1539,
+      "estimatedTokens": 365
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/TopMenu/AuthTopMenu.tsx",
+      "relativePath": "src/components/TopMenu/AuthTopMenu.tsx",
+      "size": 1140,
+      "estimatedTokens": 281
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/TopMenu/TopMenu.scss",
+      "relativePath": "src/components/TopMenu/TopMenu.scss",
+      "size": 1618,
+      "estimatedTokens": 464
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/TopMenu/TopMenu.tsx",
+      "relativePath": "src/components/TopMenu/TopMenu.tsx",
+      "size": 4930,
+      "estimatedTokens": 1178
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Walkthrough/Walkthrough.scss",
+      "relativePath": "src/components/Walkthrough/Walkthrough.scss",
+      "size": 604,
+      "estimatedTokens": 178
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Walkthrough/Walkthrough.tsx",
+      "relativePath": "src/components/Walkthrough/Walkthrough.tsx",
+      "size": 2961,
+      "estimatedTokens": 727
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Walkthrough/WalkthroughImpl.tsx",
+      "relativePath": "src/components/Walkthrough/WalkthroughImpl.tsx",
+      "size": 2596,
+      "estimatedTokens": 568
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Walkthrough/WalkthroughType.ts",
+      "relativePath": "src/components/Walkthrough/WalkthroughType.ts",
+      "size": 787,
+      "estimatedTokens": 191
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/components/Walkthrough/WalkthroughUtils.ts",
+      "relativePath": "src/components/Walkthrough/WalkthroughUtils.ts",
+      "size": 4491,
+      "estimatedTokens": 1035
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/ctx/StockLotCtx/StockLotCtx.tsx",
+      "relativePath": "src/ctx/StockLotCtx/StockLotCtx.tsx",
+      "size": 783,
+      "estimatedTokens": 189
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useBadgedTab.tsx",
+      "relativePath": "src/hooks/useBadgedTab.tsx",
+      "size": 976,
+      "estimatedTokens": 261
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useDataService.tsx",
+      "relativePath": "src/hooks/useDataService.tsx",
+      "size": 11054,
+      "estimatedTokens": 2494
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useDebounce.tsx",
+      "relativePath": "src/hooks/useDebounce.tsx",
+      "size": 490,
+      "estimatedTokens": 117
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useDialog.tsx",
+      "relativePath": "src/hooks/useDialog.tsx",
+      "size": 507,
+      "estimatedTokens": 122
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useFetchConfig.tsx",
+      "relativePath": "src/hooks/useFetchConfig.tsx",
+      "size": 6548,
+      "estimatedTokens": 1546
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useFilterV1.tsx",
+      "relativePath": "src/hooks/useFilterV1.tsx",
+      "size": 27205,
+      "estimatedTokens": 5694
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/usePagination.tsx",
+      "relativePath": "src/hooks/usePagination.tsx",
+      "size": 1445,
+      "estimatedTokens": 368
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/useCountryAndStateCodes.tsx",
+      "relativePath": "src/hooks/useQueryCustomHooks/useCountryAndStateCodes.tsx",
+      "size": 2398,
+      "estimatedTokens": 547
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/useDataService.tsx",
+      "relativePath": "src/hooks/useQueryCustomHooks/useDataService.tsx",
+      "size": 14023,
+      "estimatedTokens": 3410
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/useGetProofOfExport.tsx",
+      "relativePath": "src/hooks/useQueryCustomHooks/useGetProofOfExport.tsx",
+      "size": 1910,
+      "estimatedTokens": 482
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/useGetQueryCacheData.ts",
+      "relativePath": "src/hooks/useQueryCustomHooks/useGetQueryCacheData.ts",
+      "size": 248,
+      "estimatedTokens": 64
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/useGetUserInfoAndAuthorities.tsx",
+      "relativePath": "src/hooks/useQueryCustomHooks/useGetUserInfoAndAuthorities.tsx",
+      "size": 5247,
+      "estimatedTokens": 1234
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/hooks/useQueryCustomHooks/usePublicQueryStates.tsx",
+      "relativePath": "src/hooks/useQueryCustomHooks/usePublicQueryStates.tsx",
+      "size": 2787,
+      "estimatedTokens": 675
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/index.scss",
+      "relativePath": "src/index.scss",
+      "size": 2658,
+      "estimatedTokens": 618
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/index.tsx",
+      "relativePath": "src/index.tsx",
+      "size": 2129,
+      "estimatedTokens": 441
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/layouts/layout-dashboard-frame.tsx",
+      "relativePath": "src/layouts/layout-dashboard-frame.tsx",
+      "size": 702,
+      "estimatedTokens": 154
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/layouts/layout-dashboard-fullwidth.tsx",
+      "relativePath": "src/layouts/layout-dashboard-fullwidth.tsx",
+      "size": 647,
+      "estimatedTokens": 142
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/react-app-env.d.ts",
+      "relativePath": "src/react-app-env.d.ts",
+      "size": 41,
+      "estimatedTokens": 10
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/actions/actionTypes.ts",
+      "relativePath": "src/redux/actions/actionTypes.ts",
+      "size": 147,
+      "estimatedTokens": 40
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/actions/userActions.ts",
+      "relativePath": "src/redux/actions/userActions.ts",
+      "size": 5914,
+      "estimatedTokens": 1373
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/configureStore.ts",
+      "relativePath": "src/redux/configureStore.ts",
+      "size": 574,
+      "estimatedTokens": 116
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/middlewares/preFiltering.tsx",
+      "relativePath": "src/redux/middlewares/preFiltering.tsx",
+      "size": 606,
+      "estimatedTokens": 162
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/reducers/index.ts",
+      "relativePath": "src/redux/reducers/index.ts",
+      "size": 303,
+      "estimatedTokens": 65
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/redux/reducers/userReducer.ts",
+      "relativePath": "src/redux/reducers/userReducer.ts",
+      "size": 1067,
+      "estimatedTokens": 256
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/reportWebVitals.ts",
+      "relativePath": "src/reportWebVitals.ts",
+      "size": 441,
+      "estimatedTokens": 119
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/routes/AccountSetupPrivate.tsx",
+      "relativePath": "src/routes/AccountSetupPrivate.tsx",
+      "size": 1373,
+      "estimatedTokens": 273
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/routes/PublicAndPrivateRoute.tsx",
+      "relativePath": "src/routes/PublicAndPrivateRoute.tsx",
+      "size": 1181,
+      "estimatedTokens": 252
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/routes/PublicRoute.tsx",
+      "relativePath": "src/routes/PublicRoute.tsx",
+      "size": 1232,
+      "estimatedTokens": 288
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/setupTests.ts",
+      "relativePath": "src/setupTests.ts",
+      "size": 246,
+      "estimatedTokens": 53
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/styles/_customization.scss",
+      "relativePath": "src/styles/_customization.scss",
+      "size": 6734,
+      "estimatedTokens": 1932
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/styles/_elements.scss",
+      "relativePath": "src/styles/_elements.scss",
+      "size": 906,
+      "estimatedTokens": 245
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/styles/_helper.scss",
+      "relativePath": "src/styles/_helper.scss",
+      "size": 19150,
+      "estimatedTokens": 5278
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/styles/_utilities.scss",
+      "relativePath": "src/styles/_utilities.scss",
+      "size": 360,
+      "estimatedTokens": 125
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/styles/_variables.scss",
+      "relativePath": "src/styles/_variables.scss",
+      "size": 3657,
+      "estimatedTokens": 1417
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/swark-output/2025-08-20__12-18-45__diagram.md",
+      "relativePath": "src/swark-output/2025-08-20__12-18-45__diagram.md",
+      "size": 3149,
+      "estimatedTokens": 1348
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/swark-output/2025-08-20__12-18-45__log.md",
+      "relativePath": "src/swark-output/2025-08-20__12-18-45__log.md",
+      "size": 1801,
+      "estimatedTokens": 651
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/swark-output/2025-08-20__12-35-56__diagram.md",
+      "relativePath": "src/swark-output/2025-08-20__12-35-56__diagram.md",
+      "size": 5974,
+      "estimatedTokens": 2738
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/swark-output/2025-08-20__12-35-56__log.md",
+      "relativePath": "src/swark-output/2025-08-20__12-35-56__log.md",
+      "size": 4375,
+      "estimatedTokens": 1602
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/AuthorityTypes.tsx",
+      "relativePath": "src/types/AuthorityTypes.tsx",
+      "size": 612,
+      "estimatedTokens": 168
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/CardCheckout.tsx",
+      "relativePath": "src/types/CardCheckout.tsx",
+      "size": 1640,
+      "estimatedTokens": 403
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/DialogControl.tsx",
+      "relativePath": "src/types/DialogControl.tsx",
+      "size": 120,
+      "estimatedTokens": 31
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/Filters.ts",
+      "relativePath": "src/types/Filters.ts",
+      "size": 5679,
+      "estimatedTokens": 1393
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IAccountSetup.ts",
+      "relativePath": "src/types/IAccountSetup.ts",
+      "size": 4307,
+      "estimatedTokens": 1060
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IAccountSetupDetails.ts",
+      "relativePath": "src/types/IAccountSetupDetails.ts",
+      "size": 1640,
+      "estimatedTokens": 392
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IBillingShippingPreferences.ts",
+      "relativePath": "src/types/IBillingShippingPreferences.ts",
+      "size": 2883,
+      "estimatedTokens": 662
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IBillingShippingTypes.ts",
+      "relativePath": "src/types/IBillingShippingTypes.ts",
+      "size": 8433,
+      "estimatedTokens": 1867
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IFilterEngine.ts",
+      "relativePath": "src/types/IFilterEngine.ts",
+      "size": 9085,
+      "estimatedTokens": 2282
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IFilterEngineV2.ts",
+      "relativePath": "src/types/IFilterEngineV2.ts",
+      "size": 13623,
+      "estimatedTokens": 3296
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IFilterPreset.ts",
+      "relativePath": "src/types/IFilterPreset.ts",
+      "size": 1110,
+      "estimatedTokens": 256
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/ILogin.ts",
+      "relativePath": "src/types/ILogin.ts",
+      "size": 170,
+      "estimatedTokens": 40
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IMessageType.tsx",
+      "relativePath": "src/types/IMessageType.tsx",
+      "size": 303,
+      "estimatedTokens": 81
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/INetworkSystemTypes.ts",
+      "relativePath": "src/types/INetworkSystemTypes.ts",
+      "size": 265,
+      "estimatedTokens": 59
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IOrderTypes.ts",
+      "relativePath": "src/types/IOrderTypes.ts",
+      "size": 15526,
+      "estimatedTokens": 3573
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IPOFulfillment.ts",
+      "relativePath": "src/types/IPOFulfillment.ts",
+      "size": 1532,
+      "estimatedTokens": 385
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/ISystemTypes.ts",
+      "relativePath": "src/types/ISystemTypes.ts",
+      "size": 341,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/IUserInfo.ts",
+      "relativePath": "src/types/IUserInfo.ts",
+      "size": 863,
+      "estimatedTokens": 211
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/OrderOptions.tsx",
+      "relativePath": "src/types/OrderOptions.tsx",
+      "size": 2573,
+      "estimatedTokens": 567
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/POETypes.tsx",
+      "relativePath": "src/types/POETypes.tsx",
+      "size": 1129,
+      "estimatedTokens": 262
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/StockListTypes.tsx",
+      "relativePath": "src/types/StockListTypes.tsx",
+      "size": 3434,
+      "estimatedTokens": 807
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/checkoutConfirmation.tsx",
+      "relativePath": "src/types/checkoutConfirmation.tsx",
+      "size": 186,
+      "estimatedTokens": 45
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/enumToLabelsMap.tsx",
+      "relativePath": "src/types/enumToLabelsMap.tsx",
+      "size": 4422,
+      "estimatedTokens": 1258
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/types/pxnSettings.ts",
+      "relativePath": "src/types/pxnSettings.ts",
+      "size": 265,
+      "estimatedTokens": 68
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Account/Account.tsx",
+      "relativePath": "src/views/Account/Account.tsx",
+      "size": 651,
+      "estimatedTokens": 164
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountBalance/AccountBalance.scss",
+      "relativePath": "src/views/AccountBalance/AccountBalance.scss",
+      "size": 1363,
+      "estimatedTokens": 367
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountBalance/AccountBalance.tsx",
+      "relativePath": "src/views/AccountBalance/AccountBalance.tsx",
+      "size": 6947,
+      "estimatedTokens": 1547
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountBalanceSummary/AccountBalanceSummary.tsx",
+      "relativePath": "src/views/AccountBalanceSummary/AccountBalanceSummary.tsx",
+      "size": 2164,
+      "estimatedTokens": 493
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetup/AccountSetup.scss",
+      "relativePath": "src/views/AccountSetup/AccountSetup.scss",
+      "size": 1312,
+      "estimatedTokens": 385
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetup/AccountSetup.tsx",
+      "relativePath": "src/views/AccountSetup/AccountSetup.tsx",
+      "size": 13523,
+      "estimatedTokens": 2959
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupConfirmation/AccountSetupConfirmation.tsx",
+      "relativePath": "src/views/AccountSetupConfirmation/AccountSetupConfirmation.tsx",
+      "size": 2404,
+      "estimatedTokens": 544
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupDetails/AccountSetupDetails.scss",
+      "relativePath": "src/views/AccountSetupDetails/AccountSetupDetails.scss",
+      "size": 2048,
+      "estimatedTokens": 567
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupDetails/AccountSetupDetails.tsx",
+      "relativePath": "src/views/AccountSetupDetails/AccountSetupDetails.tsx",
+      "size": 10715,
+      "estimatedTokens": 2458
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupDocuments/AccountSetupDocuments.scss",
+      "relativePath": "src/views/AccountSetupDocuments/AccountSetupDocuments.scss",
+      "size": 950,
+      "estimatedTokens": 283
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupDocuments/AccountSetupDocuments.tsx",
+      "relativePath": "src/views/AccountSetupDocuments/AccountSetupDocuments.tsx",
+      "size": 12512,
+      "estimatedTokens": 2864
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupDocuments/AccountSetupDocumentsV1.tsx",
+      "relativePath": "src/views/AccountSetupDocuments/AccountSetupDocumentsV1.tsx",
+      "size": 12522,
+      "estimatedTokens": 2873
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupEUS/AccountSetupEUS.tsx",
+      "relativePath": "src/views/AccountSetupEUS/AccountSetupEUS.tsx",
+      "size": 15988,
+      "estimatedTokens": 3701
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupEUS/AccountSetupEUSV1.tsx",
+      "relativePath": "src/views/AccountSetupEUS/AccountSetupEUSV1.tsx",
+      "size": 14254,
+      "estimatedTokens": 3267
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupEUS/AccountSetupEUSV2.tsx",
+      "relativePath": "src/views/AccountSetupEUS/AccountSetupEUSV2.tsx",
+      "size": 14389,
+      "estimatedTokens": 3293
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AccountSetupEUSAddendum/AccountSetupEUSAddendum.tsx",
+      "relativePath": "src/views/AccountSetupEUSAddendum/AccountSetupEUSAddendum.tsx",
+      "size": 12912,
+      "estimatedTokens": 3014
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AddToExistingOrder/AddToExistingOrderV1.tsx",
+      "relativePath": "src/views/AddToExistingOrder/AddToExistingOrderV1.tsx",
+      "size": 11896,
+      "estimatedTokens": 2534
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionBidding/AuctionBidding.scss",
+      "relativePath": "src/views/AuctionBidding/AuctionBidding.scss",
+      "size": 5202,
+      "estimatedTokens": 1510
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionBidding/AuctionBidding.tsx",
+      "relativePath": "src/views/AuctionBidding/AuctionBidding.tsx",
+      "size": 7731,
+      "estimatedTokens": 1739
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionBidding/useAuctionBiddingController.tsx",
+      "relativePath": "src/views/AuctionBidding/useAuctionBiddingController.tsx",
+      "size": 8173,
+      "estimatedTokens": 1972
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionBidding/useAuctionBiddingModel.tsx",
+      "relativePath": "src/views/AuctionBidding/useAuctionBiddingModel.tsx",
+      "size": 4424,
+      "estimatedTokens": 1062
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionBidding/useAuctionData.tsx",
+      "relativePath": "src/views/AuctionBidding/useAuctionData.tsx",
+      "size": 3932,
+      "estimatedTokens": 923
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionList/AuctionList.scss",
+      "relativePath": "src/views/AuctionList/AuctionList.scss",
+      "size": 1178,
+      "estimatedTokens": 345
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionList/AuctionList.tsx",
+      "relativePath": "src/views/AuctionList/AuctionList.tsx",
+      "size": 2139,
+      "estimatedTokens": 511
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionList/AuctionListTabs.tsx",
+      "relativePath": "src/views/AuctionList/AuctionListTabs.tsx",
+      "size": 1991,
+      "estimatedTokens": 436
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionList/useAuctionListController.ts",
+      "relativePath": "src/views/AuctionList/useAuctionListController.ts",
+      "size": 2116,
+      "estimatedTokens": 517
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/AuctionList/useAuctionListModel.tsx",
+      "relativePath": "src/views/AuctionList/useAuctionListModel.tsx",
+      "size": 2562,
+      "estimatedTokens": 606
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Cart/Cart.scss",
+      "relativePath": "src/views/Cart/Cart.scss",
+      "size": 4356,
+      "estimatedTokens": 1385
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Cart/CartV1.tsx",
+      "relativePath": "src/views/Cart/CartV1.tsx",
+      "size": 41536,
+      "estimatedTokens": 9323
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Checkout/Checkout.scss",
+      "relativePath": "src/views/Checkout/Checkout.scss",
+      "size": 1278,
+      "estimatedTokens": 406
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Checkout/CheckoutV1.tsx",
+      "relativePath": "src/views/Checkout/CheckoutV1.tsx",
+      "size": 44690,
+      "estimatedTokens": 9318
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/CheckoutConfirmation/CheckoutConfirmationV1.tsx",
+      "relativePath": "src/views/CheckoutConfirmation/CheckoutConfirmationV1.tsx",
+      "size": 16673,
+      "estimatedTokens": 3665
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/ComplianceQuestionnaire/ComplianceQuestionnaire.tsx",
+      "relativePath": "src/views/ComplianceQuestionnaire/ComplianceQuestionnaire.tsx",
+      "size": 10916,
+      "estimatedTokens": 2483
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/CreateAccount/CreateAccount.scss",
+      "relativePath": "src/views/CreateAccount/CreateAccount.scss",
+      "size": 768,
+      "estimatedTokens": 231
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/CreateAccount/CreateAccount.tsx",
+      "relativePath": "src/views/CreateAccount/CreateAccount.tsx",
+      "size": 10816,
+      "estimatedTokens": 2537
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Dashboard/Dashboard.scss",
+      "relativePath": "src/views/Dashboard/Dashboard.scss",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Dashboard/Dashboard.tsx",
+      "relativePath": "src/views/Dashboard/Dashboard.tsx",
+      "size": 755,
+      "estimatedTokens": 191
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Homepage/Homepage.scss",
+      "relativePath": "src/views/Homepage/Homepage.scss",
+      "size": 300,
+      "estimatedTokens": 97
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Homepage/Homepage.test.tsx",
+      "relativePath": "src/views/Homepage/Homepage.test.tsx",
+      "size": 294,
+      "estimatedTokens": 65
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Homepage/Homepage.tsx",
+      "relativePath": "src/views/Homepage/Homepage.tsx",
+      "size": 798,
+      "estimatedTokens": 196
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/MasterPurchaseAgreement/MasterPurchaseAgreement.scss",
+      "relativePath": "src/views/MasterPurchaseAgreement/MasterPurchaseAgreement.scss",
+      "size": 230,
+      "estimatedTokens": 72
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/MasterPurchaseAgreement/MasterPurchaseAgreement.tsx",
+      "relativePath": "src/views/MasterPurchaseAgreement/MasterPurchaseAgreement.tsx",
+      "size": 7187,
+      "estimatedTokens": 1741
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/OrderConfirmation/OrderConfirmation.tsx",
+      "relativePath": "src/views/OrderConfirmation/OrderConfirmation.tsx",
+      "size": 12418,
+      "estimatedTokens": 2828
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Orders/OrderDetailsV1.tsx",
+      "relativePath": "src/views/Orders/OrderDetailsV1.tsx",
+      "size": 148151,
+      "estimatedTokens": 31110
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Orders/Orders.scss",
+      "relativePath": "src/views/Orders/Orders.scss",
+      "size": 8385,
+      "estimatedTokens": 2365
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Orders/OrdersV1.tsx",
+      "relativePath": "src/views/Orders/OrdersV1.tsx",
+      "size": 7201,
+      "estimatedTokens": 1584
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/POFulfillment/PoAwards.scss",
+      "relativePath": "src/views/POFulfillment/PoAwards.scss",
+      "size": 1418,
+      "estimatedTokens": 409
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/POFulfillment/PoAwards.tsx",
+      "relativePath": "src/views/POFulfillment/PoAwards.tsx",
+      "size": 8938,
+      "estimatedTokens": 2090
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/PaymentConfirmation/PayPal.tsx",
+      "relativePath": "src/views/PaymentConfirmation/PayPal.tsx",
+      "size": 4330,
+      "estimatedTokens": 2389
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/PaymentConfirmation/PaymentConfirmation.scss",
+      "relativePath": "src/views/PaymentConfirmation/PaymentConfirmation.scss",
+      "size": 240,
+      "estimatedTokens": 69
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/PaymentConfirmation/PaymentConfirmation.tsx",
+      "relativePath": "src/views/PaymentConfirmation/PaymentConfirmation.tsx",
+      "size": 2108,
+      "estimatedTokens": 479
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/PresignupStorefrontDivision/PresignupStorefrontDivision.scss",
+      "relativePath": "src/views/PresignupStorefrontDivision/PresignupStorefrontDivision.scss",
+      "size": 2584,
+      "estimatedTokens": 716
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/PresignupStorefrontDivision/PresignupStorefrontDivision.tsx",
+      "relativePath": "src/views/PresignupStorefrontDivision/PresignupStorefrontDivision.tsx",
+      "size": 5420,
+      "estimatedTokens": 1286
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/RMARequest/RmaRequest.scss",
+      "relativePath": "src/views/RMARequest/RmaRequest.scss",
+      "size": 4291,
+      "estimatedTokens": 1179
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/RMARequest/RmaRequest.tsx",
+      "relativePath": "src/views/RMARequest/RmaRequest.tsx",
+      "size": 12612,
+      "estimatedTokens": 3078
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/RMARequest/Tabs.tsx",
+      "relativePath": "src/views/RMARequest/Tabs.tsx",
+      "size": 1878,
+      "estimatedTokens": 403
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/RMARequestDetails/RMARequestDetails.scss",
+      "relativePath": "src/views/RMARequestDetails/RMARequestDetails.scss",
+      "size": 3612,
+      "estimatedTokens": 992
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/RMARequestDetails/RMARequestDetails.tsx",
+      "relativePath": "src/views/RMARequestDetails/RMARequestDetails.tsx",
+      "size": 11784,
+      "estimatedTokens": 2771
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Returns/Returns.tsx",
+      "relativePath": "src/views/Returns/Returns.tsx",
+      "size": 624,
+      "estimatedTokens": 161
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferences.scss",
+      "relativePath": "src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferences.scss",
+      "size": 383,
+      "estimatedTokens": 116
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferences.tsx",
+      "relativePath": "src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferences.tsx",
+      "size": 26663,
+      "estimatedTokens": 5386
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferencesUtils.ts",
+      "relativePath": "src/views/ShippingAndBillingPreferences/ShippingAndBillingPreferencesUtils.ts",
+      "size": 5493,
+      "estimatedTokens": 1104
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/ShippingConsentForm/ShippingConsentForm.tsx",
+      "relativePath": "src/views/ShippingConsentForm/ShippingConsentForm.tsx",
+      "size": 6419,
+      "estimatedTokens": 1539
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Stock/Stock.scss",
+      "relativePath": "src/views/Stock/Stock.scss",
+      "size": 7167,
+      "estimatedTokens": 2057
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Stock/Stock.tsx",
+      "relativePath": "src/views/Stock/Stock.tsx",
+      "size": 107426,
+      "estimatedTokens": 21944
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/StockAlerts/StockAlerts.tsx",
+      "relativePath": "src/views/StockAlerts/StockAlerts.tsx",
+      "size": 11858,
+      "estimatedTokens": 2343
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/views/Terms/Terms.tsx",
+      "relativePath": "src/views/Terms/Terms.tsx",
+      "size": 640,
+      "estimatedTokens": 169
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/BannerDialog/index.tsx",
+      "relativePath": "src/widgets/BannerDialog/index.tsx",
+      "size": 1758,
+      "estimatedTokens": 399
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/BotActivity/BotActivityWrapper.tsx",
+      "relativePath": "src/widgets/BotActivity/BotActivityWrapper.tsx",
+      "size": 2521,
+      "estimatedTokens": 517
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/GoogleAnalytics.tsx",
+      "relativePath": "src/widgets/GoogleAnalytics.tsx",
+      "size": 11537,
+      "estimatedTokens": 2692
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/Helpdesk.scss",
+      "relativePath": "src/widgets/Helpdesk.scss",
+      "size": 330,
+      "estimatedTokens": 101
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/Helpdesk.tsx",
+      "relativePath": "src/widgets/Helpdesk.tsx",
+      "size": 1118,
+      "estimatedTokens": 273
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/PersistedScreens/DeactivatedTenant.scss",
+      "relativePath": "src/widgets/PersistedScreens/DeactivatedTenant.scss",
+      "size": 351,
+      "estimatedTokens": 107
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/PersistedScreens/DeactivatedTenant.tsx",
+      "relativePath": "src/widgets/PersistedScreens/DeactivatedTenant.tsx",
+      "size": 433,
+      "estimatedTokens": 102
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/PersistedScreens/PersistedSnackbar.tsx",
+      "relativePath": "src/widgets/PersistedScreens/PersistedSnackbar.tsx",
+      "size": 620,
+      "estimatedTokens": 137
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/PersistedScreens/index.tsx",
+      "relativePath": "src/widgets/PersistedScreens/index.tsx",
+      "size": 562,
+      "estimatedTokens": 128
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/Pusher/index.tsx",
+      "relativePath": "src/widgets/Pusher/index.tsx",
+      "size": 2926,
+      "estimatedTokens": 712
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/Rum/index.tsx",
+      "relativePath": "src/widgets/Rum/index.tsx",
+      "size": 1137,
+      "estimatedTokens": 272
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/WhatsApp.scss",
+      "relativePath": "src/widgets/WhatsApp.scss",
+      "size": 927,
+      "estimatedTokens": 298
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/WhatsApp.tsx",
+      "relativePath": "src/widgets/WhatsApp.tsx",
+      "size": 1073,
+      "estimatedTokens": 260
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/googleAnalyticsUtils.ts",
+      "relativePath": "src/widgets/googleAnalyticsUtils.ts",
+      "size": 1071,
+      "estimatedTokens": 265
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/src/widgets/index.tsx",
+      "relativePath": "src/widgets/index.tsx",
+      "size": 2357,
+      "estimatedTokens": 543
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/tsconfig.json",
+      "relativePath": "tsconfig.json",
+      "size": 556,
+      "estimatedTokens": 157
+    },
+    {
+      "path": "/Users/praveen-ncompass/playground/POC/Zip/phonex-buyer/yarn.lock",
+      "relativePath": "yarn.lock",
+      "size": 579228,
+      "estimatedTokens": 254703
+    }
+  ],
+  "worstCaseTokens": 872977
+}

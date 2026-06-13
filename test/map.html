@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_72c041e482afe2c98d6eacf0c38ed46c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_72c041e482afe2c98d6eacf0c38ed46c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_72c041e482afe2c98d6eacf0c38ed46c = L.map(
+                "map_72c041e482afe2c98d6eacf0c38ed46c",
+                {
+                    center: [12.9716, 77.5946],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fb84f465dd7d111b8d3e44769966eb62 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fb84f465dd7d111b8d3e44769966eb62.addTo(map_72c041e482afe2c98d6eacf0c38ed46c);
+        
+    
+            var marker_45ead9fa84823f78c18990c53d186bd3 = L.marker(
+                [12.9716, 77.5946],
+                {
+}
+            ).addTo(map_72c041e482afe2c98d6eacf0c38ed46c);
+        
+    
+        var popup_17a4e100aeab9807c57bb68201c3885d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab3237e3cb2e4a6d981fe1bc0ebee61d = $(`<div id="html_ab3237e3cb2e4a6d981fe1bc0ebee61d" style="width: 100.0%; height: 100.0%;">WKT Point (77.5946, 12.9716)</div>`)[0];
+                popup_17a4e100aeab9807c57bb68201c3885d.setContent(html_ab3237e3cb2e4a6d981fe1bc0ebee61d);
+            
+        
+
+        marker_45ead9fa84823f78c18990c53d186bd3.bindPopup(popup_17a4e100aeab9807c57bb68201c3885d)
+        ;
+
+        
+    
+    
+            var marker_fd2c5c597e9f3356fa741a3d74fc11a4 = L.marker(
+                [19.076, 72.8777],
+                {
+}
+            ).addTo(map_72c041e482afe2c98d6eacf0c38ed46c);
+        
+    
+        var popup_a734e7cae471ab563f6f728c9b64f153 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9504316ca561e9ed1df1fd28ab1a135e = $(`<div id="html_9504316ca561e9ed1df1fd28ab1a135e" style="width: 100.0%; height: 100.0%;">WKT Point (72.8777, 19.076)</div>`)[0];
+                popup_a734e7cae471ab563f6f728c9b64f153.setContent(html_9504316ca561e9ed1df1fd28ab1a135e);
+            
+        
+
+        marker_fd2c5c597e9f3356fa741a3d74fc11a4.bindPopup(popup_a734e7cae471ab563f6f728c9b64f153)
+        ;
+
+        
+    
+    
+            var marker_c9a4c7812ded6d74dff2cd0cd935af22 = L.marker(
+                [22.5726, 88.3639],
+                {
+}
+            ).addTo(map_72c041e482afe2c98d6eacf0c38ed46c);
+        
+    
+        var popup_b616fea7cf6f808cad34087af0d9b148 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41c00d7771713d93857c1a405098c628 = $(`<div id="html_41c00d7771713d93857c1a405098c628" style="width: 100.0%; height: 100.0%;">WKT Point (88.3639, 22.5726)</div>`)[0];
+                popup_b616fea7cf6f808cad34087af0d9b148.setContent(html_41c00d7771713d93857c1a405098c628);
+            
+        
+
+        marker_c9a4c7812ded6d74dff2cd0cd935af22.bindPopup(popup_b616fea7cf6f808cad34087af0d9b148)
+        ;
+
+        
+    
+    
+            var marker_6b3c55d3a96b129d8183e2ff31d91be8 = L.marker(
+                [28.6139, 77.209],
+                {
+}
+            ).addTo(map_72c041e482afe2c98d6eacf0c38ed46c);
+        
+    
+        var popup_3f714d040dd227bd4eb0b7f0c6a30f94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a59782e96ccb2186b961cf5aceaa7883 = $(`<div id="html_a59782e96ccb2186b961cf5aceaa7883" style="width: 100.0%; height: 100.0%;">WKT Point (77.209, 28.6139)</div>`)[0];
+                popup_3f714d040dd227bd4eb0b7f0c6a30f94.setContent(html_a59782e96ccb2186b961cf5aceaa7883);
+            
+        
+
+        marker_6b3c55d3a96b129d8183e2ff31d91be8.bindPopup(popup_3f714d040dd227bd4eb0b7f0c6a30f94)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,219 @@
+apiVersion: v1alpha1
+kind: Diagram
+metadata:
+  name: blog-application-architecture
+  description: Multi-layered blog application with authentication and external resources
+spec:
+  nodes:
+    # Business Logic Layer
+    - id: blog-crud
+      label: "Manages blog\npost CRUD\noperations"
+      group: business
+      icon: document
+      
+    - id: request-validator
+      label: "Validates\nincoming\nrequest data"
+      group: business
+      icon: checkmark
+      
+    - id: comment-handler
+      label: "Handles\ncomment\ncreation and\nmoderation"
+      group: business
+      icon: chat
+      
+    - id: user-manager
+      label: "Manages\nuser profile\nand account\noperations"
+      group: business
+      icon: user
+      
+    # Data Access Layer
+    - id: user-data-access
+      label: "Provides\ndatabase\naccess for\nuser entities"
+      group: data
+      icon: database
+      
+    - id: blog-data-access
+      label: "Handles blog\npost database\noperations"
+      group: data
+      icon: document
+      
+    - id: comment-persistence
+      label: "Manages\ncomment\ndata persistence"
+      group: data
+      icon: storage
+      
+    - id: cache-coordinator
+      label: "Coordinates\ncaching\nstrategies and\noperations"
+      group: data
+      icon: cache
+      
+    # Authentication Layer
+    - id: jwt-processor
+      label: "Validates and\nprocesses\nJWT tokens"
+      group: auth
+      icon: key
+      
+    - id: auth-handler
+      label: "Handles user\nauthentication and\nregistration\nrequests"
+      group: auth
+      icon: security
+      
+    - id: password-encryptor
+      label: "Encrypts and\nvalidates user\npasswords"
+      group: auth
+      icon: lock
+      
+    - id: input-validator
+      label: "Validates user\ninput and\nbusiness rules"
+      group: auth
+      icon: shield
+      
+    # External Resources
+    - id: app-settings
+      label: "Manages app\nsettings and\nenvironment\nvariables"
+      group: external
+      icon: settings
+      
+    - id: user-store
+      label: "Stores user\ndata and\ncontent"
+      group: external
+      icon: database
+      
+    - id: cache-store
+      label: "Caches\nfrequently\naccessed\ndata"
+      group: external
+      icon: cache
+      
+    - id: third-party
+      label: "Provides\nthird-party\nservices"
+      group: external
+      icon: cloud
+      
+    # API Controller (top layer)
+    - id: api-controller
+      label: "Controls API\nrequests\nfrom external\nuser"
+      group: api
+      icon: gateway
+      
+  connections:
+    # API to Business Logic
+    - from: api-controller
+      to: blog-crud
+      label: "Blog requests"
+      
+    - from: api-controller
+      to: comment-handler
+      label: "Comment requests"
+      
+    - from: api-controller
+      to: user-manager
+      label: "User requests"
+      
+    # Business Logic validation
+    - from: blog-crud
+      to: request-validator
+      label: "Validate data"
+      
+    - from: comment-handler
+      to: request-validator
+      label: "Validate data"
+      
+    - from: user-manager
+      to: request-validator
+      label: "Validate data"
+      
+    # Business Logic to Data Access
+    - from: blog-crud
+      to: blog-data-access
+      label: "CRUD operations"
+      
+    - from: comment-handler
+      to: comment-persistence
+      label: "Store comments"
+      
+    - from: user-manager
+      to: user-data-access
+      label: "User data ops"
+      
+    # Authentication flows
+    - from: api-controller
+      to: auth-handler
+      label: "Auth requests"
+      
+    - from: auth-handler
+      to: jwt-processor
+      label: "Process tokens"
+      
+    - from: auth-handler
+      to: password-encryptor
+      label: "Handle passwords"
+      
+    - from: auth-handler
+      to: input-validator
+      label: "Validate input"
+      
+    # Data Access to External Resources
+    - from: user-data-access
+      to: user-store
+      label: "Store/retrieve"
+      
+    - from: blog-data-access
+      to: user-store
+      label: "Store/retrieve"
+      
+    - from: comment-persistence
+      to: user-store
+      label: "Store/retrieve"
+      
+    - from: cache-coordinator
+      to: cache-store
+      label: "Cache ops"
+      
+    # Cross-layer caching
+    - from: blog-data-access
+      to: cache-coordinator
+      label: "Cache strategy"
+      
+    - from: user-data-access
+      to: cache-coordinator
+      label: "Cache strategy"
+      
+    # External integrations
+    - from: auth-handler
+      to: third-party
+      label: "External auth"
+      
+    - from: blog-crud
+      to: app-settings
+      label: "Get config"
+      
+    - from: user-manager
+      to: app-settings
+      label: "Get config"
+      
+  groups:
+    api:
+      label: "API Layer"
+      color: "#4A90E2"
+      
+    business:
+      label: "Business Logic Layer"
+      color: "#7ED321"
+      
+    data:
+      label: "Data Access Layer"
+      color: "#F5A623"
+      
+    auth:
+      label: "Authentication Layer"
+      color: "#D0021B"
+      
+    external:
+      label: "External Resources"
+      color: "#9013FE"
+      
+  settings:
+    layout: hierarchical
+    direction: top-down
+    spacing: medium
+    theme: dark

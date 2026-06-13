@@ -1,0 +1,676 @@
+You are an expert code analysis assistant. You will be given a complete list of all file paths in a repository, including files in all folders and subfolders. Your job is to:
+1. Analyze the entire file list and repository structure, considering all folders and nested files.
+2. Identify the programming languages used across all files.
+3. Maximize inclusion: include as many files as possible in the 'fileInclusion' list, only ignoring files that are clearly unnecessary (such as build artifacts, dependencies, coverage reports, and documentation). If you are unsure about a file, include it.
+**Repository Analysis:**
+- Total Files: 472
+- Commit: 3568a97a - SP-8729 - refactored changes.
+**File System:**
+```
+phonex-buyer/
+├── .gitignore
+├── README.md
+├── json/
+│   └── walkthrough.json
+├── package.json
+├── public/
+│   ├── _redirects
+│   ├── index.html
+│   ├── manifest.json
+│   ├── quill.snow.css
+│   └── robots.txt
+├── scripts/
+│   └── sonar-code-analysis.sh
+├── src/
+│   ├── ApiMapping.tsx
+│   ├── I18n.tsx
+│   ├── I18nTranslationKeys.ts
+│   ├── PhonexRouter.tsx
+│   ├── Theme.tsx
+│   ├── _lib/
+│   │   ├── constant.ts
+│   │   ├── formatting.ts
+│   │   ├── icons.tsx
+│   │   ├── lib.tsx
+│   │   ├── rules.tsx
+│   │   ├── tagUtil.ts
+│   │   └── util.ts
+│   ├── aws-exports.ts
+│   ├── components/
+│   │   ├── AccountBalanceGrid/
+│   │   │   ├── AccountBalanceFilters.tsx
+│   │   │   ├── AccountBalanceGrid.scss
+│   │   │   ├── AccountBalanceGrid.tsx
+│   │   │   ├── AccountBalanceUtils.tsx
+│   │   │   └── FilterDateV1.tsx
+│   │   ├── AccountSetup/
+│   │   │   ├── AccountDetailsDocuments.tsx
+│   │   │   ├── AccountSectionClosed.tsx
+│   │   │   ├── AccountSectionOpen.tsx
+│   │   │   ├── AccountSetupPopup.tsx
+│   │   │   ├── AccountSetupSection.tsx
+│   │   │   ├── AccountSetupUtils.tsx
+│   │   │   ├── DocumentsFillAddressSection.tsx
+│   │   │   ├── EUSAdditionalParties.tsx
+│   │   │   ├── EUSAdditonalPartyInfo.tsx
+│   │   │   ├── EUSAddressAdditionalPartiesSection.tsx
+│   │   │   ├── EUSCompanyOrIndividual.tsx
+│   │   │   ├── EUSFormAddress.tsx
+│   │   │   ├── EUSFormRadio.tsx
+│   │   │   ├── EUSSignature.tsx
+│   │   │   ├── MasterAgreementContent.tsx
+│   │   │   ├── MissingDocumentDialog.tsx
+│   │   │   └── swark-output/
+│   │   │       ├── 2025-08-20__12-20-02__diagram.md
+│   │   │       └── 2025-08-20__12-20-02__log.md
+│   │   ├── AtomComponents/
+│   │   │   ├── AddFab.tsx
+│   │   │   ├── BackButton.tsx
+│   │   │   ├── FileWell.tsx
+│   │   │   ├── GlobalButtonWrapper.tsx
+│   │   │   ├── GridLoadingOverlay.tsx
+│   │   │   ├── IFrame.tsx
+│   │   │   ├── PXPrompt.tsx
+│   │   │   ├── PXTooltip.tsx
+│   │   │   ├── Pagination.tsx
+│   │   │   ├── PrimaryBadge.tsx
+│   │   │   ├── PrimaryButton.tsx
+│   │   │   ├── PrimaryCheckbox.tsx
+│   │   │   ├── PrimaryIconButton.tsx
+│   │   │   ├── PrimaryRadio.tsx
+│   │   │   ├── PrimarySwitch.tsx
+│   │   │   ├── SecondaryButton.tsx
+│   │   │   ├── ShadowDom.tsx
+│   │   │   ├── SideMenuIcons.tsx
+│   │   │   ├── TertiaryButton.tsx
+│   │   │   ├── TextField.tsx
+│   │   │   ├── UnsanitizedShadowDom.tsx
+│   │   │   └── index.ts
+│   │   ├── AuctionBidding/
+│   │   │   ├── AuctionBiddingGrid.tsx
+│   │   │   ├── AuctionBiddingMobileCard.tsx
+│   │   │   ├── AuctionBiddingTabs.tsx
+│   │   │   ├── AuctionBidingUtils.tsx
+│   │   │   ├── BidConfirmationDialog.tsx
+│   │   │   ├── BidLotDescription.tsx
+│   │   │   ├── ConfirmImportedBids.tsx
+│   │   │   ├── ImportLotGrid.tsx
+│   │   │   ├── LotDetailsPopup.tsx
+│   │   │   ├── LotDetailsPopupGrid.tsx
+│   │   │   ├── MaxBidComponent.tsx
+│   │   │   ├── RefreshData.tsx
+│   │   │   ├── TimeRemainingComponent.tsx
+│   │   │   └── useTimeCountDown.ts
+│   │   ├── AuctionBiddingFilter/
+│   │   │   ├── AttributeFilters.tsx
+│   │   │   ├── AuctionFilters.tsx
+│   │   │   ├── BiddingSearchField.tsx
+│   │   │   ├── FilterGroups.tsx
+│   │   │   ├── FilterUtils.ts
+│   │   │   └── useFilterSearchAndTab.tsx
+│   │   ├── AuctionList/
+│   │   │   ├── AuctionListGrid.tsx
+│   │   │   └── AuctionListGridMobileView.tsx
+│   │   ├── BillingShippingComponent/
+│   │   │   ├── AddressClosedViewComponent.tsx
+│   │   │   ├── BillMyAccountComponent.tsx
+│   │   │   ├── BillingShippingClosedRowV1.tsx
+│   │   │   ├── BillingShippingComponent.scss
+│   │   │   ├── BillingShippingComponentUtils.ts
+│   │   │   ├── BillingShippingComponentV1.tsx
+│   │   │   ├── BillingShippingOpenRowV1.tsx
+│   │   │   ├── Instructions.tsx
+│   │   │   ├── RenderAddressClosedView.tsx
+│   │   │   ├── RenderOpenAddressView.tsx
+│   │   │   ├── RequestAQuote.tsx
+│   │   │   ├── ShippingMethodInsuredV1.tsx
+│   │   │   └── ShippingSectionDescription.tsx
+│   │   ├── BillingShippingPreference/
+│   │   │   ├── BillingShippingPreference.tsx
+│   │   │   └── BillingShippingPreferenceUtils.tsx
+│   │   ├── BulkOfferImportDialog/
+│   │   │   └── BulkOfferImportDialog.tsx
+│   │   ├── BuyOfferDialog/
+│   │   │   ├── BuyOfferAlert.tsx
+│   │   │   ├── BuyOfferDialog.scss
+│   │   │   └── BuyOfferDialog.tsx
+│   │   ├── CartComponents/
+│   │   │   ├── CartItems/
+│   │   │   │   ├── CartItem.scss
+│   │   │   │   ├── CartItem.tsx
+│   │   │   │   ├── CartItemV1.tsx
+│   │   │   │   ├── OffersAwaitingTenantItem.tsx
+│   │   │   │   ├── ReadyToCheckoutAndAwaitingBuyerItem.tsx
+│   │   │   │   └── WarehousesLinks.tsx
+│   │   │   ├── CartSnackbars/
+│   │   │   │   └── CartSnackbars.tsx
+│   │   │   ├── CartTabs/
+│   │   │   │   └── CartTabs.tsx
+│   │   │   ├── OffersAwaitingTenantBox/
+│   │   │   │   ├── OffersAwaitingTenantBox.tsx
+│   │   │   │   └── OffersAwaitingTenantBoxV1.tsx
+│   │   │   ├── ReadyForAutoCheckoutBox/
+│   │   │   │   ├── Item.tsx
+│   │   │   │   └── ReadyForAutoCheckoutBox.tsx
+│   │   │   └── ReadyToCheckoutAndAwaitingBuyerBox/
+│   │   │       ├── ReadyToCheckoutAndAwaitingBuyerBox.scss
+│   │   │       └── ReadyToCheckoutAndAwaitingBuyerBoxV1.tsx
+│   │   ├── CheckoutComponents/
+│   │   │   ├── BlockedVerifiedProspectDialog/
+│   │   │   │   └── BlockedVerifiedProspectDialog.tsx
+│   │   │   ├── CalculationBarMetrics/
+│   │   │   │   └── CalculationBarMetrics.tsx
+│   │   │   ├── CalculationMetrics/
+│   │   │   │   └── CalculationMetrics.tsx
+│   │   │   ├── CheckoutAdressAndShipping/
+│   │   │   │   └── CheckoutAddressAndShippingV1.tsx
+│   │   │   ├── CheckoutAdressAndShippingOptions/
+│   │   │   │   ├── CheckoutAddressAndShippingOptionsV1.tsx
+│   │   │   │   ├── CheckoutShippingInstructions.tsx
+│   │   │   │   ├── CheckoutShippingMethodInsuredV1.tsx
+│   │   │   │   └── ShippingSectionDescription.tsx
+│   │   │   ├── CheckoutBillingShippingPreferences/
+│   │   │   │   └── CheckoutBillingShippingPreferences.tsx
+│   │   │   ├── CheckoutButtons/
+│   │   │   │   └── CheckoutButtonsV1.tsx
+│   │   │   ├── CheckoutCalculation/
+│   │   │   │   └── CheckoutCalculationV1.tsx
+│   │   │   ├── CheckoutCalculationBar/
+│   │   │   │   └── CheckoutCalculationBar.tsx
+│   │   │   ├── CheckoutUtils.ts
+│   │   │   ├── ReviewOrderCalculationBar/
+│   │   │   │   └── ReviewOrderCalculationBar.tsx
+│   │   │   └── TermsOfSale/
+│   │   │       └── TermsOfSale.tsx
+│   │   ├── ComplianceQuestionnaire/
+│   │   │   ├── CQAddress.tsx
+│   │   │   ├── CQFormRadio.tsx
+│   │   │   ├── CQMultipleTextField.tsx
+│   │   │   ├── CQOwnerShipSection.tsx
+│   │   │   ├── CQQuestion.tsx
+│   │   │   ├── CQSignature.tsx
+│   │   │   ├── ExportCQSection.tsx
+│   │   │   └── InitialCQSection.tsx
+│   │   ├── Config/
+│   │   │   └── ConfigWrapper.tsx
+│   │   ├── CreateAccount/
+│   │   │   ├── CreateAccountField.tsx
+│   │   │   └── utils.tsx
+│   │   ├── DailyReportDialog/
+│   │   │   └── DailyReportDialog.tsx
+│   │   ├── DateField/
+│   │   │   ├── DateDialog.tsx
+│   │   │   ├── DateField.scss
+│   │   │   ├── DateField.tsx
+│   │   │   └── DateFieldV1.tsx
+│   │   ├── DateFormatWrapper/
+│   │   │   └── DateFormatWrapper.tsx
+│   │   ├── Dialog/
+│   │   │   └── Dialog.tsx
+│   │   ├── DynamicField/
+│   │   │   ├── CheckBoxField.tsx
+│   │   │   ├── DefaultTextField.tsx
+│   │   │   ├── DisplayField.tsx
+│   │   │   ├── DynamicField.tsx
+│   │   │   ├── HtmlDisplayField.tsx
+│   │   │   ├── NumericTextField.tsx
+│   │   │   ├── RadioField.tsx
+│   │   │   ├── SelectTextField.tsx
+│   │   │   ├── SwitchField.tsx
+│   │   │   └── TextSelectField.tsx
+│   │   ├── EChart/
+│   │   │   └── EChart.tsx
+│   │   ├── EmailVerification/
+│   │   │   ├── EmailVerification.scss
+│   │   │   └── EmailVerification.tsx
+│   │   ├── ErrorHandlers/
+│   │   │   ├── ErrorHandler.tsx
+│   │   │   ├── ErrorUtils.ts
+│   │   │   ├── ErrorView.scss
+│   │   │   ├── ErrorView.tsx
+│   │   │   ├── PageLevelErrorBoundary.tsx
+│   │   │   ├── RootLevelErrorBoundary.scss
+│   │   │   └── RootLevelErrorBoundary.tsx
+│   │   ├── FileWell/
+│   │   │   ├── FileWell.scss
+│   │   │   └── FileWell.tsx
+│   │   ├── FilterDate/
+│   │   │   ├── FilterDate.scss
+│   │   │   └── FilterDate.tsx
+│   │   ├── FiltersPersistWrapper/
+│   │   │   └── FiltersPersistWrapper.tsx
+│   │   ├── FiltersV2/
+│   │   │   ├── FilterAddedToStock/
+│   │   │   │   └── FilterAddedToStock.tsx
+│   │   │   ├── FilterAdvanceOutOfStock/
+│   │   │   │   └── FilterAdvanceOutOfStock.tsx
+│   │   │   ├── FilterBuyers/
+│   │   │   │   └── FilterBuyers.tsx
+│   │   │   ├── FilterCategory/
+│   │   │   │   └── FilterCategory.tsx
+│   │   │   ├── FilterChip.tsx
+│   │   │   ├── FilterComponentsList.ts
+│   │   │   ├── FilterDate/
+│   │   │   │   └── FilterDate.scss
+│   │   │   ├── FilterDaysToSell/
+│   │   │   │   └── FilterDaysToSell.tsx
+│   │   │   ├── FilterDialog/
+│   │   │   │   └── FilterDialog.tsx
+│   │   │   ├── FilterItemsAvailability/
+│   │   │   │   └── FilterItemsAvailability.tsx
+│   │   │   ├── FilterMultiSelect/
+│   │   │   │   └── FilterMultiSelect.tsx
+│   │   │   ├── FilterMultiSelectChip/
+│   │   │   │   └── FilterMultiSelectChip.tsx
+│   │   │   ├── FilterMultiSelectSearch/
+│   │   │   │   └── FilterMultiSelectSearch.tsx
+│   │   │   ├── FilterNew/
+│   │   │   │   └── FilterNew.tsx
+│   │   │   ├── FilterOfferRange/
+│   │   │   │   └── FilterOfferRange.tsx
+│   │   │   ├── FilterOptions.tsx
+│   │   │   ├── FilterSingleSelect/
+│   │   │   │   └── FilterSingleSelect.tsx
+│   │   │   ├── FilterSingleSelectSearch/
+│   │   │   │   └── FilterSingleSelectSearch.tsx
+│   │   │   ├── FilterSupplierOffer/
+│   │   │   │   └── FilterSupplierOffer.tsx
+│   │   │   ├── FilterTopOffers/
+│   │   │   │   └── FilterTopOffers.tsx
+│   │   │   ├── Filters.tsx
+│   │   │   ├── FiltersUtils.ts
+│   │   │   ├── SwitchFilterChip.tsx
+│   │   │   ├── index.scss
+│   │   │   └── utils.ts
+│   │   ├── Footer/
+│   │   │   └── Footer.tsx
+│   │   ├── GradePopup/
+│   │   │   ├── GradeDescription.tsx
+│   │   │   ├── GradeMixChart.tsx
+│   │   │   ├── GradeMixChartPreview.tsx
+│   │   │   ├── GradePopup.scss
+│   │   │   └── GradePopup.tsx
+│   │   ├── ImportExportDropdown/
+│   │   │   └── ImportExportDropdown.tsx
+│   │   ├── ImportPopup/
+│   │   │   └── ImportPopup.tsx
+│   │   ├── Instructions/
+│   │   │   └── Instructions.tsx
+│   │   ├── LoadingDialog/
+│   │   │   └── LoadingDialog.tsx
+│   │   ├── Login/
+│   │   │   ├── AuthWrapper.scss
+│   │   │   ├── AuthWrapper.tsx
+│   │   │   ├── LoginFlow.tsx
+│   │   │   ├── NewPassword.tsx
+│   │   │   ├── PasswordPolicyPopover.tsx
+│   │   │   ├── ResetPasswordFlow.tsx
+│   │   │   └── UnauthorizedUserDialog.tsx
+│   │   ├── Logo/
+│   │   │   ├── Logo.scss
+│   │   │   └── Logo.tsx
+│   │   ├── MinOrderQtyDialog/
+│   │   │   ├── MinOrderQtyDialog.scss
+│   │   │   └── MinOrderQtyDialog.tsx
+│   │   ├── OrderAttachments/
+│   │   │   ├── AwaitingDocumentInfo.tsx
+│   │   │   ├── OpenAttachments.scss
+│   │   │   ├── OrderAttachments.tsx
+│   │   │   └── OrderAttachmentsDialog.tsx
+│   │   ├── OrderLineItems/
+│   │   │   └── OrderLineItemsV1.tsx
+│   │   ├── OrdersComponents/
+│   │   │   ├── BulkOrderChangesRow.tsx
+│   │   │   ├── InsufficientAvailabilityDialog.scss
+│   │   │   ├── InsufficientAvailabilityDialog.tsx
+│   │   │   ├── LatePaymentPolicy.tsx
+│   │   │   ├── OrderFulfillmentButtonsV2.tsx
+│   │   │   ├── OrderTotalsV1.tsx
+│   │   │   ├── OrderUtils.tsx
+│   │   │   ├── OrderValidations.ts
+│   │   │   ├── PXTable.scss
+│   │   │   ├── PXTable.tsx
+│   │   │   ├── PXTableV1.tsx
+│   │   │   ├── ReservationAndCancellationTermsDialog.tsx
+│   │   │   ├── SnackBarWithActionProps.tsx
+│   │   │   └── TermsOfReservationAndCancellation.tsx
+│   │   ├── PoAwards/
+│   │   │   ├── DateRangeAnalyticsSelector.tsx
+│   │   │   ├── DateSelectorComponent.tsx
+│   │   │   ├── PoAwardsGrid.tsx
+│   │   │   ├── PoAwardsGridMobileView.tsx
+│   │   │   ├── TableCellComponents.tsx
+│   │   │   ├── TableProperties.tsx
+│   │   │   └── Utils.ts
+│   │   ├── PopOverMenu/
+│   │   │   └── PopOverMenu.tsx
+│   │   ├── PresignupStorefrontDivision/
+│   │   │   ├── SalesRepCardInfo.tsx
+│   │   │   └── StorefrontDivisionCard.tsx
+│   │   ├── Progress/
+│   │   │   ├── Progress.tsx
+│   │   │   └── SectionProgress.tsx
+│   │   ├── ProofOfExportDialog/
+│   │   │   ├── FetchProofOfExport.tsx
+│   │   │   └── ProofOfExportDialog.tsx
+│   │   ├── RMARequestDetails/
+│   │   │   ├── RMARequestDetailHeader.tsx
+│   │   │   ├── RMARequestDetailsActions.tsx
+│   │   │   ├── RMARequestDetailsGrid.tsx
+│   │   │   ├── RMARequestReturnInstructions.tsx
+│   │   │   ├── RMARequestsDetailsGridMobileView.tsx
+│   │   │   ├── Utils.tsx
+│   │   │   └── gridUtils.tsx
+│   │   ├── ReviewStockImport/
+│   │   │   ├── InvalidRequestBox/
+│   │   │   │   └── InvalidRequest.tsx
+│   │   │   ├── OverwriteRequestBox/
+│   │   │   │   └── OverwriteRequestBox.tsx
+│   │   │   ├── ReviewStockImport.scss
+│   │   │   ├── ReviewStockImport.tsx
+│   │   │   └── ValidRequestBox/
+│   │   │       └── ValidRequestBox.tsx
+│   │   ├── RmaItemDialog/
+│   │   │   ├── ImagePreview.tsx
+│   │   │   ├── RMAAddItemDialog.tsx
+│   │   │   ├── RMAAddOrderItemDialog.tsx
+│   │   │   ├── RMAEditItemDialog.tsx
+│   │   │   ├── RmaAddOrderItemDialogForm.tsx
+│   │   │   ├── RmaItemDialog.scss
+│   │   │   ├── RmaItemDialogForm.tsx
+│   │   │   ├── RmaItemDialogUtils.ts
+│   │   │   └── RmaViewItemDialog.tsx
+│   │   ├── RmaRequest/
+│   │   │   ├── BatchUpdateComponent.tsx
+│   │   │   ├── RmaRequestDate.tsx
+│   │   │   ├── RmaRequestsGrid.tsx
+│   │   │   ├── RmaRequestsGridMobileView.tsx
+│   │   │   ├── TableProperties.tsx
+│   │   │   └── Utils.ts
+│   │   ├── SearchField/
+│   │   │   ├── SearchField.scss
+│   │   │   ├── SearchField.tsx
+│   │   │   ├── SearchFieldV1.scss
+│   │   │   └── SearchFieldV2.tsx
+│   │   ├── SideMenu/
+│   │   │   ├── SideMenu.scss
+│   │   │   └── SideMenu.tsx
+│   │   ├── SignaturePad/
+│   │   │   ├── SignaturePad.scss
+│   │   │   └── SignaturePad.tsx
+│   │   ├── StockAlertDialog/
+│   │   │   └── StockAlertDialog.tsx
+│   │   ├── StockListComponents/
+│   │   │   ├── AutoCheckoutPromptDialog.tsx
+│   │   │   ├── CategoryFilter.tsx
+│   │   │   ├── PreviewDescription.tsx
+│   │   │   ├── StockList.scss
+│   │   │   ├── StockList.tsx
+│   │   │   ├── StockListBuyOffer.tsx
+│   │   │   ├── StockListFilterItems.tsx
+│   │   │   ├── StockListItem.scss
+│   │   │   ├── StockListItem.tsx
+│   │   │   ├── StockListUtils.tsx
+│   │   │   ├── StockLot/
+│   │   │   │   ├── StockLotItemFooter.tsx
+│   │   │   │   ├── StocklotIcon.tsx
+│   │   │   │   └── stockLotUtils.ts
+│   │   │   ├── StockPrice.tsx
+│   │   │   ├── StocklistAlert.tsx
+│   │   │   ├── WarehouseFilter.tsx
+│   │   │   └── WarehouseGroupDescriptionDialog.tsx
+│   │   ├── StockListTutorialDialog/
+│   │   │   ├── StockListTutorialDialog.scss
+│   │   │   └── StockListTutorialDialog.tsx
+│   │   ├── TopMenu/
+│   │   │   ├── AccountPopoverMenu/
+│   │   │   │   ├── AccountPopoverMenu.tsx
+│   │   │   │   └── AccountPopoverMenuUtils.ts
+│   │   │   ├── AuthTopMenu.tsx
+│   │   │   ├── TopMenu.scss
+│   │   │   └── TopMenu.tsx
+│   │   └── Walkthrough/
+│   │       ├── Walkthrough.scss
+│   │       ├── Walkthrough.tsx
+│   │       ├── WalkthroughImpl.tsx
+│   │       ├── WalkthroughType.ts
+│   │       └── WalkthroughUtils.ts
+│   ├── ctx/
+│   │   └── StockLotCtx/
+│   │       └── StockLotCtx.tsx
+│   ├── hooks/
+│   │   ├── useBadgedTab.tsx
+│   │   ├── useDataService.tsx
+│   │   ├── useDebounce.tsx
+│   │   ├── useDialog.tsx
+│   │   ├── useFetchConfig.tsx
+│   │   ├── useFilterV1.tsx
+│   │   ├── usePagination.tsx
+│   │   └── useQueryCustomHooks/
+│   │       ├── useCountryAndStateCodes.tsx
+│   │       ├── useDataService.tsx
+│   │       ├── useGetProofOfExport.tsx
+│   │       ├── useGetQueryCacheData.ts
+│   │       ├── useGetUserInfoAndAuthorities.tsx
+│   │       └── usePublicQueryStates.tsx
+│   ├── index.scss
+│   ├── index.tsx
+│   ├── layouts/
+│   │   ├── layout-dashboard-frame.tsx
+│   │   └── layout-dashboard-fullwidth.tsx
+│   ├── react-app-env.d.ts
+│   ├── redux/
+│   │   ├── actions/
+│   │   │   ├── actionTypes.ts
+│   │   │   └── userActions.ts
+│   │   ├── configureStore.ts
+│   │   ├── middlewares/
+│   │   │   └── preFiltering.tsx
+│   │   └── reducers/
+│   │       ├── index.ts
+│   │       └── userReducer.ts
+│   ├── reportWebVitals.ts
+│   ├── routes/
+│   │   ├── AccountSetupPrivate.tsx
+│   │   ├── PublicAndPrivateRoute.tsx
+│   │   └── PublicRoute.tsx
+│   ├── setupTests.ts
+│   ├── styles/
+│   │   ├── _customization.scss
+│   │   ├── _elements.scss
+│   │   ├── _helper.scss
+│   │   ├── _utilities.scss
+│   │   └── _variables.scss
+│   ├── swark-output/
+│   │   ├── 2025-08-20__12-18-45__diagram.md
+│   │   ├── 2025-08-20__12-18-45__log.md
+│   │   ├── 2025-08-20__12-35-56__diagram.md
+│   │   └── 2025-08-20__12-35-56__log.md
+│   ├── types/
+│   │   ├── AuthorityTypes.tsx
+│   │   ├── CardCheckout.tsx
+│   │   ├── DialogControl.tsx
+│   │   ├── Filters.ts
+│   │   ├── IAccountSetup.ts
+│   │   ├── IAccountSetupDetails.ts
+│   │   ├── IBillingShippingPreferences.ts
+│   │   ├── IBillingShippingTypes.ts
+│   │   ├── IFilterEngine.ts
+│   │   ├── IFilterEngineV2.ts
+│   │   ├── IFilterPreset.ts
+│   │   ├── ILogin.ts
+│   │   ├── IMessageType.tsx
+│   │   ├── INetworkSystemTypes.ts
+│   │   ├── IOrderTypes.ts
+│   │   ├── IPOFulfillment.ts
+│   │   ├── ISystemTypes.ts
+│   │   ├── IUserInfo.ts
+│   │   ├── OrderOptions.tsx
+│   │   ├── POETypes.tsx
+│   │   ├── StockListTypes.tsx
+│   │   ├── checkoutConfirmation.tsx
+│   │   ├── enumToLabelsMap.tsx
+│   │   └── pxnSettings.ts
+│   ├── views/
+│   │   ├── Account/
+│   │   │   └── Account.tsx
+│   │   ├── AccountBalance/
+│   │   │   ├── AccountBalance.scss
+│   │   │   └── AccountBalance.tsx
+│   │   ├── AccountBalanceSummary/
+│   │   │   └── AccountBalanceSummary.tsx
+│   │   ├── AccountSetup/
+│   │   │   ├── AccountSetup.scss
+│   │   │   └── AccountSetup.tsx
+│   │   ├── AccountSetupConfirmation/
+│   │   │   └── AccountSetupConfirmation.tsx
+│   │   ├── AccountSetupDetails/
+│   │   │   ├── AccountSetupDetails.scss
+│   │   │   └── AccountSetupDetails.tsx
+│   │   ├── AccountSetupDocuments/
+│   │   │   ├── AccountSetupDocuments.scss
+│   │   │   ├── AccountSetupDocuments.tsx
+│   │   │   └── AccountSetupDocumentsV1.tsx
+│   │   ├── AccountSetupEUS/
+│   │   │   ├── AccountSetupEUS.tsx
+│   │   │   ├── AccountSetupEUSV1.tsx
+│   │   │   └── AccountSetupEUSV2.tsx
+│   │   ├── AccountSetupEUSAddendum/
+│   │   │   └── AccountSetupEUSAddendum.tsx
+│   │   ├── AddToExistingOrder/
+│   │   │   └── AddToExistingOrderV1.tsx
+│   │   ├── AuctionBidding/
+│   │   │   ├── AuctionBidding.scss
+│   │   │   ├── AuctionBidding.tsx
+│   │   │   ├── useAuctionBiddingController.tsx
+│   │   │   ├── useAuctionBiddingModel.tsx
+│   │   │   └── useAuctionData.tsx
+│   │   ├── AuctionList/
+│   │   │   ├── AuctionList.scss
+│   │   │   ├── AuctionList.tsx
+│   │   │   ├── AuctionListTabs.tsx
+│   │   │   ├── useAuctionListController.ts
+│   │   │   └── useAuctionListModel.tsx
+│   │   ├── Cart/
+│   │   │   ├── Cart.scss
+│   │   │   └── CartV1.tsx
+│   │   ├── Checkout/
+│   │   │   ├── Checkout.scss
+│   │   │   └── CheckoutV1.tsx
+│   │   ├── CheckoutConfirmation/
+│   │   │   └── CheckoutConfirmationV1.tsx
+│   │   ├── ComplianceQuestionnaire/
+│   │   │   └── ComplianceQuestionnaire.tsx
+│   │   ├── CreateAccount/
+│   │   │   ├── CreateAccount.scss
+│   │   │   └── CreateAccount.tsx
+│   │   ├── Dashboard/
+│   │   │   ├── Dashboard.scss
+│   │   │   └── Dashboard.tsx
+│   │   ├── Homepage/
+│   │   │   ├── Homepage.scss
+│   │   │   ├── Homepage.test.tsx
+│   │   │   └── Homepage.tsx
+│   │   ├── MasterPurchaseAgreement/
+│   │   │   ├── MasterPurchaseAgreement.scss
+│   │   │   └── MasterPurchaseAgreement.tsx
+│   │   ├── OrderConfirmation/
+│   │   │   └── OrderConfirmation.tsx
+│   │   ├── Orders/
+│   │   │   ├── OrderDetailsV1.tsx
+│   │   │   ├── Orders.scss
+│   │   │   └── OrdersV1.tsx
+│   │   ├── POFulfillment/
+│   │   │   ├── PoAwards.scss
+│   │   │   └── PoAwards.tsx
+│   │   ├── PaymentConfirmation/
+│   │   │   ├── PayPal.tsx
+│   │   │   ├── PaymentConfirmation.scss
+│   │   │   └── PaymentConfirmation.tsx
+│   │   ├── PresignupStorefrontDivision/
+│   │   │   ├── PresignupStorefrontDivision.scss
+│   │   │   └── PresignupStorefrontDivision.tsx
+│   │   ├── RMARequest/
+│   │   │   ├── RmaRequest.scss
+│   │   │   ├── RmaRequest.tsx
+│   │   │   └── Tabs.tsx
+│   │   ├── RMARequestDetails/
+│   │   │   ├── RMARequestDetails.scss
+│   │   │   └── RMARequestDetails.tsx
+│   │   ├── Returns/
+│   │   │   └── Returns.tsx
+│   │   ├── ShippingAndBillingPreferences/
+│   │   │   ├── ShippingAndBillingPreferences.scss
+│   │   │   ├── ShippingAndBillingPreferences.tsx
+│   │   │   └── ShippingAndBillingPreferencesUtils.ts
+│   │   ├── ShippingConsentForm/
+│   │   │   └── ShippingConsentForm.tsx
+│   │   ├── Stock/
+│   │   │   ├── Stock.scss
+│   │   │   └── Stock.tsx
+│   │   ├── StockAlerts/
+│   │   │   └── StockAlerts.tsx
+│   │   └── Terms/
+│   │       └── Terms.tsx
+│   └── widgets/
+│       ├── BannerDialog/
+│       │   └── index.tsx
+│       ├── BotActivity/
+│       │   └── BotActivityWrapper.tsx
+│       ├── GoogleAnalytics.tsx
+│       ├── Helpdesk.scss
+│       ├── Helpdesk.tsx
+│       ├── PersistedScreens/
+│       │   ├── DeactivatedTenant.scss
+│       │   ├── DeactivatedTenant.tsx
+│       │   ├── PersistedSnackbar.tsx
+│       │   └── index.tsx
+│       ├── Pusher/
+│       │   └── index.tsx
+│       ├── Rum/
+│       │   └── index.tsx
+│       ├── WhatsApp.scss
+│       ├── WhatsApp.tsx
+│       ├── googleAnalyticsUtils.ts
+│       └── index.tsx
+├── tsconfig.json
+└── yarn.lock
+```
+**Current Files:**
+.gitignore 
+README.md 
+json/walkthrough.json 
+package.json 
+public/_redirects 
+public/index.html 
+public/manifest.json 
+public/quill.snow.css 
+public/robots.txt 
+scripts/sonar-code-analysis.sh 
+**Response Format (JSON):**
+{
+  "detectedLanguages": [
+    "typescript",
+    "javascript",
+    "python",
+    "java"
+  ],
+  "fileInclusion": [
+    // List of file paths to keep (from all folders and subfolders, maximize inclusion)
+    "src/user/extension.ts",
+    "src/types.ts",
+    "src/utils/helper.ts",
+    "src/components/Button/index.tsx",
+    // ...
+  ],
+  "fileIgnored": [
+    // List of file paths to ignore (only files that are clearly unnecessary)
+    "node_modules/some-lib/index.js",
+    "dist/bundle.js",
+    "docs/README.md",
+    "build/assets/logo.png",
+    "coverage/report.html",
+    // ...
+  ]
+}
+Analyze the repository and return the valid JSON as described above, making sure to maximize inclusion and only ignore files that are clearly unnecessary.

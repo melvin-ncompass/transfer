@@ -1,0 +1,950 @@
+Batch Summary Report
+Generated: 2025-09-09T07:15:33.897Z
+Repository: c:\Users\Melvin M Shajan\Downloads\Zip\Zip\phonex-saas-buyer-onboarding
+Commit: a747b8c - Merged in SP-10783-buyer-redirecting-to-admin-site-instead-of-buyer-site-in-the-email (pull request #509)
+Total Estimated Tokens: 598861
+Token Threshold (70%): 85365
+LLM Batching Strategy: Split files into 8 batches by logical grouping (configs, utilities, controllers, services, models, infra, tests) ensuring estimated tokens per batch remain under 85365
+
+=== BATCH PROCESSING DETAILS ===
+
+
+batch information
+number 1
+description: Core configs and root-level templates
+file patterns: buildspec.yaml, templates/*
+estimated tokens: 600
+actual files processed: 1
+files involved:
+  buildspec.yaml
+
+batch summary
+{
+  "detectedLanguages": [
+    "yaml"
+  ],
+  "fileInclusion": {
+    "yaml": [
+      "buildspec.yaml"
+    ]
+  },
+  "fileIgnored": [],
+  "ignoringPattern": {
+    "yaml": [
+      "#.*",
+      "\\bDEBUG:\\b.*",
+      "console\\.(log|info|warn|error|debug|trace)\\s*[:=]?.*",
+      "\\bdebugger\\b",
+      "!!\\w+",
+      "\\&\\w+",
+      "\\*\\w+",
+      "%\\w+",
+      "\\btest\\b.*",
+      "\\bplaceholder\\b.*"
+    ]
+  }
+}
+---------------------
+
+
+batch information
+number 2
+description: Utilities - general helpers and constants
+file patterns: src/utilities/*.{ts,js}
+estimated tokens: 7700
+actual files processed: 222
+files involved:
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{
+  "detectedLanguages": [
+    "markdown"
+  ],
+  "fileInclusion": {
+    "markdown": [
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md",
+      "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md",
+      "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md",
+      "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md"
+    ]
+  },
+  "fileIgnored": [
+    "node_modules/some-lib/index.js",
+    "dist/bundle.js",
+    "docs/README.md",
+    "build/assets/logo.png",
+    "coverage/report.html"
+  ],
+  "ignoringPattern": {
+    "markdown": [
+      "<!--[\\s\\S]*?-->",
+      "\\[!\\[.*?\\]\\(.*?\\)\\]:?\\s*.*", 
+      "^(>\\s?).*", 
+      "^(\\s*- \\[ \\].*)$", 
+      "(?m)^\\s*`{3}[\\s\\S]*?`{3}\\s*$"
+    ]
+  }
+}
+---------------------
+
+
+batch information
+number 3
+description: Utilities - kinesis, lambda, logging, notification
+file patterns: src/utilities/kinesis-model/*, src/utilities/lambda/*, src/utilities/logger*, src/utilities/notification*
+estimated tokens: 6600
+actual files processed: 147
+files involved:
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{"detectedLanguages":["markdown"],"fileInclusion":{"markdown":["swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md"],"fileIgnored":["src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md (duplicate)","swark-output\\2025-08-20__12-05-55__diagram.md (duplicates omitted)","swark-output\\2025-08-20__12-05-55__log.md (duplicates omitted)","swark-output\\2025-08-20__12-10-12__diagram.md (duplicates omitted)","swark-output\\2025-08-20__12-10-12__log.md (duplicates omitted)","swark-output\\2025-08-21__12-25-16__all-three-diagram.md (duplicates omitted)","swark-output\\2025-08-21__12-25-16__all-three-log.md (duplicates omitted)","swark-output\\2025-08-25__18-35-54__all-three-diagram.md (duplicates omitted)","swark-output\\2025-08-25__18-35-54__all-three-log.md (duplicates omitted)"],"ignoringPattern":{"markdown":["^<!--([\\s\\S]*?)-->","^\\s*#.*$","^\\s*>.*$","\\b(debug|trace|example|sample)\\b.*","\\bTODO\\b.*","\\bFIXME\\b.*"]}}
+---------------------
+
+
+batch information
+number 4
+description: API handlers and controllers
+file patterns: src/**/controllers/*, src/**/handlers/*, src/**/api/*
+estimated tokens: 8800
+actual files processed: 109
+files involved:
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{"detectedLanguages":["markdown"],"fileInclusion":{"markdown":["swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md"],"fileIgnored":["swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md"],"ignoringPattern":{"markdown":["<!--([\\s\\S]*?)-->","^\\s*<!--.*$","\\bDEBUG:\\b.*","\\bTRACE:\\b.*","^\\s*TODO:.*","^\\s*FIXME:.*"]}}
+---------------------
+
+
+batch information
+number 5
+description: Services and business logic
+file patterns: src/**/services/*, src/**/use-cases/*
+estimated tokens: 8800
+actual files processed: 89
+files involved:
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{"detectedLanguages":["markdown"],"fileInclusion":{"markdown":["src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md"],"fileIgnored":["(none)"]},"ignoringPattern":{"markdown":["^<!--([\\s\\S]*?)-->","^\\s*<!--.*-->\\s*$","^\\s*#\\s*DEBUG[:\\s].*$","^\\s*console\\.(log|info|warn|error|debug)\\s*\\([^\\)]*\\)\\s*;?","^\\s*\\[DEBUG\\].*$","^\\s*TODO:.*$","^\\s*NOTE:.*$"]}}
+---------------------
+
+
+batch information
+number 6
+description: Models, schemas, and DTOs
+file patterns: src/**/models/*, src/**/schemas/*, src/**/dto/*
+estimated tokens: 7700
+actual files processed: 70
+files involved:
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{"detectedLanguages":["markdown"],"fileInclusion":{"markdown":["swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md","src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md","src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","swark-output\\2025-08-20__12-05-55__diagram.md","swark-output\\2025-08-20__12-05-55__log.md","swark-output\\2025-08-20__12-10-12__diagram.md","swark-output\\2025-08-20__12-10-12__log.md","swark-output\\2025-08-21__12-25-16__all-three-diagram.md","swark-output\\2025-08-21__12-25-16__all-three-log.md","swark-output\\2025-08-25__18-35-54__all-three-diagram.md","swark-output\\2025-08-25__18-35-54__all-three-log.md","src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md","src\\swark-output\\2025-08-21__18-25-06__all-three-log.md","src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md","src\\swark-output\\2025-08-22__11-48-14__all-three-log.md"]},"fileIgnored":["(none)"],"ignoringPattern":{"markdown":["<!--([\\s\\S]*?)-->","^\\s*<!--([\\s\\S]*?)-->\\s*$","^\\s*\\[!\\[.*\\]\\(.*\\)\\].*$","^\\s*```(?:[a-zA-Z0-9+-]*)[\\s\\S]*?```","^\\s*\\*\\*?Note:.*$","^\\s*\\bDEBUG\\b.*$","^\\s*console\\.log\\([^\\)]*\\).*","^\\s*print\\([^\\)]*\\).*"]}}
+---------------------
+
+
+batch information
+number 7
+description: Infrastructure, deployment, and CI/CD scripts
+file patterns: infra/**, deployment/**, *.yml, *.yaml
+estimated tokens: 5200
+actual files processed: 2
+files involved:
+  buildspec.yaml
+  templates\local-template.yaml
+
+batch summary
+{"detectedLanguages":["yaml"],"fileInclusion":{"yaml":["buildspec.yaml","templates\\local-template.yaml"]},"fileIgnored":[],"ignoringPattern":{"yaml":["#.*","(^|\\n)\\s*-\\s*debug:.*(\\n|$)","\\bAWSTemplateFormatVersion:\\b.*","\\bDescription:\\b.*"]}}
+---------------------
+
+
+batch information
+number 8
+description: Tests, mocks, and miscellaneous utilities
+file patterns: test/**, __mocks__/**, src/**/utils/*, scripts/**
+estimated tokens: 7600
+actual files processed: 53
+files involved:
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md
+  src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md
+  src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  swark-output\2025-08-20__12-05-55__diagram.md
+  swark-output\2025-08-20__12-05-55__log.md
+  swark-output\2025-08-20__12-10-12__diagram.md
+  swark-output\2025-08-20__12-10-12__log.md
+  swark-output\2025-08-21__12-25-16__all-three-diagram.md
+  swark-output\2025-08-21__12-25-16__all-three-log.md
+  swark-output\2025-08-25__18-35-54__all-three-diagram.md
+  swark-output\2025-08-25__18-35-54__all-three-log.md
+  src\swark-output\2025-08-21__18-25-06__all-three-diagram.md
+  src\swark-output\2025-08-21__18-25-06__all-three-log.md
+  src\swark-output\2025-08-22__11-48-14__all-three-diagram.md
+  src\swark-output\2025-08-22__11-48-14__all-three-log.md
+
+batch summary
+{
+  "detectedLanguages": [
+    "markdown"
+  ],
+  "fileInclusion": {
+    "markdown": [
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md",
+      "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md",
+      "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md",
+      "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md",
+      "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "swark-output\\2025-08-20__12-05-55__log.md",
+      "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "swark-output\\2025-08-20__12-10-12__log.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md"
+    ]
+  },
+  "fileIgnored": [],
+  "ignoringPattern": {
+    "markdown": [
+      "<!--[\\s\\S]*?-->",
+      "^>.*$",
+      "^\\s*\\[!?\\w+\\]:.*$",
+      "^\\s*```(?:[a-zA-Z0-9+\\-]*)[\\s\\S]*?^\\s*```\\s*$",
+      "^\\s*\\*\\*?\\s*Note:.*$",
+      "^\\s*\\*\\s*TODO:.*$"
+    ]
+  }
+}
+---------------------
+

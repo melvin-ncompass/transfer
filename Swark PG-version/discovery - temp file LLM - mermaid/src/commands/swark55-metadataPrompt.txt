@@ -1,0 +1,550 @@
+You are an expert code analysis assistant. You will be given a complete list of all file paths in a repository, including files in all folders and subfolders. Your job is to:
+
+1. Analyze the entire file list and repository structure, considering all folders and nested files.
+2. Identify the programming languages used across all files.
+3. For each detected programming language, map the relevant file paths into that language.
+4. Ignoring files that are clearly unnecessary (such as build artifacts, dependencies, coverage reports, documentation, style files, and type definitions). If you are unsure about a file, include it.
+5. Generate content filtering patterns for each programming language to remove unwanted code like comments, logging statements, debug code, test blocks, and boilerplate.
+6. **CRITICAL: Batch Analysis Decision** - Determine if this repository needs to be processed in batches due to token limits:
+   - Consider the estimatedPathttokens if you think its going to reach 70% of max token when we include the file content Only then split into batches
+   - If batching is needed, determine optimal number of batches with 10% file overlap for maintaining context
+   - Ensure each batch has logical grouping (related modules/components together)
+   - Overlap should include key interface files, main entry points, and shared utilities
+
+**Repository Analysis:**
+- Total Files: 419
+- Commit: 0f0c647 - Merged in test (pull request #249)
+
+**Current Files (with path token estimates):**
+.gitignore (4 path tokens)
+architecture-d2-diagram.md (8 path tokens)
+architecture-eraser-diagram.md (9 path tokens)
+architecture-mermaid-diagram.md (9 path tokens)
+architecture.d2 (5 path tokens)
+architecture.eraserdiagram (8 path tokens)
+architecture.mmd (5 path tokens)
+batch-summaries.txt (6 path tokens)
+buildspec.yaml (5 path tokens)
+database\release-1.43.0\CREATE_TABLE_tenant_sales_rep.sql (20 path tokens)
+database\release-1.44.0\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql (24 path tokens)
+database\release-1.44.0\PROSPECT_tables_DDL.sql (17 path tokens)
+database\release-1.44.0\UPDATE_customer_list_setttings_registration_status.sql (25 path tokens)
+database\release-1.44.1\buyer_onboarding_settings_v2.sql (19 path tokens)
+database\release-1.44.1\buyer_onboarding_settings_vanilla_json.sql (22 path tokens)
+database\release-1.44.1\email-templates.sql (16 path tokens)
+database\release-1.44.1\prod_account_creation_instruction.sql (21 path tokens)
+database\release-1.44.1\prod_account_setup_instruction.sql (20 path tokens)
+database\release-1.44.1\prod_add_customer_type.sql (18 path tokens)
+database\release-1.44.1\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql (28 path tokens)
+database\release-1.44.1\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql (31 path tokens)
+database\release-1.44.1\prod_update_admin_role_authority_mapping.sql (22 path tokens)
+database\release-1.44.1\prod_update_all_admin_authority.sql (20 path tokens)
+database\release-1.44.1\prod_update_owner_authority.sql (19 path tokens)
+database\release-1.44.1\remove-unique-constraint-from-prospect_user.sql (23 path tokens)
+database\release-1.46.0\buyer_onboarding_settings_update_Type1V2.sql (22 path tokens)
+database\release-1.46.0\buyer_onboarding_settings_update_WSCV2.sql (22 path tokens)
+database\release-1.46.0\PROSPECT_table_DDL.sql (17 path tokens)
+database\release-1.49.0\SP-4968-new-permissions-for-prospect-update.sql (23 path tokens)
+database\release-1.49.0\SP-5459-update_buyer_info_sections.sql (21 path tokens)
+database\release-1.52.0\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql (28 path tokens)
+database\release-1.52.0\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql (27 path tokens)
+database\release-1.52.0\SP-5884-add-unique-constraint-prospect_id.DDL.sql (25 path tokens)
+database\release-1.52.0\WeSell_customer_mandatory_business_license_changes.sql (25 path tokens)
+database\release-1.57.0\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql (26 path tokens)
+database\release-1.57.0\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql (28 path tokens)
+database\release-1.64.0\buyer-onboarding-settings-update-status-transition.DDL.sql (27 path tokens)
+database\release-1.64.0\SP-7664-buyer-status-code-settings.DDL.sql (23 path tokens)
+database\release-1.66.0\SP-7747-add-new-column-to-prospect.sql (21 path tokens)
+database\release-1.66.1\SP-7747-add-authorities-to-admin-users.sql (22 path tokens)
+database\release-1.66.1\SP-7747-populate-a-new-permission.sql (21 path tokens)
+database\release-1.66.1\SP-7747-set-timestamps-and-set-default-7-days.sql (24 path tokens)
+database\release-1.67.0\SP-7749-add-new-field-buyer_onboarding_settings.sql (24 path tokens)
+database\release-1.71.0\SP-8573-WSC-update-EUS-version.sql (20 path tokens)
+database\release-1.71.0\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql (27 path tokens)
+database\release-1.76.1\SP-9440-update-incorrect-country_code.sql (22 path tokens)
+database\release-1.78.0\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql (31 path tokens)
+database\release-1.78.0\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql (26 path tokens)
+database\release-1.78.0\SP-9385-vanilla-document-rules-script.sql (22 path tokens)
+database\release-1.79.0\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql (30 path tokens)
+database\release-1.79.0\SP-8971-add-encrypted-fields-to-BO-settings.sql (23 path tokens)
+database\release-1.79.0\SP-8971-vanilla-document-rules-script.sql (22 path tokens)
+database\release-1.79.0\SP-9856-bo-history-tables.DDL.sql (21 path tokens)
+database\release-1.79.0\SP-9856-bo-one-time-update-to-history-tables.sql (23 path tokens)
+database\release-1.79.0\SP-9856-bo-triggers.DDL.sql (19 path tokens)
+database\release-1.81.0\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql (26 path tokens)
+database\release-1.81.0\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql (25 path tokens)
+database\release-1.81.0\SP-10127-add-accessDeniedStatusCodes.sql (21 path tokens)
+database\release-1.83.0\SP-10283-bulk-resend-invite-async-mode-query.sql (23 path tokens)
+events\admin-decision-event.json (10 path tokens)
+events\business-billing-event.json (11 path tokens)
+events\cognito-event.json (9 path tokens)
+events\driver-fn-event.json (9 path tokens)
+events\generate-required-document-event.json (13 path tokens)
+events\prospect-create-consumer.json (11 path tokens)
+events\sqs-consumer.json (8 path tokens)
+events\starter-fn-event.json (9 path tokens)
+events\submit-event.json (8 path tokens)
+filtered-filesystem\batch1\batch-1-manifest.md (15 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-fn\convert-to-customer.ts (27 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-fn\decision-utils.ts (26 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-fn\index.ts (24 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-fn\reject-prospect.ts (26 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-fn\verify-prospect.ts (26 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\controller\convert-to-customer.ts (33 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\controller\reject-prospect.ts (32 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\controller\verify-prospect.ts (32 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\decision-utils.ts (28 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\index.ts (26 path tokens)
+filtered-filesystem\batch1\src\buyer-onboarding-admin-decision-trigger-api\router.ts (26 path tokens)
+filtered-filesystem\batch1\src\utilities\authorities.ts (19 path tokens)
+filtered-filesystem\batch1\src\utilities\axios\axios-utils.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\axios\cache-headers.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\axios\invalidate-saas-cache.ts (24 path tokens)
+filtered-filesystem\batch1\src\utilities\axios\invalidate-userInfo-cache.ts (25 path tokens)
+filtered-filesystem\batch1\src\utilities\cache\cache-key-manager.ts (23 path tokens)
+filtered-filesystem\batch1\src\utilities\cache\common.ts (20 path tokens)
+filtered-filesystem\batch1\src\utilities\cache\redis.ts (20 path tokens)
+filtered-filesystem\batch1\src\utilities\cache\referesh-redis-cache.ts (24 path tokens)
+filtered-filesystem\batch1\src\utilities\cognito\cognito-utils.ts (23 path tokens)
+filtered-filesystem\batch1\src\utilities\constants\constant.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\crypto-util.ts (19 path tokens)
+filtered-filesystem\batch1\src\utilities\db.ts (17 path tokens)
+filtered-filesystem\batch1\src\utilities\error-handler.ts (20 path tokens)
+filtered-filesystem\batch1\src\utilities\generate-password.ts (21 path tokens)
+filtered-filesystem\batch1\src\utilities\kinesis-model\config.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\kinesis-model\message-format.ts (24 path tokens)
+filtered-filesystem\batch1\src\utilities\kinesis-model\model.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\kinesis-model\put-record.ts (23 path tokens)
+filtered-filesystem\batch1\src\utilities\lambda\lambda-utils.ts (22 path tokens)
+filtered-filesystem\batch1\src\utilities\logger.ts (18 path tokens)
+filtered-filesystem\batch1\src\utilities\notification-utils.ts (21 path tokens)
+filtered-filesystem\batch1\src\utilities\pusher-utils.ts (19 path tokens)
+filtered-filesystem\batch1\src\utilities\reject-customer-utilities.ts (23 path tokens)
+filtered-filesystem\batch1\src\utilities\response.ts (18 path tokens)
+filtered-filesystem\batch1\src\utilities\s3-utils.ts (18 path tokens)
+filtered-filesystem\batch1\src\utilities\step-function-util.ts (21 path tokens)
+filtered-filesystem\batch1\src\utilities\steps-util.ts (19 path tokens)
+filtered-filesystem\batch1\src\utilities\types.ts (18 path tokens)
+filtered-filesystem\batch1\src\utilities\util.ts (17 path tokens)
+filtered-filesystem\batch1\src\utilities\validation.ts (19 path tokens)
+filtered-filesystem\batch2\batch-2-manifest.md (15 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-driver-fn\driver.ts (22 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-driver-fn\index.ts (22 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-driver-fn\types.ts (22 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-generate-required-document-list\controller\generate-required-document-list.ts (38 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-generate-required-document-list\index.ts (27 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-generate-required-document-list\router.ts (28 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-handle-expired-workflows\fetch-onboarding-enabled-tenants.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-handle-expired-workflows\index.ts (26 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\bulk-resend-prospect-invitation.ts (34 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\delete-invited-prospect.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\export-invited-prospects.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\get-all-invited-prospects.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\get-invited-prospect.ts (31 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\invite-prospects.ts (30 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\resend-prospect-invitation.ts (33 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\controller\update-invited-prospect.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\index.ts (24 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\invite-prospect-utils\common-utils.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\invite-prospect-utils\create-prospect.ts (33 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\invite-prospect-utils\excel-utils.ts (32 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\models\invite-prospect-DTO.ts (30 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\models\resend-prospect-invitation.DTO.ts (34 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-invite-prospects\router.ts (24 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-post-confirmation-trigger-fn\index.ts (27 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-post-confirmation-trigger-fn\types.ts (27 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-prospect-creation-fn\create-prospect.ts (27 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-prospect-creation-fn\index.ts (25 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-prospect-creation-fn\types.ts (25 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-prospects-invite-bulk-resend\index.ts (27 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-sqs-consumer\index.ts (23 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-starter-fn\index.ts (22 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-starter-fn\types.ts (22 path tokens)
+filtered-filesystem\batch2\src\buyer-onboarding-submit-application-fn\index.ts (25 path tokens)
+filtered-filesystem\batch2\src\process-prospect-expiration\index.ts (22 path tokens)
+filtered-filesystem\batch2\src\utilities\authorities.ts (19 path tokens)
+filtered-filesystem\batch2\src\utilities\constants\constant.ts (22 path tokens)
+filtered-filesystem\batch2\src\utilities\db.ts (17 path tokens)
+filtered-filesystem\batch2\src\utilities\error-handler.ts (20 path tokens)
+filtered-filesystem\batch2\src\utilities\logger.ts (18 path tokens)
+filtered-filesystem\batch2\src\utilities\response.ts (18 path tokens)
+filtered-filesystem\batch2\src\utilities\types.ts (18 path tokens)
+filtered-filesystem\batch2\src\utilities\util.ts (17 path tokens)
+filtered-filesystem\batch3\batch-3-manifest.md (15 path tokens)
+filtered-filesystem\batch3\database\release-1.43.0\CREATE_TABLE_tenant_sales_rep.sql (28 path tokens)
+filtered-filesystem\batch3\database\release-1.44.0\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql (33 path tokens)
+filtered-filesystem\batch3\database\release-1.44.0\PROSPECT_tables_DDL.sql (26 path tokens)
+filtered-filesystem\batch3\database\release-1.44.0\UPDATE_customer_list_setttings_registration_status.sql (34 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\buyer_onboarding_settings_v2.sql (28 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\buyer_onboarding_settings_vanilla_json.sql (31 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\email-templates.sql (25 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_account_creation_instruction.sql (29 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_account_setup_instruction.sql (29 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_add_customer_type.sql (27 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql (37 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql (40 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_update_admin_role_authority_mapping.sql (31 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_update_all_admin_authority.sql (29 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\prod_update_owner_authority.sql (28 path tokens)
+filtered-filesystem\batch3\database\release-1.44.1\remove-unique-constraint-from-prospect_user.sql (32 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-reference-api\controller\get-references.ts (29 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-reference-api\index.ts (23 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-success-content-api\controller\get-success-content.ts (32 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-success-content-api\index.ts (24 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-additional-fields\index.ts (28 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-bb-address\index.ts (27 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-business-owner-address\index.ts (30 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-business-phone\index.ts (28 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-frieght-forwarder-info\index.ts (30 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-policy-review\index.ts (27 path tokens)
+filtered-filesystem\batch3\src\buyer-onboarding-validate-and-save-shipping-address\index.ts (28 path tokens)
+filtered-filesystem\batch3\src\reset-password-fn\controller\reset-buyer-password.ts (27 path tokens)
+filtered-filesystem\batch3\src\reset-password-fn\dtos\reset-buyer-password-dto.ts (27 path tokens)
+filtered-filesystem\batch3\src\reset-password-fn\index.ts (20 path tokens)
+filtered-filesystem\batch3\src\reset-password-fn\router.ts (20 path tokens)
+filtered-filesystem\batch3\src\sales-rep-api\controller\get-sales-rep.ts (24 path tokens)
+filtered-filesystem\batch3\src\sales-rep-api\index.ts (19 path tokens)
+filtered-filesystem\batch3\src\sales-rep-api\router.ts (19 path tokens)
+filtered-filesystem\batch3\src\utilities\constants\constant.ts (22 path tokens)
+filtered-filesystem\batch3\src\utilities\db.ts (17 path tokens)
+filtered-filesystem\batch3\src\utilities\error-handler.ts (20 path tokens)
+filtered-filesystem\batch3\src\utilities\logger.ts (18 path tokens)
+filtered-filesystem\batch3\src\utilities\response.ts (18 path tokens)
+filtered-filesystem\batch4\batch-4-manifest.md (15 path tokens)
+filtered-filesystem\batch4\buildspec.yaml (14 path tokens)
+filtered-filesystem\batch4\database\release-1.46.0\buyer_onboarding_settings_update_Type1V2.sql (31 path tokens)
+filtered-filesystem\batch4\database\release-1.46.0\buyer_onboarding_settings_update_WSCV2.sql (31 path tokens)
+filtered-filesystem\batch4\database\release-1.46.0\PROSPECT_table_DDL.sql (26 path tokens)
+filtered-filesystem\batch4\database\release-1.49.0\SP-4968-new-permissions-for-prospect-update.sql (32 path tokens)
+filtered-filesystem\batch4\database\release-1.49.0\SP-5459-update_buyer_info_sections.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.52.0\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql (37 path tokens)
+filtered-filesystem\batch4\database\release-1.52.0\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql (36 path tokens)
+filtered-filesystem\batch4\database\release-1.52.0\SP-5884-add-unique-constraint-prospect_id.DDL.sql (33 path tokens)
+filtered-filesystem\batch4\database\release-1.52.0\WeSell_customer_mandatory_business_license_changes.sql (34 path tokens)
+filtered-filesystem\batch4\database\release-1.57.0\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql (35 path tokens)
+filtered-filesystem\batch4\database\release-1.57.0\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql (37 path tokens)
+filtered-filesystem\batch4\database\release-1.64.0\buyer-onboarding-settings-update-status-transition.DDL.sql (36 path tokens)
+filtered-filesystem\batch4\database\release-1.64.0\SP-7664-buyer-status-code-settings.DDL.sql (32 path tokens)
+filtered-filesystem\batch4\database\release-1.66.0\SP-7747-add-new-column-to-prospect.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.66.1\SP-7747-add-authorities-to-admin-users.sql (31 path tokens)
+filtered-filesystem\batch4\database\release-1.66.1\SP-7747-populate-a-new-permission.sql (29 path tokens)
+filtered-filesystem\batch4\database\release-1.66.1\SP-7747-set-timestamps-and-set-default-7-days.sql (32 path tokens)
+filtered-filesystem\batch4\database\release-1.67.0\SP-7749-add-new-field-buyer_onboarding_settings.sql (33 path tokens)
+filtered-filesystem\batch4\database\release-1.71.0\SP-8573-WSC-update-EUS-version.sql (29 path tokens)
+filtered-filesystem\batch4\database\release-1.71.0\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql (36 path tokens)
+filtered-filesystem\batch4\database\release-1.76.1\SP-9440-update-incorrect-country_code.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.78.0\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql (39 path tokens)
+filtered-filesystem\batch4\database\release-1.78.0\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql (35 path tokens)
+filtered-filesystem\batch4\database\release-1.78.0\SP-9385-vanilla-document-rules-script.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql (38 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-8971-add-encrypted-fields-to-BO-settings.sql (32 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-8971-vanilla-document-rules-script.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-9856-bo-history-tables.DDL.sql (29 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-9856-bo-one-time-update-to-history-tables.sql (32 path tokens)
+filtered-filesystem\batch4\database\release-1.79.0\SP-9856-bo-triggers.DDL.sql (28 path tokens)
+filtered-filesystem\batch4\database\release-1.81.0\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql (35 path tokens)
+filtered-filesystem\batch4\database\release-1.81.0\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql (34 path tokens)
+filtered-filesystem\batch4\database\release-1.81.0\SP-10127-add-accessDeniedStatusCodes.sql (30 path tokens)
+filtered-filesystem\batch4\database\release-1.83.0\SP-10283-bulk-resend-invite-async-mode-query.sql (32 path tokens)
+filtered-filesystem\batch4\events\admin-decision-event.json (19 path tokens)
+filtered-filesystem\batch4\events\business-billing-event.json (20 path tokens)
+filtered-filesystem\batch4\events\cognito-event.json (17 path tokens)
+filtered-filesystem\batch4\events\driver-fn-event.json (18 path tokens)
+filtered-filesystem\batch4\events\generate-required-document-event.json (22 path tokens)
+filtered-filesystem\batch4\events\prospect-create-consumer.json (20 path tokens)
+filtered-filesystem\batch4\events\sqs-consumer.json (17 path tokens)
+filtered-filesystem\batch4\events\starter-fn-event.json (18 path tokens)
+filtered-filesystem\batch4\events\submit-event.json (17 path tokens)
+filtered-filesystem\batch4\package.json (13 path tokens)
+filtered-filesystem\batch4\samconfig.toml (14 path tokens)
+filtered-filesystem\batch4\scripts\deploy.sh (15 path tokens)
+filtered-filesystem\batch4\scripts\sonar-code-analysis.sh (19 path tokens)
+filtered-filesystem\batch4\step-function-definitions\TrillionV1.json (21 path tokens)
+filtered-filesystem\batch4\step-function-definitions\Type1V1.json (21 path tokens)
+filtered-filesystem\batch4\step-function-definitions\Type1V2.json (21 path tokens)
+filtered-filesystem\batch4\step-function-definitions\Type1V3.json (21 path tokens)
+filtered-filesystem\batch4\step-function-definitions\WSCV1.json (20 path tokens)
+filtered-filesystem\batch4\step-function-definitions\WSCV2.json (20 path tokens)
+filtered-filesystem\batch4\step-function-definitions\WSCV3.json (20 path tokens)
+filtered-filesystem\batch4\step-function-definitions\WSCV4.json (20 path tokens)
+filtered-filesystem\batch4\step-function-definitions\WSCV5.json (20 path tokens)
+filtered-filesystem\batch4\tsconfig.json (13 path tokens)
+filtered-filesystem\filtered-system-manifest.md (14 path tokens)
+package-lock.json (6 path tokens)
+package.json (4 path tokens)
+README.md (4 path tokens)
+samconfig.toml (5 path tokens)
+scripts\deploy.sh (7 path tokens)
+scripts\sonar-code-analysis.sh (10 path tokens)
+src\buyer-onboarding-admin-decision-fn\convert-to-customer.ts (19 path tokens)
+src\buyer-onboarding-admin-decision-fn\decision-utils.ts (17 path tokens)
+src\buyer-onboarding-admin-decision-fn\index.ts (15 path tokens)
+src\buyer-onboarding-admin-decision-fn\reject-prospect.ts (18 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__11-29-19__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__11-29-19__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-43-33__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-43-33__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-47-48__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-47-48__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-57-28__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-22__12-57-28__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__10-41-13__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__10-41-13__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__18-00-54__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__18-00-54__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__18-06-18__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__18-06-18__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__19-41-54__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-26__19-41-54__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-07-53__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-07-53__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-10-48__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-10-48__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-17-52__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-17-52__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-19-24__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-27__20-19-24__all-three-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-29-43__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-29-43__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-30-20__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-30-20__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-34-12__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-34-12__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-40-11__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-40-11__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-46-38__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-46-38__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-56-49__high-level-diagram.md (28 path tokens)
+src\buyer-onboarding-admin-decision-fn\swark-output\2025-08-28__10-56-49__high-level-log.md (27 path tokens)
+src\buyer-onboarding-admin-decision-fn\verify-prospect.ts (18 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\controller\convert-to-customer.ts (25 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\controller\reject-prospect.ts (24 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\controller\verify-prospect.ts (24 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\decision-utils.ts (20 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\index.ts (17 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\router.ts (18 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-diagram.md (30 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-33-26__all-three-log.md (29 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-diagram.md (30 path tokens)
+src\buyer-onboarding-admin-decision-trigger-api\swark-output\2025-08-22__11-46-25__all-three-log.md (29 path tokens)
+src\buyer-onboarding-driver-fn\driver.ts (13 path tokens)
+src\buyer-onboarding-driver-fn\index.ts (13 path tokens)
+src\buyer-onboarding-driver-fn\types.ts (13 path tokens)
+src\buyer-onboarding-generate-required-document-list\controller\generate-required-document-list.ts (29 path tokens)
+src\buyer-onboarding-generate-required-document-list\index.ts (19 path tokens)
+src\buyer-onboarding-generate-required-document-list\router.ts (19 path tokens)
+src\buyer-onboarding-handle-expired-workflows\fetch-onboarding-enabled-tenants.ts (24 path tokens)
+src\buyer-onboarding-handle-expired-workflows\index.ts (17 path tokens)
+src\buyer-onboarding-invite-prospects\controller\bulk-resend-prospect-invitation.ts (25 path tokens)
+src\buyer-onboarding-invite-prospects\controller\delete-invited-prospect.ts (23 path tokens)
+src\buyer-onboarding-invite-prospects\controller\export-invited-prospects.ts (23 path tokens)
+src\buyer-onboarding-invite-prospects\controller\get-all-invited-prospects.ts (24 path tokens)
+src\buyer-onboarding-invite-prospects\controller\get-invited-prospect.ts (22 path tokens)
+src\buyer-onboarding-invite-prospects\controller\invite-prospects.ts (21 path tokens)
+src\buyer-onboarding-invite-prospects\controller\resend-prospect-invitation.ts (24 path tokens)
+src\buyer-onboarding-invite-prospects\controller\update-invited-prospect.ts (23 path tokens)
+src\buyer-onboarding-invite-prospects\index.ts (15 path tokens)
+src\buyer-onboarding-invite-prospects\invite-prospect-utils\common-utils.ts (23 path tokens)
+src\buyer-onboarding-invite-prospects\invite-prospect-utils\create-prospect.ts (24 path tokens)
+src\buyer-onboarding-invite-prospects\invite-prospect-utils\excel-utils.ts (23 path tokens)
+src\buyer-onboarding-invite-prospects\models\invite-prospect-DTO.ts (21 path tokens)
+src\buyer-onboarding-invite-prospects\models\resend-prospect-invitation.DTO.ts (25 path tokens)
+src\buyer-onboarding-invite-prospects\router.ts (15 path tokens)
+src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-diagram.md (28 path tokens)
+src\buyer-onboarding-invite-prospects\swark-output\2025-08-22__13-06-39__all-three-log.md (27 path tokens)
+src\buyer-onboarding-post-confirmation-trigger-fn\index.ts (18 path tokens)
+src\buyer-onboarding-post-confirmation-trigger-fn\types.ts (18 path tokens)
+src\buyer-onboarding-prospect-creation-fn\create-prospect.ts (18 path tokens)
+src\buyer-onboarding-prospect-creation-fn\index.ts (16 path tokens)
+src\buyer-onboarding-prospect-creation-fn\types.ts (16 path tokens)
+src\buyer-onboarding-prospects-invite-bulk-resend\index.ts (18 path tokens)
+src\buyer-onboarding-reference-api\controller\get-references.ts (20 path tokens)
+src\buyer-onboarding-reference-api\index.ts (14 path tokens)
+src\buyer-onboarding-sqs-consumer\index.ts (14 path tokens)
+src\buyer-onboarding-starter-fn\index.ts (13 path tokens)
+src\buyer-onboarding-starter-fn\types.ts (13 path tokens)
+src\buyer-onboarding-submit-application-fn\index.ts (16 path tokens)
+src\buyer-onboarding-success-content-api\controller\get-success-content.ts (23 path tokens)
+src\buyer-onboarding-success-content-api\index.ts (16 path tokens)
+src\buyer-onboarding-validate-and-save-additional-fields\index.ts (20 path tokens)
+src\buyer-onboarding-validate-and-save-bb-address\index.ts (18 path tokens)
+src\buyer-onboarding-validate-and-save-business-owner-address\index.ts (21 path tokens)
+src\buyer-onboarding-validate-and-save-business-phone\index.ts (19 path tokens)
+src\buyer-onboarding-validate-and-save-frieght-forwarder-info\index.ts (21 path tokens)
+src\buyer-onboarding-validate-and-save-policy-review\index.ts (19 path tokens)
+src\buyer-onboarding-validate-and-save-shipping-address\index.ts (19 path tokens)
+src\process-prospect-expiration\index.ts (13 path tokens)
+src\reset-password-fn\controller\reset-buyer-password.ts (18 path tokens)
+src\reset-password-fn\dtos\reset-buyer-password-dto.ts (18 path tokens)
+src\reset-password-fn\index.ts (11 path tokens)
+src\reset-password-fn\router.ts (11 path tokens)
+src\sales-rep-api\controller\get-sales-rep.ts (16 path tokens)
+src\sales-rep-api\index.ts (10 path tokens)
+src\sales-rep-api\router.ts (10 path tokens)
+src\swark-output\2025-08-21__18-25-06__all-three-diagram.md (18 path tokens)
+src\swark-output\2025-08-21__18-25-06__all-three-log.md (17 path tokens)
+src\swark-output\2025-08-22__11-48-14__all-three-diagram.md (18 path tokens)
+src\swark-output\2025-08-22__11-48-14__all-three-log.md (17 path tokens)
+src\utilities\authorities.ts (10 path tokens)
+src\utilities\axios\axios-utils.ts (13 path tokens)
+src\utilities\axios\cache-headers.ts (13 path tokens)
+src\utilities\axios\invalidate-saas-cache.ts (15 path tokens)
+src\utilities\axios\invalidate-userInfo-cache.ts (16 path tokens)
+src\utilities\cache\cache-key-manager.ts (14 path tokens)
+src\utilities\cache\common.ts (12 path tokens)
+src\utilities\cache\redis.ts (11 path tokens)
+src\utilities\cache\referesh-redis-cache.ts (15 path tokens)
+src\utilities\cognito\cognito-utils.ts (14 path tokens)
+src\utilities\constants\constant.ts (13 path tokens)
+src\utilities\crypto-util.ts (10 path tokens)
+src\utilities\db.ts (8 path tokens)
+src\utilities\error-handler.ts (11 path tokens)
+src\utilities\generate-password.ts (12 path tokens)
+src\utilities\kinesis-model\config.ts (14 path tokens)
+src\utilities\kinesis-model\message-format.ts (16 path tokens)
+src\utilities\kinesis-model\model.ts (13 path tokens)
+src\utilities\kinesis-model\put-record.ts (15 path tokens)
+src\utilities\lambda\lambda-utils.ts (13 path tokens)
+src\utilities\logger.ts (9 path tokens)
+src\utilities\notification-utils.ts (12 path tokens)
+src\utilities\pusher-utils.ts (11 path tokens)
+src\utilities\reject-customer-utilities.ts (14 path tokens)
+src\utilities\response.ts (10 path tokens)
+src\utilities\s3-utils.ts (10 path tokens)
+src\utilities\step-function-util.ts (12 path tokens)
+src\utilities\steps-util.ts (10 path tokens)
+src\utilities\types.ts (9 path tokens)
+src\utilities\util.ts (9 path tokens)
+src\utilities\validation.ts (10 path tokens)
+step-function-definitions\TrillionV1.json (13 path tokens)
+step-function-definitions\Type1V1.json (12 path tokens)
+step-function-definitions\Type1V2.json (12 path tokens)
+step-function-definitions\Type1V3.json (12 path tokens)
+step-function-definitions\WSCV1.json (11 path tokens)
+step-function-definitions\WSCV2.json (11 path tokens)
+step-function-definitions\WSCV3.json (11 path tokens)
+step-function-definitions\WSCV4.json (11 path tokens)
+step-function-definitions\WSCV5.json (11 path tokens)
+swark-output\2025-08-20__12-05-55__diagram.md (14 path tokens)
+swark-output\2025-08-20__12-05-55__log.md (13 path tokens)
+swark-output\2025-08-20__12-10-12__diagram.md (14 path tokens)
+swark-output\2025-08-20__12-10-12__log.md (13 path tokens)
+swark-output\2025-08-21__12-25-16__all-three-diagram.md (16 path tokens)
+swark-output\2025-08-21__12-25-16__all-three-log.md (15 path tokens)
+swark-output\2025-08-25__18-35-54__all-three-diagram.md (16 path tokens)
+swark-output\2025-08-25__18-35-54__all-three-log.md (15 path tokens)
+templates\local-template.yaml (10 path tokens)
+tsconfig.json (5 path tokens)
+
+**Response Format (Single line JSON):**
+{
+  "detectedLanguages": [
+    "typescript",
+    "javascript",
+    "python",
+    "java"
+  ],
+  "batches": [
+    {
+      "batchNumber": 1,
+      
+      "estimatedTokens": 15000,
+      "description": "Core extension and utilities"
+      "fileInclusion": {
+        "typescript": [
+          "src/user/extension.ts",
+          "src/utils/helper.ts",
+          "src/components/Button/index.tsx"
+        ],
+        "python": [
+          "scripts/analysis.py"
+        ]   
+      }
+    },
+    {
+      "batchNumber": 2,
+      
+      "estimatedTokens": 18000,
+      "description": "UI components with shared interfaces"
+      "fileInclusion": {
+        "typescript": [
+          "src/user/extension.ts",
+          
+        ],
+        "python": [
+          "scripts/analysis.py"
+        ],
+        "java": [
+          "backend/src/Main.java"
+        ]
+      }
+    }
+  ],
+  "fileIgnored": [
+    "node_modules/some-lib/index.js",
+    "dist/bundle.js",
+    "docs/README.md",
+    "build/assets/logo.png",
+    "coverage/report.html"
+  ],
+  "ignoringPattern": {
+    "typescript": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "console\.(log|info|warn|error|debug|trace)\s*\([^)]*\);?",
+      "debugger;?",
+      "import\s+[^;]+from\s+['"][^'"]*test[^'"]*['"];?"
+    ],
+    "javascript": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "console\.(log|info|warn|error|debug|trace)\s*\([^)]*\);?",
+      "debugger;?"
+    ],
+    "python": [
+      "#.*",
+      "print\s*\([^)]*\)",
+      "logging\.(debug|info|warning|error|critical)\s*\([^)]*\)",
+      """"[\s\S]*?"""",
+      "'''[\s\S]*?'''"
+    ],
+    "java": [
+      "//.*",
+      "/\*[\s\S]*?\*/",
+      "System\.out\.(print|println)\s*\([^)]*\);?",
+      "logger\.(debug|info|warn|error)\s*\([^)]*\);?"
+    ]
+  }
+}
+
+Generate regex patterns for each detected language that will remove:
+- Single-line and multi-line comments
+- Console/logging statements
+- Debug statements
+- Test-related imports
+- Boilerplate code
+- Unused code patterns
+
+**BATCHING DECISION CRITERIA:**
+- If batching required:
+  - Calculate optimal number of batches (aim for ~40,000 tokens per batch)
+  - Create logical groupings (modules, components, features together)
+  - Ensure minimum 10% overlap between consecutive batches using:
+    * Shared interface files
+    * Common utility files
+    * Main entry points
+    * Configuration files
+  - Provide estimated tokens per batch
+  - Include descriptive names for each batch
+
+**OVERLAP STRATEGY:**
+- Include key files that provide context across batches
+- Prioritize: types/interfaces, shared utilities, main entry files
+- Overlap should be meaningful, not random
+- Each overlapping file should appear in adjacent batches only
+
+Analyze the repository and return the valid JSON as described above.
+**IMPORTANT: 
+1. Make sure to maintain same file fullpath as given in the above Current Files.
+2. If Repo is small, omit the batches array.
+3. If Repo is big, the batches array is mandatory with proper overlap.**

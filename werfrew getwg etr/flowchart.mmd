@@ -1,0 +1,104 @@
+flowchart TD
+```mermaid
+flowchart TD
+    A[Start] --> B[User Requests Login]
+    B --> C{Username and Password Provided?}
+    C -- Yes --> D[Execute Query to Check User]
+    C -- No --> E[Return Error: 'Username and password are required']
+    D --> F{User Exists?}
+    F -- Yes --> G{Password Matches?}
+    F -- No --> H[Return Error: 'Invalid credentials']
+    G -- Yes --> I[Generate JWT Token]
+    G -- No --> H
+    I --> J[Return Token to User]
+    J --> K[End]
+
+    A1[Start] --> B1[User Requests Signup]
+    B1 --> C1{All Fields Provided?}
+    C1 -- Yes --> D1[Hash Password]
+    C1 -- No --> E1[Return Error: 'All fields are required']
+    D1 --> F1[Execute Query to Check Existing Users]
+    F1 --> G1{User Exists?}
+    G1 -- Yes --> H1[Return Error: 'User already exists']
+    G1 -- No --> I1[Insert New User into Database]
+    I1 --> J1[Return Success Message]
+    J1 --> K1[End]
+
+    A2[Start] --> B2[User Requests to Add Comment]
+    B2 --> C2{Comment Provided?}
+    C2 -- Yes --> D2{Valid Blog ID?}
+    C2 -- No --> E2[Return Error: 'Comment cannot be empty']
+    D2 -- Yes --> F2{User Authenticated?}
+    D2 -- No --> E2
+    F2 -- Yes --> G2[Execute Query to Check Blog Existence]
+    F2 -- No --> E3[Return Error: 'User authentication required']
+    G2 --> H2{Blog Exists?}
+    H2 -- Yes --> I2[Insert Comment into Database]
+    H2 -- No --> E4[Return Error: 'Blog post not found']
+    I2 --> J2[Return Success Message]
+    J2 --> K2[End]
+
+    A3[Start] --> B3[User Requests to Delete Comment]
+    B3 --> C3{Comment ID Provided?}
+    C3 -- Yes --> D3[Execute Query to Check Comment Existence]
+    C3 -- No --> E5[Return Error: 'Comment ID is required']
+    D3 --> F3{Comment Exists?}
+    F3 -- Yes --> G3[Check Comment Owner]
+    F3 -- No --> E6[Return Error: 'Comment not found']
+    G3 --> H3{User Authorized?}
+    H3 -- Yes --> I3[Delete Comment from Database]
+    H3 -- No --> E7[Return Error: 'Unauthorized']
+    I3 --> J3[Return Success Message]
+    J3 --> K3[End]
+
+    A4[Start] --> B4[User Requests to Like Blog]
+    B4 --> C4{User Authenticated?}
+    C4 -- Yes --> D4[Execute Query to Check Blog Existence]
+    C4 -- No --> E8[Return Error: 'User authentication required']
+    D4 --> F4{Blog Exists?}
+    F4 -- Yes --> G4[Check User's Previous Interaction]
+    F4 -- No --> E9[Return Error: 'Blog not found']
+    G4 --> H4{User Liked Blog?}
+    H4 -- Yes --> E10[Return Error: 'You have already liked this blog.']
+    H4 -- No --> I4[Insert or Update Like in Database]
+    I4 --> J4[Return Success Message]
+    J4 --> K4[End]
+
+    A5[Start] --> B5[User Requests to Filter Blogs]
+    B5 --> C5{Search Parameter Provided?}
+    C5 -- Yes --> D5[Execute Query to Filter Blogs]
+    C5 -- No --> E11[Return Error: 'Search parameter is required']
+    D5 --> F5{Blogs Found?}
+    F5 -- Yes --> G5[Return Filtered Blogs]
+    F5 -- No --> E12[Return Error: 'No blogs found']
+    G5 --> H5[End]
+
+    A6[Start] --> B6[User Requests to Get Blog by ID]
+    B6 --> C6{Blog ID Provided?}
+    C6 -- Yes --> D6[Execute Query to Get Blog]
+    C6 -- No --> E13[Return Error: 'Blog ID is required']
+    D6 --> F6{Blog Exists?}
+    F6 -- Yes --> G6[Return Blog Details]
+    F6 -- No --> E14[Return Error: 'Blog not found']
+    G6 --> H6[End]
+
+    A7[Start] --> B7[User Requests to Update Blog]
+    B7 --> C7{Blog ID and Content Provided?}
+    C7 -- Yes --> D7[Execute Query to Check Blog Existence]
+    C7 -- No --> E15[Return Error: 'Blog ID and content are required']
+    D7 --> F7{Blog Exists?}
+    F7 -- Yes --> G7[Update Blog in Database]
+    F7 -- No --> E16[Return Error: 'Blog not found']
+    G7 --> H7[Return Success Message]
+    H7 --> I7[End]
+
+    A8[Start] --> B8[User Requests to Delete Blog]
+    B8 --> C8{Blog ID Provided?}
+    C8 -- Yes --> D8[Execute Query to Check Blog Existence]
+    C8 -- No --> E17[Return Error: 'Blog ID is required']
+    D8 --> F8{Blog Exists?}
+    F8 -- Yes --> G8[Delete Blog from Database]
+    F8 -- No --> E18[Return Error: 'Blog not found']
+    G8 --> H8[Return Success Message]
+    H8 --> I8[End]
+```

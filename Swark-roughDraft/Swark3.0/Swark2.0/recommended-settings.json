@@ -1,0 +1,12 @@
+{
+  "swark2.maxFiles": 2000,
+  "swark2.enableChunking": true,
+  "swark2.chunkingThreshold": 0.6,
+  "swark2.fileExtensions": [
+    "py", "js", "jsx", "ts", "tsx", "java", "c", "cpp", "go", "rs", "json", "md"
+  ],
+  "files.exclude": {
+    "**/node_modules": false,
+    "**/out": false
+  }
+}

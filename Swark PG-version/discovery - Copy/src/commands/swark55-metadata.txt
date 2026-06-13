@@ -1,0 +1,1258 @@
+{
+  "repositoryPath": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)",
+  "selectedCommit": {
+    "hash": "b8869e739bfc0d89c245af50bb93ecade9b7e275",
+    "shortHash": "b8869e7",
+    "author": "melvin-ncompass",
+    "date": "2025-09-15 16:03:59 +0530",
+    "message": "just testing",
+    "timestamp": "2025-09-15T10:33:59.000Z"
+  },
+  "totalFiles": 207,
+  "directoryStructure": "Archive (1)/\n├── Dockerfile\n├── README.md\n├── __MACOSX/\n│   ├── dist/\n│   │   ├── alerts/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── asset/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── auth/\n│   │   │   ├── dto/\n│   │   │   ├── entity/\n│   │   │   ├── guards/\n│   │   │   └── strategies/\n│   │   ├── aws/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── azure/\n│   │   │   └── entity/\n│   │   ├── common/\n│   │   │   ├── decorator/\n│   │   │   ├── enum/\n│   │   │   ├── exceptions/\n│   │   │   └── interceptors/\n│   │   ├── common-fn/\n│   │   ├── cost/\n│   │   │   └── entity/\n│   │   ├── cron-jobs/\n│   │   ├── gcp/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── github/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── gsuite/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── ibex-users/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── invoice/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── jira/\n│   │   │   └── entity/\n│   │   ├── keka/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── mail/\n│   │   ├── outline/\n│   │   │   └── entity/\n│   │   ├── pipedrive/\n│   │   │   └── entity/\n│   │   ├── secrets/\n│   │   ├── services/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── slack/\n│   │   │   └── entity/\n│   │   ├── sync/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── sync-log/\n│   │   │   └── entity/\n│   │   ├── types/\n│   │   ├── users/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── utils/\n│   │   └── webhooks/\n│   │       └── guard/\n│   ├── src/\n│   │   ├── alerts/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── aws/\n│   │   │   └── entity/\n│   │   ├── azure/\n│   │   │   └── entity/\n│   │   ├── common/\n│   │   │   └── enum/\n│   │   ├── common-fn/\n│   │   ├── cost/\n│   │   │   └── entity/\n│   │   ├── cron-jobs/\n│   │   ├── gcp/\n│   │   │   └── entity/\n│   │   ├── github/\n│   │   │   └── entity/\n│   │   ├── gsuite/\n│   │   │   └── entity/\n│   │   ├── ibex-users/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── invoice/\n│   │   ├── jira/\n│   │   │   └── entity/\n│   │   ├── keka/\n│   │   │   └── entity/\n│   │   ├── outline/\n│   │   │   └── entity/\n│   │   ├── pipedrive/\n│   │   │   └── entity/\n│   │   ├── services/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── slack/\n│   │   │   └── entity/\n│   │   ├── sync/\n│   │   │   ├── dto/\n│   │   │   └── entity/\n│   │   ├── sync-log/\n│   │   ├── utils/\n│   │   └── webhooks/\n│   │       └── guard/\n│   ├── swark55-efa5bf1d-2025-09-05T11-26-47/\n│   └── swark_output/\n│       └── HEAD/\n├── dist/\n│   ├── alerts/\n│   │   ├── alerts.controller.d.ts\n│   │   ├── alerts.controller.js\n│   │   ├── alerts.controller.js.map\n│   │   ├── alerts.module.d.ts\n│   │   ├── alerts.module.js\n│   │   ├── alerts.module.js.map\n│   │   ├── alerts.repository.d.ts\n│   │   ├── alerts.repository.js\n│   │   ├── alerts.repository.js.map\n│   │   ├── alerts.service.d.ts\n│   │   ├── alerts.service.js\n│   │   ├── alerts.service.js.map\n│   │   ├── dto/\n│   │   │   ├── alert-dto.d.ts\n│   │   │   ├── alert-dto.js\n│   │   │   └── alert-dto.js.map\n│   │   └── entity/\n│   │       ├── alerts-entity.d.ts\n│   │       ├── alerts-entity.js\n│   │       └── alerts-entity.js.map\n│   ├── app.module.d.ts\n│   ├── app.module.js\n│   ├── app.module.js.map\n│   ├── asset/\n│   │   ├── asset.controller.d.ts\n│   │   ├── asset.controller.js\n│   │   ├── asset.controller.js.map\n│   │   ├── asset.module.d.ts\n│   │   ├── asset.module.js\n│   │   ├── asset.module.js.map\n│   │   ├── asset.service.d.ts\n│   │   ├── asset.service.js\n│   │   ├── asset.service.js.map\n│   │   ├── dto/\n│   │   │   ├── update-asset-details.dto.d.ts\n│   │   │   ├── update-asset-details.dto.js\n│   │   │   └── update-asset-details.dto.js.map\n│   │   └── entity/\n│   │       ├── asset-assignment-history.d.ts\n│   │       ├── asset-assignment-history.js\n│   │       ├── asset-assignment-history.js.map\n│   │       ├── asset-assignment.d.ts\n│   │       ├── asset-assignment.js\n│   │       ├── asset-assignment.js.map\n│   │       ├── asset-details-entity.d.ts\n│   │       ├── asset-details-entity.js\n│   │       ├── asset-details-entity.js.map\n│   │       ├── asset-logon-details.entity.d.ts\n│   │       ├── asset-logon-details.entity.js\n│   │       └── asset-logon-details.entity.js.map\n│   ├── auth/\n│   │   ├── auth.controller.d.ts\n│   │   ├── auth.controller.js\n│   │   ├── auth.controller.js.map\n│   │   ├── auth.module.d.ts\n│   │   ├── auth.module.js\n│   │   ├── auth.module.js.map\n│   │   ├── auth.service.d.ts\n│   │   ├── auth.service.js\n│   │   ├── auth.service.js.map\n│   │   ├── dto/\n│   │   │   ├── api-key-generate-request.d.ts\n│   │   │   ├── api-key-generate-request.js\n│   │   │   └── api-key-generate-request.js.map\n│   │   ├── entity/\n│   │   │   ├── api-key-entity.d.ts\n│   │   │   ├── api-key-entity.js\n│   │   │   └── api-key-entity.js.map\n│   │   ├── guards/\n│   │   │   ├── admin-role.guard.d.ts\n│   │   │   ├── admin-role.guard.js\n│   │   │   ├── admin-role.guard.js.map\n│   │   │   ├── jwt-auth.guard.d.ts\n│   │   │   ├── jwt-auth.guard.js\n│   │   │   ├── jwt-auth.guard.js.map\n│   │   │   ├── local-auth.guard.d.ts\n│   │   │   ├── local-auth.guard.js\n│   │   │   ├── local-auth.guard.js.map\n│   │   │   ├── refreshtoken.guard.d.ts\n│   │   │   ├── refreshtoken.guard.js\n│   │   │   └── refreshtoken.guard.js.map\n│   │   └── strategies/\n│   │       ├── api-key.strategy.d.ts\n│   │       ├── api-key.strategy.js\n│   │       ├── api-key.strategy.js.map\n│   │       ├── jwt-auth.strategy.d.ts\n│   │       ├── jwt-auth.strategy.js\n│   │       ├── jwt-auth.strategy.js.map\n│   │       ├── local.strategy.d.ts\n│   │       ├── local.strategy.js\n│   │       ├── local.strategy.js.map\n│   │       ├── refreshToken.strategy.d.ts\n│   │       ├── refreshToken.strategy.js\n│   │       └── refreshToken.strategy.js.map\n│   ├── aws/\n│   │   ├── aws.controller.d.ts\n│   │   ├── aws.controller.js\n│   │   ├── aws.controller.js.map\n│   │   ├── aws.module.d.ts\n│   │   ├── aws.module.js\n│   │   ├── aws.module.js.map\n│   │   ├── aws.service.d.ts\n│   │   ├── aws.service.js\n│   │   ├── aws.service.js.map\n│   │   ├── dto/\n│   │   │   ├── aws-group-response.d.ts\n│   │   │   ├── aws-group-response.js\n│   │   │   ├── aws-group-response.js.map\n│   │   │   ├── aws-policy-response.d.ts\n│   │   │   ├── aws-policy-response.js\n│   │   │   ├── aws-policy-response.js.map\n│   │   │   ├── aws-user-response.d.ts\n│   │   │   ├── aws-user-response.js\n│   │   │   └── aws-user-response.js.map\n│   │   └── entity/\n│   │       ├── aws-group-policy.entity.d.ts\n│   │       ├── aws-group-policy.entity.js\n│   │       ├── aws-group-policy.entity.js.map\n│   │       ├── aws-groups.entity.d.ts\n│   │       ├── aws-groups.entity.js\n│   │       ├── aws-groups.entity.js.map\n│   │       ├── aws-policies.entity.d.ts\n│   │       ├── aws-policies.entity.js\n│   │       ├── aws-policies.entity.js.map\n│   │       ├── aws-user-group.entity.d.ts\n│   │       ├── aws-user-group.entity.js\n│   │       ├── aws-user-group.entity.js.map\n│   │       ├── aws-users.entity.d.ts\n│   │       ├── aws-users.entity.js\n│   │       └── aws-users.entity.js.map\n│   ├── azure/\n│   │   ├── azure.controller.d.ts\n│   │   ├── azure.controller.js\n│   │   ├── azure.controller.js.map\n│   │   ├── azure.module.d.ts\n│   │   ├── azure.module.js\n│   │   ├── azure.module.js.map\n│   │   ├── azure.service.d.ts\n│   │   ├── azure.service.js\n│   │   ├── azure.service.js.map\n│   │   └── entity/\n│   │       ├── azure-user.entity.d.ts\n│   │       ├── azure-user.entity.js\n│   │       └── azure-user.entity.js.map\n│   ├── common/\n│   │   ├── api-response.d.ts\n│   │   ├── api-response.js\n│   │   ├── api-response.js.map\n│   │   ├── decorator/\n│   │   │   ├── get-current-user-id.decorator.d.ts\n│   │   │   ├── get-current-user-id.decorator.js\n│   │   │   ├── get-current-user-id.decorator.js.map\n│   │   │   ├── get-current-user.decorator.d.ts\n│   │   │   ├── get-current-user.decorator.js\n│   │   │   ├── get-current-user.decorator.js.map\n│   │   │   ├── is-valid-url.decorator.d.ts\n│   │   │   ├── is-valid-url.decorator.js\n│   │   │   ├── is-valid-url.decorator.js.map\n│   │   │   ├── match.decorator.d.ts\n│   │   │   ├── match.decorator.js\n│   │   │   └── match.decorator.js.map\n│   │   ├── enum/\n│   │   │   ├── ibex-status.enum.d.ts\n│   │   │   ├── ibex-status.enum.js\n│   │   │   └── ibex-status.enum.js.map\n│   │   ├── exceptions/\n│   │   │   ├── http-exception.filter.d.ts\n│   │   │   ├── http-exception.filter.js\n│   │   │   ├── http-exception.filter.js.map\n│   │   │   ├── invalid-csv-exception.d.ts\n│   │   │   ├── invalid-csv-exception.js\n│   │   │   └── invalid-csv-exception.js.map\n│   │   └── interceptors/\n│   │       ├── api-response.interceptor.d.ts\n│   │       ├── api-response.interceptor.js\n│   │       └── api-response.interceptor.js.map\n│   ├── common-fn/\n│   │   ├── common-fn.module.d.ts\n│   │   ├── common-fn.module.js\n│   │   ├── common-fn.module.js.map\n│   │   ├── common-fn.service.d.ts\n│   │   ├── common-fn.service.js\n│   │   └── common-fn.service.js.map\n│   ├── cost/\n│   │   ├── cost.controller.d.ts\n│   │   ├── cost.controller.js\n│   │   ├── cost.controller.js.map\n│   │   ├── cost.module.d.ts\n│   │   ├── cost.module.js\n│   │   ├── cost.module.js.map\n│   │   ├── cost.service.d.ts\n│   │   ├── cost.service.js\n│   │   ├── cost.service.js.map\n│   │   └── entity/\n│   │       ├── aws-cost.entity.d.ts\n│   │       ├── aws-cost.entity.js\n│   │       ├── aws-cost.entity.js.map\n│   │       ├── azure-cost.entity.d.ts\n│   │       ├── azure-cost.entity.js\n│   │       ├── azure-cost.entity.js.map\n│   │       ├── gcp-cost.entity.d.ts\n│   │       ├── gcp-cost.entity.js\n│   │       └── gcp-cost.entity.js.map\n│   ├── cron-jobs/\n│   │   ├── cron-jobs.controller.d.ts\n│   │   ├── cron-jobs.controller.js\n│   │   ├── cron-jobs.controller.js.map\n│   │   ├── cron-jobs.module.d.ts\n│   │   ├── cron-jobs.module.js\n│   │   ├── cron-jobs.module.js.map\n│   │   ├── cron-jobs.service.d.ts\n│   │   ├── cron-jobs.service.js\n│   │   └── cron-jobs.service.js.map\n│   ├── gcp/\n│   │   ├── dto/\n│   │   │   ├── aws-policy-response.d.ts\n│   │   │   ├── aws-policy-response.js\n│   │   │   ├── aws-policy-response.js.map\n│   │   │   ├── gcp-project-response.d.ts\n│   │   │   ├── gcp-project-response.js\n│   │   │   ├── gcp-project-response.js.map\n│   │   │   ├── gcp-user-response.d.ts\n│   │   │   ├── gcp-user-response.js\n│   │   │   └── gcp-user-response.js.map\n│   │   ├── entity/\n│   │   │   ├── gcp-org-roles.entity.d.ts\n│   │   │   ├── gcp-org-roles.entity.js\n│   │   │   ├── gcp-org-roles.entity.js.map\n│   │   │   ├── gcp-projects.entity.d.ts\n│   │   │   ├── gcp-projects.entity.js\n│   │   │   ├── gcp-projects.entity.js.map\n│   │   │   ├── gcp-roles.entity.d.ts\n│   │   │   ├── gcp-roles.entity.js\n│   │   │   ├── gcp-roles.entity.js.map\n│   │   │   ├── gcp-user-org-role.entity.d.ts\n│   │   │   ├── gcp-user-org-role.entity.js\n│   │   │   ├── gcp-user-org-role.entity.js.map\n│   │   │   ├── gcp-user-project.d.ts\n│   │   │   ├── gcp-user-project.js\n│   │   │   ├── gcp-user-project.js.map\n│   │   │   ├── gcp-user-role.d.ts\n│   │   │   ├── gcp-user-role.js\n│   │   │   ├── gcp-user-role.js.map\n│   │   │   ├── gcp-users.entity.d.ts\n│   │   │   ├── gcp-users.entity.js\n│   │   │   └── gcp-users.entity.js.map\n│   │   ├── gcp.controller.d.ts\n│   │   ├── gcp.controller.js\n│   │   ├── gcp.controller.js.map\n│   │   ├── gcp.module.d.ts\n│   │   ├── gcp.module.js\n│   │   ├── gcp.module.js.map\n│   │   ├── gcp.service.d.ts\n│   │   ├── gcp.service.js\n│   │   └── gcp.service.js.map\n│   ├── github/\n│   │   ├── dto/\n│   │   │   ├── git-collab-response.d.ts\n│   │   │   ├── git-collab-response.js\n│   │   │   ├── git-collab-response.js.map\n│   │   │   ├── git-repo-response.d.ts\n│   │   │   ├── git-repo-response.js\n│   │   │   └── git-repo-response.js.map\n│   │   ├── entity/\n│   │   │   ├── github-collaborators.entity.d.ts\n│   │   │   ├── github-collaborators.entity.js\n│   │   │   ├── github-collaborators.entity.js.map\n│   │   │   ├── github-repo-collaboration.entity.d.ts\n│   │   │   ├── github-repo-collaboration.entity.js\n│   │   │   ├── github-repo-collaboration.entity.js.map\n│   │   │   ├── github-repository.entity.d.ts\n│   │   │   ├── github-repository.entity.js\n│   │   │   └── github-repository.entity.js.map\n│   │   ├── github.controller.d.ts\n│   │   ├── github.controller.js\n│   │   ├── github.controller.js.map\n│   │   ├── github.module.d.ts\n│   │   ├── github.module.js\n│   │   ├── github.module.js.map\n│   │   ├── github.service.d.ts\n│   │   ├── github.service.js\n│   │   └── github.service.js.map\n│   ├── gsuite/\n│   │   ├── dto/\n│   │   │   ├── custom-email-decorator.d.ts\n│   │   │   ├── custom-email-decorator.js\n│   │   │   ├── custom-email-decorator.js.map\n│   │   │   ├── gsuite-user-csv.d.ts\n│   │   │   ├── gsuite-user-csv.js\n│   │   │   └── gsuite-user-csv.js.map\n│   │   ├── entity/\n│   │   │   ├── gsuite-users.entity.d.ts\n│   │   │   ├── gsuite-users.entity.js\n│   │   │   └── gsuite-users.entity.js.map\n│   │   ├── gsuite.controller.d.ts\n│   │   ├── gsuite.controller.js\n│   │   ├── gsuite.controller.js.map\n│   │   ├── gsuite.middleware.d.ts\n│   │   ├── gsuite.middleware.js\n│   │   ├── gsuite.middleware.js.map\n│   │   ├── gsuite.module.d.ts\n│   │   ├── gsuite.module.js\n│   │   ├── gsuite.module.js.map\n│   │   ├── gsuite.service.d.ts\n│   │   ├── gsuite.service.js\n│   │   └── gsuite.service.js.map\n│   ├── ibex-users/\n│   │   ├── dto/\n│   │   │   ├── create-user.dto.d.ts\n│   │   │   ├── create-user.dto.js\n│   │   │   ├── create-user.dto.js.map\n│   │   │   ├── date-range.dto.d.ts\n│   │   │   ├── date-range.dto.js\n│   │   │   ├── date-range.dto.js.map\n│   │   │   ├── update-user.dto.d.ts\n│   │   │   ├── update-user.dto.js\n│   │   │   ├── update-user.dto.js.map\n│   │   │   ├── user.dto.d.ts\n│   │   │   ├── user.dto.js\n│   │   │   └── user.dto.js.map\n│   │   ├── entity/\n│   │   │   ├── ibex-users.entity.d.ts\n│   │   │   ├── ibex-users.entity.js\n│   │   │   └── ibex-users.entity.js.map\n│   │   ├── ibex-users.controller.d.ts\n│   │   ├── ibex-users.controller.js\n│   │   ├── ibex-users.controller.js.map\n│   │   ├── ibex-users.module.d.ts\n│   │   ├── ibex-users.module.js\n│   │   ├── ibex-users.module.js.map\n│   │   ├── ibex-users.service.d.ts\n│   │   ├── ibex-users.service.js\n│   │   └── ibex-users.service.js.map\n│   ├── invoice/\n│   │   ├── dto/\n│   │   │   ├── uploaded-file.dto.d.ts\n│   │   │   ├── uploaded-file.dto.js\n│   │   │   └── uploaded-file.dto.js.map\n│   │   ├── entity/\n│   │   │   ├── invoice-entity.d.ts\n│   │   │   ├── invoice-entity.js\n│   │   │   └── invoice-entity.js.map\n│   │   ├── invoice.controller.d.ts\n│   │   ├── invoice.controller.js\n│   │   ├── invoice.controller.js.map\n│   │   ├── invoice.module.d.ts\n│   │   ├── invoice.module.js\n│   │   ├── invoice.module.js.map\n│   │   ├── invoice.service.d.ts\n│   │   ├── invoice.service.js\n│   │   └── invoice.service.js.map\n│   ├── jira/\n│   │   ├── entity/\n│   │   │   ├── jira-groups.entity.d.ts\n│   │   │   ├── jira-groups.entity.js\n│   │   │   ├── jira-groups.entity.js.map\n│   │   │   ├── jira-projects.entity.d.ts\n│   │   │   ├── jira-projects.entity.js\n│   │   │   ├── jira-projects.entity.js.map\n│   │   │   ├── jira-user-group.entity.d.ts\n│   │   │   ├── jira-user-group.entity.js\n│   │   │   ├── jira-user-group.entity.js.map\n│   │   │   ├── jira-user-project.entity.d.ts\n│   │   │   ├── jira-user-project.entity.js\n│   │   │   ├── jira-user-project.entity.js.map\n│   │   │   ├── jira-users.entity.d.ts\n│   │   │   ├── jira-users.entity.js\n│   │   │   └── jira-users.entity.js.map\n│   │   ├── jira.controller.d.ts\n│   │   ├── jira.controller.js\n│   │   ├── jira.controller.js.map\n│   │   ├── jira.module.d.ts\n│   │   ├── jira.module.js\n│   │   ├── jira.module.js.map\n│   │   ├── jira.service.d.ts\n│   │   ├── jira.service.js\n│   │   └── jira.service.js.map\n│   ├── keka/\n│   │   ├── dto/\n│   │   │   ├── asset-csv.d.ts\n│   │   │   ├── asset-csv.js\n│   │   │   ├── asset-csv.js.map\n│   │   │   ├── custom-date-relieved-decorator.d.ts\n│   │   │   ├── custom-date-relieved-decorator.js\n│   │   │   ├── custom-date-relieved-decorator.js.map\n│   │   │   ├── custom-email-decorator.d.ts\n│   │   │   ├── custom-email-decorator.js\n│   │   │   ├── custom-email-decorator.js.map\n│   │   │   ├── keka-csv.d.ts\n│   │   │   ├── keka-csv.js\n│   │   │   └── keka-csv.js.map\n│   │   ├── entity/\n│   │   │   ├── Department-migrated-history.entity.d.ts\n│   │   │   ├── Department-migrated-history.entity.js\n│   │   │   ├── Department-migrated-history.entity.js.map\n│   │   │   ├── keka.entity.d.ts\n│   │   │   ├── keka.entity.js\n│   │   │   └── keka.entity.js.map\n│   │   ├── keka.controller.d.ts\n│   │   ├── keka.controller.js\n│   │   ├── keka.controller.js.map\n│   │   ├── keka.middleware.d.ts\n│   │   ├── keka.middleware.js\n│   │   ├── keka.middleware.js.map\n│   │   ├── keka.module.d.ts\n│   │   ├── keka.module.js\n│   │   ├── keka.module.js.map\n│   │   ├── keka.service.d.ts\n│   │   ├── keka.service.js\n│   │   └── keka.service.js.map\n│   ├── lambda.d.ts\n│   ├── lambda.js\n│   ├── lambda.js.map\n│   ├── mail/\n│   │   ├── mail.module.d.ts\n│   │   ├── mail.module.js\n│   │   ├── mail.module.js.map\n│   │   ├── mail.service.d.ts\n│   │   ├── mail.service.js\n│   │   └── mail.service.js.map\n│   ├── main.d.ts\n│   ├── main.js\n│   ├── main.js.map\n│   ├── outline/\n│   │   ├── entity/\n│   │   │   ├── outline-groups.entity.d.ts\n│   │   │   ├── outline-groups.entity.js\n│   │   │   ├── outline-groups.entity.js.map\n│   │   │   ├── outline-users.entity.d.ts\n│   │   │   ├── outline-users.entity.js\n│   │   │   └── outline-users.entity.js.map\n│   │   ├── outline.controller.d.ts\n│   │   ├── outline.controller.js\n│   │   ├── outline.controller.js.map\n│   │   ├── outline.module.d.ts\n│   │   ├── outline.module.js\n│   │   ├── outline.module.js.map\n│   │   ├── outline.service.d.ts\n│   │   ├── outline.service.js\n│   │   └── outline.service.js.map\n│   ├── pipedrive/\n│   │   ├── entity/\n│   │   │   ├── pipedrive.enitity.d.ts\n│   │   │   ├── pipedrive.enitity.js\n│   │   │   └── pipedrive.enitity.js.map\n│   │   ├── pipedrive.controller.d.ts\n│   │   ├── pipedrive.controller.js\n│   │   ├── pipedrive.controller.js.map\n│   │   ├── pipedrive.module.d.ts\n│   │   ├── pipedrive.module.js\n│   │   ├── pipedrive.module.js.map\n│   │   ├── pipedrive.service.d.ts\n│   │   ├── pipedrive.service.js\n│   │   └── pipedrive.service.js.map\n│   ├── secrets/\n│   │   ├── secrets.config.d.ts\n│   │   ├── secrets.config.js\n│   │   └── secrets.config.js.map\n│   ├── services/\n│   │   ├── dto/\n│   │   │   ├── create-payment.dto.d.ts\n│   │   │   ├── create-payment.dto.js\n│   │   │   ├── create-payment.dto.js.map\n│   │   │   ├── create-service-user.dto.d.ts\n│   │   │   ├── create-service-user.dto.js\n│   │   │   ├── create-service-user.dto.js.map\n│   │   │   ├── create-service.dto.d.ts\n│   │   │   ├── create-service.dto.js\n│   │   │   ├── create-service.dto.js.map\n│   │   │   ├── importDto.d.ts\n│   │   │   ├── importDto.js\n│   │   │   ├── importDto.js.map\n│   │   │   ├── paymentHistory-csv.d.ts\n│   │   │   ├── paymentHistory-csv.js\n│   │   │   ├── paymentHistory-csv.js.map\n│   │   │   ├── update-payment-dto.d.ts\n│   │   │   ├── update-payment-dto.js\n│   │   │   ├── update-payment-dto.js.map\n│   │   │   ├── update-service-dto.d.ts\n│   │   │   ├── update-service-dto.js\n│   │   │   ├── update-service-dto.js.map\n│   │   │   ├── update-service-user.dto.d.ts\n│   │   │   ├── update-service-user.dto.js\n│   │   │   └── update-service-user.dto.js.map\n│   │   ├── entity/\n│   │   │   ├── payments-history.entity.d.ts\n│   │   │   ├── payments-history.entity.js\n│   │   │   ├── payments-history.entity.js.map\n│   │   │   ├── service-user-activity-history.d.ts\n│   │   │   ├── service-user-activity-history.js\n│   │   │   ├── service-user-activity-history.js.map\n│   │   │   ├── service-user-billing-history.d.ts\n│   │   │   ├── service-user-billing-history.js\n│   │   │   ├── service-user-billing-history.js.map\n│   │   │   ├── services-history.entity.d.ts\n│   │   │   ├── services-history.entity.js\n│   │   │   ├── services-history.entity.js.map\n│   │   │   ├── services-users.entity.d.ts\n│   │   │   ├── services-users.entity.js\n│   │   │   ├── services-users.entity.js.map\n│   │   │   ├── services.entity.d.ts\n│   │   │   ├── services.entity.js\n│   │   │   └── services.entity.js.map\n│   │   ├── paymentHistory.middleware.d.ts\n│   │   ├── paymentHistory.middleware.js\n│   │   ├── paymentHistory.middleware.js.map\n│   │   ├── service.middleware.d.ts\n│   │   ├── service.middleware.js\n│   │   ├── service.middleware.js.map\n│   │   ├── services.controller.d.ts\n│   │   ├── services.controller.js\n│   │   ├── services.controller.js.map\n│   │   ├── services.module.d.ts\n│   │   ├── services.module.js\n│   │   ├── services.module.js.map\n│   │   ├── services.service.d.ts\n│   │   ├── services.service.js\n│   │   └── services.service.js.map\n│   ├── slack/\n│   │   ├── entity/\n│   │   │   ├── slack.entity.d.ts\n│   │   │   ├── slack.entity.js\n│   │   │   └── slack.entity.js.map\n│   │   ├── slack.controller.d.ts\n│   │   ├── slack.controller.js\n│   │   ├── slack.controller.js.map\n│   │   ├── slack.module.d.ts\n│   │   ├── slack.module.js\n│   │   ├── slack.module.js.map\n│   │   ├── slack.service.d.ts\n│   │   ├── slack.service.js\n│   │   └── slack.service.js.map\n│   ├── sync/\n│   │   ├── dto/\n│   │   │   ├── create-sync.dto.d.ts\n│   │   │   ├── create-sync.dto.js\n│   │   │   └── create-sync.dto.js.map\n│   │   ├── entity/\n│   │   │   ├── sync-entity.d.ts\n│   │   │   ├── sync-entity.js\n│   │   │   └── sync-entity.js.map\n│   │   ├── sync.controller.d.ts\n│   │   ├── sync.controller.js\n│   │   ├── sync.controller.js.map\n│   │   ├── sync.module.d.ts\n│   │   ├── sync.module.js\n│   │   ├── sync.module.js.map\n│   │   ├── sync.service.d.ts\n│   │   ├── sync.service.js\n│   │   └── sync.service.js.map\n│   ├── sync-log/\n│   │   ├── entity/\n│   │   │   ├── sync-log.entity.d.ts\n│   │   │   ├── sync-log.entity.js\n│   │   │   └── sync-log.entity.js.map\n│   │   ├── sync-log.controller.d.ts\n│   │   ├── sync-log.controller.js\n│   │   ├── sync-log.controller.js.map\n│   │   ├── sync-log.module.d.ts\n│   │   ├── sync-log.module.js\n│   │   ├── sync-log.module.js.map\n│   │   ├── sync-log.service.d.ts\n│   │   ├── sync-log.service.js\n│   │   └── sync-log.service.js.map\n│   ├── tsconfig.build.tsbuildinfo\n│   ├── types/\n│   │   ├── index.d.ts\n│   │   ├── index.js\n│   │   ├── index.js.map\n│   │   ├── jwtPayload.type.d.ts\n│   │   ├── jwtPayload.type.js\n│   │   ├── jwtPayload.type.js.map\n│   │   ├── jwtPayloadWithRt.type.d.ts\n│   │   ├── jwtPayloadWithRt.type.js\n│   │   └── jwtPayloadWithRt.type.js.map\n│   ├── users/\n│   │   ├── dto/\n│   │   │   ├── create-user.dto.d.ts\n│   │   │   ├── create-user.dto.js\n│   │   │   ├── create-user.dto.js.map\n│   │   │   ├── update-user.dto.d.ts\n│   │   │   ├── update-user.dto.js\n│   │   │   ├── update-user.dto.js.map\n│   │   │   ├── user.dto.d.ts\n│   │   │   ├── user.dto.js\n│   │   │   └── user.dto.js.map\n│   │   ├── entity/\n│   │   │   ├── users.entity.d.ts\n│   │   │   ├── users.entity.js\n│   │   │   └── users.entity.js.map\n│   │   ├── users.controller.d.ts\n│   │   ├── users.controller.js\n│   │   ├── users.controller.js.map\n│   │   ├── users.module.d.ts\n│   │   ├── users.module.js\n│   │   ├── users.module.js.map\n│   │   ├── users.service.d.ts\n│   │   ├── users.service.js\n│   │   └── users.service.js.map\n│   ├── utils/\n│   │   ├── encrypt.d.ts\n│   │   ├── encrypt.js\n│   │   ├── encrypt.js.map\n│   │   ├── lib.d.ts\n│   │   ├── lib.js\n│   │   └── lib.js.map\n│   └── webhooks/\n│       ├── guard/\n│       │   ├── verify-signature.guard.d.ts\n│       │   ├── verify-signature.guard.js\n│       │   └── verify-signature.guard.js.map\n│       ├── webhook.controller.d.ts\n│       ├── webhook.controller.js\n│       ├── webhook.controller.js.map\n│       ├── webhook.module.d.ts\n│       ├── webhook.module.js\n│       ├── webhook.module.js.map\n│       ├── webhook.service.d.ts\n│       ├── webhook.service.js\n│       └── webhook.service.js.map\n├── nest-cli.json\n├── package-lock.json\n├── package.json\n├── src/\n│   ├── alerts/\n│   │   ├── alerts.controller.ts\n│   │   ├── alerts.module.ts\n│   │   ├── alerts.repository.ts\n│   │   ├── alerts.service.ts\n│   │   ├── dto/\n│   │   │   └── alert-dto.ts\n│   │   └── entity/\n│   │       └── alerts-entity.ts\n│   ├── app.module.ts\n│   ├── asset/\n│   │   ├── asset.controller.ts\n│   │   ├── asset.module.ts\n│   │   ├── asset.service.ts\n│   │   ├── dto/\n│   │   │   └── update-asset-details.dto.ts\n│   │   └── entity/\n│   │       ├── asset-assignment-history.ts\n│   │       ├── asset-assignment.ts\n│   │       ├── asset-details-entity.ts\n│   │       └── asset-logon-details.entity.ts\n│   ├── auth/\n│   │   ├── auth.controller.ts\n│   │   ├── auth.module.ts\n│   │   ├── auth.service.ts\n│   │   ├── dto/\n│   │   │   └── api-key-generate-request.ts\n│   │   ├── entity/\n│   │   │   └── api-key-entity.ts\n│   │   ├── guards/\n│   │   │   ├── admin-role.guard.ts\n│   │   │   ├── jwt-auth.guard.ts\n│   │   │   ├── local-auth.guard.ts\n│   │   │   └── refreshtoken.guard.ts\n│   │   └── strategies/\n│   │       ├── api-key.strategy.ts\n│   │       ├── jwt-auth.strategy.ts\n│   │       ├── local.strategy.ts\n│   │       └── refreshToken.strategy.ts\n│   ├── aws/\n│   │   ├── aws.controller.ts\n│   │   ├── aws.module.ts\n│   │   ├── aws.service.ts\n│   │   ├── dto/\n│   │   │   ├── aws-group-response.ts\n│   │   │   ├── aws-policy-response.ts\n│   │   │   └── aws-user-response.ts\n│   │   └── entity/\n│   │       ├── aws-group-policy.entity.ts\n│   │       ├── aws-groups.entity.ts\n│   │       ├── aws-policies.entity.ts\n│   │       ├── aws-user-group.entity.ts\n│   │       └── aws-users.entity.ts\n│   ├── azure/\n│   │   ├── azure.controller.ts\n│   │   ├── azure.module.ts\n│   │   ├── azure.service.ts\n│   │   └── entity/\n│   │       └── azure-user.entity.ts\n│   ├── common/\n│   │   ├── api-response.ts\n│   │   ├── decorator/\n│   │   │   ├── get-current-user-id.decorator.ts\n│   │   │   ├── get-current-user.decorator.ts\n│   │   │   ├── is-valid-url.decorator.ts\n│   │   │   └── match.decorator.ts\n│   │   ├── enum/\n│   │   │   └── ibex-status.enum.ts\n│   │   ├── exceptions/\n│   │   │   ├── http-exception.filter.ts\n│   │   │   └── invalid-csv-exception.ts\n│   │   └── interceptors/\n│   │       └── api-response.interceptor.ts\n│   ├── common-fn/\n│   │   ├── common-fn.module.ts\n│   │   └── common-fn.service.ts\n│   ├── cost/\n│   │   ├── cost.controller.ts\n│   │   ├── cost.module.ts\n│   │   ├── cost.service.ts\n│   │   └── entity/\n│   │       ├── aws-cost.entity.ts\n│   │       ├── azure-cost.entity.ts\n│   │       └── gcp-cost.entity.ts\n│   ├── cron-jobs/\n│   │   ├── cron-jobs.controller.ts\n│   │   ├── cron-jobs.module.ts\n│   │   └── cron-jobs.service.ts\n│   ├── gcp/\n│   │   ├── dto/\n│   │   │   ├── aws-policy-response.ts\n│   │   │   ├── gcp-project-response.ts\n│   │   │   └── gcp-user-response.ts\n│   │   ├── entity/\n│   │   │   ├── gcp-org-roles.entity.ts\n│   │   │   ├── gcp-projects.entity.ts\n│   │   │   ├── gcp-roles.entity.ts\n│   │   │   ├── gcp-user-org-role.entity.ts\n│   │   │   ├── gcp-user-project.ts\n│   │   │   ├── gcp-user-role.ts\n│   │   │   └── gcp-users.entity.ts\n│   │   ├── gcp.controller.ts\n│   │   ├── gcp.module.ts\n│   │   └── gcp.service.ts\n│   ├── github/\n│   │   ├── dto/\n│   │   │   ├── git-collab-response.ts\n│   │   │   └── git-repo-response.ts\n│   │   ├── entity/\n│   │   │   ├── github-collaborators.entity.ts\n│   │   │   ├── github-repo-collaboration.entity.ts\n│   │   │   └── github-repository.entity.ts\n│   │   ├── github.controller.ts\n│   │   ├── github.module.ts\n│   │   └── github.service.ts\n│   ├── gsuite/\n│   │   ├── dto/\n│   │   │   ├── custom-email-decorator.ts\n│   │   │   └── gsuite-user-csv.ts\n│   │   ├── entity/\n│   │   │   └── gsuite-users.entity.ts\n│   │   ├── gsuite.controller.ts\n│   │   ├── gsuite.middleware.ts\n│   │   ├── gsuite.module.ts\n│   │   └── gsuite.service.ts\n│   ├── ibex-users/\n│   │   ├── dto/\n│   │   │   ├── create-user.dto.ts\n│   │   │   ├── date-range.dto.ts\n│   │   │   ├── update-user.dto.ts\n│   │   │   └── user.dto.ts\n│   │   ├── entity/\n│   │   │   └── ibex-users.entity.ts\n│   │   ├── ibex-users.controller.ts\n│   │   ├── ibex-users.module.ts\n│   │   └── ibex-users.service.ts\n│   ├── invoice/\n│   │   ├── dto/\n│   │   │   └── uploaded-file.dto.ts\n│   │   ├── entity/\n│   │   │   └── invoice-entity.ts\n│   │   ├── invoice.controller.ts\n│   │   ├── invoice.module.ts\n│   │   └── invoice.service.ts\n│   ├── jira/\n│   │   ├── entity/\n│   │   │   ├── jira-groups.entity.ts\n│   │   │   ├── jira-projects.entity.ts\n│   │   │   ├── jira-user-group.entity.ts\n│   │   │   ├── jira-user-project.entity.ts\n│   │   │   └── jira-users.entity.ts\n│   │   ├── jira.controller.ts\n│   │   ├── jira.module.ts\n│   │   └── jira.service.ts\n│   ├── keka/\n│   │   ├── dto/\n│   │   │   ├── asset-csv.ts\n│   │   │   ├── custom-date-relieved-decorator.ts\n│   │   │   ├── custom-email-decorator.ts\n│   │   │   └── keka-csv.ts\n│   │   ├── entity/\n│   │   │   ├── Department-migrated-history.entity.ts\n│   │   │   └── keka.entity.ts\n│   │   ├── keka.controller.ts\n│   │   ├── keka.middleware.ts\n│   │   ├── keka.module.ts\n│   │   └── keka.service.ts\n│   ├── lambda.ts\n│   ├── mail/\n│   │   ├── mail.module.ts\n│   │   └── mail.service.ts\n│   ├── main.ts\n│   ├── outline/\n│   │   ├── entity/\n│   │   │   ├── outline-groups.entity.ts\n│   │   │   └── outline-users.entity.ts\n│   │   ├── outline.controller.ts\n│   │   ├── outline.module.ts\n│   │   └── outline.service.ts\n│   ├── pipedrive/\n│   │   ├── entity/\n│   │   │   └── pipedrive.enitity.ts\n│   │   ├── pipedrive.controller.ts\n│   │   ├── pipedrive.module.ts\n│   │   └── pipedrive.service.ts\n│   ├── secrets/\n│   │   └── secrets.config.ts\n│   ├── services/\n│   │   ├── dto/\n│   │   │   ├── create-payment.dto.ts\n│   │   │   ├── create-service-user.dto.ts\n│   │   │   ├── create-service.dto.ts\n│   │   │   ├── importDto.ts\n│   │   │   ├── paymentHistory-csv.ts\n│   │   │   ├── update-payment-dto.ts\n│   │   │   ├── update-service-dto.ts\n│   │   │   └── update-service-user.dto.ts\n│   │   ├── entity/\n│   │   │   ├── payments-history.entity.ts\n│   │   │   ├── service-user-activity-history.ts\n│   │   │   ├── service-user-billing-history.ts\n│   │   │   ├── services-history.entity.ts\n│   │   │   ├── services-users.entity.ts\n│   │   │   └── services.entity.ts\n│   │   ├── paymentHistory.middleware.ts\n│   │   ├── service.middleware.ts\n│   │   ├── services.controller.ts\n│   │   ├── services.module.ts\n│   │   └── services.service.ts\n│   ├── slack/\n│   │   ├── entity/\n│   │   │   └── slack.entity.ts\n│   │   ├── slack.controller.ts\n│   │   ├── slack.module.ts\n│   │   └── slack.service.ts\n│   ├── sync/\n│   │   ├── dto/\n│   │   │   └── create-sync.dto.ts\n│   │   ├── entity/\n│   │   │   └── sync-entity.ts\n│   │   ├── sync.controller.ts\n│   │   ├── sync.module.ts\n│   │   └── sync.service.ts\n│   ├── sync-log/\n│   │   ├── entity/\n│   │   │   └── sync-log.entity.ts\n│   │   ├── sync-log.controller.ts\n│   │   ├── sync-log.module.ts\n│   │   └── sync-log.service.ts\n│   ├── types/\n│   │   ├── index.ts\n│   │   ├── jwtPayload.type.ts\n│   │   └── jwtPayloadWithRt.type.ts\n│   ├── users/\n│   │   ├── dto/\n│   │   │   ├── create-user.dto.ts\n│   │   │   ├── update-user.dto.ts\n│   │   │   └── user.dto.ts\n│   │   ├── entity/\n│   │   │   └── users.entity.ts\n│   │   ├── users.controller.ts\n│   │   ├── users.module.ts\n│   │   └── users.service.ts\n│   ├── utils/\n│   │   ├── encrypt.ts\n│   │   └── lib.ts\n│   └── webhooks/\n│       ├── guard/\n│       │   └── verify-signature.guard.ts\n│       ├── webhook.controller.ts\n│       ├── webhook.module.ts\n│       └── webhook.service.ts\n├── swark55-efa5bf1d-2025-09-05T11-26-47/\n│   ├── detailed-architecture.d2\n│   ├── detailed-architecture.eraser\n│   ├── high-level-architecture.d2\n│   ├── high-level-architecture.eraser\n│   ├── semi-detailed-architecture.d2\n│   ├── semi-detailed-architecture.eraser\n│   └── swark55-analysis-summary.md\n├── swark_output/\n│   └── HEAD/\n│       ├── detailed.d2\n│       ├── detailed.eraser\n│       ├── high_level.d2\n│       ├── high_level.eraser\n│       ├── semi_detailed.d2\n│       ├── semi_detailed.eraser\n│       └── token_report.txt\n├── test/\n│   ├── app.e2e-spec.ts\n│   └── jest-e2e.json\n├── tsconfig.build.json\n└── tsconfig.json",
+  "fileList": [
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\Dockerfile",
+      "relativePath": "Dockerfile",
+      "size": 385,
+      "estimatedTokens": 104
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\nest-cli.json",
+      "relativePath": "nest-cli.json",
+      "size": 171,
+      "estimatedTokens": 52
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\package-lock.json",
+      "relativePath": "package-lock.json",
+      "size": 579267,
+      "estimatedTokens": 229208
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\package.json",
+      "relativePath": "package.json",
+      "size": 3800,
+      "estimatedTokens": 1423
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\README.md",
+      "relativePath": "README.md",
+      "size": 3340,
+      "estimatedTokens": 986
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\alerts.controller.ts",
+      "relativePath": "src\\alerts\\alerts.controller.ts",
+      "size": 4305,
+      "estimatedTokens": 967
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\alerts.module.ts",
+      "relativePath": "src\\alerts\\alerts.module.ts",
+      "size": 710,
+      "estimatedTokens": 145
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\alerts.repository.ts",
+      "relativePath": "src\\alerts\\alerts.repository.ts",
+      "size": 255,
+      "estimatedTokens": 52
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\alerts.service.ts",
+      "relativePath": "src\\alerts\\alerts.service.ts",
+      "size": 9013,
+      "estimatedTokens": 1747
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\dto\\alert-dto.ts",
+      "relativePath": "src\\alerts\\dto\\alert-dto.ts",
+      "size": 1519,
+      "estimatedTokens": 470
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\alerts\\entity\\alerts-entity.ts",
+      "relativePath": "src\\alerts\\entity\\alerts-entity.ts",
+      "size": 1424,
+      "estimatedTokens": 376
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\app.module.ts",
+      "relativePath": "src\\app.module.ts",
+      "size": 7292,
+      "estimatedTokens": 1628
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\asset.controller.ts",
+      "relativePath": "src\\asset\\asset.controller.ts",
+      "size": 3140,
+      "estimatedTokens": 737
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\asset.module.ts",
+      "relativePath": "src\\asset\\asset.module.ts",
+      "size": 629,
+      "estimatedTokens": 136
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\asset.service.ts",
+      "relativePath": "src\\asset\\asset.service.ts",
+      "size": 14076,
+      "estimatedTokens": 3128
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\dto\\update-asset-details.dto.ts",
+      "relativePath": "src\\asset\\dto\\update-asset-details.dto.ts",
+      "size": 950,
+      "estimatedTokens": 260
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\entity\\asset-assignment-history.ts",
+      "relativePath": "src\\asset\\entity\\asset-assignment-history.ts",
+      "size": 448,
+      "estimatedTokens": 122
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\entity\\asset-assignment.ts",
+      "relativePath": "src\\asset\\entity\\asset-assignment.ts",
+      "size": 780,
+      "estimatedTokens": 224
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\entity\\asset-details-entity.ts",
+      "relativePath": "src\\asset\\entity\\asset-details-entity.ts",
+      "size": 1625,
+      "estimatedTokens": 450
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\asset\\entity\\asset-logon-details.entity.ts",
+      "relativePath": "src\\asset\\entity\\asset-logon-details.entity.ts",
+      "size": 708,
+      "estimatedTokens": 200
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\auth.controller.ts",
+      "relativePath": "src\\auth\\auth.controller.ts",
+      "size": 3506,
+      "estimatedTokens": 862
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\auth.module.ts",
+      "relativePath": "src\\auth\\auth.module.ts",
+      "size": 868,
+      "estimatedTokens": 198
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\auth.service.ts",
+      "relativePath": "src\\auth\\auth.service.ts",
+      "size": 6617,
+      "estimatedTokens": 1562
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\dto\\api-key-generate-request.ts",
+      "relativePath": "src\\auth\\dto\\api-key-generate-request.ts",
+      "size": 430,
+      "estimatedTokens": 116
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\entity\\api-key-entity.ts",
+      "relativePath": "src\\auth\\entity\\api-key-entity.ts",
+      "size": 555,
+      "estimatedTokens": 157
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\guards\\admin-role.guard.ts",
+      "relativePath": "src\\auth\\guards\\admin-role.guard.ts",
+      "size": 1660,
+      "estimatedTokens": 356
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\guards\\jwt-auth.guard.ts",
+      "relativePath": "src\\auth\\guards\\jwt-auth.guard.ts",
+      "size": 199,
+      "estimatedTokens": 47
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\guards\\local-auth.guard.ts",
+      "relativePath": "src\\auth\\guards\\local-auth.guard.ts",
+      "size": 162,
+      "estimatedTokens": 34
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\guards\\refreshtoken.guard.ts",
+      "relativePath": "src\\auth\\guards\\refreshtoken.guard.ts",
+      "size": 169,
+      "estimatedTokens": 35
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\strategies\\api-key.strategy.ts",
+      "relativePath": "src\\auth\\strategies\\api-key.strategy.ts",
+      "size": 784,
+      "estimatedTokens": 186
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\strategies\\jwt-auth.strategy.ts",
+      "relativePath": "src\\auth\\strategies\\jwt-auth.strategy.ts",
+      "size": 464,
+      "estimatedTokens": 105
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\strategies\\local.strategy.ts",
+      "relativePath": "src\\auth\\strategies\\local.strategy.ts",
+      "size": 586,
+      "estimatedTokens": 124
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\auth\\strategies\\refreshToken.strategy.ts",
+      "relativePath": "src\\auth\\strategies\\refreshToken.strategy.ts",
+      "size": 743,
+      "estimatedTokens": 168
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\aws.controller.ts",
+      "relativePath": "src\\aws\\aws.controller.ts",
+      "size": 6171,
+      "estimatedTokens": 1552
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\aws.module.ts",
+      "relativePath": "src\\aws\\aws.module.ts",
+      "size": 3008,
+      "estimatedTokens": 697
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\aws.service.ts",
+      "relativePath": "src\\aws\\aws.service.ts",
+      "size": 33068,
+      "estimatedTokens": 7439
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\dto\\aws-group-response.ts",
+      "relativePath": "src\\aws\\dto\\aws-group-response.ts",
+      "size": 340,
+      "estimatedTokens": 92
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\dto\\aws-policy-response.ts",
+      "relativePath": "src\\aws\\dto\\aws-policy-response.ts",
+      "size": 226,
+      "estimatedTokens": 55
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\dto\\aws-user-response.ts",
+      "relativePath": "src\\aws\\dto\\aws-user-response.ts",
+      "size": 365,
+      "estimatedTokens": 99
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\entity\\aws-group-policy.entity.ts",
+      "relativePath": "src\\aws\\entity\\aws-group-policy.entity.ts",
+      "size": 595,
+      "estimatedTokens": 155
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\entity\\aws-groups.entity.ts",
+      "relativePath": "src\\aws\\entity\\aws-groups.entity.ts",
+      "size": 904,
+      "estimatedTokens": 243
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\entity\\aws-policies.entity.ts",
+      "relativePath": "src\\aws\\entity\\aws-policies.entity.ts",
+      "size": 695,
+      "estimatedTokens": 182
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\entity\\aws-user-group.entity.ts",
+      "relativePath": "src\\aws\\entity\\aws-user-group.entity.ts",
+      "size": 732,
+      "estimatedTokens": 200
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\aws\\entity\\aws-users.entity.ts",
+      "relativePath": "src\\aws\\entity\\aws-users.entity.ts",
+      "size": 1245,
+      "estimatedTokens": 349
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\azure\\azure.controller.ts",
+      "relativePath": "src\\azure\\azure.controller.ts",
+      "size": 2285,
+      "estimatedTokens": 547
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\azure\\azure.module.ts",
+      "relativePath": "src\\azure\\azure.module.ts",
+      "size": 892,
+      "estimatedTokens": 212
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\azure\\azure.service.ts",
+      "relativePath": "src\\azure\\azure.service.ts",
+      "size": 19622,
+      "estimatedTokens": 4262
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\azure\\entity\\azure-user.entity.ts",
+      "relativePath": "src\\azure\\entity\\azure-user.entity.ts",
+      "size": 1607,
+      "estimatedTokens": 442
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\api-response.ts",
+      "relativePath": "src\\common\\api-response.ts",
+      "size": 209,
+      "estimatedTokens": 51
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\decorator\\get-current-user-id.decorator.ts",
+      "relativePath": "src\\common\\decorator\\get-current-user-id.decorator.ts",
+      "size": 366,
+      "estimatedTokens": 81
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\decorator\\get-current-user.decorator.ts",
+      "relativePath": "src\\common\\decorator\\get-current-user.decorator.ts",
+      "size": 376,
+      "estimatedTokens": 84
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\decorator\\is-valid-url.decorator.ts",
+      "relativePath": "src\\common\\decorator\\is-valid-url.decorator.ts",
+      "size": 798,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\decorator\\match.decorator.ts",
+      "relativePath": "src\\common\\decorator\\match.decorator.ts",
+      "size": 796,
+      "estimatedTokens": 161
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\enum\\ibex-status.enum.ts",
+      "relativePath": "src\\common\\enum\\ibex-status.enum.ts",
+      "size": 106,
+      "estimatedTokens": 33
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\exceptions\\http-exception.filter.ts",
+      "relativePath": "src\\common\\exceptions\\http-exception.filter.ts",
+      "size": 742,
+      "estimatedTokens": 157
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\exceptions\\invalid-csv-exception.ts",
+      "relativePath": "src\\common\\exceptions\\invalid-csv-exception.ts",
+      "size": 407,
+      "estimatedTokens": 103
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common\\interceptors\\api-response.interceptor.ts",
+      "relativePath": "src\\common\\interceptors\\api-response.interceptor.ts",
+      "size": 614,
+      "estimatedTokens": 136
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common-fn\\common-fn.module.ts",
+      "relativePath": "src\\common-fn\\common-fn.module.ts",
+      "size": 1197,
+      "estimatedTokens": 291
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\common-fn\\common-fn.service.ts",
+      "relativePath": "src\\common-fn\\common-fn.service.ts",
+      "size": 10943,
+      "estimatedTokens": 2510
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\cost.controller.ts",
+      "relativePath": "src\\cost\\cost.controller.ts",
+      "size": 4305,
+      "estimatedTokens": 1127
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\cost.module.ts",
+      "relativePath": "src\\cost\\cost.module.ts",
+      "size": 597,
+      "estimatedTokens": 139
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\cost.service.ts",
+      "relativePath": "src\\cost\\cost.service.ts",
+      "size": 30289,
+      "estimatedTokens": 7248
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\entity\\aws-cost.entity.ts",
+      "relativePath": "src\\cost\\entity\\aws-cost.entity.ts",
+      "size": 582,
+      "estimatedTokens": 162
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\entity\\azure-cost.entity.ts",
+      "relativePath": "src\\cost\\entity\\azure-cost.entity.ts",
+      "size": 646,
+      "estimatedTokens": 172
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cost\\entity\\gcp-cost.entity.ts",
+      "relativePath": "src\\cost\\entity\\gcp-cost.entity.ts",
+      "size": 582,
+      "estimatedTokens": 163
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cron-jobs\\cron-jobs.controller.ts",
+      "relativePath": "src\\cron-jobs\\cron-jobs.controller.ts",
+      "size": 1853,
+      "estimatedTokens": 428
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cron-jobs\\cron-jobs.module.ts",
+      "relativePath": "src\\cron-jobs\\cron-jobs.module.ts",
+      "size": 4445,
+      "estimatedTokens": 1057
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\cron-jobs\\cron-jobs.service.ts",
+      "relativePath": "src\\cron-jobs\\cron-jobs.service.ts",
+      "size": 15114,
+      "estimatedTokens": 3412
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\dto\\aws-policy-response.ts",
+      "relativePath": "src\\gcp\\dto\\aws-policy-response.ts",
+      "size": 226,
+      "estimatedTokens": 55
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\dto\\gcp-project-response.ts",
+      "relativePath": "src\\gcp\\dto\\gcp-project-response.ts",
+      "size": 383,
+      "estimatedTokens": 95
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\dto\\gcp-user-response.ts",
+      "relativePath": "src\\gcp\\dto\\gcp-user-response.ts",
+      "size": 331,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-org-roles.entity.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-org-roles.entity.ts",
+      "size": 525,
+      "estimatedTokens": 150
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-projects.entity.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-projects.entity.ts",
+      "size": 1176,
+      "estimatedTokens": 329
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-roles.entity.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-roles.entity.ts",
+      "size": 522,
+      "estimatedTokens": 149
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-user-org-role.entity.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-user-org-role.entity.ts",
+      "size": 508,
+      "estimatedTokens": 147
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-user-project.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-user-project.ts",
+      "size": 795,
+      "estimatedTokens": 223
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-user-role.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-user-role.ts",
+      "size": 640,
+      "estimatedTokens": 183
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\entity\\gcp-users.entity.ts",
+      "relativePath": "src\\gcp\\entity\\gcp-users.entity.ts",
+      "size": 1490,
+      "estimatedTokens": 425
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\gcp.controller.ts",
+      "relativePath": "src\\gcp\\gcp.controller.ts",
+      "size": 6313,
+      "estimatedTokens": 1631
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\gcp.module.ts",
+      "relativePath": "src\\gcp\\gcp.module.ts",
+      "size": 3241,
+      "estimatedTokens": 778
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gcp\\gcp.service.ts",
+      "relativePath": "src\\gcp\\gcp.service.ts",
+      "size": 37122,
+      "estimatedTokens": 8205
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\dto\\git-collab-response.ts",
+      "relativePath": "src\\github\\dto\\git-collab-response.ts",
+      "size": 1073,
+      "estimatedTokens": 248
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\dto\\git-repo-response.ts",
+      "relativePath": "src\\github\\dto\\git-repo-response.ts",
+      "size": 913,
+      "estimatedTokens": 237
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\entity\\github-collaborators.entity.ts",
+      "relativePath": "src\\github\\entity\\github-collaborators.entity.ts",
+      "size": 1779,
+      "estimatedTokens": 477
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\entity\\github-repo-collaboration.entity.ts",
+      "relativePath": "src\\github\\entity\\github-repo-collaboration.entity.ts",
+      "size": 1152,
+      "estimatedTokens": 299
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\entity\\github-repository.entity.ts",
+      "relativePath": "src\\github\\entity\\github-repository.entity.ts",
+      "size": 1363,
+      "estimatedTokens": 360
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\github.controller.ts",
+      "relativePath": "src\\github\\github.controller.ts",
+      "size": 5441,
+      "estimatedTokens": 1380
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\github.module.ts",
+      "relativePath": "src\\github\\github.module.ts",
+      "size": 2936,
+      "estimatedTokens": 670
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\github\\github.service.ts",
+      "relativePath": "src\\github\\github.service.ts",
+      "size": 25154,
+      "estimatedTokens": 5426
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\dto\\custom-email-decorator.ts",
+      "relativePath": "src\\gsuite\\dto\\custom-email-decorator.ts",
+      "size": 475,
+      "estimatedTokens": 108
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\dto\\gsuite-user-csv.ts",
+      "relativePath": "src\\gsuite\\dto\\gsuite-user-csv.ts",
+      "size": 1025,
+      "estimatedTokens": 308
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\entity\\gsuite-users.entity.ts",
+      "relativePath": "src\\gsuite\\entity\\gsuite-users.entity.ts",
+      "size": 1205,
+      "estimatedTokens": 338
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\gsuite.controller.ts",
+      "relativePath": "src\\gsuite\\gsuite.controller.ts",
+      "size": 3170,
+      "estimatedTokens": 815
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\gsuite.middleware.ts",
+      "relativePath": "src\\gsuite\\gsuite.middleware.ts",
+      "size": 5244,
+      "estimatedTokens": 1171
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\gsuite.module.ts",
+      "relativePath": "src\\gsuite\\gsuite.module.ts",
+      "size": 970,
+      "estimatedTokens": 236
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\gsuite\\gsuite.service.ts",
+      "relativePath": "src\\gsuite\\gsuite.service.ts",
+      "size": 19645,
+      "estimatedTokens": 4536
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\dto\\create-user.dto.ts",
+      "relativePath": "src\\ibex-users\\dto\\create-user.dto.ts",
+      "size": 497,
+      "estimatedTokens": 150
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\dto\\date-range.dto.ts",
+      "relativePath": "src\\ibex-users\\dto\\date-range.dto.ts",
+      "size": 163,
+      "estimatedTokens": 42
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\dto\\update-user.dto.ts",
+      "relativePath": "src\\ibex-users\\dto\\update-user.dto.ts",
+      "size": 306,
+      "estimatedTokens": 88
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\dto\\user.dto.ts",
+      "relativePath": "src\\ibex-users\\dto\\user.dto.ts",
+      "size": 262,
+      "estimatedTokens": 75
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\entity\\ibex-users.entity.ts",
+      "relativePath": "src\\ibex-users\\entity\\ibex-users.entity.ts",
+      "size": 3415,
+      "estimatedTokens": 1006
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\ibex-users.controller.ts",
+      "relativePath": "src\\ibex-users\\ibex-users.controller.ts",
+      "size": 9970,
+      "estimatedTokens": 2495
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\ibex-users.module.ts",
+      "relativePath": "src\\ibex-users\\ibex-users.module.ts",
+      "size": 4623,
+      "estimatedTokens": 1113
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\ibex-users\\ibex-users.service.ts",
+      "relativePath": "src\\ibex-users\\ibex-users.service.ts",
+      "size": 203159,
+      "estimatedTokens": 48051
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\invoice\\dto\\uploaded-file.dto.ts",
+      "relativePath": "src\\invoice\\dto\\uploaded-file.dto.ts",
+      "size": 346,
+      "estimatedTokens": 97
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\invoice\\entity\\invoice-entity.ts",
+      "relativePath": "src\\invoice\\entity\\invoice-entity.ts",
+      "size": 1217,
+      "estimatedTokens": 332
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\invoice\\invoice.controller.ts",
+      "relativePath": "src\\invoice\\invoice.controller.ts",
+      "size": 3063,
+      "estimatedTokens": 763
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\invoice\\invoice.module.ts",
+      "relativePath": "src\\invoice\\invoice.module.ts",
+      "size": 1985,
+      "estimatedTokens": 441
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\invoice\\invoice.service.ts",
+      "relativePath": "src\\invoice\\invoice.service.ts",
+      "size": 13309,
+      "estimatedTokens": 3016
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\entity\\jira-groups.entity.ts",
+      "relativePath": "src\\jira\\entity\\jira-groups.entity.ts",
+      "size": 850,
+      "estimatedTokens": 215
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\entity\\jira-projects.entity.ts",
+      "relativePath": "src\\jira\\entity\\jira-projects.entity.ts",
+      "size": 1008,
+      "estimatedTokens": 247
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\entity\\jira-user-group.entity.ts",
+      "relativePath": "src\\jira\\entity\\jira-user-group.entity.ts",
+      "size": 1016,
+      "estimatedTokens": 272
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\entity\\jira-user-project.entity.ts",
+      "relativePath": "src\\jira\\entity\\jira-user-project.entity.ts",
+      "size": 1293,
+      "estimatedTokens": 346
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\entity\\jira-users.entity.ts",
+      "relativePath": "src\\jira\\entity\\jira-users.entity.ts",
+      "size": 1982,
+      "estimatedTokens": 519
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\jira.controller.ts",
+      "relativePath": "src\\jira\\jira.controller.ts",
+      "size": 5102,
+      "estimatedTokens": 1202
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\jira.module.ts",
+      "relativePath": "src\\jira\\jira.module.ts",
+      "size": 3169,
+      "estimatedTokens": 730
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\jira\\jira.service.ts",
+      "relativePath": "src\\jira\\jira.service.ts",
+      "size": 41360,
+      "estimatedTokens": 7694
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\dto\\asset-csv.ts",
+      "relativePath": "src\\keka\\dto\\asset-csv.ts",
+      "size": 193,
+      "estimatedTokens": 55
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\dto\\custom-date-relieved-decorator.ts",
+      "relativePath": "src\\keka\\dto\\custom-date-relieved-decorator.ts",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\dto\\custom-email-decorator.ts",
+      "relativePath": "src\\keka\\dto\\custom-email-decorator.ts",
+      "size": 475,
+      "estimatedTokens": 108
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\dto\\keka-csv.ts",
+      "relativePath": "src\\keka\\dto\\keka-csv.ts",
+      "size": 2295,
+      "estimatedTokens": 522
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\entity\\Department-migrated-history.entity.ts",
+      "relativePath": "src\\keka\\entity\\Department-migrated-history.entity.ts",
+      "size": 777,
+      "estimatedTokens": 217
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\entity\\keka.entity.ts",
+      "relativePath": "src\\keka\\entity\\keka.entity.ts",
+      "size": 1456,
+      "estimatedTokens": 396
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\keka.controller.ts",
+      "relativePath": "src\\keka\\keka.controller.ts",
+      "size": 4524,
+      "estimatedTokens": 1146
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\keka.middleware.ts",
+      "relativePath": "src\\keka\\keka.middleware.ts",
+      "size": 8292,
+      "estimatedTokens": 1958
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\keka.module.ts",
+      "relativePath": "src\\keka\\keka.module.ts",
+      "size": 2785,
+      "estimatedTokens": 649
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\keka\\keka.service.ts",
+      "relativePath": "src\\keka\\keka.service.ts",
+      "size": 32859,
+      "estimatedTokens": 7100
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\lambda.ts",
+      "relativePath": "src\\lambda.ts",
+      "size": 1004,
+      "estimatedTokens": 232
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\mail\\mail.module.ts",
+      "relativePath": "src\\mail\\mail.module.ts",
+      "size": 179,
+      "estimatedTokens": 41
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\mail\\mail.service.ts",
+      "relativePath": "src\\mail\\mail.service.ts",
+      "size": 1891,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\main.ts",
+      "relativePath": "src\\main.ts",
+      "size": 464,
+      "estimatedTokens": 102
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\outline\\entity\\outline-groups.entity.ts",
+      "relativePath": "src\\outline\\entity\\outline-groups.entity.ts",
+      "size": 833,
+      "estimatedTokens": 202
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\outline\\entity\\outline-users.entity.ts",
+      "relativePath": "src\\outline\\entity\\outline-users.entity.ts",
+      "size": 1657,
+      "estimatedTokens": 426
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\outline\\outline.controller.ts",
+      "relativePath": "src\\outline\\outline.controller.ts",
+      "size": 6619,
+      "estimatedTokens": 1496
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\outline\\outline.module.ts",
+      "relativePath": "src\\outline\\outline.module.ts",
+      "size": 2924,
+      "estimatedTokens": 686
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\outline\\outline.service.ts",
+      "relativePath": "src\\outline\\outline.service.ts",
+      "size": 41842,
+      "estimatedTokens": 8130
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\pipedrive\\entity\\pipedrive.enitity.ts",
+      "relativePath": "src\\pipedrive\\entity\\pipedrive.enitity.ts",
+      "size": 1364,
+      "estimatedTokens": 389
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\pipedrive\\pipedrive.controller.ts",
+      "relativePath": "src\\pipedrive\\pipedrive.controller.ts",
+      "size": 1774,
+      "estimatedTokens": 453
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\pipedrive\\pipedrive.module.ts",
+      "relativePath": "src\\pipedrive\\pipedrive.module.ts",
+      "size": 2857,
+      "estimatedTokens": 671
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\pipedrive\\pipedrive.service.ts",
+      "relativePath": "src\\pipedrive\\pipedrive.service.ts",
+      "size": 13851,
+      "estimatedTokens": 3199
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\secrets\\secrets.config.ts",
+      "relativePath": "src\\secrets\\secrets.config.ts",
+      "size": 1413,
+      "estimatedTokens": 302
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\create-payment.dto.ts",
+      "relativePath": "src\\services\\dto\\create-payment.dto.ts",
+      "size": 306,
+      "estimatedTokens": 90
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\create-service-user.dto.ts",
+      "relativePath": "src\\services\\dto\\create-service-user.dto.ts",
+      "size": 450,
+      "estimatedTokens": 143
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\create-service.dto.ts",
+      "relativePath": "src\\services\\dto\\create-service.dto.ts",
+      "size": 1344,
+      "estimatedTokens": 403
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\importDto.ts",
+      "relativePath": "src\\services\\dto\\importDto.ts",
+      "size": 13341,
+      "estimatedTokens": 3160
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\paymentHistory-csv.ts",
+      "relativePath": "src\\services\\dto\\paymentHistory-csv.ts",
+      "size": 2156,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\update-payment-dto.ts",
+      "relativePath": "src\\services\\dto\\update-payment-dto.ts",
+      "size": 273,
+      "estimatedTokens": 80
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\update-service-dto.ts",
+      "relativePath": "src\\services\\dto\\update-service-dto.ts",
+      "size": 1510,
+      "estimatedTokens": 417
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\dto\\update-service-user.dto.ts",
+      "relativePath": "src\\services\\dto\\update-service-user.dto.ts",
+      "size": 523,
+      "estimatedTokens": 164
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\payments-history.entity.ts",
+      "relativePath": "src\\services\\entity\\payments-history.entity.ts",
+      "size": 1344,
+      "estimatedTokens": 355
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\service-user-activity-history.ts",
+      "relativePath": "src\\services\\entity\\service-user-activity-history.ts",
+      "size": 776,
+      "estimatedTokens": 204
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\service-user-billing-history.ts",
+      "relativePath": "src\\services\\entity\\service-user-billing-history.ts",
+      "size": 780,
+      "estimatedTokens": 207
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\services-history.entity.ts",
+      "relativePath": "src\\services\\entity\\services-history.entity.ts",
+      "size": 598,
+      "estimatedTokens": 159
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\services-users.entity.ts",
+      "relativePath": "src\\services\\entity\\services-users.entity.ts",
+      "size": 1529,
+      "estimatedTokens": 390
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\entity\\services.entity.ts",
+      "relativePath": "src\\services\\entity\\services.entity.ts",
+      "size": 2199,
+      "estimatedTokens": 579
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\paymentHistory.middleware.ts",
+      "relativePath": "src\\services\\paymentHistory.middleware.ts",
+      "size": 8227,
+      "estimatedTokens": 1936
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\service.middleware.ts",
+      "relativePath": "src\\services\\service.middleware.ts",
+      "size": 9925,
+      "estimatedTokens": 1883
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\services.controller.ts",
+      "relativePath": "src\\services\\services.controller.ts",
+      "size": 20109,
+      "estimatedTokens": 4726
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\services.module.ts",
+      "relativePath": "src\\services\\services.module.ts",
+      "size": 2676,
+      "estimatedTokens": 613
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\services\\services.service.ts",
+      "relativePath": "src\\services\\services.service.ts",
+      "size": 97355,
+      "estimatedTokens": 21564
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\slack\\entity\\slack.entity.ts",
+      "relativePath": "src\\slack\\entity\\slack.entity.ts",
+      "size": 1406,
+      "estimatedTokens": 408
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\slack\\slack.controller.ts",
+      "relativePath": "src\\slack\\slack.controller.ts",
+      "size": 3468,
+      "estimatedTokens": 872
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\slack\\slack.module.ts",
+      "relativePath": "src\\slack\\slack.module.ts",
+      "size": 2787,
+      "estimatedTokens": 647
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\slack\\slack.service.ts",
+      "relativePath": "src\\slack\\slack.service.ts",
+      "size": 17154,
+      "estimatedTokens": 3975
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync\\dto\\create-sync.dto.ts",
+      "relativePath": "src\\sync\\dto\\create-sync.dto.ts",
+      "size": 163,
+      "estimatedTokens": 41
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync\\entity\\sync-entity.ts",
+      "relativePath": "src\\sync\\entity\\sync-entity.ts",
+      "size": 611,
+      "estimatedTokens": 147
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync\\sync.controller.ts",
+      "relativePath": "src\\sync\\sync.controller.ts",
+      "size": 5061,
+      "estimatedTokens": 1117
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync\\sync.module.ts",
+      "relativePath": "src\\sync\\sync.module.ts",
+      "size": 5516,
+      "estimatedTokens": 1276
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync\\sync.service.ts",
+      "relativePath": "src\\sync\\sync.service.ts",
+      "size": 2605,
+      "estimatedTokens": 546
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync-log\\entity\\sync-log.entity.ts",
+      "relativePath": "src\\sync-log\\entity\\sync-log.entity.ts",
+      "size": 395,
+      "estimatedTokens": 105
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync-log\\sync-log.controller.ts",
+      "relativePath": "src\\sync-log\\sync-log.controller.ts",
+      "size": 1752,
+      "estimatedTokens": 424
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync-log\\sync-log.module.ts",
+      "relativePath": "src\\sync-log\\sync-log.module.ts",
+      "size": 477,
+      "estimatedTokens": 117
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\sync-log\\sync-log.service.ts",
+      "relativePath": "src\\sync-log\\sync-log.service.ts",
+      "size": 2773,
+      "estimatedTokens": 642
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\types\\index.ts",
+      "relativePath": "src\\types\\index.ts",
+      "size": 76,
+      "estimatedTokens": 18
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\types\\jwtPayload.type.ts",
+      "relativePath": "src\\types\\jwtPayload.type.ts",
+      "size": 90,
+      "estimatedTokens": 27
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\types\\jwtPayloadWithRt.type.ts",
+      "relativePath": "src\\types\\jwtPayloadWithRt.type.ts",
+      "size": 117,
+      "estimatedTokens": 27
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\dto\\create-user.dto.ts",
+      "relativePath": "src\\users\\dto\\create-user.dto.ts",
+      "size": 564,
+      "estimatedTokens": 185
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\dto\\update-user.dto.ts",
+      "relativePath": "src\\users\\dto\\update-user.dto.ts",
+      "size": 516,
+      "estimatedTokens": 168
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\dto\\user.dto.ts",
+      "relativePath": "src\\users\\dto\\user.dto.ts",
+      "size": 262,
+      "estimatedTokens": 75
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\entity\\users.entity.ts",
+      "relativePath": "src\\users\\entity\\users.entity.ts",
+      "size": 984,
+      "estimatedTokens": 274
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\users.controller.ts",
+      "relativePath": "src\\users\\users.controller.ts",
+      "size": 2076,
+      "estimatedTokens": 506
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\users.module.ts",
+      "relativePath": "src\\users\\users.module.ts",
+      "size": 464,
+      "estimatedTokens": 107
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\users\\users.service.ts",
+      "relativePath": "src\\users\\users.service.ts",
+      "size": 7922,
+      "estimatedTokens": 1833
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\utils\\encrypt.ts",
+      "relativePath": "src\\utils\\encrypt.ts",
+      "size": 1378,
+      "estimatedTokens": 402
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\utils\\lib.ts",
+      "relativePath": "src\\utils\\lib.ts",
+      "size": 105,
+      "estimatedTokens": 28
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\webhooks\\guard\\verify-signature.guard.ts",
+      "relativePath": "src\\webhooks\\guard\\verify-signature.guard.ts",
+      "size": 2131,
+      "estimatedTokens": 440
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\webhooks\\webhook.controller.ts",
+      "relativePath": "src\\webhooks\\webhook.controller.ts",
+      "size": 2821,
+      "estimatedTokens": 507
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\webhooks\\webhook.module.ts",
+      "relativePath": "src\\webhooks\\webhook.module.ts",
+      "size": 3325,
+      "estimatedTokens": 729
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\src\\webhooks\\webhook.service.ts",
+      "relativePath": "src\\webhooks\\webhook.service.ts",
+      "size": 14942,
+      "estimatedTokens": 4255
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\detailed-architecture.d2",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\detailed-architecture.d2",
+      "size": 528,
+      "estimatedTokens": 183
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\detailed-architecture.eraser",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\detailed-architecture.eraser",
+      "size": 756,
+      "estimatedTokens": 206
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\high-level-architecture.d2",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\high-level-architecture.d2",
+      "size": 528,
+      "estimatedTokens": 183
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\high-level-architecture.eraser",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\high-level-architecture.eraser",
+      "size": 505,
+      "estimatedTokens": 135
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\semi-detailed-architecture.d2",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\semi-detailed-architecture.d2",
+      "size": 528,
+      "estimatedTokens": 183
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\semi-detailed-architecture.eraser",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\semi-detailed-architecture.eraser",
+      "size": 576,
+      "estimatedTokens": 158
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark55-efa5bf1d-2025-09-05T11-26-47\\swark55-analysis-summary.md",
+      "relativePath": "swark55-efa5bf1d-2025-09-05T11-26-47\\swark55-analysis-summary.md",
+      "size": 1204,
+      "estimatedTokens": 303
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\detailed.d2",
+      "relativePath": "swark_output\\HEAD\\detailed.d2",
+      "size": 6019,
+      "estimatedTokens": 1590
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\detailed.eraser",
+      "relativePath": "swark_output\\HEAD\\detailed.eraser",
+      "size": 7931,
+      "estimatedTokens": 2209
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\high_level.d2",
+      "relativePath": "swark_output\\HEAD\\high_level.d2",
+      "size": 2594,
+      "estimatedTokens": 629
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\high_level.eraser",
+      "relativePath": "swark_output\\HEAD\\high_level.eraser",
+      "size": 2661,
+      "estimatedTokens": 615
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\semi_detailed.d2",
+      "relativePath": "swark_output\\HEAD\\semi_detailed.d2",
+      "size": 2877,
+      "estimatedTokens": 745
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\semi_detailed.eraser",
+      "relativePath": "swark_output\\HEAD\\semi_detailed.eraser",
+      "size": 2254,
+      "estimatedTokens": 532
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\swark_output\\HEAD\\token_report.txt",
+      "relativePath": "swark_output\\HEAD\\token_report.txt",
+      "size": 8999,
+      "estimatedTokens": 2502
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\test\\app.e2e-spec.ts",
+      "relativePath": "test\\app.e2e-spec.ts",
+      "size": 630,
+      "estimatedTokens": 148
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\test\\jest-e2e.json",
+      "relativePath": "test\\jest-e2e.json",
+      "size": 183,
+      "estimatedTokens": 68
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\tsconfig.build.json",
+      "relativePath": "tsconfig.build.json",
+      "size": 97,
+      "estimatedTokens": 30
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Archive (1)\\tsconfig.json",
+      "relativePath": "tsconfig.json",
+      "size": 546,
+      "estimatedTokens": 152
+    }
+  ],
+  "worstCaseTokens": 475442
+}

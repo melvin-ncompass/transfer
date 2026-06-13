@@ -1,0 +1,2530 @@
+{
+  "repositoryPath": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding",
+  "selectedCommit": {
+    "hash": "0f0c64749abc80c7e89ec49e16664bfce2f1ac41",
+    "shortHash": "0f0c647",
+    "author": "Vivin Ramachandran",
+    "date": "2024-02-06 16:13:41 +0000",
+    "message": "Merged in test (pull request #249)",
+    "timestamp": "2024-02-06T16:13:41.000Z"
+  },
+  "totalFiles": 419,
+  "directoryStructure": "phonex-saas-buyer-onboarding/\n├── .gitignore\n├── README.md\n├── architecture-d2-diagram.md\n├── architecture-eraser-diagram.md\n├── architecture-mermaid-diagram.md\n├── architecture.d2\n├── architecture.eraserdiagram\n├── architecture.mmd\n├── batch-summaries.txt\n├── buildspec.yaml\n├── database/\n│   ├── release-1.43.0/\n│   │   └── CREATE_TABLE_tenant_sales_rep.sql\n│   ├── release-1.44.0/\n│   │   ├── PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql\n│   │   ├── PROSPECT_tables_DDL.sql\n│   │   └── UPDATE_customer_list_setttings_registration_status.sql\n│   ├── release-1.44.1/\n│   │   ├── buyer_onboarding_settings_v2.sql\n│   │   ├── buyer_onboarding_settings_vanilla_json.sql\n│   │   ├── email-templates.sql\n│   │   ├── prod_account_creation_instruction.sql\n│   │   ├── prod_account_setup_instruction.sql\n│   │   ├── prod_add_customer_type.sql\n│   │   ├── prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql\n│   │   ├── prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql\n│   │   ├── prod_update_admin_role_authority_mapping.sql\n│   │   ├── prod_update_all_admin_authority.sql\n│   │   ├── prod_update_owner_authority.sql\n│   │   └── remove-unique-constraint-from-prospect_user.sql\n│   ├── release-1.46.0/\n│   │   ├── PROSPECT_table_DDL.sql\n│   │   ├── buyer_onboarding_settings_update_Type1V2.sql\n│   │   └── buyer_onboarding_settings_update_WSCV2.sql\n│   ├── release-1.49.0/\n│   │   ├── SP-4968-new-permissions-for-prospect-update.sql\n│   │   └── SP-5459-update_buyer_info_sections.sql\n│   ├── release-1.52.0/\n│   │   ├── KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql\n│   │   ├── RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql\n│   │   ├── SP-5884-add-unique-constraint-prospect_id.DDL.sql\n│   │   └── WeSell_customer_mandatory_business_license_changes.sql\n│   ├── release-1.57.0/\n│   │   ├── SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql\n│   │   └── SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql\n│   ├── release-1.64.0/\n│   │   ├── SP-7664-buyer-status-code-settings.DDL.sql\n│   │   └── buyer-onboarding-settings-update-status-transition.DDL.sql\n│   ├── release-1.66.0/\n│   │   └── SP-7747-add-new-column-to-prospect.sql\n│   ├── release-1.66.1/\n│   │   ├── SP-7747-add-authorities-to-admin-users.sql\n│   │   ├── SP-7747-populate-a-new-permission.sql\n│   │   └── SP-7747-set-timestamps-and-set-default-7-days.sql\n│   ├── release-1.67.0/\n│   │   └── SP-7749-add-new-field-buyer_onboarding_settings.sql\n│   ├── release-1.71.0/\n│   │   ├── SP-8573-WSC-update-EUS-version.sql\n│   │   └── SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql\n│   ├── release-1.76.1/\n│   │   └── SP-9440-update-incorrect-country_code.sql\n│   ├── release-1.78.0/\n│   │   ├── SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql\n│   │   ├── SP-9385-update-buyer_onboarding_settings-fields-lengths.sql\n│   │   └── SP-9385-vanilla-document-rules-script.sql\n│   ├── release-1.79.0/\n│   │   ├── SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql\n│   │   ├── SP-8971-add-encrypted-fields-to-BO-settings.sql\n│   │   ├── SP-8971-vanilla-document-rules-script.sql\n│   │   ├── SP-9856-bo-history-tables.DDL.sql\n│   │   ├── SP-9856-bo-one-time-update-to-history-tables.sql\n│   │   └── SP-9856-bo-triggers.DDL.sql\n│   ├── release-1.81.0/\n│   │   ├── SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql\n│   │   ├── SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql\n│   │   └── SP-10127-add-accessDeniedStatusCodes.sql\n│   └── release-1.83.0/\n│       └── SP-10283-bulk-resend-invite-async-mode-query.sql\n├── events/\n│   ├── admin-decision-event.json\n│   ├── business-billing-event.json\n│   ├── cognito-event.json\n│   ├── driver-fn-event.json\n│   ├── generate-required-document-event.json\n│   ├── prospect-create-consumer.json\n│   ├── sqs-consumer.json\n│   ├── starter-fn-event.json\n│   └── submit-event.json\n├── filtered-filesystem/\n│   ├── batch1/\n│   │   ├── batch-1-manifest.md\n│   │   └── src/\n│   │       ├── buyer-onboarding-admin-decision-fn/\n│   │       │   ├── convert-to-customer.ts\n│   │       │   ├── decision-utils.ts\n│   │       │   ├── index.ts\n│   │       │   ├── reject-prospect.ts\n│   │       │   └── verify-prospect.ts\n│   │       ├── buyer-onboarding-admin-decision-trigger-api/\n│   │       │   ├── controller/\n│   │       │   │   ├── convert-to-customer.ts\n│   │       │   │   ├── reject-prospect.ts\n│   │       │   │   └── verify-prospect.ts\n│   │       │   ├── decision-utils.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       └── utilities/\n│   │           ├── authorities.ts\n│   │           ├── axios/\n│   │           │   ├── axios-utils.ts\n│   │           │   ├── cache-headers.ts\n│   │           │   ├── invalidate-saas-cache.ts\n│   │           │   └── invalidate-userInfo-cache.ts\n│   │           ├── cache/\n│   │           │   ├── cache-key-manager.ts\n│   │           │   ├── common.ts\n│   │           │   ├── redis.ts\n│   │           │   └── referesh-redis-cache.ts\n│   │           ├── cognito/\n│   │           │   └── cognito-utils.ts\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── crypto-util.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── generate-password.ts\n│   │           ├── kinesis-model/\n│   │           │   ├── config.ts\n│   │           │   ├── message-format.ts\n│   │           │   ├── model.ts\n│   │           │   └── put-record.ts\n│   │           ├── lambda/\n│   │           │   └── lambda-utils.ts\n│   │           ├── logger.ts\n│   │           ├── notification-utils.ts\n│   │           ├── pusher-utils.ts\n│   │           ├── reject-customer-utilities.ts\n│   │           ├── response.ts\n│   │           ├── s3-utils.ts\n│   │           ├── step-function-util.ts\n│   │           ├── steps-util.ts\n│   │           ├── types.ts\n│   │           ├── util.ts\n│   │           └── validation.ts\n│   ├── batch2/\n│   │   ├── batch-2-manifest.md\n│   │   └── src/\n│   │       ├── buyer-onboarding-driver-fn/\n│   │       │   ├── driver.ts\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-generate-required-document-list/\n│   │       │   ├── controller/\n│   │       │   │   └── generate-required-document-list.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       ├── buyer-onboarding-handle-expired-workflows/\n│   │       │   ├── fetch-onboarding-enabled-tenants.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-invite-prospects/\n│   │       │   ├── controller/\n│   │       │   │   ├── bulk-resend-prospect-invitation.ts\n│   │       │   │   ├── delete-invited-prospect.ts\n│   │       │   │   ├── export-invited-prospects.ts\n│   │       │   │   ├── get-all-invited-prospects.ts\n│   │       │   │   ├── get-invited-prospect.ts\n│   │       │   │   ├── invite-prospects.ts\n│   │       │   │   ├── resend-prospect-invitation.ts\n│   │       │   │   └── update-invited-prospect.ts\n│   │       │   ├── index.ts\n│   │       │   ├── invite-prospect-utils/\n│   │       │   │   ├── common-utils.ts\n│   │       │   │   ├── create-prospect.ts\n│   │       │   │   └── excel-utils.ts\n│   │       │   ├── models/\n│   │       │   │   ├── invite-prospect-DTO.ts\n│   │       │   │   └── resend-prospect-invitation.DTO.ts\n│   │       │   └── router.ts\n│   │       ├── buyer-onboarding-post-confirmation-trigger-fn/\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-prospect-creation-fn/\n│   │       │   ├── create-prospect.ts\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-prospects-invite-bulk-resend/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-sqs-consumer/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-starter-fn/\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-submit-application-fn/\n│   │       │   └── index.ts\n│   │       ├── process-prospect-expiration/\n│   │       │   └── index.ts\n│   │       └── utilities/\n│   │           ├── authorities.ts\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── logger.ts\n│   │           ├── response.ts\n│   │           ├── types.ts\n│   │           └── util.ts\n│   ├── batch3/\n│   │   ├── batch-3-manifest.md\n│   │   ├── database/\n│   │   │   ├── release-1.43.0/\n│   │   │   │   └── CREATE_TABLE_tenant_sales_rep.sql\n│   │   │   ├── release-1.44.0/\n│   │   │   │   ├── PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql\n│   │   │   │   ├── PROSPECT_tables_DDL.sql\n│   │   │   │   └── UPDATE_customer_list_setttings_registration_status.sql\n│   │   │   └── release-1.44.1/\n│   │   │       ├── buyer_onboarding_settings_v2.sql\n│   │   │       ├── buyer_onboarding_settings_vanilla_json.sql\n│   │   │       ├── email-templates.sql\n│   │   │       ├── prod_account_creation_instruction.sql\n│   │   │       ├── prod_account_setup_instruction.sql\n│   │   │       ├── prod_add_customer_type.sql\n│   │   │       ├── prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql\n│   │   │       ├── prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql\n│   │   │       ├── prod_update_admin_role_authority_mapping.sql\n│   │   │       ├── prod_update_all_admin_authority.sql\n│   │   │       ├── prod_update_owner_authority.sql\n│   │   │       └── remove-unique-constraint-from-prospect_user.sql\n│   │   └── src/\n│   │       ├── buyer-onboarding-reference-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-references.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-success-content-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-success-content.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-additional-fields/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-bb-address/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-business-owner-address/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-business-phone/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-frieght-forwarder-info/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-policy-review/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-shipping-address/\n│   │       │   └── index.ts\n│   │       ├── reset-password-fn/\n│   │       │   ├── controller/\n│   │       │   │   └── reset-buyer-password.ts\n│   │       │   ├── dtos/\n│   │       │   │   └── reset-buyer-password-dto.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       ├── sales-rep-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-sales-rep.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       └── utilities/\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── logger.ts\n│   │           └── response.ts\n│   ├── batch4/\n│   │   ├── batch-4-manifest.md\n│   │   ├── buildspec.yaml\n│   │   ├── database/\n│   │   │   ├── release-1.46.0/\n│   │   │   │   ├── PROSPECT_table_DDL.sql\n│   │   │   │   ├── buyer_onboarding_settings_update_Type1V2.sql\n│   │   │   │   └── buyer_onboarding_settings_update_WSCV2.sql\n│   │   │   ├── release-1.49.0/\n│   │   │   │   ├── SP-4968-new-permissions-for-prospect-update.sql\n│   │   │   │   └── SP-5459-update_buyer_info_sections.sql\n│   │   │   ├── release-1.52.0/\n│   │   │   │   ├── KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql\n│   │   │   │   ├── RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql\n│   │   │   │   ├── SP-5884-add-unique-constraint-prospect_id.DDL.sql\n│   │   │   │   └── WeSell_customer_mandatory_business_license_changes.sql\n│   │   │   ├── release-1.57.0/\n│   │   │   │   ├── SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql\n│   │   │   │   └── SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql\n│   │   │   ├── release-1.64.0/\n│   │   │   │   ├── SP-7664-buyer-status-code-settings.DDL.sql\n│   │   │   │   └── buyer-onboarding-settings-update-status-transition.DDL.sql\n│   │   │   ├── release-1.66.0/\n│   │   │   │   └── SP-7747-add-new-column-to-prospect.sql\n│   │   │   ├── release-1.66.1/\n│   │   │   │   ├── SP-7747-add-authorities-to-admin-users.sql\n│   │   │   │   ├── SP-7747-populate-a-new-permission.sql\n│   │   │   │   └── SP-7747-set-timestamps-and-set-default-7-days.sql\n│   │   │   ├── release-1.67.0/\n│   │   │   │   └── SP-7749-add-new-field-buyer_onboarding_settings.sql\n│   │   │   ├── release-1.71.0/\n│   │   │   │   ├── SP-8573-WSC-update-EUS-version.sql\n│   │   │   │   └── SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql\n│   │   │   ├── release-1.76.1/\n│   │   │   │   └── SP-9440-update-incorrect-country_code.sql\n│   │   │   ├── release-1.78.0/\n│   │   │   │   ├── SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql\n│   │   │   │   ├── SP-9385-update-buyer_onboarding_settings-fields-lengths.sql\n│   │   │   │   └── SP-9385-vanilla-document-rules-script.sql\n│   │   │   ├── release-1.79.0/\n│   │   │   │   ├── SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql\n│   │   │   │   ├── SP-8971-add-encrypted-fields-to-BO-settings.sql\n│   │   │   │   ├── SP-8971-vanilla-document-rules-script.sql\n│   │   │   │   ├── SP-9856-bo-history-tables.DDL.sql\n│   │   │   │   ├── SP-9856-bo-one-time-update-to-history-tables.sql\n│   │   │   │   └── SP-9856-bo-triggers.DDL.sql\n│   │   │   ├── release-1.81.0/\n│   │   │   │   ├── SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql\n│   │   │   │   ├── SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql\n│   │   │   │   └── SP-10127-add-accessDeniedStatusCodes.sql\n│   │   │   └── release-1.83.0/\n│   │   │       └── SP-10283-bulk-resend-invite-async-mode-query.sql\n│   │   ├── events/\n│   │   │   ├── admin-decision-event.json\n│   │   │   ├── business-billing-event.json\n│   │   │   ├── cognito-event.json\n│   │   │   ├── driver-fn-event.json\n│   │   │   ├── generate-required-document-event.json\n│   │   │   ├── prospect-create-consumer.json\n│   │   │   ├── sqs-consumer.json\n│   │   │   ├── starter-fn-event.json\n│   │   │   └── submit-event.json\n│   │   ├── package.json\n│   │   ├── samconfig.toml\n│   │   ├── scripts/\n│   │   │   ├── deploy.sh\n│   │   │   └── sonar-code-analysis.sh\n│   │   ├── step-function-definitions/\n│   │   │   ├── TrillionV1.json\n│   │   │   ├── Type1V1.json\n│   │   │   ├── Type1V2.json\n│   │   │   ├── Type1V3.json\n│   │   │   ├── WSCV1.json\n│   │   │   ├── WSCV2.json\n│   │   │   ├── WSCV3.json\n│   │   │   ├── WSCV4.json\n│   │   │   └── WSCV5.json\n│   │   └── tsconfig.json\n│   └── filtered-system-manifest.md\n├── package-lock.json\n├── package.json\n├── samconfig.toml\n├── scripts/\n│   ├── deploy.sh\n│   └── sonar-code-analysis.sh\n├── src/\n│   ├── buyer-onboarding-admin-decision-fn/\n│   │   ├── convert-to-customer.ts\n│   │   ├── decision-utils.ts\n│   │   ├── index.ts\n│   │   ├── reject-prospect.ts\n│   │   ├── swark-output/\n│   │   │   ├── 2025-08-22__11-29-19__all-three-diagram.md\n│   │   │   ├── 2025-08-22__11-29-19__all-three-log.md\n│   │   │   ├── 2025-08-22__12-43-33__all-three-diagram.md\n│   │   │   ├── 2025-08-22__12-43-33__all-three-log.md\n│   │   │   ├── 2025-08-22__12-47-48__all-three-diagram.md\n│   │   │   ├── 2025-08-22__12-47-48__all-three-log.md\n│   │   │   ├── 2025-08-22__12-57-28__all-three-diagram.md\n│   │   │   ├── 2025-08-22__12-57-28__all-three-log.md\n│   │   │   ├── 2025-08-26__10-41-13__high-level-diagram.md\n│   │   │   ├── 2025-08-26__10-41-13__high-level-log.md\n│   │   │   ├── 2025-08-26__18-00-54__all-three-diagram.md\n│   │   │   ├── 2025-08-26__18-00-54__all-three-log.md\n│   │   │   ├── 2025-08-26__18-06-18__all-three-diagram.md\n│   │   │   ├── 2025-08-26__18-06-18__all-three-log.md\n│   │   │   ├── 2025-08-26__19-41-54__all-three-diagram.md\n│   │   │   ├── 2025-08-26__19-41-54__all-three-log.md\n│   │   │   ├── 2025-08-27__20-07-53__all-three-diagram.md\n│   │   │   ├── 2025-08-27__20-07-53__all-three-log.md\n│   │   │   ├── 2025-08-27__20-10-48__all-three-diagram.md\n│   │   │   ├── 2025-08-27__20-10-48__all-three-log.md\n│   │   │   ├── 2025-08-27__20-17-52__all-three-diagram.md\n│   │   │   ├── 2025-08-27__20-17-52__all-three-log.md\n│   │   │   ├── 2025-08-27__20-19-24__all-three-diagram.md\n│   │   │   ├── 2025-08-27__20-19-24__all-three-log.md\n│   │   │   ├── 2025-08-28__10-29-43__high-level-diagram.md\n│   │   │   ├── 2025-08-28__10-29-43__high-level-log.md\n│   │   │   ├── 2025-08-28__10-30-20__high-level-diagram.md\n│   │   │   ├── 2025-08-28__10-30-20__high-level-log.md\n│   │   │   ├── 2025-08-28__10-34-12__high-level-diagram.md\n│   │   │   ├── 2025-08-28__10-34-12__high-level-log.md\n│   │   │   ├── 2025-08-28__10-40-11__high-level-diagram.md\n│   │   │   ├── 2025-08-28__10-40-11__high-level-log.md\n│   │   │   ├── 2025-08-28__10-46-38__high-level-diagram.md\n│   │   │   ├── 2025-08-28__10-46-38__high-level-log.md\n│   │   │   ├── 2025-08-28__10-56-49__high-level-diagram.md\n│   │   │   └── 2025-08-28__10-56-49__high-level-log.md\n│   │   └── verify-prospect.ts\n│   ├── buyer-onboarding-admin-decision-trigger-api/\n│   │   ├── controller/\n│   │   │   ├── convert-to-customer.ts\n│   │   │   ├── reject-prospect.ts\n│   │   │   └── verify-prospect.ts\n│   │   ├── decision-utils.ts\n│   │   ├── index.ts\n│   │   ├── router.ts\n│   │   └── swark-output/\n│   │       ├── 2025-08-22__11-33-26__all-three-diagram.md\n│   │       ├── 2025-08-22__11-33-26__all-three-log.md\n│   │       ├── 2025-08-22__11-46-25__all-three-diagram.md\n│   │       └── 2025-08-22__11-46-25__all-three-log.md\n│   ├── buyer-onboarding-driver-fn/\n│   │   ├── driver.ts\n│   │   ├── index.ts\n│   │   └── types.ts\n│   ├── buyer-onboarding-generate-required-document-list/\n│   │   ├── controller/\n│   │   │   └── generate-required-document-list.ts\n│   │   ├── index.ts\n│   │   └── router.ts\n│   ├── buyer-onboarding-handle-expired-workflows/\n│   │   ├── fetch-onboarding-enabled-tenants.ts\n│   │   └── index.ts\n│   ├── buyer-onboarding-invite-prospects/\n│   │   ├── controller/\n│   │   │   ├── bulk-resend-prospect-invitation.ts\n│   │   │   ├── delete-invited-prospect.ts\n│   │   │   ├── export-invited-prospects.ts\n│   │   │   ├── get-all-invited-prospects.ts\n│   │   │   ├── get-invited-prospect.ts\n│   │   │   ├── invite-prospects.ts\n│   │   │   ├── resend-prospect-invitation.ts\n│   │   │   └── update-invited-prospect.ts\n│   │   ├── index.ts\n│   │   ├── invite-prospect-utils/\n│   │   │   ├── common-utils.ts\n│   │   │   ├── create-prospect.ts\n│   │   │   └── excel-utils.ts\n│   │   ├── models/\n│   │   │   ├── invite-prospect-DTO.ts\n│   │   │   └── resend-prospect-invitation.DTO.ts\n│   │   ├── router.ts\n│   │   └── swark-output/\n│   │       ├── 2025-08-22__13-06-39__all-three-diagram.md\n│   │       └── 2025-08-22__13-06-39__all-three-log.md\n│   ├── buyer-onboarding-post-confirmation-trigger-fn/\n│   │   ├── index.ts\n│   │   └── types.ts\n│   ├── buyer-onboarding-prospect-creation-fn/\n│   │   ├── create-prospect.ts\n│   │   ├── index.ts\n│   │   └── types.ts\n│   ├── buyer-onboarding-prospects-invite-bulk-resend/\n│   │   └── index.ts\n│   ├── buyer-onboarding-reference-api/\n│   │   ├── controller/\n│   │   │   └── get-references.ts\n│   │   └── index.ts\n│   ├── buyer-onboarding-sqs-consumer/\n│   │   └── index.ts\n│   ├── buyer-onboarding-starter-fn/\n│   │   ├── index.ts\n│   │   └── types.ts\n│   ├── buyer-onboarding-submit-application-fn/\n│   │   └── index.ts\n│   ├── buyer-onboarding-success-content-api/\n│   │   ├── controller/\n│   │   │   └── get-success-content.ts\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-additional-fields/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-bb-address/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-business-owner-address/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-business-phone/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-frieght-forwarder-info/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-policy-review/\n│   │   └── index.ts\n│   ├── buyer-onboarding-validate-and-save-shipping-address/\n│   │   └── index.ts\n│   ├── process-prospect-expiration/\n│   │   └── index.ts\n│   ├── reset-password-fn/\n│   │   ├── controller/\n│   │   │   └── reset-buyer-password.ts\n│   │   ├── dtos/\n│   │   │   └── reset-buyer-password-dto.ts\n│   │   ├── index.ts\n│   │   └── router.ts\n│   ├── sales-rep-api/\n│   │   ├── controller/\n│   │   │   └── get-sales-rep.ts\n│   │   ├── index.ts\n│   │   └── router.ts\n│   ├── swark-output/\n│   │   ├── 2025-08-21__18-25-06__all-three-diagram.md\n│   │   ├── 2025-08-21__18-25-06__all-three-log.md\n│   │   ├── 2025-08-22__11-48-14__all-three-diagram.md\n│   │   └── 2025-08-22__11-48-14__all-three-log.md\n│   └── utilities/\n│       ├── authorities.ts\n│       ├── axios/\n│       │   ├── axios-utils.ts\n│       │   ├── cache-headers.ts\n│       │   ├── invalidate-saas-cache.ts\n│       │   └── invalidate-userInfo-cache.ts\n│       ├── cache/\n│       │   ├── cache-key-manager.ts\n│       │   ├── common.ts\n│       │   ├── redis.ts\n│       │   └── referesh-redis-cache.ts\n│       ├── cognito/\n│       │   └── cognito-utils.ts\n│       ├── constants/\n│       │   └── constant.ts\n│       ├── crypto-util.ts\n│       ├── db.ts\n│       ├── error-handler.ts\n│       ├── generate-password.ts\n│       ├── kinesis-model/\n│       │   ├── config.ts\n│       │   ├── message-format.ts\n│       │   ├── model.ts\n│       │   └── put-record.ts\n│       ├── lambda/\n│       │   └── lambda-utils.ts\n│       ├── logger.ts\n│       ├── notification-utils.ts\n│       ├── pusher-utils.ts\n│       ├── reject-customer-utilities.ts\n│       ├── response.ts\n│       ├── s3-utils.ts\n│       ├── step-function-util.ts\n│       ├── steps-util.ts\n│       ├── types.ts\n│       ├── util.ts\n│       └── validation.ts\n├── step-function-definitions/\n│   ├── TrillionV1.json\n│   ├── Type1V1.json\n│   ├── Type1V2.json\n│   ├── Type1V3.json\n│   ├── WSCV1.json\n│   ├── WSCV2.json\n│   ├── WSCV3.json\n│   ├── WSCV4.json\n│   └── WSCV5.json\n├── swark-output/\n│   ├── 2025-08-20__12-05-55__diagram.md\n│   ├── 2025-08-20__12-05-55__log.md\n│   ├── 2025-08-20__12-10-12__diagram.md\n│   ├── 2025-08-20__12-10-12__log.md\n│   ├── 2025-08-21__12-25-16__all-three-diagram.md\n│   ├── 2025-08-21__12-25-16__all-three-log.md\n│   ├── 2025-08-25__18-35-54__all-three-diagram.md\n│   └── 2025-08-25__18-35-54__all-three-log.md\n├── temp/\n│   ├── batch1/\n│   │   ├── batch-1-info.md\n│   │   └── src/\n│   │       ├── buyer-onboarding-admin-decision-fn/\n│   │       │   ├── convert-to-customer.ts\n│   │       │   ├── decision-utils.ts\n│   │       │   ├── index.ts\n│   │       │   ├── reject-prospect.ts\n│   │       │   └── verify-prospect.ts\n│   │       ├── buyer-onboarding-admin-decision-trigger-api/\n│   │       │   ├── controller/\n│   │       │   │   ├── convert-to-customer.ts\n│   │       │   │   ├── reject-prospect.ts\n│   │       │   │   └── verify-prospect.ts\n│   │       │   ├── decision-utils.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       └── utilities/\n│   │           ├── authorities.ts\n│   │           ├── axios/\n│   │           │   ├── axios-utils.ts\n│   │           │   ├── cache-headers.ts\n│   │           │   ├── invalidate-saas-cache.ts\n│   │           │   └── invalidate-userInfo-cache.ts\n│   │           ├── cache/\n│   │           │   ├── cache-key-manager.ts\n│   │           │   ├── common.ts\n│   │           │   ├── redis.ts\n│   │           │   └── referesh-redis-cache.ts\n│   │           ├── cognito/\n│   │           │   └── cognito-utils.ts\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── crypto-util.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── generate-password.ts\n│   │           ├── kinesis-model/\n│   │           │   ├── config.ts\n│   │           │   ├── message-format.ts\n│   │           │   ├── model.ts\n│   │           │   └── put-record.ts\n│   │           ├── lambda/\n│   │           │   └── lambda-utils.ts\n│   │           ├── logger.ts\n│   │           ├── notification-utils.ts\n│   │           ├── pusher-utils.ts\n│   │           ├── reject-customer-utilities.ts\n│   │           ├── response.ts\n│   │           ├── s3-utils.ts\n│   │           ├── step-function-util.ts\n│   │           ├── steps-util.ts\n│   │           ├── types.ts\n│   │           ├── util.ts\n│   │           └── validation.ts\n│   ├── batch2/\n│   │   ├── batch-2-info.md\n│   │   └── src/\n│   │       ├── buyer-onboarding-driver-fn/\n│   │       │   ├── driver.ts\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-generate-required-document-list/\n│   │       │   ├── controller/\n│   │       │   │   └── generate-required-document-list.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       ├── buyer-onboarding-handle-expired-workflows/\n│   │       │   ├── fetch-onboarding-enabled-tenants.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-invite-prospects/\n│   │       │   ├── controller/\n│   │       │   │   ├── bulk-resend-prospect-invitation.ts\n│   │       │   │   ├── delete-invited-prospect.ts\n│   │       │   │   ├── export-invited-prospects.ts\n│   │       │   │   ├── get-all-invited-prospects.ts\n│   │       │   │   ├── get-invited-prospect.ts\n│   │       │   │   ├── invite-prospects.ts\n│   │       │   │   ├── resend-prospect-invitation.ts\n│   │       │   │   └── update-invited-prospect.ts\n│   │       │   ├── index.ts\n│   │       │   ├── invite-prospect-utils/\n│   │       │   │   ├── common-utils.ts\n│   │       │   │   ├── create-prospect.ts\n│   │       │   │   └── excel-utils.ts\n│   │       │   ├── models/\n│   │       │   │   ├── invite-prospect-DTO.ts\n│   │       │   │   └── resend-prospect-invitation.DTO.ts\n│   │       │   └── router.ts\n│   │       ├── buyer-onboarding-post-confirmation-trigger-fn/\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-prospect-creation-fn/\n│   │       │   ├── create-prospect.ts\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-prospects-invite-bulk-resend/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-sqs-consumer/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-starter-fn/\n│   │       │   ├── index.ts\n│   │       │   └── types.ts\n│   │       ├── buyer-onboarding-submit-application-fn/\n│   │       │   └── index.ts\n│   │       ├── process-prospect-expiration/\n│   │       │   └── index.ts\n│   │       └── utilities/\n│   │           ├── authorities.ts\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── logger.ts\n│   │           ├── response.ts\n│   │           ├── types.ts\n│   │           └── util.ts\n│   ├── batch3/\n│   │   ├── batch-3-info.md\n│   │   ├── database/\n│   │   │   ├── release-1.43.0/\n│   │   │   │   └── CREATE_TABLE_tenant_sales_rep.sql\n│   │   │   ├── release-1.44.0/\n│   │   │   │   ├── PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql\n│   │   │   │   ├── PROSPECT_tables_DDL.sql\n│   │   │   │   └── UPDATE_customer_list_setttings_registration_status.sql\n│   │   │   └── release-1.44.1/\n│   │   │       ├── buyer_onboarding_settings_v2.sql\n│   │   │       ├── buyer_onboarding_settings_vanilla_json.sql\n│   │   │       ├── email-templates.sql\n│   │   │       ├── prod_account_creation_instruction.sql\n│   │   │       ├── prod_account_setup_instruction.sql\n│   │   │       ├── prod_add_customer_type.sql\n│   │   │       ├── prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql\n│   │   │       ├── prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql\n│   │   │       ├── prod_update_admin_role_authority_mapping.sql\n│   │   │       ├── prod_update_all_admin_authority.sql\n│   │   │       ├── prod_update_owner_authority.sql\n│   │   │       └── remove-unique-constraint-from-prospect_user.sql\n│   │   └── src/\n│   │       ├── buyer-onboarding-reference-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-references.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-success-content-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-success-content.ts\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-additional-fields/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-bb-address/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-business-owner-address/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-business-phone/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-frieght-forwarder-info/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-policy-review/\n│   │       │   └── index.ts\n│   │       ├── buyer-onboarding-validate-and-save-shipping-address/\n│   │       │   └── index.ts\n│   │       ├── reset-password-fn/\n│   │       │   ├── controller/\n│   │       │   │   └── reset-buyer-password.ts\n│   │       │   ├── dtos/\n│   │       │   │   └── reset-buyer-password-dto.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       ├── sales-rep-api/\n│   │       │   ├── controller/\n│   │       │   │   └── get-sales-rep.ts\n│   │       │   ├── index.ts\n│   │       │   └── router.ts\n│   │       └── utilities/\n│   │           ├── constants/\n│   │           │   └── constant.ts\n│   │           ├── db.ts\n│   │           ├── error-handler.ts\n│   │           ├── logger.ts\n│   │           └── response.ts\n│   └── batch4/\n│       ├── batch-4-info.md\n│       ├── buildspec.yaml\n│       ├── database/\n│       │   ├── release-1.46.0/\n│       │   │   ├── PROSPECT_table_DDL.sql\n│       │   │   ├── buyer_onboarding_settings_update_Type1V2.sql\n│       │   │   └── buyer_onboarding_settings_update_WSCV2.sql\n│       │   ├── release-1.49.0/\n│       │   │   ├── SP-4968-new-permissions-for-prospect-update.sql\n│       │   │   └── SP-5459-update_buyer_info_sections.sql\n│       │   ├── release-1.52.0/\n│       │   │   ├── KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql\n│       │   │   ├── RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql\n│       │   │   ├── SP-5884-add-unique-constraint-prospect_id.DDL.sql\n│       │   │   └── WeSell_customer_mandatory_business_license_changes.sql\n│       │   ├── release-1.57.0/\n│       │   │   ├── SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql\n│       │   │   └── SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql\n│       │   ├── release-1.64.0/\n│       │   │   ├── SP-7664-buyer-status-code-settings.DDL.sql\n│       │   │   └── buyer-onboarding-settings-update-status-transition.DDL.sql\n│       │   ├── release-1.66.0/\n│       │   │   └── SP-7747-add-new-column-to-prospect.sql\n│       │   ├── release-1.66.1/\n│       │   │   ├── SP-7747-add-authorities-to-admin-users.sql\n│       │   │   ├── SP-7747-populate-a-new-permission.sql\n│       │   │   └── SP-7747-set-timestamps-and-set-default-7-days.sql\n│       │   ├── release-1.67.0/\n│       │   │   └── SP-7749-add-new-field-buyer_onboarding_settings.sql\n│       │   ├── release-1.71.0/\n│       │   │   ├── SP-8573-WSC-update-EUS-version.sql\n│       │   │   └── SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql\n│       │   ├── release-1.76.1/\n│       │   │   └── SP-9440-update-incorrect-country_code.sql\n│       │   ├── release-1.78.0/\n│       │   │   ├── SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql\n│       │   │   ├── SP-9385-update-buyer_onboarding_settings-fields-lengths.sql\n│       │   │   └── SP-9385-vanilla-document-rules-script.sql\n│       │   ├── release-1.79.0/\n│       │   │   ├── SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql\n│       │   │   ├── SP-8971-add-encrypted-fields-to-BO-settings.sql\n│       │   │   ├── SP-8971-vanilla-document-rules-script.sql\n│       │   │   ├── SP-9856-bo-history-tables.DDL.sql\n│       │   │   ├── SP-9856-bo-one-time-update-to-history-tables.sql\n│       │   │   └── SP-9856-bo-triggers.DDL.sql\n│       │   ├── release-1.81.0/\n│       │   │   ├── SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql\n│       │   │   ├── SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql\n│       │   │   └── SP-10127-add-accessDeniedStatusCodes.sql\n│       │   └── release-1.83.0/\n│       │       └── SP-10283-bulk-resend-invite-async-mode-query.sql\n│       ├── events/\n│       │   ├── admin-decision-event.json\n│       │   ├── business-billing-event.json\n│       │   ├── cognito-event.json\n│       │   ├── driver-fn-event.json\n│       │   ├── generate-required-document-event.json\n│       │   ├── prospect-create-consumer.json\n│       │   ├── sqs-consumer.json\n│       │   ├── starter-fn-event.json\n│       │   └── submit-event.json\n│       ├── package.json\n│       ├── samconfig.toml\n│       ├── scripts/\n│       │   ├── deploy.sh\n│       │   └── sonar-code-analysis.sh\n│       ├── step-function-definitions/\n│       │   ├── TrillionV1.json\n│       │   ├── Type1V1.json\n│       │   ├── Type1V2.json\n│       │   ├── Type1V3.json\n│       │   ├── WSCV1.json\n│       │   ├── WSCV2.json\n│       │   ├── WSCV3.json\n│       │   ├── WSCV4.json\n│       │   └── WSCV5.json\n│       └── tsconfig.json\n├── templates/\n│   └── local-template.yaml\n└── tsconfig.json",
+  "fileList": [
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\.gitignore",
+      "relativePath": ".gitignore",
+      "size": 3726,
+      "estimatedTokens": 968
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture-d2-diagram.md",
+      "relativePath": "architecture-d2-diagram.md",
+      "size": 7781,
+      "estimatedTokens": 2211
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture-eraser-diagram.md",
+      "relativePath": "architecture-eraser-diagram.md",
+      "size": 3691,
+      "estimatedTokens": 784
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture-mermaid-diagram.md",
+      "relativePath": "architecture-mermaid-diagram.md",
+      "size": 6695,
+      "estimatedTokens": 1647
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture.d2",
+      "relativePath": "architecture.d2",
+      "size": 7473,
+      "estimatedTokens": 2118
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture.eraserdiagram",
+      "relativePath": "architecture.eraserdiagram",
+      "size": 3391,
+      "estimatedTokens": 694
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\architecture.mmd",
+      "relativePath": "architecture.mmd",
+      "size": 6338,
+      "estimatedTokens": 1550
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\batch-summaries.txt",
+      "relativePath": "batch-summaries.txt",
+      "size": 29293,
+      "estimatedTokens": 6259
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\buildspec.yaml",
+      "relativePath": "buildspec.yaml",
+      "size": 1122,
+      "estimatedTokens": 286
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.43.0\\CREATE_TABLE_tenant_sales_rep.sql",
+      "relativePath": "database\\release-1.43.0\\CREATE_TABLE_tenant_sales_rep.sql",
+      "size": 955,
+      "estimatedTokens": 266
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.0\\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql",
+      "relativePath": "database\\release-1.44.0\\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql",
+      "size": 2700,
+      "estimatedTokens": 658
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.0\\PROSPECT_tables_DDL.sql",
+      "relativePath": "database\\release-1.44.0\\PROSPECT_tables_DDL.sql",
+      "size": 5958,
+      "estimatedTokens": 1547
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.0\\UPDATE_customer_list_setttings_registration_status.sql",
+      "relativePath": "database\\release-1.44.0\\UPDATE_customer_list_setttings_registration_status.sql",
+      "size": 294,
+      "estimatedTokens": 73
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\buyer_onboarding_settings_v2.sql",
+      "relativePath": "database\\release-1.44.1\\buyer_onboarding_settings_v2.sql",
+      "size": 16295,
+      "estimatedTokens": 5378
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\buyer_onboarding_settings_vanilla_json.sql",
+      "relativePath": "database\\release-1.44.1\\buyer_onboarding_settings_vanilla_json.sql",
+      "size": 13303,
+      "estimatedTokens": 4563
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\email-templates.sql",
+      "relativePath": "database\\release-1.44.1\\email-templates.sql",
+      "size": 586,
+      "estimatedTokens": 164
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_account_creation_instruction.sql",
+      "relativePath": "database\\release-1.44.1\\prod_account_creation_instruction.sql",
+      "size": 13440,
+      "estimatedTokens": 3627
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_account_setup_instruction.sql",
+      "relativePath": "database\\release-1.44.1\\prod_account_setup_instruction.sql",
+      "size": 8960,
+      "estimatedTokens": 2262
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_add_customer_type.sql",
+      "relativePath": "database\\release-1.44.1\\prod_add_customer_type.sql",
+      "size": 14282,
+      "estimatedTokens": 3573
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql",
+      "relativePath": "database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql",
+      "size": 48063,
+      "estimatedTokens": 13890
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql",
+      "relativePath": "database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql",
+      "size": 292902,
+      "estimatedTokens": 100617
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_update_admin_role_authority_mapping.sql",
+      "relativePath": "database\\release-1.44.1\\prod_update_admin_role_authority_mapping.sql",
+      "size": 3500,
+      "estimatedTokens": 733
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_update_all_admin_authority.sql",
+      "relativePath": "database\\release-1.44.1\\prod_update_all_admin_authority.sql",
+      "size": 4554,
+      "estimatedTokens": 937
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\prod_update_owner_authority.sql",
+      "relativePath": "database\\release-1.44.1\\prod_update_owner_authority.sql",
+      "size": 2752,
+      "estimatedTokens": 563
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.44.1\\remove-unique-constraint-from-prospect_user.sql",
+      "relativePath": "database\\release-1.44.1\\remove-unique-constraint-from-prospect_user.sql",
+      "size": 63,
+      "estimatedTokens": 16
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.46.0\\buyer_onboarding_settings_update_Type1V2.sql",
+      "relativePath": "database\\release-1.46.0\\buyer_onboarding_settings_update_Type1V2.sql",
+      "size": 13644,
+      "estimatedTokens": 4666
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.46.0\\buyer_onboarding_settings_update_WSCV2.sql",
+      "relativePath": "database\\release-1.46.0\\buyer_onboarding_settings_update_WSCV2.sql",
+      "size": 20635,
+      "estimatedTokens": 6725
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.46.0\\PROSPECT_table_DDL.sql",
+      "relativePath": "database\\release-1.46.0\\PROSPECT_table_DDL.sql",
+      "size": 93,
+      "estimatedTokens": 22
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.49.0\\SP-4968-new-permissions-for-prospect-update.sql",
+      "relativePath": "database\\release-1.49.0\\SP-4968-new-permissions-for-prospect-update.sql",
+      "size": 291,
+      "estimatedTokens": 70
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.49.0\\SP-5459-update_buyer_info_sections.sql",
+      "relativePath": "database\\release-1.49.0\\SP-5459-update_buyer_info_sections.sql",
+      "size": 1279,
+      "estimatedTokens": 313
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.52.0\\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql",
+      "relativePath": "database\\release-1.52.0\\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql",
+      "size": 641,
+      "estimatedTokens": 196
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.52.0\\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql",
+      "relativePath": "database\\release-1.52.0\\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql",
+      "size": 78376,
+      "estimatedTokens": 24684
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.52.0\\SP-5884-add-unique-constraint-prospect_id.DDL.sql",
+      "relativePath": "database\\release-1.52.0\\SP-5884-add-unique-constraint-prospect_id.DDL.sql",
+      "size": 54,
+      "estimatedTokens": 11
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.52.0\\WeSell_customer_mandatory_business_license_changes.sql",
+      "relativePath": "database\\release-1.52.0\\WeSell_customer_mandatory_business_license_changes.sql",
+      "size": 33612,
+      "estimatedTokens": 10616
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.57.0\\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql",
+      "relativePath": "database\\release-1.57.0\\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql",
+      "size": 13991,
+      "estimatedTokens": 4948
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.57.0\\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql",
+      "relativePath": "database\\release-1.57.0\\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql",
+      "size": 14574,
+      "estimatedTokens": 4120
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.64.0\\buyer-onboarding-settings-update-status-transition.DDL.sql",
+      "relativePath": "database\\release-1.64.0\\buyer-onboarding-settings-update-status-transition.DDL.sql",
+      "size": 240,
+      "estimatedTokens": 60
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.64.0\\SP-7664-buyer-status-code-settings.DDL.sql",
+      "relativePath": "database\\release-1.64.0\\SP-7664-buyer-status-code-settings.DDL.sql",
+      "size": 507,
+      "estimatedTokens": 122
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.66.0\\SP-7747-add-new-column-to-prospect.sql",
+      "relativePath": "database\\release-1.66.0\\SP-7747-add-new-column-to-prospect.sql",
+      "size": 218,
+      "estimatedTokens": 57
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.66.1\\SP-7747-add-authorities-to-admin-users.sql",
+      "relativePath": "database\\release-1.66.1\\SP-7747-add-authorities-to-admin-users.sql",
+      "size": 165,
+      "estimatedTokens": 47
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.66.1\\SP-7747-populate-a-new-permission.sql",
+      "relativePath": "database\\release-1.66.1\\SP-7747-populate-a-new-permission.sql",
+      "size": 876,
+      "estimatedTokens": 229
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.66.1\\SP-7747-set-timestamps-and-set-default-7-days.sql",
+      "relativePath": "database\\release-1.66.1\\SP-7747-set-timestamps-and-set-default-7-days.sql",
+      "size": 477,
+      "estimatedTokens": 96
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.67.0\\SP-7749-add-new-field-buyer_onboarding_settings.sql",
+      "relativePath": "database\\release-1.67.0\\SP-7749-add-new-field-buyer_onboarding_settings.sql",
+      "size": 1114,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.71.0\\SP-8573-WSC-update-EUS-version.sql",
+      "relativePath": "database\\release-1.71.0\\SP-8573-WSC-update-EUS-version.sql",
+      "size": 125,
+      "estimatedTokens": 34
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.71.0\\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql",
+      "relativePath": "database\\release-1.71.0\\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql",
+      "size": 323,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.76.1\\SP-9440-update-incorrect-country_code.sql",
+      "relativePath": "database\\release-1.76.1\\SP-9440-update-incorrect-country_code.sql",
+      "size": 1063,
+      "estimatedTokens": 279
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.78.0\\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql",
+      "relativePath": "database\\release-1.78.0\\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql",
+      "size": 928,
+      "estimatedTokens": 242
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.78.0\\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql",
+      "relativePath": "database\\release-1.78.0\\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql",
+      "size": 1708,
+      "estimatedTokens": 420
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.78.0\\SP-9385-vanilla-document-rules-script.sql",
+      "relativePath": "database\\release-1.78.0\\SP-9385-vanilla-document-rules-script.sql",
+      "size": 53204,
+      "estimatedTokens": 15460
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql",
+      "relativePath": "database\\release-1.79.0\\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql",
+      "size": 107,
+      "estimatedTokens": 19
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-8971-add-encrypted-fields-to-BO-settings.sql",
+      "relativePath": "database\\release-1.79.0\\SP-8971-add-encrypted-fields-to-BO-settings.sql",
+      "size": 7939,
+      "estimatedTokens": 2003
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-8971-vanilla-document-rules-script.sql",
+      "relativePath": "database\\release-1.79.0\\SP-8971-vanilla-document-rules-script.sql",
+      "size": 53394,
+      "estimatedTokens": 15512
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-9856-bo-history-tables.DDL.sql",
+      "relativePath": "database\\release-1.79.0\\SP-9856-bo-history-tables.DDL.sql",
+      "size": 1681,
+      "estimatedTokens": 431
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-9856-bo-one-time-update-to-history-tables.sql",
+      "relativePath": "database\\release-1.79.0\\SP-9856-bo-one-time-update-to-history-tables.sql",
+      "size": 1113,
+      "estimatedTokens": 273
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.79.0\\SP-9856-bo-triggers.DDL.sql",
+      "relativePath": "database\\release-1.79.0\\SP-9856-bo-triggers.DDL.sql",
+      "size": 4919,
+      "estimatedTokens": 1290
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.81.0\\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql",
+      "relativePath": "database\\release-1.81.0\\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql",
+      "size": 534,
+      "estimatedTokens": 134
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.81.0\\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql",
+      "relativePath": "database\\release-1.81.0\\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql",
+      "size": 1059,
+      "estimatedTokens": 255
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.81.0\\SP-10127-add-accessDeniedStatusCodes.sql",
+      "relativePath": "database\\release-1.81.0\\SP-10127-add-accessDeniedStatusCodes.sql",
+      "size": 279,
+      "estimatedTokens": 68
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\database\\release-1.83.0\\SP-10283-bulk-resend-invite-async-mode-query.sql",
+      "relativePath": "database\\release-1.83.0\\SP-10283-bulk-resend-invite-async-mode-query.sql",
+      "size": 189,
+      "estimatedTokens": 46
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\admin-decision-event.json",
+      "relativePath": "events\\admin-decision-event.json",
+      "size": 416,
+      "estimatedTokens": 144
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\business-billing-event.json",
+      "relativePath": "events\\business-billing-event.json",
+      "size": 15583,
+      "estimatedTokens": 2315
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\cognito-event.json",
+      "relativePath": "events\\cognito-event.json",
+      "size": 952,
+      "estimatedTokens": 316
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\driver-fn-event.json",
+      "relativePath": "events\\driver-fn-event.json",
+      "size": 2670,
+      "estimatedTokens": 839
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\generate-required-document-event.json",
+      "relativePath": "events\\generate-required-document-event.json",
+      "size": 437,
+      "estimatedTokens": 128
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\prospect-create-consumer.json",
+      "relativePath": "events\\prospect-create-consumer.json",
+      "size": 1766,
+      "estimatedTokens": 708
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\sqs-consumer.json",
+      "relativePath": "events\\sqs-consumer.json",
+      "size": 1867,
+      "estimatedTokens": 992
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\starter-fn-event.json",
+      "relativePath": "events\\starter-fn-event.json",
+      "size": 422,
+      "estimatedTokens": 129
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\events\\submit-event.json",
+      "relativePath": "events\\submit-event.json",
+      "size": 27178,
+      "estimatedTokens": 6445
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\batch-1-manifest.md",
+      "relativePath": "filtered-filesystem\\batch1\\batch-1-manifest.md",
+      "size": 2185,
+      "estimatedTokens": 568
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\convert-to-customer.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\convert-to-customer.ts",
+      "size": 7671,
+      "estimatedTokens": 1698
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\decision-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\decision-utils.ts",
+      "size": 16267,
+      "estimatedTokens": 3856
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\index.ts",
+      "size": 7737,
+      "estimatedTokens": 1849
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\reject-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\reject-prospect.ts",
+      "size": 803,
+      "estimatedTokens": 186
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\verify-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-fn\\verify-prospect.ts",
+      "size": 5729,
+      "estimatedTokens": 1317
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\convert-to-customer.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\convert-to-customer.ts",
+      "size": 1578,
+      "estimatedTokens": 368
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\reject-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\reject-prospect.ts",
+      "size": 1091,
+      "estimatedTokens": 258
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\verify-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\verify-prospect.ts",
+      "size": 1276,
+      "estimatedTokens": 308
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\decision-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\decision-utils.ts",
+      "size": 14088,
+      "estimatedTokens": 3416
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\index.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\index.ts",
+      "size": 1154,
+      "estimatedTokens": 270
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\router.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\buyer-onboarding-admin-decision-trigger-api\\router.ts",
+      "size": 2385,
+      "estimatedTokens": 564
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\authorities.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\authorities.ts",
+      "size": 1042,
+      "estimatedTokens": 213
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\axios\\axios-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\axios\\axios-utils.ts",
+      "size": 1625,
+      "estimatedTokens": 361
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\axios\\cache-headers.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\axios\\cache-headers.ts",
+      "size": 1244,
+      "estimatedTokens": 288
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\axios\\invalidate-saas-cache.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\axios\\invalidate-saas-cache.ts",
+      "size": 813,
+      "estimatedTokens": 181
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\axios\\invalidate-userInfo-cache.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\axios\\invalidate-userInfo-cache.ts",
+      "size": 682,
+      "estimatedTokens": 163
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\cache\\cache-key-manager.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\cache\\cache-key-manager.ts",
+      "size": 391,
+      "estimatedTokens": 89
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\cache\\common.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\cache\\common.ts",
+      "size": 821,
+      "estimatedTokens": 181
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\cache\\redis.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\cache\\redis.ts",
+      "size": 1921,
+      "estimatedTokens": 441
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\cache\\referesh-redis-cache.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\cache\\referesh-redis-cache.ts",
+      "size": 1528,
+      "estimatedTokens": 375
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\cognito\\cognito-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\cognito\\cognito-utils.ts",
+      "size": 8150,
+      "estimatedTokens": 2062
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\constants\\constant.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\constants\\constant.ts",
+      "size": 840,
+      "estimatedTokens": 184
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\crypto-util.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\crypto-util.ts",
+      "size": 1926,
+      "estimatedTokens": 465
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\db.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\db.ts",
+      "size": 2224,
+      "estimatedTokens": 469
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\error-handler.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\error-handler.ts",
+      "size": 850,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\generate-password.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\generate-password.ts",
+      "size": 1260,
+      "estimatedTokens": 345
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\config.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\config.ts",
+      "size": 162,
+      "estimatedTokens": 38
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\message-format.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\message-format.ts",
+      "size": 639,
+      "estimatedTokens": 144
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\model.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\model.ts",
+      "size": 762,
+      "estimatedTokens": 158
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\put-record.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\kinesis-model\\put-record.ts",
+      "size": 489,
+      "estimatedTokens": 114
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\lambda\\lambda-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\lambda\\lambda-utils.ts",
+      "size": 542,
+      "estimatedTokens": 112
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\logger.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\logger.ts",
+      "size": 1962,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\notification-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\notification-utils.ts",
+      "size": 1547,
+      "estimatedTokens": 365
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\pusher-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\pusher-utils.ts",
+      "size": 387,
+      "estimatedTokens": 95
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\reject-customer-utilities.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\reject-customer-utilities.ts",
+      "size": 3575,
+      "estimatedTokens": 910
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\response.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\response.ts",
+      "size": 1710,
+      "estimatedTokens": 359
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\s3-utils.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\s3-utils.ts",
+      "size": 2055,
+      "estimatedTokens": 489
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\step-function-util.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\step-function-util.ts",
+      "size": 7954,
+      "estimatedTokens": 1825
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\steps-util.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\steps-util.ts",
+      "size": 10495,
+      "estimatedTokens": 2432
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\types.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\types.ts",
+      "size": 3800,
+      "estimatedTokens": 926
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\util.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\util.ts",
+      "size": 38189,
+      "estimatedTokens": 9129
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch1\\src\\utilities\\validation.ts",
+      "relativePath": "filtered-filesystem\\batch1\\src\\utilities\\validation.ts",
+      "size": 1182,
+      "estimatedTokens": 329
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\batch-2-manifest.md",
+      "relativePath": "filtered-filesystem\\batch2\\batch-2-manifest.md",
+      "size": 2766,
+      "estimatedTokens": 726
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\driver.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\driver.ts",
+      "size": 14033,
+      "estimatedTokens": 3432
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\index.ts",
+      "size": 2525,
+      "estimatedTokens": 594
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\types.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-driver-fn\\types.ts",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\controller\\generate-required-document-list.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\controller\\generate-required-document-list.ts",
+      "size": 19532,
+      "estimatedTokens": 4455
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\index.ts",
+      "size": 1101,
+      "estimatedTokens": 257
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\router.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-generate-required-document-list\\router.ts",
+      "size": 1601,
+      "estimatedTokens": 349
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-handle-expired-workflows\\fetch-onboarding-enabled-tenants.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-handle-expired-workflows\\fetch-onboarding-enabled-tenants.ts",
+      "size": 741,
+      "estimatedTokens": 174
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-handle-expired-workflows\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-handle-expired-workflows\\index.ts",
+      "size": 6034,
+      "estimatedTokens": 1433
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\bulk-resend-prospect-invitation.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\bulk-resend-prospect-invitation.ts",
+      "size": 5590,
+      "estimatedTokens": 1284
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\delete-invited-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\delete-invited-prospect.ts",
+      "size": 2255,
+      "estimatedTokens": 535
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\export-invited-prospects.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\export-invited-prospects.ts",
+      "size": 1564,
+      "estimatedTokens": 367
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\get-all-invited-prospects.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\get-all-invited-prospects.ts",
+      "size": 538,
+      "estimatedTokens": 128
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\get-invited-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\get-invited-prospect.ts",
+      "size": 840,
+      "estimatedTokens": 202
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\invite-prospects.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\invite-prospects.ts",
+      "size": 2868,
+      "estimatedTokens": 680
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\resend-prospect-invitation.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\resend-prospect-invitation.ts",
+      "size": 5317,
+      "estimatedTokens": 1200
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\update-invited-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\controller\\update-invited-prospect.ts",
+      "size": 7001,
+      "estimatedTokens": 1624
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\index.ts",
+      "size": 1309,
+      "estimatedTokens": 304
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\common-utils.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\common-utils.ts",
+      "size": 13844,
+      "estimatedTokens": 3228
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\create-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\create-prospect.ts",
+      "size": 4835,
+      "estimatedTokens": 1168
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\excel-utils.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\excel-utils.ts",
+      "size": 3587,
+      "estimatedTokens": 821
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\models\\invite-prospect-DTO.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\models\\invite-prospect-DTO.ts",
+      "size": 1087,
+      "estimatedTokens": 303
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\models\\resend-prospect-invitation.DTO.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\models\\resend-prospect-invitation.DTO.ts",
+      "size": 655,
+      "estimatedTokens": 162
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\router.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-invite-prospects\\router.ts",
+      "size": 3673,
+      "estimatedTokens": 903
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-post-confirmation-trigger-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-post-confirmation-trigger-fn\\index.ts",
+      "size": 2439,
+      "estimatedTokens": 571
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-post-confirmation-trigger-fn\\types.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-post-confirmation-trigger-fn\\types.ts",
+      "size": 680,
+      "estimatedTokens": 152
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\create-prospect.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\create-prospect.ts",
+      "size": 5337,
+      "estimatedTokens": 1300
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\index.ts",
+      "size": 3809,
+      "estimatedTokens": 938
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\types.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-prospect-creation-fn\\types.ts",
+      "size": 1455,
+      "estimatedTokens": 350
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-prospects-invite-bulk-resend\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-prospects-invite-bulk-resend\\index.ts",
+      "size": 5793,
+      "estimatedTokens": 1314
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-sqs-consumer\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-sqs-consumer\\index.ts",
+      "size": 2871,
+      "estimatedTokens": 695
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-starter-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-starter-fn\\index.ts",
+      "size": 2543,
+      "estimatedTokens": 583
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-starter-fn\\types.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-starter-fn\\types.ts",
+      "size": 1382,
+      "estimatedTokens": 323
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\buyer-onboarding-submit-application-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\buyer-onboarding-submit-application-fn\\index.ts",
+      "size": 21412,
+      "estimatedTokens": 4898
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\process-prospect-expiration\\index.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\process-prospect-expiration\\index.ts",
+      "size": 5395,
+      "estimatedTokens": 1233
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\authorities.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\authorities.ts",
+      "size": 1042,
+      "estimatedTokens": 213
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\constants\\constant.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\constants\\constant.ts",
+      "size": 840,
+      "estimatedTokens": 184
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\db.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\db.ts",
+      "size": 2224,
+      "estimatedTokens": 469
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\error-handler.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\error-handler.ts",
+      "size": 850,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\logger.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\logger.ts",
+      "size": 1962,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\response.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\response.ts",
+      "size": 1710,
+      "estimatedTokens": 359
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\types.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\types.ts",
+      "size": 3800,
+      "estimatedTokens": 926
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch2\\src\\utilities\\util.ts",
+      "relativePath": "filtered-filesystem\\batch2\\src\\utilities\\util.ts",
+      "size": 38189,
+      "estimatedTokens": 9129
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\batch-3-manifest.md",
+      "relativePath": "filtered-filesystem\\batch3\\batch-3-manifest.md",
+      "size": 2576,
+      "estimatedTokens": 692
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.43.0\\CREATE_TABLE_tenant_sales_rep.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.43.0\\CREATE_TABLE_tenant_sales_rep.sql",
+      "size": 955,
+      "estimatedTokens": 266
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.0\\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.0\\PROD_UPDATE_status_code_for_Non_WeSell_tenants.sql",
+      "size": 2700,
+      "estimatedTokens": 658
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.0\\PROSPECT_tables_DDL.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.0\\PROSPECT_tables_DDL.sql",
+      "size": 5958,
+      "estimatedTokens": 1547
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.0\\UPDATE_customer_list_setttings_registration_status.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.0\\UPDATE_customer_list_setttings_registration_status.sql",
+      "size": 294,
+      "estimatedTokens": 73
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\buyer_onboarding_settings_v2.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\buyer_onboarding_settings_v2.sql",
+      "size": 16295,
+      "estimatedTokens": 5378
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\buyer_onboarding_settings_vanilla_json.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\buyer_onboarding_settings_vanilla_json.sql",
+      "size": 13303,
+      "estimatedTokens": 4563
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\email-templates.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\email-templates.sql",
+      "size": 586,
+      "estimatedTokens": 164
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_account_creation_instruction.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_account_creation_instruction.sql",
+      "size": 13440,
+      "estimatedTokens": 3627
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_account_setup_instruction.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_account_setup_instruction.sql",
+      "size": 8960,
+      "estimatedTokens": 2262
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_add_customer_type.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_add_customer_type.sql",
+      "size": 14282,
+      "estimatedTokens": 3573
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_as_text.sql",
+      "size": 48063,
+      "estimatedTokens": 13890
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_buyer_onboarding_settings_for_clients_with_country_code_mapping_tables.sql",
+      "size": 292902,
+      "estimatedTokens": 100617
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_admin_role_authority_mapping.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_admin_role_authority_mapping.sql",
+      "size": 3500,
+      "estimatedTokens": 733
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_all_admin_authority.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_all_admin_authority.sql",
+      "size": 4554,
+      "estimatedTokens": 937
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_owner_authority.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\prod_update_owner_authority.sql",
+      "size": 2752,
+      "estimatedTokens": 563
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\database\\release-1.44.1\\remove-unique-constraint-from-prospect_user.sql",
+      "relativePath": "filtered-filesystem\\batch3\\database\\release-1.44.1\\remove-unique-constraint-from-prospect_user.sql",
+      "size": 63,
+      "estimatedTokens": 16
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-reference-api\\controller\\get-references.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-reference-api\\controller\\get-references.ts",
+      "size": 854,
+      "estimatedTokens": 190
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-reference-api\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-reference-api\\index.ts",
+      "size": 1570,
+      "estimatedTokens": 354
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-success-content-api\\controller\\get-success-content.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-success-content-api\\controller\\get-success-content.ts",
+      "size": 803,
+      "estimatedTokens": 179
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-success-content-api\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-success-content-api\\index.ts",
+      "size": 1501,
+      "estimatedTokens": 352
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-additional-fields\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-additional-fields\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-bb-address\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-bb-address\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-business-owner-address\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-business-owner-address\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-business-phone\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-business-phone\\index.ts",
+      "size": 764,
+      "estimatedTokens": 172
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-frieght-forwarder-info\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-frieght-forwarder-info\\index.ts",
+      "size": 758,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-policy-review\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-policy-review\\index.ts",
+      "size": 758,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-shipping-address\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\buyer-onboarding-validate-and-save-shipping-address\\index.ts",
+      "size": 1715,
+      "estimatedTokens": 368
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\reset-password-fn\\controller\\reset-buyer-password.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\reset-password-fn\\controller\\reset-buyer-password.ts",
+      "size": 3831,
+      "estimatedTokens": 890
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\reset-password-fn\\dtos\\reset-buyer-password-dto.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\reset-password-fn\\dtos\\reset-buyer-password-dto.ts",
+      "size": 126,
+      "estimatedTokens": 30
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\reset-password-fn\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\reset-password-fn\\index.ts",
+      "size": 1512,
+      "estimatedTokens": 341
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\reset-password-fn\\router.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\reset-password-fn\\router.ts",
+      "size": 1143,
+      "estimatedTokens": 257
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\sales-rep-api\\controller\\get-sales-rep.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\sales-rep-api\\controller\\get-sales-rep.ts",
+      "size": 1902,
+      "estimatedTokens": 439
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\sales-rep-api\\index.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\sales-rep-api\\index.ts",
+      "size": 1513,
+      "estimatedTokens": 340
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\sales-rep-api\\router.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\sales-rep-api\\router.ts",
+      "size": 1128,
+      "estimatedTokens": 264
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\utilities\\constants\\constant.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\utilities\\constants\\constant.ts",
+      "size": 840,
+      "estimatedTokens": 184
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\utilities\\db.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\utilities\\db.ts",
+      "size": 2224,
+      "estimatedTokens": 469
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\utilities\\error-handler.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\utilities\\error-handler.ts",
+      "size": 850,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\utilities\\logger.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\utilities\\logger.ts",
+      "size": 1962,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch3\\src\\utilities\\response.ts",
+      "relativePath": "filtered-filesystem\\batch3\\src\\utilities\\response.ts",
+      "size": 1710,
+      "estimatedTokens": 359
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\batch-4-manifest.md",
+      "relativePath": "filtered-filesystem\\batch4\\batch-4-manifest.md",
+      "size": 3709,
+      "estimatedTokens": 1126
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\buildspec.yaml",
+      "relativePath": "filtered-filesystem\\batch4\\buildspec.yaml",
+      "size": 1122,
+      "estimatedTokens": 286
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.46.0\\buyer_onboarding_settings_update_Type1V2.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.46.0\\buyer_onboarding_settings_update_Type1V2.sql",
+      "size": 13644,
+      "estimatedTokens": 4666
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.46.0\\buyer_onboarding_settings_update_WSCV2.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.46.0\\buyer_onboarding_settings_update_WSCV2.sql",
+      "size": 20635,
+      "estimatedTokens": 6725
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.46.0\\PROSPECT_table_DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.46.0\\PROSPECT_table_DDL.sql",
+      "size": 93,
+      "estimatedTokens": 22
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.49.0\\SP-4968-new-permissions-for-prospect-update.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.49.0\\SP-4968-new-permissions-for-prospect-update.sql",
+      "size": 291,
+      "estimatedTokens": 70
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.49.0\\SP-5459-update_buyer_info_sections.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.49.0\\SP-5459-update_buyer_info_sections.sql",
+      "size": 1279,
+      "estimatedTokens": 313
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.52.0\\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.52.0\\KrackedScreens_and_CellFixExpert_default_values_for_tax_exempt.sql",
+      "size": 641,
+      "estimatedTokens": 196
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.52.0\\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.52.0\\RecirQ_and_MOQ5_customer_mandatory_business_license_changes.sql",
+      "size": 78376,
+      "estimatedTokens": 24684
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.52.0\\SP-5884-add-unique-constraint-prospect_id.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.52.0\\SP-5884-add-unique-constraint-prospect_id.DDL.sql",
+      "size": 54,
+      "estimatedTokens": 11
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.52.0\\WeSell_customer_mandatory_business_license_changes.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.52.0\\WeSell_customer_mandatory_business_license_changes.sql",
+      "size": 33612,
+      "estimatedTokens": 10616
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.57.0\\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.57.0\\SP-6542-update-bos-for-state-to-be-conditional-dropdrown.sql",
+      "size": 13991,
+      "estimatedTokens": 4948
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.57.0\\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.57.0\\SP-6620-buyer-onboarding-add-new-section-for-DiamondAssets-prod.sql",
+      "size": 14574,
+      "estimatedTokens": 4120
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.64.0\\buyer-onboarding-settings-update-status-transition.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.64.0\\buyer-onboarding-settings-update-status-transition.DDL.sql",
+      "size": 240,
+      "estimatedTokens": 60
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.64.0\\SP-7664-buyer-status-code-settings.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.64.0\\SP-7664-buyer-status-code-settings.DDL.sql",
+      "size": 507,
+      "estimatedTokens": 122
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.66.0\\SP-7747-add-new-column-to-prospect.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.66.0\\SP-7747-add-new-column-to-prospect.sql",
+      "size": 218,
+      "estimatedTokens": 57
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-add-authorities-to-admin-users.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-add-authorities-to-admin-users.sql",
+      "size": 165,
+      "estimatedTokens": 47
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-populate-a-new-permission.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-populate-a-new-permission.sql",
+      "size": 876,
+      "estimatedTokens": 229
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-set-timestamps-and-set-default-7-days.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.66.1\\SP-7747-set-timestamps-and-set-default-7-days.sql",
+      "size": 477,
+      "estimatedTokens": 96
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.67.0\\SP-7749-add-new-field-buyer_onboarding_settings.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.67.0\\SP-7749-add-new-field-buyer_onboarding_settings.sql",
+      "size": 1114,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.71.0\\SP-8573-WSC-update-EUS-version.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.71.0\\SP-8573-WSC-update-EUS-version.sql",
+      "size": 125,
+      "estimatedTokens": 34
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.71.0\\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.71.0\\SP-8573-WSC-update-uploaded-document-metata-with-EUS-version.sql",
+      "size": 323,
+      "estimatedTokens": 87
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.76.1\\SP-9440-update-incorrect-country_code.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.76.1\\SP-9440-update-incorrect-country_code.sql",
+      "size": 1063,
+      "estimatedTokens": 279
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-modify-column-lengths-to-prevent-encypted-data-truncation.DDL.sql",
+      "size": 928,
+      "estimatedTokens": 242
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-update-buyer_onboarding_settings-fields-lengths.sql",
+      "size": 1708,
+      "estimatedTokens": 420
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-vanilla-document-rules-script.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.78.0\\SP-9385-vanilla-document-rules-script.sql",
+      "size": 53204,
+      "estimatedTokens": 15460
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-add-curr_execution_ config-to-prospect_workflow-table.DDL.sql",
+      "size": 107,
+      "estimatedTokens": 19
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-add-encrypted-fields-to-BO-settings.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-add-encrypted-fields-to-BO-settings.sql",
+      "size": 7939,
+      "estimatedTokens": 2003
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-vanilla-document-rules-script.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-8971-vanilla-document-rules-script.sql",
+      "size": 53394,
+      "estimatedTokens": 15512
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-history-tables.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-history-tables.DDL.sql",
+      "size": 1681,
+      "estimatedTokens": 431
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-one-time-update-to-history-tables.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-one-time-update-to-history-tables.sql",
+      "size": 1113,
+      "estimatedTokens": 273
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-triggers.DDL.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.79.0\\SP-9856-bo-triggers.DDL.sql",
+      "size": 4919,
+      "estimatedTokens": 1290
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10100-one-time-update-buyer-status_code-WeSell_prod.sql",
+      "size": 534,
+      "estimatedTokens": 134
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10100-VERIFIED_PROSPECT_IN_GRACE_PERIOD-queries.sql",
+      "size": 1059,
+      "estimatedTokens": 255
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10127-add-accessDeniedStatusCodes.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.81.0\\SP-10127-add-accessDeniedStatusCodes.sql",
+      "size": 279,
+      "estimatedTokens": 68
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\database\\release-1.83.0\\SP-10283-bulk-resend-invite-async-mode-query.sql",
+      "relativePath": "filtered-filesystem\\batch4\\database\\release-1.83.0\\SP-10283-bulk-resend-invite-async-mode-query.sql",
+      "size": 189,
+      "estimatedTokens": 46
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\admin-decision-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\admin-decision-event.json",
+      "size": 416,
+      "estimatedTokens": 144
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\business-billing-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\business-billing-event.json",
+      "size": 15583,
+      "estimatedTokens": 2315
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\cognito-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\cognito-event.json",
+      "size": 952,
+      "estimatedTokens": 316
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\driver-fn-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\driver-fn-event.json",
+      "size": 2670,
+      "estimatedTokens": 839
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\generate-required-document-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\generate-required-document-event.json",
+      "size": 437,
+      "estimatedTokens": 128
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\prospect-create-consumer.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\prospect-create-consumer.json",
+      "size": 1766,
+      "estimatedTokens": 708
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\sqs-consumer.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\sqs-consumer.json",
+      "size": 1867,
+      "estimatedTokens": 992
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\starter-fn-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\starter-fn-event.json",
+      "size": 422,
+      "estimatedTokens": 129
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\events\\submit-event.json",
+      "relativePath": "filtered-filesystem\\batch4\\events\\submit-event.json",
+      "size": 27178,
+      "estimatedTokens": 6445
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\package.json",
+      "relativePath": "filtered-filesystem\\batch4\\package.json",
+      "size": 5278,
+      "estimatedTokens": 1413
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\samconfig.toml",
+      "relativePath": "filtered-filesystem\\batch4\\samconfig.toml",
+      "size": 875,
+      "estimatedTokens": 194
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\scripts\\deploy.sh",
+      "relativePath": "filtered-filesystem\\batch4\\scripts\\deploy.sh",
+      "size": 56942,
+      "estimatedTokens": 14297
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\scripts\\sonar-code-analysis.sh",
+      "relativePath": "filtered-filesystem\\batch4\\scripts\\sonar-code-analysis.sh",
+      "size": 762,
+      "estimatedTokens": 211
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\TrillionV1.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\TrillionV1.json",
+      "size": 42050,
+      "estimatedTokens": 6531
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\Type1V1.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\Type1V1.json",
+      "size": 12628,
+      "estimatedTokens": 2756
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\Type1V2.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\Type1V2.json",
+      "size": 15173,
+      "estimatedTokens": 3275
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\Type1V3.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\Type1V3.json",
+      "size": 21165,
+      "estimatedTokens": 4211
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\WSCV1.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\WSCV1.json",
+      "size": 21712,
+      "estimatedTokens": 4623
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\WSCV2.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\WSCV2.json",
+      "size": 25507,
+      "estimatedTokens": 5393
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\WSCV3.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\WSCV3.json",
+      "size": 30476,
+      "estimatedTokens": 6401
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\WSCV4.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\WSCV4.json",
+      "size": 49262,
+      "estimatedTokens": 7612
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\step-function-definitions\\WSCV5.json",
+      "relativePath": "filtered-filesystem\\batch4\\step-function-definitions\\WSCV5.json",
+      "size": 25980,
+      "estimatedTokens": 5149
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\batch4\\tsconfig.json",
+      "relativePath": "filtered-filesystem\\batch4\\tsconfig.json",
+      "size": 11369,
+      "estimatedTokens": 2121
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\filtered-filesystem\\filtered-system-manifest.md",
+      "relativePath": "filtered-filesystem\\filtered-system-manifest.md",
+      "size": 1914,
+      "estimatedTokens": 439
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\package-lock.json",
+      "relativePath": "package-lock.json",
+      "size": 78927,
+      "estimatedTokens": 32356
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\package.json",
+      "relativePath": "package.json",
+      "size": 5278,
+      "estimatedTokens": 1413
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\README.md",
+      "relativePath": "README.md",
+      "size": 8327,
+      "estimatedTokens": 1763
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\samconfig.toml",
+      "relativePath": "samconfig.toml",
+      "size": 875,
+      "estimatedTokens": 194
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\scripts\\deploy.sh",
+      "relativePath": "scripts\\deploy.sh",
+      "size": 56942,
+      "estimatedTokens": 14297
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\scripts\\sonar-code-analysis.sh",
+      "relativePath": "scripts\\sonar-code-analysis.sh",
+      "size": 762,
+      "estimatedTokens": 211
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\convert-to-customer.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\convert-to-customer.ts",
+      "size": 7671,
+      "estimatedTokens": 1698
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\decision-utils.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\decision-utils.ts",
+      "size": 16267,
+      "estimatedTokens": 3856
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\index.ts",
+      "size": 7737,
+      "estimatedTokens": 1849
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\reject-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\reject-prospect.ts",
+      "size": 803,
+      "estimatedTokens": 186
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__11-29-19__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__11-29-19__all-three-diagram.md",
+      "size": 17149,
+      "estimatedTokens": 6992
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__11-29-19__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__11-29-19__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-43-33__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-43-33__all-three-diagram.md",
+      "size": 15188,
+      "estimatedTokens": 6106
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-43-33__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-43-33__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-47-48__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-47-48__all-three-diagram.md",
+      "size": 13522,
+      "estimatedTokens": 5454
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-47-48__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-47-48__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-57-28__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-57-28__all-three-diagram.md",
+      "size": 14474,
+      "estimatedTokens": 5719
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-57-28__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-22__12-57-28__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__10-41-13__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__10-41-13__high-level-diagram.md",
+      "size": 6908,
+      "estimatedTokens": 2576
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__10-41-13__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__10-41-13__high-level-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-00-54__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-00-54__all-three-diagram.md",
+      "size": 34547,
+      "estimatedTokens": 11585
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-00-54__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-00-54__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-06-18__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-06-18__all-three-diagram.md",
+      "size": 39049,
+      "estimatedTokens": 12866
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-06-18__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__18-06-18__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__19-41-54__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__19-41-54__all-three-diagram.md",
+      "size": 32975,
+      "estimatedTokens": 10880
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__19-41-54__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-26__19-41-54__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-07-53__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-07-53__all-three-diagram.md",
+      "size": 35477,
+      "estimatedTokens": 11542
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-07-53__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-07-53__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-10-48__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-10-48__all-three-diagram.md",
+      "size": 32253,
+      "estimatedTokens": 10605
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-10-48__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-10-48__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-17-52__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-17-52__all-three-diagram.md",
+      "size": 32523,
+      "estimatedTokens": 10705
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-17-52__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-17-52__all-three-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-19-24__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-19-24__all-three-diagram.md",
+      "size": 7802,
+      "estimatedTokens": 1781
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-19-24__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-27__20-19-24__all-three-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-29-43__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-29-43__high-level-diagram.md",
+      "size": 10718,
+      "estimatedTokens": 3399
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-29-43__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-29-43__high-level-log.md",
+      "size": 991,
+      "estimatedTokens": 319
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-30-20__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-30-20__high-level-diagram.md",
+      "size": 3731,
+      "estimatedTokens": 917
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-30-20__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-30-20__high-level-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-34-12__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-34-12__high-level-diagram.md",
+      "size": 3861,
+      "estimatedTokens": 936
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-34-12__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-34-12__high-level-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-40-11__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-40-11__high-level-diagram.md",
+      "size": 3938,
+      "estimatedTokens": 977
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-40-11__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-40-11__high-level-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-46-38__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-46-38__high-level-diagram.md",
+      "size": 6244,
+      "estimatedTokens": 1567
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-46-38__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-46-38__high-level-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-56-49__high-level-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-56-49__high-level-diagram.md",
+      "size": 8633,
+      "estimatedTokens": 3142
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-56-49__high-level-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\swark-output\\2025-08-28__10-56-49__high-level-log.md",
+      "size": 998,
+      "estimatedTokens": 321
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-fn\\verify-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-fn\\verify-prospect.ts",
+      "size": 5729,
+      "estimatedTokens": 1317
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\convert-to-customer.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\controller\\convert-to-customer.ts",
+      "size": 1578,
+      "estimatedTokens": 368
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\reject-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\controller\\reject-prospect.ts",
+      "size": 1091,
+      "estimatedTokens": 258
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\controller\\verify-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\controller\\verify-prospect.ts",
+      "size": 1276,
+      "estimatedTokens": 308
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\decision-utils.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\decision-utils.ts",
+      "size": 14088,
+      "estimatedTokens": 3416
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\index.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\index.ts",
+      "size": 1154,
+      "estimatedTokens": 270
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\router.ts",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\router.ts",
+      "size": 2385,
+      "estimatedTokens": 564
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-diagram.md",
+      "size": 11184,
+      "estimatedTokens": 4677
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-33-26__all-three-log.md",
+      "size": 1208,
+      "estimatedTokens": 364
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-diagram.md",
+      "size": 13216,
+      "estimatedTokens": 5300
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-admin-decision-trigger-api\\swark-output\\2025-08-22__11-46-25__all-three-log.md",
+      "size": 1208,
+      "estimatedTokens": 364
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-driver-fn\\driver.ts",
+      "relativePath": "src\\buyer-onboarding-driver-fn\\driver.ts",
+      "size": 14033,
+      "estimatedTokens": 3432
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-driver-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-driver-fn\\index.ts",
+      "size": 2525,
+      "estimatedTokens": 594
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-driver-fn\\types.ts",
+      "relativePath": "src\\buyer-onboarding-driver-fn\\types.ts",
+      "size": 0,
+      "estimatedTokens": 0
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-generate-required-document-list\\controller\\generate-required-document-list.ts",
+      "relativePath": "src\\buyer-onboarding-generate-required-document-list\\controller\\generate-required-document-list.ts",
+      "size": 19532,
+      "estimatedTokens": 4455
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-generate-required-document-list\\index.ts",
+      "relativePath": "src\\buyer-onboarding-generate-required-document-list\\index.ts",
+      "size": 1101,
+      "estimatedTokens": 257
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-generate-required-document-list\\router.ts",
+      "relativePath": "src\\buyer-onboarding-generate-required-document-list\\router.ts",
+      "size": 1601,
+      "estimatedTokens": 349
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-handle-expired-workflows\\fetch-onboarding-enabled-tenants.ts",
+      "relativePath": "src\\buyer-onboarding-handle-expired-workflows\\fetch-onboarding-enabled-tenants.ts",
+      "size": 741,
+      "estimatedTokens": 174
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-handle-expired-workflows\\index.ts",
+      "relativePath": "src\\buyer-onboarding-handle-expired-workflows\\index.ts",
+      "size": 6034,
+      "estimatedTokens": 1433
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\bulk-resend-prospect-invitation.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\bulk-resend-prospect-invitation.ts",
+      "size": 5590,
+      "estimatedTokens": 1284
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\delete-invited-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\delete-invited-prospect.ts",
+      "size": 2255,
+      "estimatedTokens": 535
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\export-invited-prospects.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\export-invited-prospects.ts",
+      "size": 1564,
+      "estimatedTokens": 367
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\get-all-invited-prospects.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\get-all-invited-prospects.ts",
+      "size": 538,
+      "estimatedTokens": 128
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\get-invited-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\get-invited-prospect.ts",
+      "size": 840,
+      "estimatedTokens": 202
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\invite-prospects.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\invite-prospects.ts",
+      "size": 2868,
+      "estimatedTokens": 680
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\resend-prospect-invitation.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\resend-prospect-invitation.ts",
+      "size": 5317,
+      "estimatedTokens": 1200
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\controller\\update-invited-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\controller\\update-invited-prospect.ts",
+      "size": 7001,
+      "estimatedTokens": 1624
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\index.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\index.ts",
+      "size": 1309,
+      "estimatedTokens": 304
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\common-utils.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\common-utils.ts",
+      "size": 13844,
+      "estimatedTokens": 3228
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\create-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\create-prospect.ts",
+      "size": 4835,
+      "estimatedTokens": 1168
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\excel-utils.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\invite-prospect-utils\\excel-utils.ts",
+      "size": 3587,
+      "estimatedTokens": 821
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\models\\invite-prospect-DTO.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\models\\invite-prospect-DTO.ts",
+      "size": 1087,
+      "estimatedTokens": 303
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\models\\resend-prospect-invitation.DTO.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\models\\resend-prospect-invitation.DTO.ts",
+      "size": 655,
+      "estimatedTokens": 162
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\router.ts",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\router.ts",
+      "size": 3673,
+      "estimatedTokens": 903
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-diagram.md",
+      "size": 14947,
+      "estimatedTokens": 5686
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md",
+      "relativePath": "src\\buyer-onboarding-invite-prospects\\swark-output\\2025-08-22__13-06-39__all-three-log.md",
+      "size": 2513,
+      "estimatedTokens": 793
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-post-confirmation-trigger-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-post-confirmation-trigger-fn\\index.ts",
+      "size": 2439,
+      "estimatedTokens": 571
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-post-confirmation-trigger-fn\\types.ts",
+      "relativePath": "src\\buyer-onboarding-post-confirmation-trigger-fn\\types.ts",
+      "size": 680,
+      "estimatedTokens": 152
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-prospect-creation-fn\\create-prospect.ts",
+      "relativePath": "src\\buyer-onboarding-prospect-creation-fn\\create-prospect.ts",
+      "size": 5337,
+      "estimatedTokens": 1300
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-prospect-creation-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-prospect-creation-fn\\index.ts",
+      "size": 3809,
+      "estimatedTokens": 938
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-prospect-creation-fn\\types.ts",
+      "relativePath": "src\\buyer-onboarding-prospect-creation-fn\\types.ts",
+      "size": 1455,
+      "estimatedTokens": 350
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-prospects-invite-bulk-resend\\index.ts",
+      "relativePath": "src\\buyer-onboarding-prospects-invite-bulk-resend\\index.ts",
+      "size": 5793,
+      "estimatedTokens": 1314
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-reference-api\\controller\\get-references.ts",
+      "relativePath": "src\\buyer-onboarding-reference-api\\controller\\get-references.ts",
+      "size": 854,
+      "estimatedTokens": 190
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-reference-api\\index.ts",
+      "relativePath": "src\\buyer-onboarding-reference-api\\index.ts",
+      "size": 1570,
+      "estimatedTokens": 354
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-sqs-consumer\\index.ts",
+      "relativePath": "src\\buyer-onboarding-sqs-consumer\\index.ts",
+      "size": 2871,
+      "estimatedTokens": 695
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-starter-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-starter-fn\\index.ts",
+      "size": 2543,
+      "estimatedTokens": 583
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-starter-fn\\types.ts",
+      "relativePath": "src\\buyer-onboarding-starter-fn\\types.ts",
+      "size": 1382,
+      "estimatedTokens": 323
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-submit-application-fn\\index.ts",
+      "relativePath": "src\\buyer-onboarding-submit-application-fn\\index.ts",
+      "size": 21412,
+      "estimatedTokens": 4898
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-success-content-api\\controller\\get-success-content.ts",
+      "relativePath": "src\\buyer-onboarding-success-content-api\\controller\\get-success-content.ts",
+      "size": 803,
+      "estimatedTokens": 179
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-success-content-api\\index.ts",
+      "relativePath": "src\\buyer-onboarding-success-content-api\\index.ts",
+      "size": 1501,
+      "estimatedTokens": 352
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-additional-fields\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-additional-fields\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-bb-address\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-bb-address\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-business-owner-address\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-business-owner-address\\index.ts",
+      "size": 756,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-business-phone\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-business-phone\\index.ts",
+      "size": 764,
+      "estimatedTokens": 172
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-frieght-forwarder-info\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-frieght-forwarder-info\\index.ts",
+      "size": 758,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-policy-review\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-policy-review\\index.ts",
+      "size": 758,
+      "estimatedTokens": 170
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\buyer-onboarding-validate-and-save-shipping-address\\index.ts",
+      "relativePath": "src\\buyer-onboarding-validate-and-save-shipping-address\\index.ts",
+      "size": 1715,
+      "estimatedTokens": 368
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\process-prospect-expiration\\index.ts",
+      "relativePath": "src\\process-prospect-expiration\\index.ts",
+      "size": 5395,
+      "estimatedTokens": 1233
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\reset-password-fn\\controller\\reset-buyer-password.ts",
+      "relativePath": "src\\reset-password-fn\\controller\\reset-buyer-password.ts",
+      "size": 3831,
+      "estimatedTokens": 890
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\reset-password-fn\\dtos\\reset-buyer-password-dto.ts",
+      "relativePath": "src\\reset-password-fn\\dtos\\reset-buyer-password-dto.ts",
+      "size": 126,
+      "estimatedTokens": 30
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\reset-password-fn\\index.ts",
+      "relativePath": "src\\reset-password-fn\\index.ts",
+      "size": 1512,
+      "estimatedTokens": 341
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\reset-password-fn\\router.ts",
+      "relativePath": "src\\reset-password-fn\\router.ts",
+      "size": 1143,
+      "estimatedTokens": 257
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\sales-rep-api\\controller\\get-sales-rep.ts",
+      "relativePath": "src\\sales-rep-api\\controller\\get-sales-rep.ts",
+      "size": 1902,
+      "estimatedTokens": 439
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\sales-rep-api\\index.ts",
+      "relativePath": "src\\sales-rep-api\\index.ts",
+      "size": 1513,
+      "estimatedTokens": 340
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\sales-rep-api\\router.ts",
+      "relativePath": "src\\sales-rep-api\\router.ts",
+      "size": 1128,
+      "estimatedTokens": 264
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "relativePath": "src\\swark-output\\2025-08-21__18-25-06__all-three-diagram.md",
+      "size": 8413,
+      "estimatedTokens": 2387
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "relativePath": "src\\swark-output\\2025-08-21__18-25-06__all-three-log.md",
+      "size": 9481,
+      "estimatedTokens": 3009
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "relativePath": "src\\swark-output\\2025-08-22__11-48-14__all-three-diagram.md",
+      "size": 13733,
+      "estimatedTokens": 5569
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\swark-output\\2025-08-22__11-48-14__all-three-log.md",
+      "relativePath": "src\\swark-output\\2025-08-22__11-48-14__all-three-log.md",
+      "size": 9272,
+      "estimatedTokens": 2950
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\authorities.ts",
+      "relativePath": "src\\utilities\\authorities.ts",
+      "size": 1042,
+      "estimatedTokens": 213
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\axios\\axios-utils.ts",
+      "relativePath": "src\\utilities\\axios\\axios-utils.ts",
+      "size": 1625,
+      "estimatedTokens": 361
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\axios\\cache-headers.ts",
+      "relativePath": "src\\utilities\\axios\\cache-headers.ts",
+      "size": 1244,
+      "estimatedTokens": 288
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\axios\\invalidate-saas-cache.ts",
+      "relativePath": "src\\utilities\\axios\\invalidate-saas-cache.ts",
+      "size": 813,
+      "estimatedTokens": 181
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\axios\\invalidate-userInfo-cache.ts",
+      "relativePath": "src\\utilities\\axios\\invalidate-userInfo-cache.ts",
+      "size": 682,
+      "estimatedTokens": 163
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\cache\\cache-key-manager.ts",
+      "relativePath": "src\\utilities\\cache\\cache-key-manager.ts",
+      "size": 391,
+      "estimatedTokens": 89
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\cache\\common.ts",
+      "relativePath": "src\\utilities\\cache\\common.ts",
+      "size": 821,
+      "estimatedTokens": 181
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\cache\\redis.ts",
+      "relativePath": "src\\utilities\\cache\\redis.ts",
+      "size": 1921,
+      "estimatedTokens": 441
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\cache\\referesh-redis-cache.ts",
+      "relativePath": "src\\utilities\\cache\\referesh-redis-cache.ts",
+      "size": 1528,
+      "estimatedTokens": 375
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\cognito\\cognito-utils.ts",
+      "relativePath": "src\\utilities\\cognito\\cognito-utils.ts",
+      "size": 8150,
+      "estimatedTokens": 2062
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\constants\\constant.ts",
+      "relativePath": "src\\utilities\\constants\\constant.ts",
+      "size": 840,
+      "estimatedTokens": 184
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\crypto-util.ts",
+      "relativePath": "src\\utilities\\crypto-util.ts",
+      "size": 1926,
+      "estimatedTokens": 465
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\db.ts",
+      "relativePath": "src\\utilities\\db.ts",
+      "size": 2224,
+      "estimatedTokens": 469
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\error-handler.ts",
+      "relativePath": "src\\utilities\\error-handler.ts",
+      "size": 850,
+      "estimatedTokens": 180
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\generate-password.ts",
+      "relativePath": "src\\utilities\\generate-password.ts",
+      "size": 1260,
+      "estimatedTokens": 345
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\kinesis-model\\config.ts",
+      "relativePath": "src\\utilities\\kinesis-model\\config.ts",
+      "size": 162,
+      "estimatedTokens": 38
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\kinesis-model\\message-format.ts",
+      "relativePath": "src\\utilities\\kinesis-model\\message-format.ts",
+      "size": 639,
+      "estimatedTokens": 144
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\kinesis-model\\model.ts",
+      "relativePath": "src\\utilities\\kinesis-model\\model.ts",
+      "size": 762,
+      "estimatedTokens": 158
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\kinesis-model\\put-record.ts",
+      "relativePath": "src\\utilities\\kinesis-model\\put-record.ts",
+      "size": 489,
+      "estimatedTokens": 114
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\lambda\\lambda-utils.ts",
+      "relativePath": "src\\utilities\\lambda\\lambda-utils.ts",
+      "size": 542,
+      "estimatedTokens": 112
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\logger.ts",
+      "relativePath": "src\\utilities\\logger.ts",
+      "size": 1962,
+      "estimatedTokens": 437
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\notification-utils.ts",
+      "relativePath": "src\\utilities\\notification-utils.ts",
+      "size": 1547,
+      "estimatedTokens": 365
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\pusher-utils.ts",
+      "relativePath": "src\\utilities\\pusher-utils.ts",
+      "size": 387,
+      "estimatedTokens": 95
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\reject-customer-utilities.ts",
+      "relativePath": "src\\utilities\\reject-customer-utilities.ts",
+      "size": 3575,
+      "estimatedTokens": 910
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\response.ts",
+      "relativePath": "src\\utilities\\response.ts",
+      "size": 1710,
+      "estimatedTokens": 359
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\s3-utils.ts",
+      "relativePath": "src\\utilities\\s3-utils.ts",
+      "size": 2055,
+      "estimatedTokens": 489
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\step-function-util.ts",
+      "relativePath": "src\\utilities\\step-function-util.ts",
+      "size": 7954,
+      "estimatedTokens": 1825
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\steps-util.ts",
+      "relativePath": "src\\utilities\\steps-util.ts",
+      "size": 10495,
+      "estimatedTokens": 2432
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\types.ts",
+      "relativePath": "src\\utilities\\types.ts",
+      "size": 3800,
+      "estimatedTokens": 926
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\util.ts",
+      "relativePath": "src\\utilities\\util.ts",
+      "size": 38189,
+      "estimatedTokens": 9129
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\src\\utilities\\validation.ts",
+      "relativePath": "src\\utilities\\validation.ts",
+      "size": 1182,
+      "estimatedTokens": 329
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\TrillionV1.json",
+      "relativePath": "step-function-definitions\\TrillionV1.json",
+      "size": 42050,
+      "estimatedTokens": 6531
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\Type1V1.json",
+      "relativePath": "step-function-definitions\\Type1V1.json",
+      "size": 12628,
+      "estimatedTokens": 2756
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\Type1V2.json",
+      "relativePath": "step-function-definitions\\Type1V2.json",
+      "size": 15173,
+      "estimatedTokens": 3275
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\Type1V3.json",
+      "relativePath": "step-function-definitions\\Type1V3.json",
+      "size": 21165,
+      "estimatedTokens": 4211
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\WSCV1.json",
+      "relativePath": "step-function-definitions\\WSCV1.json",
+      "size": 21712,
+      "estimatedTokens": 4623
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\WSCV2.json",
+      "relativePath": "step-function-definitions\\WSCV2.json",
+      "size": 25507,
+      "estimatedTokens": 5393
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\WSCV3.json",
+      "relativePath": "step-function-definitions\\WSCV3.json",
+      "size": 30476,
+      "estimatedTokens": 6401
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\WSCV4.json",
+      "relativePath": "step-function-definitions\\WSCV4.json",
+      "size": 49262,
+      "estimatedTokens": 7612
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\step-function-definitions\\WSCV5.json",
+      "relativePath": "step-function-definitions\\WSCV5.json",
+      "size": 25980,
+      "estimatedTokens": 5149
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-20__12-05-55__diagram.md",
+      "relativePath": "swark-output\\2025-08-20__12-05-55__diagram.md",
+      "size": 3981,
+      "estimatedTokens": 1639
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-20__12-05-55__log.md",
+      "relativePath": "swark-output\\2025-08-20__12-05-55__log.md",
+      "size": 7064,
+      "estimatedTokens": 2387
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-20__12-10-12__diagram.md",
+      "relativePath": "swark-output\\2025-08-20__12-10-12__diagram.md",
+      "size": 3575,
+      "estimatedTokens": 1521
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-20__12-10-12__log.md",
+      "relativePath": "swark-output\\2025-08-20__12-10-12__log.md",
+      "size": 8162,
+      "estimatedTokens": 2717
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "relativePath": "swark-output\\2025-08-21__12-25-16__all-three-diagram.md",
+      "size": 7738,
+      "estimatedTokens": 2001
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "relativePath": "swark-output\\2025-08-21__12-25-16__all-three-log.md",
+      "size": 8990,
+      "estimatedTokens": 2865
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "relativePath": "swark-output\\2025-08-25__18-35-54__all-three-diagram.md",
+      "size": 27417,
+      "estimatedTokens": 10470
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "relativePath": "swark-output\\2025-08-25__18-35-54__all-three-log.md",
+      "size": 9548,
+      "estimatedTokens": 3036
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\templates\\local-template.yaml",
+      "relativePath": "templates\\local-template.yaml",
+      "size": 18314,
+      "estimatedTokens": 4391
+    },
+    {
+      "path": "c:\\Users\\Melvin M Shajan\\Downloads\\Zip\\Zip\\phonex-saas-buyer-onboarding\\tsconfig.json",
+      "relativePath": "tsconfig.json",
+      "size": 11369,
+      "estimatedTokens": 2121
+    }
+  ],
+  "worstCaseTokens": 1019346
+}

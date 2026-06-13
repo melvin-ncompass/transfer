@@ -1,0 +1,35 @@
+1. Preprocessor => From root level traverse all the files and folders build a Json Object.
+2. Build prompt
+    2A. You are a system archiect I want you to study the file system provided as a JSON object
+    2B. JSON Object
+    2C. Based on your study let me know
+        2C1. What are all the programming languages present in this file system
+        2C2. Define all possible ways in which functions and classes can be declared in the list of programming languages that you found above
+        2C3. To construct a mindmap at a high-level what files and folders can be safely ignored, if are in doubt include it
+        2C4. i have given you the estimated tokens for each files.Based on your includtion files list, im going to build a new prompt with all the file contents to genrate a mindMap.Keeping your max token limit in the mind split your responce of file include and exclution in batches.make sure the batch has revelent files combanition to build relevent mindMap.i want you to overlap atleast 10% of the the file so that there will be a connection between the batches.
+3. Identify token size of the prompt = Request
+4. Request < MAX_TOKEN_SIZE for the model (DeepSeek coder) [input + out]
+    True => Submit to the model and get the output
+5. Based on output from the LLM , Now Preprocessor needs to traverse and generate a new file system along with code (Without LLM in actual file and folder)
+6. Based on the new file system and batches(for loop),build prompt for each batch
+    6A.You are a system archiect I want you to study the
+    6B.To construct a mindmap at a high-level,give me the summary to build the mind mindmap
+    6C.file and its content along with its file SEPARATOR
+    6D.store each batch's output as summary in a summary file(append all the batch in same file)
+        6D1.Sample
+            batch information
+            number 1
+            files involved:
+            (//file)
+            (//file)
+            (//file)
+            batch summary
+            ---------------------
+            batch information
+            number 2
+            files involved:
+            (//file)
+            batch summary
+7.Build Prompt
+    7A.read the finished Summary file
+    7B.you have you create a High Level mindmap and gimme Mermaid diagram , eraser diagram and MD
