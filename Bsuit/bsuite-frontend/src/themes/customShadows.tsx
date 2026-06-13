@@ -1,0 +1,33 @@
+// utils
+import { withAlpha } from '../utils/colorUtils';
+
+//  LIGHT THEME - CUSTOM SHADOWS  //
+
+function createCustomShadow(palette: any, baseColor: string) {
+  const transparent = withAlpha(baseColor, 0.24);
+  const commonShadow = (color: string) => `0px 12px 14px 0px ${withAlpha(color, 0.3)}`;
+
+  return {
+    // elevation levels (based on MUI's shadow scale)
+    z1: `0 1px 2px 0 ${transparent}`,
+    z8: `0 8px 16px 0 ${transparent}`,
+    z12: `0 12px 24px 0 ${transparent}, 0 10px 20px 0 ${transparent}`,
+    z16: `0 0 3px 0 ${transparent}, 0 14px 28px -5px ${transparent}`,
+    z20: `0 0 3px 0 ${transparent}, 0 18px 36px -5px ${transparent}`,
+    z24: `0 0 6px 0 ${transparent}, 0 21px 44px 0 ${transparent}`,
+
+    // color-based shadows
+    primary: commonShadow(palette.primary.main),
+    secondary: commonShadow(palette.secondary.main),
+    success: commonShadow(palette.success.main),
+    warning: commonShadow(palette.warning.main),
+    error: commonShadow(palette.error.main)
+  };
+}
+
+// export a fixed function for light theme
+export default function CustomShadows(palette: any) {
+  // always use grey[900] for shadow color base in light mode
+  const baseColor = palette.dark[900];
+  return createCustomShadow(palette, baseColor);
+}

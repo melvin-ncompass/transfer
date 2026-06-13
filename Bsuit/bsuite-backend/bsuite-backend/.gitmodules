@@ -1,0 +1,4 @@
+[submodule "src/auth"]
+	path = src/auth
+	url = git@github.com:ncompass-ts/auth-backend.git
+	branch = feature/auth

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+
+    .header img {
+      width: 100%;
+      max-height: 100px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .sub-title {
+      font-size: 17px;
+      margin-top: 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      /* margin-top: 6px; */
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 6px;
+    }
+
+    th {
+      background: #f0f0f0;
+      text-align: left;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    .bold {
+      font-weight: bold;
+      background: #f0f0f0;
+    }
+
+    .italics {
+      font-style: italic;
+    }
+
+    /* Indentation */
+    .indent-0 {
+      padding-left: 4px;
+    }
+
+    .indent-1 {
+      padding-left: 20px;
+    }
+
+    .indent-2 {
+      padding-left: 36px;
+    }
+
+    .indent-3 {
+      padding-left: 52px;
+    }
+
+    /* Mini table for Tax % */
+    .nested-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2px;
+      margin-bottom: 6px;
+      font-size: 10px;
+    }
+
+    .nested-table th,
+    .nested-table td {
+      border: 1px solid #ccc;
+      padding: 4px;
+    }
+
+    .nested-header {
+      background: #f2f2f2;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    {{#if headerUrl}}
+    <img src="{{headerUrl}}" alt="Header Logo" />
+    {{/if}}
+    <div class="title">Tax Summary</div>
+    <div class="sub-title">{{companyName}}</div>
+    <div class="sub-title">{{fromDate}} - {{toDate}}</div>
+  </div>
+
+  <table>
+    <tr>
+      <th>Tax Name</th>
+      <th class="right">Taxable Amount</th>
+      <th class="right">Tax Amount</th>
+    </tr>
+
+    {{#each rows}}
+
+    {{!-- Tax Name --}}
+    {{#if (eq type "tax-name")}}
+    <tr class="bold">
+      <td class="indent-{{indent}}">{{name}}</td>
+      <td class="right">{{totalTaxableAmount}}</td>
+      <td class="right">{{totalTaxAmount}}</td>
+    </tr>
+    {{/if}}
+
+    {{!-- Tax % --}}
+    {{#if (eq type "tax-percent")}}
+    <tr>
+      <td class="indent-{{indent}}">{{name}}</td>
+      <td class="right">{{taxableAmount}}</td>
+      <td class="right">{{taxAmount}}</td>
+    </tr>
+
+    {{!-- Nested mini-table for detailed rows --}}
+    {{#if details}}
+    <tr>
+      <td colspan="3" class="indent-{{indent}}">
+        <table class="nested-table" style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+          <tr class="nested-header-row">
+            <th style="width: 15%;">Date</th>
+            <th style="width: 15%;">Type</th>
+            <th style="width: 20%;">Description</th>
+            <th class="right" style="width: 15%;">Debit</th>
+            <th class="right" style="width: 15%;">Credit</th>
+            <th class="right" style="width: 20%;">Balance</th>
+          </tr>
+          {{#each details}}
+          <tr class="nested-row">
+            <td>{{date}}</td>
+            <td>{{transactionType}}</td>
+            <td>{{reference}}</td>
+            <td class="right">{{debit}}</td>
+            <td class="right">{{credit}}</td>
+            <td class="right">{{balance}}</td>
+          </tr>
+          {{/each}}
+        </table>
+
+      </td>
+    </tr>
+    {{/if}}
+
+    {{/if}}
+
+    {{/each}}
+
+    <tr class="bold">
+      <td>Total Tax</td>
+      <td></td>
+      <td class="right">{{totalTax}}</td>
+    </tr>
+
+  </table>
+
+</body>
+
+</html>

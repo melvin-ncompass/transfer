@@ -1,0 +1,15 @@
+services:
+  bsuite-frontend:
+    container_name: bsuite-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    restart: always
+    networks:
+      - bsuite-net
+
+networks:
+  bsuite-net:
+    external: true

@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bsuite_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: LxVwF!,6g8CE}5E1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5431:5432"
+    networks:
+      - bsuite-net 
+
+volumes:
+  db_data:
+
+networks:
+  bsuite-net:
+    external: true

@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  postgres-docker:
+    image: postgres:15-alpine
+    container_name: analytics-postgres-docker
+    environment:
+      POSTGRES_DB: datastuff
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_docker_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - analytics-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  clickhouse-docker:
+    image: clickhouse/clickhouse-server:latest
+    container_name: analytics-clickhouse-docker
+    environment:
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: Password
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_docker_data:/var/lib/clickhouse
+    networks:
+      - analytics-network
+    depends_on:
+      postgres-docker:
+        condition: service_healthy
+
+  duckdb-docker:
+    image: duckdb/duckdb:latest
+    container_name: analytics-duckdb-docker
+    # Keep container running by allocating a TTY
+    tty: true
+    stdin_open: true
+    entrypoint: [] # Reset entrypoint to default
+    command: ["duckdb"] # Run duckdb repl
+    networks:
+      - analytics-network
+    depends_on:
+      postgres-docker:
+        condition: service_healthy
+
+  analytics-backend:
+    build:
+      context: ./analytics-benchmark
+      dockerfile: Dockerfile
+    container_name: analytics-backend
+    env_file:
+      - ./analytics-benchmark/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - analytics-network
+    depends_on:
+      postgres-docker:
+        condition: service_healthy
+      clickhouse-docker:
+        condition: service_started
+      duckdb-docker:
+        condition: service_started
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+  analytics-frontend:
+    build:
+      context: ./analytics-frontend
+      dockerfile: Dockerfile
+    container_name: analytics-frontend
+    ports:
+      - "3001:3001"
+    networks:
+      - analytics-network
+    depends_on:
+      - analytics-backend
+    restart: unless-stopped
+
+  data-generator:
+    build:
+      context: ./data-generator   
+      dockerfile: Dockerfile
+    container_name: analytics-data-generator
+    env_file:
+      - ./analytics-benchmark/.env
+    networks:
+      - analytics-network
+    depends_on:
+      - postgres-docker
+    restart: "no"
+    command: ["python", "seed_docker_10m.py"]
+
+          
+volumes:
+  postgres_docker_data:
+  clickhouse_docker_data:
+
+networks:
+  analytics-network:
+    driver: bridge

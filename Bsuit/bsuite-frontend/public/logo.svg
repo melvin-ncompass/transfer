@@ -1,0 +1,26 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#1976D2" opacity="0.1"/>
+  <!-- Main B Letter -->
+  <path d="M 60 50 L 60 150 L 110 150 C 130 150 145 135 145 115 C 145 105 140 96 132 92 C 138 88 142 80 142 70 C 142 52 128 50 110 50 L 60 50 Z M 80 65 L 105 65 C 115 65 122 68 122 78 C 122 88 115 91 105 91 L 80 91 Z M 80 106 L 108 106 C 120 106 125 110 125 120 C 125 130 120 135 108 135 L 80 135 Z"
+        fill="#1976D2"
+        stroke="#1976D2"
+        stroke-width="2"/>
+  <!-- Accent Lines for Business Feel -->
+  <line x1="145" y1="70" x2="160" y2="70" stroke="#BBD4F5" stroke-width="3" stroke-linecap="round"/>
+  <line x1="145" y1="115" x2="165" y2="115" stroke="#BBD4F5" stroke-width="3" stroke-linecap="round"/>
+  <!-- Bottom accent -->
+  <path d="M 50 160 Q 100 165 150 160" stroke="rgba(168, 203, 246, 1)" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+{
+  "view_business_settings": "User can view business settings information.",
+  "update_business_settings": "User can add/update/remove Company Details/Branding, Identity, Report Structure, Integrations. View Organization Settings permission is required.",
+  "view_export_activity": "User can view/export activity log of the company. View Organization Settings permission is required.",
+  "import_export_business_settings": "User can import/export Company Data. Manage Organization Settings permission is required.",
+  "manage_custom_domain_mapping": "User can add/update/delete Custom Domain Mapping for the company. Manage Organization Settings permission is required.",
+  "view_reminders": "User can view Company Reminders. View Organization Settings permission is required.",
+  "manage_reminders": "User can add/update/delete Company Reminders. View Reminders permission is required.",
+  "view_user_management": "User can view users with access to the company. View Organization Settings permission is required.",
+  "manage_user_management": "User can add/update/delete users access to the company. View User Management permission is required.",
+  "view_insights": "User can view Financial Reports of the company.",
+  "manage_insights": "User can create custom Financial Reports of the company. View Insights permission is required.",
+  "export_insights": "User can export Financial Reports of the company. View Insights permission is required.",
+  "view_coa": "User can view the Chart of Accounts of the company.",
+  "manage_coa": "User can add/update/delete/import the Chart of Accounts of the company. View Chart of Accounts permission is required.",
+  "export_coa": "User can export the Chart of Accounts of the company. View Chart of Accounts permission is required.",
+  "view_transactions": "User can view the financial transactions of the company.",
+  "manage_transactions": "User can add/update/delete the financial transactions of the company. View Transactions are required.",
+  "export_transactions": "User can export the financial transactions of the company. View Transactions permission is required.",
+  "view_opening_balance": "User can import/match/delete the uncategorized financial transactions of the company. View Transactions permission is required.",
+  "manage_opening_balance": "User can view Opening balance transactions of the company. View Transactions and Manage Transactions permissions are required.",
+  "manage_uncategorized_transactions": "User can set up Opening balance transactions of the company. Manage Transactions permission is required."
+}

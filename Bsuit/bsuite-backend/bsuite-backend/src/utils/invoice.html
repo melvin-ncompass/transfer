@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: #000;
+      margin: 0;
+      padding: 30px;
+    }
+
+    /* ================= HEADER ================= */
+.header-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.header-table td {
+  vertical-align: top;
+}
+
+.header-left {
+  width: 65%;
+}
+
+.balance-due {
+  margin-top: 10px;
+}
+.header-right {
+  width: 35%;
+  text-align: right;
+}
+
+.company-logo img {
+  max-height: 60px;
+  max-width: 200px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.company-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.identity {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ================= INFO ROW ================= */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+.info-table td {
+  vertical-align: top; 
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.info-left {
+  width: 65%;
+}
+
+.info-right {
+  width: 35%;
+  text-align: right;
+}
+
+
+    /* ================= DETAILS ================= */
+    .invoice-details {
+      margin-bottom: 20px;
+      font-size: 11px;
+      line-height: 1.6;
+      text-align: right;
+    }
+
+    /* ================= BILL / SHIP ================= */
+    .bill-to {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .bill-to strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ================= ITEMS TABLE ================= */
+    table.items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .items-table th {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-weight: bold;
+    }
+
+    .items-table td {
+      border: 1px solid #e0e0e0;
+      padding: 8px;
+    }
+
+    .items-table th:last-child,
+    .items-table td:last-child {
+      text-align: right;
+      width: 130px; /* Amount column */
+    }
+
+    .items-table th:nth-last-child(2),
+    .items-table td:nth-last-child(2) {
+      text-align: right;
+      width: 100px; /* Rate */
+    }
+
+    .items-table th:nth-last-child(3),
+    .items-table td:nth-last-child(3) {
+      text-align: right;
+      width: 70px; /* Qty */
+    }
+
+    /* ================= TOTALS ================= */
+    .totals-wrapper {
+      width: 100%;
+      text-align: right;
+      margin-top: 15px;
+    }
+
+    .totals-table {
+      display: inline-table;
+      width: 280px;
+    }
+
+    .totals-table td {
+      padding: 5px 0;
+      font-size: 12px;
+    }
+
+    .totals-table .label {
+      text-align: left;
+    }
+
+    .totals-table .value {
+      text-align: right;
+      font-weight: bold;
+    }
+
+    .totals-notes-table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+.totals-notes-table td {
+  vertical-align: top;
+}
+
+.notes-left {
+  width: 65%;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.totals-right {
+  width: 35%;
+  text-align: right;
+}
+
+    .totals-table .highlight {
+      color: #2b7cff;
+    }
+
+    .totals-table .negative {
+      color: #d9534f;
+    }
+
+    .totals-table .round {
+      color: #2ba30d;
+    }
+
+    /* ================= EXTRAS ================= */
+   .amount-words {
+  font-size: 11px;
+  color: #444;
+  line-height: 1.4;
+}
+
+
+    .identity,
+    .bank-details {
+      margin-top: 20px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 10px;
+      text-align: center;
+      color: #444;
+    }
+
+    .line {
+      margin-top: 15px;
+  padding-top: 10px;         
+  border-top: 1px solid #ccc7c7;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<table class="header-table">
+  <tr>
+
+    <!-- LEFT COLUMN -->
+    <td class="header-left">
+
+      {{#if company.companyLogoUrl}}
+        <div class="company-logo">
+          <img src="{{company.companyLogoUrl}}" alt="Company Logo" />
+        </div>
+      {{/if}}
+
+      <div class="company-name">
+        {{company.name}}
+      </div>
+
+      {{#if company.companyAddress.length}}
+  <div class="company-address">
+    {{#each company.companyAddress}}
+      {{this}}<br />
+    {{/each}}
+  </div>
+{{/if}}
+
+      {{#if identityFields.length}}
+        <div class="identity">
+          {{#each identityFields}}
+            <div><strong>{{label}}:</strong> {{value}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
+
+    </td>
+
+    <!-- RIGHT COLUMN -->
+    {{#if invoice}}
+      <td class="header-right">
+
+        <h2 style="margin: 0;">Invoice</h2>
+
+        {{#if invoice.number}}
+          <div>{{invoice.number}}</div>
+        {{/if}}
+
+        {{#if invoice.balanceDue}}
+          <div class="balance-due">
+            <strong>Balance Due</strong><br />
+            {{invoice.currency}} {{invoice.balanceDue}}
+          </div>
+        {{/if}}
+
+      </td>
+    {{/if}}
+
+  </tr>
+</table>
+
+
+
+ <!-- ================= BILL / SHIP / DETAILS ================= -->
+<table class="info-table">
+  <tr>
+    <!-- LEFT COLUMN -->
+    <td class="info-left">
+
+      {{#if billTo}}
+        <div class="bill-to">
+          <strong>Bill To</strong><br />
+          {{billTo.name}}<br />
+          {{#each billTo.address}}
+            {{this}}<br />
+          {{/each}}
+        </div>
+      {{/if}}
+
+    </td>
+
+    <!-- RIGHT COLUMN -->
+    <td class="info-right">
+
+      {{#if invoiceDetails.invoiceDate}}
+        <div><strong>Invoice Date:</strong> {{invoiceDetails.invoiceDate}}</div>
+      {{/if}}
+
+      {{#if invoiceDetails.dueDate}}
+        <div><strong>Due Date:</strong> {{invoiceDetails.dueDate}}</div>
+      {{/if}}
+
+      {{#if invoiceDetails.serviceStart}}
+        <div><strong>Service Start:</strong> {{invoiceDetails.serviceStart}}</div>
+      {{/if}}
+
+      {{#if invoiceDetails.serviceEnd}}
+        <div><strong>Service End:</strong> {{invoiceDetails.serviceEnd}}</div>
+      {{/if}}
+
+    </td>
+  </tr>
+</table>
+
+
+
+  <!-- ================= ITEMS ================= -->
+  {{#if items.length}}
+<table class="items-table">
+  <thead>
+    <tr>
+      <th>#</th>
+
+      {{#if items.[0].item}}
+        <th>Item</th>
+      {{/if}}
+
+      {{#if items.[0].account}}
+        <th>Account Name</th>
+      {{/if}}
+
+      {{#if items.[0].hsnSac}}
+        <th>Hsn / Sac</th>
+      {{/if}}
+
+      {{#if items.[0].quantity}}
+        <th>Qty</th>
+      {{/if}}
+
+      {{#if items.[0].rate}}
+        <th>Rate</th>
+      {{/if}}
+
+      {{#if items.[0].amount}}
+        <th>Amount</th>
+      {{/if}}
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td>{{lineNo}}</td>
+
+        {{#if item}}
+          <td>{{item}}</td>
+        {{/if}}
+
+        {{#if account}}
+          <td>{{account}}</td>
+        {{/if}}
+
+        {{#if hsnSac}}
+          <td class="text-right">{{hsnSac}}</td>
+        {{/if}}
+
+        {{#if quantity}}
+          <td class="text-right">{{quantity}}</td>
+        {{/if}}
+
+        {{#if rate}}
+          <td class="text-right">{{rate}}</td>
+        {{/if}}
+
+        {{#if amount}}
+          <td class="text-right">{{amount}}</td>
+        {{/if}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
+
+
+
+ {{#if total.length}}
+<table class="totals-notes-table">
+  <tr>
+    <td class="notes-left"></td>
+
+    <td class="totals-right">
+      <div class="totals-wrapper">
+        <table class="totals-table">
+          {{#each total}}
+            <tr>
+              <td class="label {{#if isTotal}}line{{/if}}">
+                {{label}}
+              </td>
+              <td class="value {{#if highlight}}highlight{{/if}} {{#if round}}round{{/if}} {{#if isTotal}}line{{/if}} {{#if negative}}negative{{/if}}">
+                {{value}}
+              </td>
+            </tr>
+          {{/each}}
+        </table>
+      </div>
+
+      {{#if amountInWords}}
+        <div class="amount-words" style="margin-top: 8px;">
+          <strong>Balance Due In Words:</strong><br />
+         <div style="margin-top: 8px;">{{amountInWords}}</div>
+        </div>
+      {{/if}}
+
+    </td>
+  </tr>
+
+  {{#if description}}
+  <tr>
+    <td class="notes-left">
+      <div class="invoice-description">
+        <strong>{{description.label}}</strong>
+        <div style="margin-top: 2px; white-space: pre-line;">
+          {{description.value}}
+        </div>
+      </div>
+    </td>
+    <td></td>
+  </tr>
+  {{/if}}
+</table>
+{{/if}}
+
+
+  <!-- ================= IDENTITY ================= -->
+
+
+  <!-- ================= BANK DETAILS ================= -->
+  {{#if bankDetails.length}}
+    <div class="bank-details">
+      {{#each bankDetails}}
+        <div><strong>{{label}}:</strong> {{value}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+ 
+
+  <!-- ================= FOOTER ================= -->
+  {{#if footerText}}
+    <div class="footer">
+      {{footerText}}
+    </div>
+  {{/if}}
+
+</body>
+</html>

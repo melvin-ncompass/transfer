@@ -1,0 +1,6 @@
+Account Name,Account Type,Account Code,Account Currency,Notes,Group Name,Parent Account
+Cash on Hand,Asset,CASH-001,₹ - INR,Main cash account,Main Assets,
+Office Supplies,Expense,EXP-045,₹ - INR,Expense account for office supplies,Operating Expenses,
+Sales Revenue,Income,INC-100,₹ - INR,Income from product sales,Revenue Group,
+Bank Account,Asset,BANK-001,₹ - INR,Primary bank account,Main Assets,Cash on Hand
+Accounts Payable,Liability,LIAB-002,₹ - INR,Money owed to vendors,Liabilities Group,

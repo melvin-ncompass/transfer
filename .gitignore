@@ -1,0 +1,137 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+.yarn/
+bower_components/
+
+# Python
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+.eggs/
+*.egg
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+
+# Environment & secrets (never commit these)
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+credentials.json
+secrets.json
+service-account*.json
+*_sa.json
+*-sa.json
+*serviceaccount*.json
+*-adminsdk-*.json
+Bsuit/bsuite-backend/static/storage_read_sa.json
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.output/
+.cache/
+.parcel-cache/
+.turbo/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Archives (backup copies at repo root)
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Databases & local data
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Docker local volumes
+docker-data/
+
+# Java / Kotlin
+target/
+.gradle/
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Rust
+target/
+
+# Go
+vendor/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Misc
+*.tmp
+*.temp
+*.bak
+*.orig
+.sass-cache/
+.vercel/
+.netlify/
+
+# Images / map tiles excluded from the transfer push (regenerable, keeps repo light)
+# Remove this line if you want PNGs tracked in git.
+*.png
+# Large GIS raster source data (regenerable / very large)
+leaflet/raster/weather_tiles/
+leaflet/raster/new_tiles/

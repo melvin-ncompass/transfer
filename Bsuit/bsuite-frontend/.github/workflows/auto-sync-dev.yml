@@ -1,0 +1,46 @@
+name: Auto Sync Dev Branches
+
+on:
+  push:
+    branches:
+      - dev_v2   # Trigger whenever dev_v2 gets new commits (e.g. after merge)
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repository with full history
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2️⃣ Configure Git identity and behavior
+      - name: Configure Git
+        run: |
+          git config --global user.name "sync-bot"
+          git config --global user.email "sync-bot@users.noreply.github.com"
+          git config --global pull.rebase false   # Always merge when pulling
+
+      # 3️⃣ Merge dev_v2 → books_dev
+      - name: Sync dev_v2 into books_dev
+        run: |
+          echo "⚙️ Syncing dev_v2 into books_dev..."
+          git fetch origin books_dev dev_v2
+          git checkout books_dev
+          git merge --no-edit origin/dev_v2 || true
+          git push origin books_dev || echo "⚠️ Merge or push issue in books_dev"
+
+      # 4️⃣ Merge dev_v2 → people_dev
+      - name: Sync dev_v2 into people_dev
+        run: |
+          echo "⚙️ Syncing dev_v2 into people_dev..."
+          git fetch origin people_dev dev_v2
+          git checkout people_dev
+          if ! git merge --no-edit origin/dev_v2; then
+            echo "⚠️ Conflict detected while merging dev_v2 into people_dev"
+            exit 0
+          fi
+          git push origin people_dev || echo "⚠️ Merge or push issue in people_dev"

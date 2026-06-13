@@ -1,0 +1,21 @@
+services:
+  vault:
+    image: hashicorp/vault:1.21.2
+    container_name: vault
+    cap_add:
+      - IPC_LOCK
+    ports:
+      - "${VAULT_PORT}:8200"
+    volumes:
+      - ${VAULT_DATA_PATH}:/vault/data
+      - ${VAULT_HCL_PATH}:/vault/config/vault.hcl
+    user: "0:0"
+    command: vault server -config=/vault/config/vault.hcl
+    networks:
+      - bsuite-net
+    environment:
+      - VAULT_ADDR=http://vault:8200
+
+networks:
+  bsuite-net:
+    external: true

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .header img {
+            width: 100%;
+            max-height: 100px;
+            object-fit: fill;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .sub-title {
+            font-size: 17px;
+            margin-top: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 6px;
+        }
+
+        th {
+            background: #e0e0e0;
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .bold {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+        .italics {
+            font-style: italic;
+        }
+
+        .italics.bold {
+            background: #ffffff;
+        }
+
+        .indent-0 {
+            padding-left: 4px;
+        }
+
+        .indent-1 {
+            padding-left: 20px;
+        }
+
+        .indent-2 {
+            padding-left: 36px;
+        }
+
+        .indent-3 {
+            padding-left: 52px;
+        }
+
+        .indent-4 {
+            padding-left: 68px;
+        }
+
+        .indent-5 {
+            padding-left: 84px;
+        }
+
+        .indent-6 {
+            padding-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        {{#if headerUrl}}
+        <img src="{{headerUrl}}" alt="Header Logo" />
+        {{/if}}
+        <div class="title">Trial Balance</div>
+        <div class="sub-title">{{companyName}}</div>
+        <div class="sub-title">As of : {{toDate}}</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th class="right">Debit</th>
+            <th class="right">Credit</th>
+        </tr>
+
+        {{#each sections}}
+        <!-- Section row -->
+        <tr class="bold">
+            <td>{{sectionName}}</td>
+            <td class="right">{{totalDebit}}</td>
+            <td class="right">{{totalCredit}}</td>
+        </tr>
+
+        {{#each groups}}
+        <!-- Group row -->
+        <tr class="bold">
+            <td class="indent-1">{{groupName}}</td>
+            <td class="right">{{totalDebit}}</td>
+            <td class="right">{{totalCredit}}</td>
+        </tr>
+
+        {{#each rows}}
+        <!-- Account / Subaccount rows -->
+        <tr class="{{#if bold}}bold{{/if}} {{#if italics}}italics{{/if}}">
+            <td class="indent-{{indent}}">{{name}}</td>
+            <td class="right">{{debit}}</td>
+            <td class="right">{{credit}}</td>
+        </tr>
+        {{/each}}
+
+        {{/each}}
+        {{/each}}
+
+        <!-- Grand total -->
+        <tr class="bold">
+            <td>Total</td>
+            <td class="right">{{grandDebit}}</td>
+            <td class="right">{{grandCredit}}</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

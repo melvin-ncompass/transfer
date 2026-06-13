@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoices</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .company-logo {
+      width: 100vw;
+      height: 120px;
+      overflow: hidden;
+    }
+
+    .company-logo img {
+      width: 100vw;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .period {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .right {
+      text-align: right;
+    }
+
+    tr {
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+
+<body>
+  {{#if headerUrl}}
+  <div class="company-logo">
+    <img src="{{headerUrl}}" alt="Company Logo" />
+  </div>
+  {{/if}}
+
+  <h2>Transactions - Invoices</h2>
+  <div class="period">From {{formattedFromDate}} to {{formattedToDate}}</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Invoice No.</th>
+        <th>Invoice To</th>
+        <th>Status</th>
+        <th>Due in</th>
+        <th class="right">Total</th>
+        <th class="right">Balance Due</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rows}}
+      <tr>
+        <td>{{date}}</td>
+        <td>{{number}}</td>
+        <td>{{contact}}</td>
+        <td>{{status}}</td>
+        <td>{{dueIn}} days</td>
+        <td class="right">{{total}}</td>
+        <td class="right">{{balanceDue}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

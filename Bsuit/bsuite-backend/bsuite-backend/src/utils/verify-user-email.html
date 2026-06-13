@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification</title>
+  <style>
+    p {
+      color: #555555;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body style="font-family: Arial, sans-serif; background: #e9ecef; padding: 40px;">
+
+  <div style="
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+  ">
+
+    <h1>Welcome to Bsuite!</h1>
+
+    <p>Hello {{name}},</p>
+    <p>Thank you for signing up for <strong>Bsuite</strong>, your all-in-one solution for managing your finances and HR management efficiently.</p>
+    <p>To complete your registration, please verify your email address by clicking the button below:</p>
+
+
+    <a href="{{verificationLink}}"
+      style="
+        display: inline-block;
+        padding: 12px 20px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 15px;
+        font-size: 15px;
+        font-weight: bold;
+      ">
+      Verify Your Email
+    </a>
+
+    <p style="font-size: 15px; color: #555; margin-top: 20px;">
+      If the button doesn't work, copy and paste the following link into your browser:
+    </p>
+
+    <div style="
+      margin: 20px 0;
+      padding: 15px;
+      background: #f7f7f7;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #333;
+      word-break: break-all;
+    ">
+      {{verificationLink}}
+    </div>
+
+    <p style="font-size: 15px; color: #555;">
+      If you did not create this account, you can safely ignore this email.
+    </p>
+
+    <p>We're excited to have you on board!</p>
+    <p>— The Bsuite Team</p>
+
+    <p style="font-size: 13px; color: #999; text-align: center; margin-top: 30px;">
+      © {{year}} Bsuite — All rights reserved.
+    </p>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+export const items = [
+  {
+    id: 1,
+    name: "Brochure Design",
+    description:
+      "Brochure Design Single Sided Color Custom Themes for your business.",
+    qty: 1,
+    rate: 300,
+    discount: 0,
+    taxPercent: 7.0,
+    tax: 21,
+    amount: 300,
+  },
+  {
+    id: 2,
+    name: "Web Design Packages(Template) - Basic",
+    description: "Custom Themes for your business.",
+    qty: 1,
+    rate: 250,
+    discount: 0,
+    taxPercent: 4.7,
+    tax: 11.75,
+    amount: 250,
+  },
+  {
+    id: 3,
+    name: "Print Ad - Basic - Color",
+    description: "Print Ad 1/8 size Color",
+    qty: 1,
+    rate: 80,
+    discount: 0,
+    taxPercent: 0,
+    tax: 0,
+    amount: 80,
+  },
+];

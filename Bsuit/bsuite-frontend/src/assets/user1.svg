@@ -1,0 +1,18 @@
+<svg
+  width="128"
+  height="128"
+  viewBox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle cx="64" cy="64" r="64" fill="#E3F2FD"/>
+  <circle cx="64" cy="48" r="24" fill="#90CAF9"/>
+  <path
+    d="M64 80c-18 0-36 9-36 27v5h72v-5c0-18-18-27-36-27z"
+    fill="#64B5F6"
+  />
+  <circle cx="64" cy="48" r="20" fill="#BBDEFB"/>
+  <path
+    d="M64 60c8 0 14-6 14-14s-6-14-14-14-14 6-14 14 6 14 14 14z"
+    fill="#E3F2FD"
+  />
+</svg>

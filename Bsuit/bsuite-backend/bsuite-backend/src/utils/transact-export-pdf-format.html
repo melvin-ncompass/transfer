@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .company-logo {
+      width: 100vw;
+      height: 120px;
+      overflow: hidden;
+    }
+
+    .company-logo img {
+      width: 100vw;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    .header {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f4f4f4;
+      text-transform: uppercase;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  {{#if headerUrl}}
+  <div class="company-logo">
+    <img src="{{headerUrl}}" alt="Company Logo" />
+  </div>
+  {{/if}}
+  <div class="header">
+    <div class="title">Transactions ({{filterLabel}})</div>
+    <div class="subtitle">{{formattedFromDate}} - {{formattedToDate}}</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Description</th>
+        {{#if isAccountReport}}
+        <th>From / To Account</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Balance</th>
+        {{else}}
+        <th>From Account</th>
+        <th>To Account</th>
+        <th>Amount</th>
+        {{/if}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each rows}}
+      <tr>
+        {{#if ../isAccountReport}}
+        <td>{{date}}</td>
+        <td>{{transactionTypeId}}</td>
+        <td>{{transactionTypeName}}</td>
+        <td>{{description}}</td>
+        <td>{{fromOrToAccount}}</td>
+        <td class="text-right">{{debit}}</td>
+        <td class="text-right">{{credit}}</td>
+        <td class="text-right"><strong>{{balance}}</strong></td>
+        {{else}} {{#if transactionTypeId}}
+        <td rowspan="{{rowspan}}">{{date}}</td>
+        <td rowspan="{{rowspan}}">{{transactionTypeId}}</td>
+        <td rowspan="{{rowspan}}">{{transactionTypeName}}</td>
+        <td rowspan="{{rowspan}}">{{description}}</td>
+        {{/if}}
+        <td>{{fromAccountName}}</td>
+        <td>{{toAccountName}}</td>
+        {{#if amount}}
+        <td rowspan="{{rowspan}}" class="text-right">
+          <strong>{{amount}}</strong>
+        </td>
+        {{/if}} {{/if}}
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+
+</html>
